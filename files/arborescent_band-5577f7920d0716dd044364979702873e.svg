@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xml:space="preserve"
+   stroke-miterlimit="10"
+   style="clip-rule:evenodd;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:round"
+   viewBox="0 0 3068.027 1586.525"
+   version="1.1"
+   id="svg15"
+   sodipodi:docname="arborescent_band.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:vectornator="http://vectornator.io"><defs
+   id="defs15" /><sodipodi:namedview
+   id="namedview15"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="0.34941021"
+   inkscape:cx="1534.0135"
+   inkscape:cy="794.19545"
+   inkscape:window-width="2254"
+   inkscape:window-height="1502"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="g15" />
+  <g
+   fill="none"
+   stroke="#bd93f9"
+   stroke-linejoin="miter"
+   class="stroke-orange fill-orange"
+   style="clip-rule:evenodd;fill-rule:nonzero;stroke:#ff851b;stroke-linecap:round;stroke-linejoin:round"
+   id="g3">
+    <path
+   vectornator:layerName="Curve 2"
+   stroke-dasharray="0.1, 0.1, 6, 10"
+   stroke-linecap="butt"
+   stroke-width="12"
+   d="M10 500c90-200 890-200 983.29 0"
+   class="stroke-orange fill-orange"
+   style="stroke:#616161;stroke-opacity:1"
+   transform="translate(246.892 837.079)scale(.73733)"
+   id="path1" />
+    <path
+   vectornator:layerName="Curve 1"
+   stroke-width="12"
+   d="M10 500c90 200 890 200 983.29 0"
+   class="stroke-orange fill-orange"
+   style="stroke:#616161;stroke-opacity:1"
+   transform="translate(246.892 837.079)scale(.73733)"
+   id="path2" />
+    <path
+   vectornator:layerName="Oval 1"
+   stroke-linecap="butt"
+   stroke-width="18.988"
+   d="M10.21 503.397c0-272.38 219.938-493.188 491.246-493.188s491.246 220.808 491.246 493.188-219.938 493.187-491.246 493.187S10.209 775.777 10.209 503.397z"
+   class="stroke-orange fill-orange"
+   style="stroke:#616161;stroke-opacity:1"
+   transform="translate(246.892 837.079)scale(.73733)"
+   id="path3" />
+  </g>
+  <g
+   fill="none"
+   stroke="#bd93f9"
+   stroke-linejoin="miter"
+   class="stroke-orange fill-orange"
+   style="clip-rule:evenodd;fill-rule:nonzero;stroke:#ff851b;stroke-linecap:round;stroke-linejoin:round"
+   id="g6">
+    <path
+   vectornator:layerName="Curve 2"
+   stroke-dasharray="0.1, 0.1, 6, 10"
+   stroke-linecap="butt"
+   stroke-width="12"
+   d="M10 500c90-200 890-200 983.29 0"
+   class="stroke-orange fill-orange"
+   style="stroke:#616161;stroke-opacity:1"
+   transform="translate(355.254 -.527)scale(.73733)"
+   id="path4" />
+    <path
+   vectornator:layerName="Curve 1"
+   stroke-width="12"
+   d="M10 500c90 200 890 200 983.29 0"
+   class="stroke-orange fill-orange"
+   style="stroke:#616161;stroke-opacity:1"
+   transform="translate(355.254 -.527)scale(.73733)"
+   id="path5" />
+    <path
+   vectornator:layerName="Oval 1"
+   stroke-linecap="butt"
+   stroke-width="18.988"
+   d="M10.21 503.397c0-272.38 219.938-493.188 491.246-493.188s491.246 220.808 491.246 493.188-219.938 493.187-491.246 493.187S10.209 775.777 10.209 503.397z"
+   class="stroke-orange fill-orange"
+   style="stroke:#616161;stroke-opacity:1"
+   transform="translate(355.254 -.527)scale(.73733)"
+   id="path6" />
+  </g>
+  <g
+   fill="none"
+   stroke="#bd93f9"
+   stroke-linejoin="miter"
+   class="stroke-orange fill-orange"
+   style="clip-rule:evenodd;fill-rule:nonzero;stroke:#ff851b;stroke-linecap:round;stroke-linejoin:round"
+   id="g9">
+    <path
+   vectornator:layerName="Curve 2"
+   stroke-dasharray="0.1, 0.1, 6, 10"
+   stroke-linecap="butt"
+   stroke-width="12"
+   d="M10 500c90-200 890-200 983.29 0"
+   class="stroke-orange fill-orange"
+   style="stroke:#616161;stroke-opacity:1"
+   transform="translate(2089.238 27.67)scale(.73733)"
+   id="path7" />
+    <path
+   vectornator:layerName="Curve 1"
+   stroke-width="12"
+   d="M10 500c90 200 890 200 983.29 0"
+   class="stroke-orange fill-orange"
+   style="stroke:#616161;stroke-opacity:1"
+   transform="translate(2089.238 27.67)scale(.73733)"
+   id="path8" />
+    <path
+   vectornator:layerName="Oval 1"
+   stroke-linecap="butt"
+   stroke-width="18.988"
+   d="M10.21 503.397c0-272.38 219.938-493.188 491.246-493.188s491.246 220.808 491.246 493.188-219.938 493.187-491.246 493.187S10.209 775.777 10.209 503.397z"
+   class="stroke-orange fill-orange"
+   style="stroke:#616161;stroke-opacity:1"
+   transform="translate(2089.238 27.67)scale(.73733)"
+   id="path9" />
+  </g>
+  <g
+   fill="none"
+   stroke="#bd93f9"
+   stroke-linejoin="miter"
+   class="stroke-orange fill-orange"
+   style="clip-rule:evenodd;fill-rule:nonzero;stroke:#ff851b;stroke-linecap:round;stroke-linejoin:round"
+   id="g12">
+    <path
+   vectornator:layerName="Curve 2"
+   stroke-dasharray="0.1, 0.1, 6, 10"
+   stroke-linecap="butt"
+   stroke-width="12"
+   d="M10 500c90-200 890-200 983.29 0"
+   class="stroke-orange fill-orange"
+   style="stroke:#616161;stroke-opacity:1"
+   transform="translate(2068.635 821.444)scale(.73733)"
+   id="path10" />
+    <path
+   vectornator:layerName="Curve 1"
+   stroke-width="12"
+   d="M10 500c90 200 890 200 983.29 0"
+   class="stroke-orange fill-orange"
+   style="stroke:#616161;stroke-opacity:1"
+   transform="translate(2068.635 821.444)scale(.73733)"
+   id="path11" />
+    <path
+   vectornator:layerName="Oval 1"
+   stroke-linecap="butt"
+   stroke-width="18.988"
+   d="M10.21 503.397c0-272.38 219.938-493.188 491.246-493.188s491.246 220.808 491.246 493.188-219.938 493.187-491.246 493.187S10.209 775.777 10.209 503.397z"
+   class="stroke-orange fill-orange"
+   style="stroke:#616161;stroke-opacity:1"
+   transform="translate(2068.635 821.444)scale(.73733)"
+   id="path12" />
+  </g>
+  <path
+   d="M1928.507 231.131c30.908 10.89 60.22 22.193 87.884 33.87m182.962 98.97c91.55 65.506 140.29 137.434 140.29 211.029 0 105.09-99.385 206.78-280.882 291.23m-511.3 149.898c-218.91 39.3-465.746 60.418-719.144 60.418-250.484 0-494.557-20.635-711.58-59.07m-538.683-160.695C-590.847 774.246-683.01 676.2-683.01 575c0-74.94 50.539-148.152 145.354-214.615m165.862-90.237c40.241-17.445 84.11-34.087 131.441-49.795 24.984-8.291 50.753-16.262 77.249-23.905M307.294 104.2C407.487 91.988 511.68 83.285 618.18 78.323m571.431 9.671c92.307 7.543 182.154 17.95 268.354 31.06"
+   style="fill:none;stroke:#ff4136;stroke-width:38.1619;stroke-miterlimit:4.1"
+   transform="translate(702.091 490.898)"
+   id="path13" />
+  <path
+   d="M2094.327-228.922c163.468 81.647 252.528 178.082 252.528 277.563 0 127.83-147.048 250.628-410.057 343.488m-506.03 117.52c-186.326 26.495-388.602 40.539-595.24 40.539-217.447 0-430.063-15.552-624.346-44.798m-475.645-112.81c-263.811-92.913-411.336-215.902-411.336-343.939 0-122.123 134.212-239.654 375.53-330.875m537.304-129.669c117.95-16.88 242.33-28.765 370.194-35.249m582.228 8.192c120.718 9.651 237.295 24.196 347.088 43.272"
+   style="fill:none;stroke:#ff4136;stroke-width:38.1619;stroke-miterlimit:4.1"
+   transform="translate(702.091 490.898)"
+   id="path14" />
+  <g
+   style="stroke-width:2;stroke-dasharray:none"
+   id="g15">
+    <path
+   d="M148.267 247.41a4.89 4.89 0 0 1-4.89 4.89 4.89 4.89 0 0 1-4.889-4.89 4.89 4.89 0 0 1 4.89-4.89 4.89 4.89 0 0 1 4.889 4.89m14.937 0a4.89 4.89 0 0 1-4.889 4.89 4.89 4.89 0 0 1-4.89-4.89 4.89 4.89 0 0 1 4.89-4.89 4.89 4.89 0 0 1 4.89 4.89m14.937 0a4.89 4.89 0 0 1-4.89 4.89 4.89 4.89 0 0 1-4.888-4.89 4.89 4.89 0 0 1 4.889-4.89 4.89 4.89 0 0 1 4.89 4.89"
+   class="stroke-orange fill-orange stroke-orange"
+   style="fill:#616161;fill-opacity:1;stroke:#616161;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;stroke-dasharray:none;stroke-opacity:1"
+   transform="translate(-277.398 -2631.356)scale(11.84879)"
+   id="path15" />
+  </g>
+</svg>

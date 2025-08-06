@@ -1,0 +1,19 @@
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xml:space="preserve" stroke-miterlimit="10" style="clip-rule:evenodd;fill-rule:nonzero;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 1445.7847 530" version="1.1" id="svg3" sodipodi:docname="2b_color.svg" inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)">
+  <defs id="defs3"/>
+  <sodipodi:namedview id="namedview3" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:zoom="0.63911719" inkscape:cx="606.30508" inkscape:cy="-80.579901" inkscape:window-width="2254" inkscape:window-height="1502" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="1" inkscape:current-layer="svg3"/>
+  <g vectornator:layerName="Layer 1" fill="none" stroke="#FF851B" stroke-width="30" clip-path="url(#ArtboardFrame_89)" id="g3" style="stroke:#ff851b" transform="translate(15,15)">
+    <path d="M 0,500 C 295.052,478.769 292.496,23.073 0,0" class="stroke-orange stroke-orange" id="path1" style="stroke:#ff851b"/>
+    <path d="M 0,206 C 22.871,156.565 67.661,121.509 121.7,100.743 M 223.097,78.872 c 10.317,-3.547 38.559,-4.07 48.888,-0.212 m 108.696,23.248 C 433.705,122.85 477.533,157.575 500,206" style="clip-rule:evenodd;fill-rule:nonzero;stroke:#ff851b;stroke-linecap:round;stroke-linejoin:round" id="path2"/>
+    <path d="M 500,500 C 203.989,478.769 206.552,23.073 500,0" style="clip-rule:evenodd;fill-rule:nonzero;stroke:#ff851b;stroke-linecap:round;stroke-linejoin:round" id="path3"/>
+  </g>
+  <g id="svg3-5" transform="translate(-18.815995)">
+    <path id="path3-7" style="clip-rule:evenodd;fill:#616161;fill-rule:nonzero;stroke:none;stroke-width:28.3465;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1" class="stroke-comment fill-comment" d="m 705.70835,213.03808 -90,51.96289 90,51.96094 v -33.29687 h 72 v 33.29687 l 90,-51.96094 -90,-51.96289 v 33.29688 h -72 z"/>
+  </g>
+  <g id="svg3-9" transform="translate(930.78471,15)" style="stroke:#ff851b">
+    <g vectornator:layerName="Layer 1" fill="none" stroke="#FF851B" stroke-width="30" clip-path="url(#ArtboardFrame_89)" transform="matrix(1,0,0,-1,0,500)" id="g3-2" style="clip-rule:evenodd;fill-rule:nonzero;stroke:#ff851b;stroke-linecap:round;stroke-linejoin:round">
+      <path d="M 0,500 C 295.052,478.769 292.496,23.073 0,0" class="stroke-orange stroke-orange" id="path1-2" style="stroke:#ff851b"/>
+      <path d="M 0,206 C 22.871,156.565 67.661,121.509 121.7,100.743 M 223.097,78.872 c 10.317,-3.547 38.559,-4.07 48.888,-0.212 m 108.696,23.248 C 433.705,122.85 477.533,157.575 500,206" style="clip-rule:evenodd;fill-rule:nonzero;stroke:#ff851b;stroke-linecap:round;stroke-linejoin:round" id="path2-8"/>
+      <path d="M 500,500 C 203.989,478.769 206.552,23.073 500,0" style="clip-rule:evenodd;fill-rule:nonzero;stroke:#ff851b;stroke-linecap:round;stroke-linejoin:round" id="path3-9"/>
+    </g>
+  </g>
+</svg>
