@@ -1,0 +1,441 @@
+\documentclass[10pt,twoside,openright]{uithesis}
+\usepackage{graphicx}
+\usepackage{geometry}
+\setstocksize{9.25in}{6.125in}
+\geometry{papersize={6.125in,9.25in},inner=.625in,outer=0.625in,top=0.625in,bottom=0.875in,bindingoffset=0.4in}
+\usepackage{silence}
+%Disable all warnings issued by latex starting with "You have..."
+\WarningFilter{latex}{You have requested package}
+\WarningFilter{pdf backend}{(pdf backend): ignore duplicate}
+\WarningFilter{latex}{Hyper reference}
+\WarningFilter{latex}{Reference `ex:}
+
+\bibliography{main.bib}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+  basicstyle=\normalfont\ttfamily,
+  numbers=left,
+  numberstyle=\scriptsize,
+  stepnumber=1,
+  numbersep=8pt,
+  showstringspaces=false,
+  breaklines=true,
+  frame=lines,
+  backgroundcolor=\color{background},
+  literate=
+  *{0}{{{\color{numb}0}}}{1}
+  {1}{{{\color{numb}1}}}{1}
+  {2}{{{\color{numb}2}}}{1}
+  {3}{{{\color{numb}3}}}{1}
+  {4}{{{\color{numb}4}}}{1}
+  {5}{{{\color{numb}5}}}{1}
+  {6}{{{\color{numb}6}}}{1}
+  {7}{{{\color{numb}7}}}{1}
+  {8}{{{\color{numb}8}}}{1}
+  {9}{{{\color{numb}9}}}{1}
+  {:}{{{\color{punct}{:}}}}{1}
+  {,}{{{\color{punct}{,}}}}{1}
+  {\{}{{{\color{delim}{\{}}}}{1}
+  {\}}{{{\color{delim}{\}}}}}{1}
+  {[}{{{\color{delim}{[}}}}{1}
+  {]}{{{\color{delim}{]}}}}{1},
+}
+\usepackage[inkscapeformat=png]{svg}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{microtype}      % microtypography
+\usepackage{doi}
+\usepackage[twitter]{coloremoji}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{times}
+\usepackage{mathtools}
+\usepackage{bbm}
+\usepackage{fancyhdr}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%  imports  %%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{framed}
+\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%  math commands  %%%%%%%%%%%%%%%%
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\m}{\scalebox{0.5}[1.0]{\(\ -\ \)\!}}
+\newcommand{\LP}{\left(}
+\newcommand{\RP}{\right)}
+\newcommand{\LA}{\left\langle}
+\newcommand{\RA}{\right\rangle}
+\newcommand{\img}[1]{\includegraphics[height=2ex, width=2ex]{#1}}
+\newcommand{\bkt}[1]{\LA \img{ #1}\RA}
+\newcommand{\LB}{\left[}
+\newcommand{\RB}{\right]}
+\newcommand{\LS}{\left\lbrace}
+\newcommand{\RS}{\right\rbrace}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\LN}{\left.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%  theorem  %%%%%%%%%%%%%%%%%%%
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{corollary}{Corollary}[theorem]
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{proposition}{Proposition}[section]
+% \newtheorem{definition}{Definition}[section]
+% \newtheorem{example}{Example}[section]
+% \newtheorem{remark}{Algorithm}[section]
+% \newtheorem{axiom}{Axiom}[section]
+% \newtheorem{conjecture}{Conjecture}[section]
+% \newtheorem{observation}{Figure}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\nf}[1]{\nameref{#1} (page~\pageref{#1})}
+
+\setsecnumdepth{subsection}
+\date{December 2025}
+% \year{2025}
+\title{The Tanglenomicon: Tabulation of Arborescent Tangles}
+
+\author{Joseph C. Starr}
+
+\definecolor{clrsnavy}{HTML}{001F3F}
+\definecolor{clrsblue}{HTML}{0074D9}
+\definecolor{clrsaqua}{HTML}{7FDBFF}
+\definecolor{clrsteal}{HTML}{39CCCC}
+\definecolor{clrsolive}{HTML}{3D9970}
+\definecolor{clrsgreen}{HTML}{2ECC40}
+\definecolor{clrslime}{HTML}{01FF70}
+\definecolor{clrsyellow}{HTML}{FFDC00}
+\definecolor{clrsorange}{HTML}{FF851B}
+\definecolor{clrsred}{HTML}{FF4136}
+\definecolor{clrsfuchsia}{HTML}{F012BE}
+\definecolor{clrspurple}{HTML}{B10DC9}
+\definecolor{clrsmaroon}{HTML}{85144B}
+\definecolor{clrswhite}{HTML}{FFFFFF}
+\definecolor{clrssilver}{HTML}{DDDDDD}
+\definecolor{clrsgray}{HTML}{AAAAAA}
+\definecolor{clrsdarkgray}{HTML}{616161}
+\definecolor{clrsblack}{HTML}{111111}
+
+\usepackage[many]{tcolorbox}
+\tcbset{
+  base/.style={
+    enhanced,
+    breakable,  % Allows page break.
+    sharp corners,
+    fonttitle=\bfseries,
+    colbacktitle=#1!5!white,
+    coltitle=#1,
+    toptitle=0mm,
+    bottomtitle=0mm,
+    boxrule=0mm,
+    left=2.5mm,
+    leftrule=1mm,
+    right=3.5mm,
+    boxrule=0pt,frame hidden,
+    colback=#1!5,
+    colframe=#1!80,
+    borderline west={2pt}{0pt}{#1},
+    label separator=
+  }
+}
+
+\newtcbtheorem[auto counter,number within=chapter]{theorem}{Theorem}{
+  base=clrsnavy
+}{}
+
+\newtcbtheorem[auto counter,number within=chapter]{lemma}{Lemma}{
+  base=clrsnavy
+}{}
+
+\newtcbtheorem[auto counter,number within=chapter]{corollary}{Corollary}{
+  base=clrsnavy
+}{}
+
+\newtcbtheorem[auto counter,number within=chapter]{proposition}{Proposition}{
+  base=clrsnavy
+}{}
+
+\newtcbtheorem[auto counter,number within=chapter]{definition}{Definition}{
+  base=clrsolive
+}{}
+
+\newtcbtheorem[auto counter,number within=chapter]{remark}{Algorithm}{
+  base=clrspurple
+}{}
+
+\newtcbtheorem[auto counter,number within=chapter]{requirement}{Requirement}{
+  base=clrsfuchsia
+}{}
+
+\newtcbtheorem[auto counter,number within=chapter]{usecase}{Use Case}{
+  base=clrsfuchsia
+}{}
+
+\newtcbtheorem[auto counter,number within=chapter]{testcard}{Test}{
+  base=clrsred
+}{}
+
+\newtcbtheorem[auto counter,number within=chapter]{example}{Example}{
+  base=clrsblack
+}{}
+
+\newtcolorbox{note}[1][]{
+  title={Note:},
+  base=clrsdarkgray
+}
+
+\newtcolorbox{convention}[1][]{
+  title={Convention:},
+  base=clrsorange
+}
+\usepackage[normalem]{ulem}
+%%% --- The following two lines are what needs to be added --- %%%
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks,
+  linkcolor=[rgb]{0.62,0.22,0.24},
+  urlcolor=[rgb]{0.16,0.20,0.36},
+  citecolor=[rgb]{0.95,0.65,0.07},
+  pdftitle={\thetitle},
+  pdfauthor={\theauthor},
+  breaklinks=true
+}
+
+\degree{Doctor of Philosophy}
+\concentration{Mathematics}
+
+\ThesisSupervisor{Isabel Darcy}
+
+\CommitteeMember{Francis Bonahon}
+\CommitteeMember{Keiko Kawamuro }
+\CommitteeMember{Colleen Mitchell}
+\CommitteeMember{Radmila Sazdanovi{\'c}}
+
+\setcounter{tocdepth}{2}
+
+\begin{document}
+
+\titlepage
+
+\copyrightPage
+
+\frontmatter
+
+\begin{acknowledgments}
+  Completing this PhD has been the hardest thing I've ever done. The
+  last four years were filled with stress, doubt, and exhaustion. I
+  would have never been able to tackle this alone. I feel grateful to
+  have had a team around me and supported me through each milestone.
+
+  I want to express my deepest thanks to my best friend and wife
+  Valeria, who has been with me at every step. She sacrificed so much
+  to make this happen. She moved across the country away from family,
+  worked as our primary bread winner, ate way too many frozen dinners
+  when I just couldn't do more that day, missed out on four years of
+  vacations, and just felt every ounce of my stress and exhaustion.
+  Valeria, te amo, I'm happy to have you as my partner, you're my
+  rock. I also need to acknowledge what kept Valeria and I from
+  losing it when the stress maxed out, Topper the pug, the best dog
+  in the world. Thank you for sitting with (on) me for hours on end
+  while I studied for qualifying exams, prepared for my comprehensive
+  exam, prepared for my defense, and wrote this thesis.
+
+  To my family, you've all been there for me. Mom and Dad, I'm
+  grateful that you have always pushed me to do hard things and
+  supported me through all my successes and failures. Mom, thank you
+  for walking this path before me, I truly don't understand how you
+  had two children while completing a PhD. I'm grateful for all the
+  conversations and advice you've given me and for always reassuring
+  me that it's normal and will be okay. Dad, thank you for everything
+  you've done for us. Thank you for helping us move, for driving to
+  Iowa to be here while I worked through exam weeks, for helping us
+  with the garden, and for so many other things. To my siblings,
+  thank you for being fun and keeping my spirits up. To Aunt Shirley,
+  thank you for being in my corner. To my in-laws Gume and Marisol,
+  thank you for all you've done for Valeria, I couldn't ask for
+  better people to be my in-laws.
+
+  School hasn't always been easy for me; as a child I experienced an
+  environment where faculty were cruel. Moving beyond that experience
+  has been hard, but I've been lucky to have had a wonderful
+  collection of mentors and friends to help me. My high school
+  physics teacher, Dr. Deano Smith, thank you for believing in me. My
+  high school biology teachers, Martha and Tom Friedlander, thank you
+  for always encouraging me. My math professor, Dr. Alan Wiggins,
+  thank you for putting The Knot Book
+  \citep{adamsKnotBookElementary2004} in my hands and showing me that
+  I can do math. My computer science professor, Dr. Bruce Elenbogen,
+  thank you for challenging me; you are missed.
+
+  I would like to also thank the community I've built and been
+  accepted into at Iowa and in the broader math community. To my
+  advisor Isabel Darcy, thank you for all you've done for me in the
+  last few years. Thank you for bringing me into your community and
+  being one of my biggest cheerleaders and advocates. I look forward
+  to our continued collaboration and hope we build great things. To
+  my committee members, Francis Bonahon, Keiko Kawamuro, Colleen
+  Mitchell, and Radmila Sazdanovic thank you for serving on my
+  committee and for all the time you've given me as I've matured as a
+  mathematician. To the Iowa Topology group, without the support of
+  the RTG (DMS-2038103), I would never have had the opportunity to
+  meet Dr. Bonahon and Dr. Sazdanovic. To my academic siblings and
+  extended applied topology friends; Ethan, George, Jacob, Paria, and
+  Robert, thanks for all the brainstorming and good conversation. To
+  Nick Connolly, ``The Tanglenomicon''
+  \citep{connollyClassificationTabulation2string2021} is an amazing name for the
+  series of Iowa applied topology tanlge tabulation projects, I'm excited to add
+  my subtile to this collection. To the
+  ISA, particularly Lori Adams, thank you for helping me develop
+  as an instructor and giving me a venue to express myself. The Iowa
+  community is full of wonderful people, unfortunately I can't thank
+  everyone individually, so to those who I havn't listed I simply thank
+  you for being you.
+
+  Finally, It may seem strange, but I would like to also acknowledge
+  my 2019 fusion. Over my four years in Iowa, my car safely carried
+  me as I drove around 1000 hours of commute.
+
+\end{acknowledgments}
+
+\begin{abstract}
+  The enumeration of provably unique mathematical knots, tabulation, has been a
+  core area of research for over 150 years. One important advancement
+  in this area
+  was Conway's development of a building block for knots, the tangles. Formally,
+  an $n$-string tangle is a portion of a knot diagram enclosed in a Jordan curve
+  that intersects the knot in exactly $2n$ points. The tabulation of the two
+  string tangles, Conway's building blocks for knots, has been called:
+  \begin{quote}
+    ``The most important missing infrastructure project in knot
+    theory'' -Dr. Dror
+    Bar-Natan\citep{bar-natanMostImportantMissing}
+  \end{quote}
+  \vspace{-2mm}
+  Without such a table of tangles, researchers are in the
+  position of a chemist who possesses a table of fatty acids but no periodic
+  table. In this thesis we answer, in part, this call.
+
+  This thesis develops the theory needed to
+  tabulate tables of successively more complex classes of tangles. We start with
+  the rational and Montesinos tangles, and then conclude with the arborescent
+  tangles, often called the algebraic tangles. For each of
+  these classes of
+  tangles, we additionally develop a collection of software designs used to
+  efficiently and scalably compute tables of these tangles to high crossing
+  number (19). We will also
+  discuss ways that the accessibility of knot theory and in
+  particular tabulation make the domain a candidate for undergraduate
+  research. As
+  part of our discussion of undergraduate research, we will outline a software
+  engineering process particularly suited for undergraduate research in knot
+  theory, as well as a model life cycle for an undergraduate research experience
+  in computational knot theory.
+
+  \vspace{1cm}
+  \noindent
+  This material is based upon work supported by the National Science
+  Foundation under
+  Award~No.~(DMS\nobreakdash2038103).
+  Any opinions, findings, and conclusions or recommendations
+  expressed in this material
+  are those of the author and do not necessarily reflect the views
+  of the National Science
+  Foundation.
+\end{abstract}
+
+\begin{publicAbstract}
+  The tabulation, creation of a list, of mathematical
+  knots has been a core area of mathematics research for over 150 years. A key
+  breakthrough in knot tabulation was Conway's development of a
+  building block for
+  knots, the two string tangle. A two string tangle is a portion of a
+  mathematical knot bound within a ball and intersecting that
+  ball in exactly
+  four points. A table of these objects has been called:
+  \begin{quote}
+    ``The most important missing infrastructure project in knot
+    theory'' -Dr. Dror
+    Bar-Natan\citep{bar-natanMostImportantMissing}
+  \end{quote}
+  \vspace{-2mm}
+  Without such a table of tangles, mathematicians and scientists are in the
+  position of a chemist who possesses a table of fatty acids but no periodic
+  table. In this thesis we answer, in part, this call.
+
+  As we progress through this thesis, we produce
+  successively larger and more complete tables of tangles. Each table we produce
+  requires the development of the mathematical theory demonstrating that what we
+  have produced is what we say it is. Then, for each tangle type we develop the
+  theory for, we also develop a collection of software designs used
+  to convince a
+  computer to quickly generate large tables of tangles. We will also
+  discuss ways that the accessibility of knot theory and in
+  particular tabulation make this domain a candidate for undergraduate
+  research. As
+  part of our discussion of undergraduate research, we will outline a software
+  engineering process particularly suited for undergraduate research in knot
+  theory, as well as a model life cycle for an undergraduate research experience
+  in computational knot theory.
+
+\end{publicAbstract}
+
+\tableofcontents
+
+\listoffigures
+
+\mainmatter
+
+\include{introduction}
+
+\include{background}
+
+\include{tabulation}
+
+\include{software}
+
+\include{future-work}
+
+\chapter{Census of RLITT up to TCN 9}
+
+A full table of RLITT up to TCN 18 is available as supplimental material of this
+work.
+A full table of RLITT up to TCN 16 is available on GitHub
+\citep{Starr_The_Tanglenomicon_A_2025}.
+%
+\bigskip
+% \appendix
+
+% \backmatter
+
+\raggedright
+\printbibliography
+$\,$
+\newpage
+$\,$
+\newpage
+$\,$
+\newpage
+$\,$
+\newpage
+\end{document}

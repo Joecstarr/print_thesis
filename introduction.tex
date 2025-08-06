@@ -1,0 +1,416 @@
+\chapter{Introduction}
+
+There exists a common view of advanced mathematics as esoteric nonsense only
+understandable by elite thinkers. While that sentiment is perhaps deserved by
+some mathematical disciplines, knot theory is an area of advanced mathematics
+that offers deep significance as well as general accessibility. A lay person can
+be easily taught the basic structures of knot theory, while it takes years to
+master the details.
+
+%  prettier-ignore-start
+
+\section{An Intuitive Grounding in Knot
+Theory}\label{sec-intro-intuit_knot_theory}
+
+%  prettier-ignore-end
+
+A knot, when used in everyday life, is a tool whether it's the
+``bunny ear'' knot
+holding on your shoe, a decorative monkey's fist on your keychain, or a climbing
+hitch securing yourself to a rock wall. Now, when thinking of these tool knots,
+we should note one critical attribute, they're made of a single string with open
+ends (Figure~\ref{fig-intro-everyday_knot}). Notice with this
+construction, no matter how
+``knotted'' the string, we can always pull on loops to remove the
+knot, leaving us
+with only an unknotted string.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{files/everyday_knot-3d0a3f087e460add29008825581bbd36.pdf}
+  \caption[An everyday knot with open ends.]{An everyday knot with open ends.}
+  \label{fig-intro-everyday_knot}
+\end{figure}
+
+This leaves us with a somewhat unsatisfying construction, exactly one object, a
+string. How might we add some spice to our construction? What if we turn the
+string into a circle by gluing the ends as in
+Figure~\ref{fig-intro-everyday_knot_closed}?
+When we try to wiggle the closed up string around, trying to remove the knot, we
+stretch and pull on the string, but regardless of what we do, we end up with a
+knot. Constructing a physical model of
+Figure~\ref{fig-intro-everyday_knot_closed} and
+playing with it should convince you that the knot can't be removed. We call
+these closed up versions of knots \textbf{mathematical knots}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{files/everyday_knot_closed-dc24f338fa5dd2633dcba3c6e31156ee.pdf}
+  \caption[Closing the ends of the everyday knot.]{Closing the ends
+    of the everyday knot in Figure~\ref{fig-intro-everyday_knot} to form a
+  mathematical knot.}
+  \label{fig-intro-everyday_knot_closed}
+\end{figure}
+
+With this, when compared to an everyday knot, we are already in a better place.
+You may discover that then gluing the ends yields knots that can't be maneuvered
+to look the same as Figure~\ref{fig-intro-everyday_knot_closed} or
+Figure~\ref{fig-intro-circle}. Continuing to experiment with your physical
+model, twisting the ends of the string around each other in different ways
+(Figure~\ref{fig-intro-torus}).
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{files/circle-5a8ae67a7c8a7a4fc197ac67fe7ba70a.pdf}
+  \caption[A representation of a simple loop.]{A representation of a
+  simple loop made from gluing the ends of a rope together.}
+  \label{fig-intro-circle}
+\end{figure}
+
+In fact, this twisting gives us a whole infinite family of odd crossing torus
+knots, a sampling of which can be seen in Figure~\ref{fig-intro-torus_knots}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{files/torus_physical-fa039c19edb7484321bde650f450164b.pdf}
+  \caption[A representation of twisting the ends of a rope.]{A
+  representation of twisting the ends of a rope around itself before gluing.}
+  \label{fig-intro-torus}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{files/torus-689573cf371cfec2180887a2654c1f43.pdf}
+  \caption[Three knots built from twisting.]{Three knots built from
+    the operation seen in Figure~\ref{fig-intro-torus}. From left
+  to right: three, five, and seven crossing torus knots.}
+  \label{fig-intro-torus_knots}
+\end{figure}
+
+Our experimentation with the physical model may conjure some questions, three
+important questions we may ask are:
+
+\begin{enumerate}
+  \item ``How do I systematically construct knots?''
+  \item ``How do I tell two knots I make apart?''
+  \item ``How do I generate new knots?''
+\end{enumerate}
+
+Attempting to answer these questions, even just in part or with restrictions, is
+the bread and butter of knot theory and the focus of the rest of this thesis.
+Some great texts for continued reading on knot theory in order of accessibility
+are: The Knot Book: An Elementary Introduction to the Mathematical Theory of
+Knots by Adams \citep{adamsKnotBookElementary2004}, LinKnot: Knot
+Theory by Computer
+by Jablan and Sazdanovi{\'c} \citep{jablanLinKnotKnotTheory2007},
+Knots and Links by
+Rolfsen \citep{rolfsenKnotsLinks2003}, and An Introduction to Knot Theory by
+Lickerish \citep{lickorishIntroductionKnotTheory1997}.
+
+The remainder of this thesis quickly exchanges the idea of a knot for that of a
+tangle, introduced by Conway \citep{conwayEnumerationKnotsLinks1970}.
+A tangle can be
+thought of as slamming a cookie cutter onto a knot diagram pinning down four
+points. Once the knot is pinned down we then cut off the parts of the knot
+laying outside the cookie cutter, seen in Figure~\ref{fig-intro-tangle_maker}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/tangle_maker-d959b9e7c360bb1bd923d6177c09c044.pdf}
+  \caption[The creation of a tangle from a knot.]{The creation of a
+    tangle from a knot by cutting a section out of the knot but
+  fixing four points.}
+  \label{fig-intro-tangle_maker}
+\end{figure}
+
+%  prettier-ignore-start
+
+\section{Brief Discussion on Applications}\label{sec-intro-applications}
+
+%  prettier-ignore-end
+
+As we saw in the Section~\ref{sec-intro-intuit_knot_theory},
+mathematical knots can be easily constructed as physical objects. It should be
+no surprise then that mathematical knots and tangles appear in the hard
+sciences, particularly in the realms of physics, chemistry, and biology. In this
+section, we will discuss one of the most commonly discussed applications of knot
+theory.
+
+\subsection{Tangles in DNA}
+
+One of the fundamental features that identifies life as life is the ability to
+self-replicate. In order to self-replicate, life must have a mechanism to pass
+information to successive generations. Consider first the most basic self
+replicating component of life, called a cell. The information of a cell is
+stored as double-stranded DNA (dsDNA), as described by Crick, Franklin, Gosling,
+and Watson
+\citep{watsonMolecularStructureNucleic1953,
+franklinMolecularConfigurationSodium1953},
+a polymer consisting of two strands constructed from a sugar-phosphate connected
+to one of the monomers \citep{watsonMolecularStructureNucleic1953}:
+
+\begin{enumerate}
+  \item Adenine (A)
+  \item Guanine (G)
+  \item Cytosine (C)
+  \item Thymine (T)
+\end{enumerate}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{files/DNA_chemical_structu-d5653e324ba48edb00fc63567a2cf1c0.pdf}
+  \caption[A schematic diagram demonstrating the structure of a dsDNA
+  polymer.]{A schematic diagram demonstrating the structure of a
+    dsDNA polymer (Ball CC BY-SA 2.5 via Wikimedia
+  Commons\citep{madeleinepriceballDNAChemicalStructure2007})}
+  \label{fig-intro-dna_chemical_structure}
+\end{figure}
+
+The two strands of dsDNA connect to each other to form the
+``double-helix'' where
+the monomers bind to each other with guanine (G) binding to cytosine (C), and
+adenine (A) binding to thymine (T) \citep{watsonMolecularStructureNucleic1953}
+(Figure~\ref{fig-intro-dna_chemical_structure}). When replicating,
+the cell will duplicate
+the dsDNA by splitting the dsDNA into two single strands with the enzyme DNA
+helicase. Once the DNA is split, two new complementary single strands are
+constructed to be paired with each of the original single strands.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/DNA_replication_en-7ba25b2f51c348cb7d031e6a172d6abd.pdf}
+  \caption[A schematic diagram demonstrating the splitting of a
+    double strand of DNA into
+  two new double strands.]{A schematic diagram demonstrating the
+    splitting of a double strand of DNA into
+    two new double strands. (Ruiz Public domain via Wikimedia
+  Commons\citep{ruizDNAReplicationFork})}
+  \label{fig-intro-dna_split}
+\end{figure}
+
+The dsDNA of a cell needs to be physically stored inside the cell. Cell volume
+is limited, so organizing the dsDNA to fit in that volume requires several
+complex cellular mechanisms. One issue solved by these mechanisms is that of
+local knotting, which becomes a problem when the cell attempts to replicate.
+During the replication process, the DNA helicase begins splitting the dsDNA, but
+when the DNA helicase reaches the locally knotted portion, it becomes stuck, the
+replication will be unable to continue
+\citep{albertsMolecularBiologyCell2022}, and
+the cell will die. If this local knotting is allowed to happen unchecked, every
+cell would eventually be unable to replicate and would ultimately die. Famously,
+life finds a way, and one cellular mechanism that mitigates this local knotting
+problem is the enzyme type II
+topoisomerase\citep{albertsMolecularBiologyCell2022}.
+
+The enzyme attempts to solve this local knotting by cutting one of
+the dsDNA where
+two segments cross, then moving the top double strand to the bottom, this action
+can be seen in Figure~\ref{fig-intro-topo}.
+
+\begin{figure}[H]
+  \begin{subfigure}[t]{.35\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/Gyrase_structure_Dmi-1d125d277339d7c31499be4e7766a1ef.png}
+    \caption[A schematic diagram of the enzyme type II
+    topoisomerase.]{A schematic diagram of the enzyme type II
+      topoisomerase. (Sutor CC BY-SA 4.0 via Wikimedia
+    Commons\citep{sutorSchemeDNAGyrase})}
+    \label{fig-intro-topo2schem}
+  \end{subfigure}
+  \hfill
+  \centering
+  \begin{subfigure}[t]{.6\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/topo3-31473ad625ab67bf8b08a2069a9bf0fb.pdf}
+    \caption[Type II topoisomerase doing a crossing exchange.]{Type
+      II topoisomerase doing a crossing exchange. From top left to bottom
+  right: 1) A crossing of two dsDNA segments. 2) The enzyme grabs the
+  under segment.
+3) The enzyme splits the under segment. 4) The enzyme passes the over segment
+through the gap. 5) The crossing with the segments exchanged.}
+\label{fig-intro-topo}
+\end{subfigure}
+\caption[Schematic diagrams of the enzyme type II
+topoisomerase.]{Schematic diagrams of the enzyme type II topoisomerase.}
+\end{figure}
+
+In mammals (and many other animal groups), dsDNA takes the form of long strings,
+which can only become everyday knots. However, it was discovered by Dulbecco and
+Vogt\citep{dulbeccoEVIDENCERINGSTRUCTURE1963,
+weilCYCLICHELIXCYCLIC1963, vinogradTwistedCircularForm1965}
+that in some viruses (Polyoma) the dsDNA is a closed loop, allowing it to form
+into a mathematical knot (Figure~\ref{fig-intro-circ_dna_fig}) .
+
+\begin{figure}
+\begin{subfigure}[t]{.45\textwidth}
+\includegraphics[width=\textwidth]{files/dna_circle-64775fa5ef9cccacd98295c0fecc35ba.pdf}
+\caption[A schematic diagram of circular dsDNA.]{A schematic diagram
+of circular dsDNA.}
+\label{fig-intro-dna_circle}
+\end{subfigure}
+~
+\begin{subfigure}[t]{.45\textwidth}
+\centering
+\includegraphics[width=\textwidth]{files/sem_knot-dee1106bb3b0e30c06d0f9d136d6f76f.png}
+\caption[A scanning electron microscope image of knotted dsDNA.]{A
+scanning electron microscope image of knotted dsDNA (Arsuaga CC
+BY-ND\citep{arsuagaDNAKnotSeen2013}).}
+\label{fig-intro-sem_knot-png}
+\end{subfigure}
+\caption[Schematic diagrams of circular and knotted dsDNA.]{Schematic
+diagrams of circular and knotted dsDNA.}
+\label{fig-intro-circ_dna_fig}
+\end{figure}
+
+From here one may ask, ``If the dsDNA is knotted and type II topoisomerase makes
+a change, what kind of new knot can this make?'', this question was addressed
+first by Ernst and Sumners in the 1990s \citep{ernstCalculusRationalTangles1990}
+\citep{ernstTANGLEEQUATIONS1996}. Their approach considers the dsDNA
+to be bounded by
+two ``areas'', the first area is created by drawing a circle around the crossing
+that type II topoisomerase is working on (right side of
+Figure~\ref{fig-intro-tangle_equation_start}), and the second by
+drawing a circle around the
+remainder (left side of
+Figure~\ref{fig-intro-tangle_equation_start}). From here, the
+crossing change from type II topoisomerase can be modeled by changing the tangle
+bound in the area on the right (Figure~\ref{fig-intro-tangle_calc}),
+\citep{darcy3DVisualizationSoftware2008}.
+
+\begin{note}
+After the change, there may be many crossings that type II
+topoisomerase could ``choose'' to work on next. A program
+like TopoICE-X \citep{darcy3DVisualizationSoftware2008} (built into KnotPlot
+\citep{schareinInteractiveTopologicalDrawing1998}) can help visualize
+the results of
+making these choices.
+\end{note}
+
+\begin{figure}
+\begin{subfigure}[t]{.45\textwidth}
+\centering
+\includegraphics[width=\textwidth]{files/tangle_equation_star-893577b81dd84ec6fe27e7f4781c5418.pdf}
+\caption[A knot diagram showing two areas containing knot data.]{A
+knot diagram showing two areas containing knot data. The right side contains
+the crossing that type II topoisomerase will work on.}
+\label{fig-intro-tangle_equation_start}
+\end{subfigure}
+~
+\begin{subfigure}[t]{.45\textwidth}
+\centering
+\includegraphics[width=\textwidth]{files/tangle_equation_resu-e4d9cd036ada95414b3b525d38b63b2d.pdf}
+\caption[A knot diagram showing two areas containing knot data.]{A
+knot diagram showing two areas containing knot data. The right side contains
+the crossing that type II topoisomerase has worked on.}
+\label{fig-intro-tangle_equation_result}
+\end{subfigure}
+\caption[A tangle model for a crossing change in a knot.]{A tangle
+model for a crossing change in a knot.}
+\label{fig-intro-tangle_calc}
+
+\end{figure}
+The modeling of the action of type II topoisomerase is just one of the many
+applications for the theory of knots and tangles found in biology. For further
+reading on applications, a good source is the ``Encyclopedia of knot
+theory''\citep{adamsEncyclopediaKnotTheory2021}, a survey of many
+subdisciplines of
+knot theory with a chapter devoted to applications.
+
+%  prettier-ignore-start
+
+\section{Overview of this Thesis}\label{sec-intro-overview}
+
+%  prettier-ignore-end
+
+As discussed in the previous section, the goal of this thesis is to address, in
+part, the three questions ``How do I systematically construct
+knots?'', ``How do I
+tell two knots I make apart?'', and ``How do I generate new knots?''
+Particularly,
+we will address a restricted version of these questions, for objects that can be
+thought of as the building blocks of knots, the tangles introduced by Conway
+\citep{conwayEnumerationKnotsLinks1970}. Through the
+middle(Chapter~\ref{ch-tabulation} and Chapter~\ref{ch-software}) of
+this thesis, we will
+describe several strategies that have been employed to answer even further
+restricted versions of these questions:
+
+\begin{itemize}
+\item ``How do I systematically construct rational tangles?'', ``How
+do I tell two
+rational tangles I make apart?'', and ``How do I generate new rational
+tangles?''
+\item ``How do I systematically construct Montesinos tangles?'' and
+``How do I tell
+two Montesinos tangles I make apart?'', and ``How do I generate new Montesinos
+tangles?''
+\item ``How do I systematically construct algebraic/arborescent
+tangles?'' and ``How
+do I tell two algebraic/arborescent tangles I make apart?'', and ``How do I
+generate new algebraic/arborescent tangles?''
+\end{itemize}
+
+While we could answer these questions about tangles with pen and
+paper brute force, as Tait, Little, Kirkman, Conway, and Caudron
+\cite{taitTenfoldKnottiness1885,
+kirkmanEnumerationDescriptionConstruction1885,
+littleKnotsCensusOrder1885,conwayEnumerationKnotsLinks1970,caudron1982classification}
+did for knots.  Beyond a
+reasonable ``crossing number'' (Section~\ref{subsec-knot_def}), as
+small as 8, the time
+and effort needed makes pen and paper untenable. To achieve our goal in a
+reasonable time, we will follow a similar framework to that of Hoste,
+Thistlethwaite, Weeks, and Burton \citep{hosteFirst1701936Knots1998,
+hosteEnumerationClassificationKnots2005,burtonNext350Million2020}.
+Utilizing computer methods to generate a tangle table of algebraic/arborescent
+tangles to twelve crossings. To effectively utilize computers for this
+tabulation work requires the design and implementation of a knot theory specific
+software toolbox.
+
+\subsection{Chapter Summary}
+
+We will now summarize each of the chapters of this thesis. Organizationally,
+this thesis is partitioned into five chapters, with each chapter further divided
+into sections, and subsections.
+
+\subsubsection{Chapter 1: Introduction}
+
+This introduction gave an intuitive description of the basics of knot theory,
+and a discussion of an application for knots and tangles. We now finish with
+this description of the content in the remainder of this thesis.
+
+\subsubsection{Chapter 2: Preliminaries}
+
+This chapter gives the preliminaries in knot and tangle theory needed
+for the rest of the
+thesis. Included are the historical background of tabulation in knot theory and
+a grounding in knot and tangle theory. We will see definitions for knots and
+tangles, as well as some notations and invariants for those knots and tangles.
+
+\subsubsection{Chapter 3: Tabulation}
+
+This chapter describes the theoretical methodology for the tabulation of
+algebraic tangles. It is divided into two sections, the first
+contains the method used for
+tabulation of two well-understood classes of tangles: the rational and
+Montesinos tangles. The second describes the methodology for the tabulation of
+the more general type of tangle the arborescent (algebraic) tangles. For each
+class of tangle we tabulated, a definition and classification is given, followed
+by a theoretical generation strategy.
+
+\subsubsection{Chapter 4: Software and its Engineering}
+
+This chapter addresses the computational and engineering aspects of software for
+mathematics research. The chapter begins with an overview of product management
+and software engineering practices. In our discussion of software engineering we
+develop a process designed for use by professional and undergraduate researchers
+in computational knot theory. With our process, we create a product design for a
+general purpose ``knot theory software toolbox''. The chapter concludes with the
+software design (unit description) for the tools developed to realize the
+solutions in the tabulation section.
+
+\subsubsection{Chapter 5: Future Directions}
+
+The final chapter of this thesis gives an overview of future work to be done in
+the tangle tabulation domain. This takes two forms, first the direct next steps
+for tangle tabulation at the professional research level. Second, we outline a
+collection of topics and research directions at various levels appropriate for
+undergraduate researchers.

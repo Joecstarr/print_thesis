@@ -1,0 +1,1438 @@
+\chapter{Software and its Engineering}\label{ch-software}
+
+We now shift from the mathematical world to the world of computers and software.
+We start with a brief overview of the goals of product management and software
+engineering (Section~\ref{sec-product-vs-project}). This includes the
+development of model
+software engineering processes tailored for use in professional and
+undergraduate mathematics research. Next, we use the engineering concepts of
+Section~\ref{sec-product-vs-project} to compare and contrast a
+collection of tools currently
+available for use in knot theory research
+(Section~\ref{sec-surveyoftools}). Using the
+analysis of current tools, and our software process we define a set of
+requirements and a system design for a new general purpose knot theory software
+toolbox (Section~\ref{sec-archofktst}). Finally, using this system
+design, and following our
+process, we present documentation for the software units that satisfy the
+tabulation theory of Chapter~\ref{ch-tabulation}.
+
+\section{Basics of Product Management and Software Engineering}
+
+%  prettier-ignore-start
+
+\subsection{Project vs. Product}\label{sec-product-vs-project}
+
+%  prettier-ignore-end
+
+One of the most pervasive ideas held by amateur software developers is that
+documentation means simply commenting your code. This idea and its consequences
+are one of the fundamental differentiators between a piece of software being a
+project or becoming a product. A project is short-lived with no consideration of
+long-term reuse or usage by a community. Much preferred is the creation of
+products that are long-term, reusable, extensible, and portable investments of
+time and energy (effort).
+
+The creation of a product requires planning and documentation of a system far
+beyond simple code comments. When developing a product, we must include
+thoughtful and deliberate consideration of the goals and how we will achieve
+them. For example, identifying where effort invested now to create a robust
+system can save effort later, and enumerating and analyzing risk to the product
+can reduce the chance of total product failure.
+
+The creation of a software product has two phases, a generic (not software
+specific) high-level product management/development phase followed by a detailed
+software engineering phase. Having this two-pass approach allows for the product
+to be well and thoroughly defined and assessed before any technical engineering
+work is started, reducing the risk of a product being intractable based on the
+product constraints. The remainder of this chapter will give context to product
+management and software engineering practices, with preparing undergraduates for
+research as the goal. We will start with a design for a course on teaching
+project management to undergraduate researchers. We then develop a software
+engineering process for use in mathematics research.
+
+%  prettier-ignore-start
+
+\subsection{Instruction of Product Management}\label{sec-product-management}
+
+%  prettier-ignore-end
+
+Undergraduate researchers, in most academic disciplines, have little exposure to
+systematic product management. Outside a structured classroom setting, an
+undergraduate researcher may have never completed a project, let alone worked on
+a product. Giving undergraduate researchers a minimal set of product management
+tools increases their ability to estimate and bring together successful
+products.
+
+In this section we describe a course design for a basic undergraduate course in
+product management. The perspective of the course design is not software
+focused, but is intended for general use across disciplines. In six weeks of
+instruction, this course introduces students to the key concepts in product
+management needed to ideate and systematically complete complex products. The
+design utilizes the ``Backward Design'' of Wiggins and McTighe
+\citep{wigginsUnderstandingDesign2008}. Many of the ideas come from Pressman and
+Maxim \citep{pressmanSoftwareEngineeringPractitioners2015a} but have
+been massaged to
+be less software focused. Full course design and template documents are found
+published on GitHub \citep{joestarrJoecstarrMfaCoBPMV1002025}.
+
+\subsubsection{Stage 1 - Desired Results}
+
+\paragraph{Established Goals}
+
+Product management is an important part of being successful in academia as well
+as industry. To take a product from ideation to a publishable product can be
+easy when everything goes right. However, while completing a product, issues
+often arise that impact the ability to meet product goals. This course will
+introduce product management concepts that will enable practitioners to mitigate
+these hidden impacts.
+
+The overarching theme for the course is:
+
+\begin{quote}
+  Be kind to future you.
+\end{quote}
+
+\paragraph{Transfer}
+
+\textit{Students will be able to independently use their learning to\dots}
+
+Students should leave this course knowing that there are tools to reach for when
+planning future products. Additionally, students should have a surface
+understanding of at least one specific tool to manage each section of the
+product life cycle.
+
+\paragraph{Meaning}
+
+\subparagraph{Understandings}
+
+\textit{Students will understand that\dots}
+
+\begin{itemize}
+  \item Product creation is an accomplishable endeavor.
+  \item Products have long lives, but projects die fast.
+  \item ``Future you'' is a person that you need to collaborate with.
+  \item Product documentation makes life easier.
+  \item Stakeholder agreement is essential.
+  \item Risk management from the ``Indiana Jones School of Risk
+    Management'' - Rob
+    Thomsett \citep{thomsettIndianaJonesSchool1992} is bad.
+  \item Products fall behind ``One day at a time'' - Fred Brooks
+    \citep{brooksMythicalManmonthEssays2013}
+\end{itemize}
+
+\subparagraph{Essential Questions}
+
+\begin{itemize}
+  \item How do you ideate for a product?
+  \item How do you design a product plan?
+  \item How do you evaluate risk?
+  \item How do you create tasks for a product?
+  \item How do you create a product schedule?
+\end{itemize}
+
+\paragraph{Acquisition}
+
+\subparagraph{Students will know\dots}
+
+\begin{itemize}
+  \item How to use Crazy8s for ideation.
+  \item How a basic product plan is used.
+  \item How a risk management plan is used.
+  \item How a product is scheduled.
+\end{itemize}
+
+\subparagraph{Students will be skilled at\dots}
+
+Students will be able to utilize product management tools in practice.
+
+\subsubsection{Stage 2 - Evidence and Assessment}
+
+\paragraph{Evaluative Criteria}
+
+\begin{itemize}
+  \item Students have a well-formed product plan.
+  \item Students have a well-formed risk management plan.
+  \item Students have a well-formed product schedule.
+  \item Students complete a product.
+\end{itemize}
+
+\paragraph{Assessment Evidence}
+
+\subparagraph{Performance Task(s):}
+
+Students will complete a collection of product management documents for their
+product. The course will culminate with a 1:1 retrospective meeting where the
+student will present their completed material and reflect on successes and
+failures in their planning.
+
+\subparagraph{Other Evidence:}
+
+Students will have a touchpoint meeting every other week, with meeting minutes
+summarized in a canvas reflection.
+
+\subsubsection{Stage 3 - Learning Plan: \textit{Summary of Key
+Learning Events and Instruction}}
+
+The course will contain five to six weeks of instruction followed by
+{\textasciitilde}10 weeks
+of lightly supervised working time. The following is a high-level overview of
+the course schedule:
+
+\begin{enumerate}
+  \item Week 1 and 2:
+    \begin{enumerate}
+      \item Product ideation
+    \end{enumerate}
+
+  \item Week 2:
+    \begin{enumerate}
+      \item A product plan
+      \item Overview
+      \item Assessment and control
+    \end{enumerate}
+
+  \item Week 3:
+    \begin{enumerate}
+      \item Requirements design
+    \end{enumerate}
+
+  \item Week 4:
+    \begin{enumerate}
+      \item Risk management
+    \end{enumerate}
+
+  \item Week 5:
+    \begin{enumerate}
+      \item Product schedule
+    \end{enumerate}
+
+  \item Week 7-15: Individual work
+  \item Week 16: Retrospective meetings
+\end{enumerate}
+
+%  prettier-ignore-start
+
+\subsection{Software Engineering and Life Cycle}\label{sec-life-cycle}
+
+%  prettier-ignore-end
+
+The second stage of software product development is the software engineering
+process. Just as in the product management section
+(Section~\ref{sec-product-management}), we
+are approaching the software engineering process from an undergraduate training
+perspective. However, unlike our discussion of general product management, we
+assume some prior knowledge of software practices. We assume familiarity with
+programming, types of programming languages, and the basic structure of a
+program. If the reader feels unprepared, they may find it useful to complete one
+of the many free asynchronous online courses offered by major
+universities\footnote{At the time of writing ``Python for Everybody''
+  by the University of Michigan
+is a great choice.} and browse a standard intoduction to computation text such
+as ``Introduction to the theory of computation'' by
+Sipser\citep{sipserIntroductionTheoryComputation2013}. With this in
+mind, we will
+focus on engineering processes needed for our tangle tabulation use case,
+omitting discussion of the practice of programming itself.
+
+We will first define what steps we will take as part of our model process and
+any quality gates\footnote{A collection of quality goals that need to
+  be satisfied to call a step
+``complete''.} to be satisfied before moving between those steps. We
+call this collection of steps and transitions a \textbf{software life
+cycle}. Rather
+than reinventing the wheel, we will build on top of an existing life cycle
+model. There are several existing models available to us, the most common
+processes used in industry are agile models such as extreme programming
+\citep{beckExtremeProgrammingExplained2012}
+(Figure~\ref{fig-extreme-model}) and scrum
+\citep{nonakaNewNewProduct1986} (Figure~\ref{fig-scrum-model}). Less
+common in industry but
+historically relevant are linear models such as the
+waterfall \citep{beningtonProductionLargeComputer1983}
+(Figure~\ref{fig-waterfall-model}) or the V
+model \citep{forsbergRelationshipSystemEngineering1991}
+(Figure~\ref{fig-v-model}).
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{\textwidth}
+    \centering
+    \includegraphics[width=0.5\textwidth]{files/extreme_programming-8468ea3e3b54f36cfb2d148b529104bc.pdf}
+    \caption[The extreme programming agile life cycle.]{The extreme
+    programing agile life cycle\citep{donwellsExtremeProgrammingsvgCC2010}.}
+    \label{fig-extreme-model}
+  \end{subfigure}
+  \newline
+  \centering
+  \begin{subfigure}[b]{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{files/scrum_process-f682cc7dd6febc3e27c3f1f4d4f24b68.pdf}
+    \caption[The scrum agile life cycle.]{The scrum agile life cycle
+    \citep{lakeworksScrumProjectManagement2008}.}
+    \label{fig-scrum-model}
+  \end{subfigure}
+  \caption[Life cycle diagrams of two agile process
+  models.]{Life cycle diagrams of two agile process models.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{\textwidth}
+    \centering
+    \includegraphics[width=.6\textwidth]{files/waterfall_process.dr-3297c507a9048d1c8c418fdc55ed172f.pdf}
+    \caption[The waterfall process model.]{The waterfall process
+    model. Note that the model allows no back tracking.}
+    \label{fig-waterfall-model}
+  \end{subfigure}
+  \newline
+  \centering
+  \begin{subfigure}[b]{\textwidth}
+    \centering
+    \includegraphics[width=.7\textwidth]{files/v_process.drawio-44bb05aab7fdb452f2c04919e16b17da.pdf}
+    \caption[The V process model.]{The V process model.}
+    \label{fig-v-model}
+  \end{subfigure}
+  \caption[Life cycle phase progression models of two two linear process
+  models.]{Life cycle phase progression models of two two linear
+  process models.}
+\end{figure}Agile processes have become ubiquitous in industry as
+they allow for tight
+feedback loops which ensures the product meets the needs of stakeholders,
+reducing the risk of misunderstandings. In a research context, by the time
+product software is being written, requirements and expectations for the
+software are necessarily fully understood and well-defined. Consequently, and
+contrary to industry trends, linear models are the most appropriate for research
+contexts. While researchers can be expected to define well-considered
+requirements, as amateur software engineers, it is rare that the design and
+programming techniques are mature enough to support the strict progression of a
+waterfall process. As such, a V model where downstream phases feedback into
+previous phases is ideal. For our model process, however, we will make a single
+change, disallowing feedback caused by down stream phases to change
+requirements, as seen in Figure~\ref{se-fig-modifiedv}.
+\begin{figure}[H]
+  \begin{subfigure}[b]{.35\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/v_mod_process-380fbdc60ed09262d1d4071193280a64.pdf}
+    \caption[The modified V process model.]{The modified V process model.}
+    \label{se-fig-modifiedmultiv}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{.6\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/v_multi_process-5a99d5c6ced50541d38c398c1f51bd68.pdf}
+    \caption[The parallel V process model.]{The parallel V process model.}
+    \label{se-fig-modifiedv}
+  \end{subfigure}
+  \caption[V process models.]{}
+\end{figure}
+
+Often software products are developed by teams of engineers. In these team
+environments, it is important that the software process be easily
+parallelizable.
+Our modified V model can be parallelized as in
+Figure~\ref{se-fig-modifiedmultiv}. Allowing
+the process to be utilized by individual researchers at primarily undergraduate
+institutions or large REU\footnote{Research Experiences for
+  Undergraduates, a program funded by the National
+Science Foundation (NSF).} projects.
+
+The remainder of this section describes each phase of our modified V model. In
+each subsection, we will describe the activities that should be carried out
+during that phase, as well as an overview of what, if any, diagrams we should
+expect to be created. The diagrams we will discuss for each phase are
+simplifications of standard UML \citep{UnifiedModelingLanguage2017} diagrams.
+Throughout the phases, we will use an implementation of the game of
+``Go Fish'' as
+an example software product.
+
+\begin{note}
+  Since the rules of ``Go Fish'' are highly non-standard, we will use the
+  rules defined by Parlett \citep{parlettPenguinBookCard2009} as a common base.
+\end{note}
+
+%  prettier-ignore-start
+
+\subsubsection{Requirements}\label{subsec-requirements}
+
+%  prettier-ignore-end
+
+Requirements define the conditions and behaviors that are expected out of a
+system. Writing specific and non-ambiguous requirements is a surprisingly
+difficult task, for example, when writing a set of requirements for
+``Go Fish'' we
+may define a requirement such as Example~\ref{se-fig-bad_req}.
+
+\begin{example}{A requirement for a fishing action}{se-fig-bad_req}
+  \begin{requirement}{ Player Goes Fishing}{}
+    At the beginning of the active player's turn that player shall request a
+    card from any other player.
+  \end{requirement}
+
+\end{example}
+
+\begin{note}
+  Observe the indicative mood used in Example~\ref{se-fig-bad_req}.
+  The indicative mood, as in
+  the use of ``shall,'' helps the designer reduce ambiguity by
+  sharpening precision.
+\end{note}
+
+On its face, Example~\ref{se-fig-bad_req} seems to be a perfectly
+good requirement phrasing
+the ``fishing'' phase of a turn. However, if you put yourself in the shoes of a
+person who has never played ``Go Fish,'' you might be confused by how
+to ask for a
+card. Can the active player ask for a 10, or should they ask specifically for
+a $10\heartsuit$? Fixing this ambiguity in
+Example~\ref{se-fig-bad_req} can by done by making
+the requirement more precises Example~\ref{se-fig-bad_req_fixed}.
+
+\begin{example}{An updated requirement for a fishing
+  action}{se-fig-bad_req_fixed}
+  \begin{requirement}{ Player Goes Fishing}{}
+    At the beginning of the active player's turn that player shall request a
+    card, by rank and suit, from any other player.
+  \end{requirement}
+
+\end{example}In a research context, the phrasing of a requirement, as in
+Example~\ref{se-fig-bad_req_fixed} is often redundant. Most pieces of
+software in a rigorous
+mathematical context will have backing from theorems and definitions that
+unambiguously define what the software should do. This means we must change how
+we think about requirements in the research setting. Instead of requirements of
+the style of Example~\ref{se-fig-bad_req_fixed} we phrase
+requirements as \textbf{use cases}.
+
+\begin{definition}{Paraphrasing Pressman and Maxim, Page 149
+  \textbf{\citep{pressmanSoftwareEngineeringPractitioners2015a}}}{}
+  A \textbf{use case} tells a stylized story about how an end user
+  (playing one of a number
+  of possible roles) interacts with the system under a specific set of
+  circumstances. The story may be narrative text, an outline of tasks or
+  interactions, a template-based description, or a diagrammatic representation.
+
+\end{definition}In this context, we may rephrase
+Example~\ref{se-fig-bad_req_fixed} as a use case, such as
+Example~\ref{se-fig-use_case}.
+
+\begin{example}{A usecase for a fishing action}{se-fig-use_case}
+  \begin{usecase}{ Player Goes Fishing}{}
+    A player asks another player for a specific card (rank and suit).
+  \end{usecase}
+
+\end{example}\paragraph{Use Case Diagram}
+
+One popular way to phrase and visualize a collection of use cases is a use case
+diagram \citep{UnifiedModelingLanguage2017}. A use case diagram shows
+the connections
+between actors (Player and Dealer in Figure~\ref{se-ex-usecase}) and
+use cases (oval cells
+in Figure~\ref{se-ex-usecase}). When an actor is connected to a use
+case, we interpret that
+connection as the user being able to initiate (kicking off the story the use
+case tells) that use case. In Figure~\ref{se-ex-usecase} we have a
+connection between use
+cases, the ``include'' connection, this connection models a use case initiating
+another use case. The ``include'' relationship is useful for generalizing
+behavior, in Figure~\ref{se-ex-usecase} we see the \texttt{matching}
+use case included in both the
+\texttt{fishing} and \texttt{drawing} use cases.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/mermaid-9f149812-7c2265bd36529cda5fe32ef9ffe6a5b9.png}
+  \caption[A use case diagram for Go Fish.]{A use case diagram for Go Fish.}
+  \label{se-ex-usecase}
+\end{figure}
+%  prettier-ignore-start
+
+\subsubsection{Software Design}\label{subsec-softearedesign}
+
+%  prettier-ignore-end
+
+After expectations of a system are set in the requirements phase, we can
+decompose the problem into a software design. Pressman and Maxim
+\citep{pressmanSoftwareEngineeringPractitioners2015a} outline eight principles
+(Definition~\ref{se-def-8core}) that guide this process. This problem
+decomposition tells us how
+to break the software into discrete pieces of functionality called
+\textbf{units}.
+Depending on the team, their needs, and the technologies they are using, a unit
+can be sized anywhere from a single function to a collection of files.
+\newpage
+\begin{definition}{Paraphrasing Pressman and Maxim, Section 7.2.2
+  \textbf{\citep{pressmanSoftwareEngineeringPractitioners2015a}}}{se-def-8core}
+  \begin{enumerate}
+    \item Divide and conquer: You should break a hard problem into
+      smaller solvable
+      problems where possible.
+    \item Understand the use of abstraction: Solving your problem is
+      good, solving a
+      more general version of your problem is better. Write software
+      that hits the
+      ``sweet spot'' of abstraction. Software that is not too general
+      that it's hard
+      to use for your specifc needs, and not to specialized that you
+      can't use it
+      again for a similar problem.
+    \item Strive for consistency: It's easier to use/build intuition
+      when choices are
+      consistent. When you open a textbook, why is it easy to find the index?
+      Because they are consistently in the same location.
+    \item Focus on the transfer of information: Software, at its most
+      basic, is about
+      manipulating data. Knowing where that data moves and how it's consumed
+      is key to understanding and contextualizing a problem.
+    \item Build software that exhibits effective modularity: When
+      decomposing a problem
+      as in (1), the smaller problems should have low coupling (see
+      Definition~\ref{se-def-coup}) and
+      high cohesion (see Definition~\ref{se-def-coh}).
+    \item Look for patterns: Look for ways common design patterns
+      (see Definition~\ref{se-def-designpat}) can
+      be used to solve the problem.
+    \item When possible, represent the problem and its solution from a number of
+      different perspectives: It's often the case that the first
+      solution (obvious
+      solution) is not the best/ideal solution. Approaching a problem from many
+      perspectives helps identify alternative solutions.
+    \item Remember that someone will maintain the software: ``Be kind
+      to future you.''
+      Spend an hour now to save days later.
+  \end{enumerate}
+
+\end{definition}
+\begin{definition}{Paraphrasing Pressman and Maxim, Section 14.2.4
+  \textbf{\citep{pressmanSoftwareEngineeringPractitioners2015a}}}{se-def-coup}
+  \textbf{Coupling} is a qualitative measure of the degree to which units are
+  connected to one another. As units become more interdependent, coupling
+  increases.
+
+\end{definition}
+\begin{definition}{Paraphrasing Pressman and Maxim, Section 14.2.3
+  \textbf{\citep{pressmanSoftwareEngineeringPractitioners2015a}}}{se-def-coh}
+  Within the context of unit-level design for systems,
+  \textbf{cohesion} implies that a
+  unit encapsulates only attributes and operations that are closely
+  related to one another and to the unit itself.
+
+\end{definition}
+\begin{definition}{Paraphrasing Pressman and Maxim, Page 349
+  \textbf{\citep{pressmanSoftwareEngineeringPractitioners2015a}}}{se-def-designpat}
+  A \textbf{design pattern} is an abstraction that prescribes a
+  design solution to a
+  specific, well-bounded design problem. A design pattern saves you from
+  ``reinventing the wheel,'' or worse, inventing a ``new wheel'' that
+  is slightly out
+  of round, too small for its intended use, and too narrow for the
+  ground it will
+  roll over.
+
+  As an example we give a common design pattern the \textbf{Iterator
+  Pattern} From Gamma \citep{gammaDesignPatternsElements1995}:
+
+  \textbf{Intent}
+
+  Provide a way to access the elements of an aggregate object
+  sequentially without
+  exposing its underlying representation.
+
+  \textbf{Motivation}
+
+  An aggregate object such as a list should give you a way to access
+  its elements
+  without exposing its internal structure. Moreover, you might want to traverse
+  the list in different ways, depending on what you want to accomplish. But you
+  probably don't want to bloat the List interface with operations for different
+  traversals, even if you could anticipate the ones you will need.
+  You might also
+  need to have more than one traversal pending on the same list.
+
+  The Iterator pattern lets you do all this. The key idea in this pattern is to
+  take the responsibility for access and traversal out of the list
+  object and put
+  it into an iterator object. The Iterator class defines an interface for
+  accessing the list's elements. An iterator object is responsible for keeping
+  track of the current element; that is, it knows which elements have been
+  traversed already.
+
+  \textbf{Applicability}
+
+  Use the Iterator pattern:
+
+  \begin{itemize}
+    \item to access an aggregate object's contents without exposing its internal
+      representation.
+    \item to support multiple traversals of aggregate objects.
+    \item to provide a uniform interface for traversing different
+      aggregate structures
+      (that is, to support polymorphic iteration).
+  \end{itemize}
+
+\end{definition}\paragraph{Diagrams}
+
+\subparagraph{Block Diagram}
+
+To diagrammatically represent a software design, we utilize a modified block
+diagram. A block diagram gives a high-level description of the discrete units of
+a software design and how those units relate to each other. The units are given
+by blocks containing a descriptive title. Units that satisfy similar use cases
+and may be abstractable to a common design are grouped together in container
+blocks (\texttt{User Interface} in Figure~\ref{se-ex-block}).
+Connections between blocks are
+recorded with decorated arrows, the decorations indicate the multiplicity of the
+relationship between components, such as \texttt{1} for a one-to-one,
+\texttt{1..*} for a 1 to
+many, or \texttt{*..1} for a many to 1 mapping.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/mermaid-9be24c8a-b6a23769af2e4792ccf4a75e5020712d.png}
+  \caption[A block diagram for Go Fish.]{A block diagram for Go Fish.}
+  \label{se-ex-block}
+\end{figure}
+\subparagraph{Sequence Diagram}
+
+When the software design must account for communication between units, a
+sequence diagram may be used. A sequence diagram records the actions and data
+transfers that actors (units) take during a use case. A sequence diagram encodes
+time on the vertical axis, with actors as vertical lanes. Interactions between
+actors over time are indicated by annotated arrows between lanes. Arrow
+annotations are a description of the interaction taking place. Conditional
+sequences are indicated by boxes delimiting the possible sequences of the
+interaction (\texttt{is negative} and \texttt{is positive}
+subsequences in Figure~\ref{se-ex-seq}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=0.4\textheight]{files/mermaid-65edd29b-3f9def422ece398989b9a45e6815dbcb.png}
+  \caption[A sequence diagram for Go Fish turn.]{A sequence diagram
+  for Go Fish turn.}\label{se-ex-seq}
+\end{figure}
+%  prettier-ignore-start
+
+\subsubsection{Unit Design}\label{sec-product-unit-design}
+
+%  prettier-ignore-end
+
+As we proceed down the left side of the V model, we narrow our focus,
+progressively becoming less abstract and more concrete in our representation of
+our software. The software design gives us a description of what units we will
+need, but does not give an actionable description of those units. A unit
+description gives that actionable description, a language agnostic but directly
+implementable (programmable) description for what a unit contains and how a unit
+works.
+
+A description for a unit contains the data members (variables) and the
+functional members a unit contains. Each of these items is described in two
+ways, first a plain English description, and second included diagrammatically in
+a class diagram \citep{UnifiedModelingLanguage2017} for the unit. The
+plain English
+description for each member describes what that member is intended to be or do.
+In the case of a functional member, along with an English description, a
+diagrammatic definition as a state
+machine\citep{UnifiedModelingLanguage2017} should
+also be given.
+
+As with the special language/mood used when designing requirements
+(Section~\ref{subsec-requirements}), documentation at the unit level
+and below have a
+particular frugal and direct style. When this style is first encountered it can
+be jarring, and the writing appear shockingly poor. However, just as
+the use of the
+indicative mood in requirements encourages precision, the style of documentation
+at this level serves a purpose. Documentation at this level is not intended to
+tell a story or describe a problem, but to directly define a computational unit
+one layer of abstraction above code. Simple direct language here encourages the
+clear communication of expectations and intents that translate to code.
+Complicated ideas, at this level, are easier to express (and consume) when
+presented diagrammatically. Our English descriptions serve simply to supplement
+the diagrams.
+
+\begin{note}
+  Writing long, elaborate explanations at the unit level should prompt you to
+  engage in analysis of your design. The need for explanations like this
+  often indicates you are missing something at the software design
+  level, look for
+  missing abstraction or a place to divide and conquer.
+\end{note}
+
+\paragraph{Diagrams}
+
+\subparagraph{Class Diagram}
+
+$\,$
+
+A class diagram \citep{UnifiedModelingLanguage2017}, containing a collection of
+blocks and their relationships, similar to a block diagram. However, in a class
+diagram, the blocks are functional subunits of a unit. Each block contains a set
+of data members followed by a set of functional members. In an object aware
+language, such as Python or Java, a block might directly correspond to a class
+in the language sense. In an imperative language, such as C, the blocks may
+correspond to one or more \texttt{.c} or \texttt{.h} files.
+
+Each member of the class is decorated to indicate public or private visibility,
+meaning, visibility to the world outside the unit. A $+$ is used to indicate
+public visibility, meaning the member can be seen and used by other classes, and
+a $-$ to indicate private visibility, meaning the member can only be seen from
+inside the class. When referencing other units in the system, the external units
+are truncated to an empty class (as in the \texttt{Card} class in
+Figure~\ref{se-cd-fig-agg}). One or
+more optional decorators can be added to a class to further contextualize the
+class. The decorators that we allow in a class diagram are:
+
+\begin{enumerate}
+  \item Enumeration: Indicating the class is an enumeration.
+  \item Interface: Indicating the class is an interface. This is usually used to
+    simplify the diagram when common collections of data/functions need to be
+    repeated.
+  \item External: Indicating the class is defined outside the current unit.
+\end{enumerate}
+
+The relationships between classes are described by arrows between those classes.
+Each type of arrow used in a class diagram defines a slightly different type of
+relationship. The arrows that we will allow in a class diagram are the
+aggregation (Figure~\ref{se-cd-fig-agg}) and the realization
+(Figure~\ref{se-cd-fig-real}). The
+aggregation connection describes the relationship when one class uses
+(aggregates) the connected class.
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[c]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.2\textwidth]{files/mermaid-1e7aaf39-93e3af7002f2c2a71b2599db1135755f.png}
+    \caption[An aggregation connection. ]{An aggregation
+    connection.\\Class A aggregates Class B.}
+    \label{se-cd-fig-agg}
+  \end{subfigure}
+  \quad
+  \quad
+  \quad
+  \centering
+  \begin{subfigure}[c]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.2\textwidth]{files/mermaid-03ad04eb-9aab69420f4255ea41d0c4db56d31209.png}
+    \caption[A realization connection.]{A realization
+    connection.\\Class A realizes Class B.}
+    \label{se-cd-fig-real}
+  \end{subfigure}
+  \caption[Types of class diagram connections.]{}
+\end{figure}
+
+In Figure~\ref{se-ex-class}, a class diagram for a Go Fish
+player, we see the \texttt{Player} class using (aggregating) the
+\texttt{Hand} class. In
+Figure~\ref{se-cd-fig-real} we see the realization connection, which
+describes the
+relationship when a class implements an interface. An example can be seen in
+Figure~\ref{se-ex-class} with the \texttt{Hand} and
+\texttt{Book}\footnote{A book is the matched sets of cards that are
+  counted at the end of Go Fish
+to determine the winner.} classes realizing the
+\texttt{CardCollection} interface. Both the \texttt{Hand} and
+\texttt{Book} classes are collections
+of multiple cards and will need common data, such as a function to print all
+cards in the collection. This common (expected) data is modeled as an interface
+that can be reused without needing to be rewritten.
+\newpage
+\begin{note}
+  In some object-oriented languages, this relationship may be defined by an
+  interface or with inheritance. However, in languages that are not
+  object oriented
+  such as C, we instead define this common set of data as an abstract interface
+  for design purposes that we must implement in each component that realizes the
+  interface.
+\end{note}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=0.7\textheight]{files/mermaid-9b06e87f-775f95fc702d1a5535ed3b0f46fad1e5.png}
+  \caption[A class diagram for a Go Fish player.]{A class diagram for
+  a Go Fish player.}\label{se-ex-class}
+\end{figure}
+\newpage
+\subparagraph{State Machine}
+
+A state machine \citep{UnifiedModelingLanguage2017} diagram describes
+the collection
+of states and transitions that a function can move between. When defining a
+state machine, we start with two special states. The first special state is the
+start state, indicated by a filled in circle, and the second special state is
+the end state, indicated by a filled in circle surrounded by a ring. Other
+states are recorded by a box with text describing the state. Decision points are
+documented with a diamond, with each path of the condition decorated with text.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=0.5\textheight]{files/mermaid-4ae3bf05-a0b4390a5e0e6be01a54489d5b62bb22.png}
+  \caption[A state machine diagram for a Go Fish turn.]{A state
+  machine diagram for a Go Fish turn.}\label{se-ex-sm}
+\end{figure}
+\subsubsection{Implementation}
+
+Once the design of a unit is complete, we are ready to implement (program) that
+unit. There are no special activities in the implementation phase outside of
+programming effort. It is important to strictly follow the unit and system
+design in this phase. If deficiencies in design are found, the V model allows
+for that feedback to be pushed to earlier phases and addressed by flowing back
+through the V model. Good practice in the programming stage is to add a comment
+describing each unit implementation as well as each data an functional memeber.
+The goal of these comments is to briefly describe the code for future readers,
+but they cannot replace the written documentation from previous sections.
+Additional good practices are to consistently format the code with a common
+style, utilize good data hygiene with a version control system, and favor simple
+implementations over ``clever''.
+
+\subsubsection{Unit Testing}
+
+With implementation complete, we move to the right side of the V, which consists
+of the verification activities. The first verification phase is the isolated
+verification of each unit, called \textbf{unit testing}. In this
+phase, we design and
+carry out tests of the units we have implemented. When designing tests, it is
+important to draw from the unit design directly, instead of designing tests
+against the actual implemented code. Testing the code against the design ensures
+that we are not drawing the target around the arrow. Tests, particularly unit
+tests, can and should, be separated into two classes of tests. The first class
+is those on the ``happy path'', validating that ``good'' well-formed
+input generates
+expected output, see Example~\ref{se-ex-happyut}. The second class
+are those on the ``unhappy
+path'', validating that ``bad'' or malformed input is handled as expected, see
+Example~\ref{se-ex-unhappyut}. Each public, accessible to external
+units, interface of a unit
+should have at least one unit test. If validation in this, or the following
+phases, finds deficiencies in the design, the V model allows for that feedback
+to be pushed to earlier phases and addressed by flowing back through the V
+model.
+
+\paragraph{Test Cards}
+
+As we walk up the right side of the V, instead of diagrams we utilize test
+cards. A test card is used to define a set of requirements that a test will be
+implemented against. Each test card has four fields with content as follows:
+
+\begin{itemize}
+  \item \textbf{Test Name}: The unique name for the test. This name
+    is used in test
+    reports to identify what has failed.
+
+  \item \textbf{Description}: The description of what the test is
+    validating and how that
+    validation works. This section may include text and diagrams.
+
+  \item \textbf{Inputs}: A set of inputs to feed the unit.
+
+  \item \textbf{Outputs}: The outputs that are expected when the
+    inputs are fed to the
+    unit.
+\end{itemize}
+
+The following are two examples of unit test cards for the Go Fish product. One
+test card is on the happy path, and one is on the unhappy path.
+
+\begin{example}{A happy path test card for a player turn in Go
+  Fish}{se-ex-happyut}
+  \begin{testcard}{ Request A Card, Reponse Is Positive}{}
+    \textbf{Description}: Active player requests a card from a target
+    player. The target
+    player has the requested card and produces it.
+
+    \textbf{Inputs}:
+
+    \begin{itemize}
+      \item A valid requested card
+      \item A valid target player with requested card in hand
+    \end{itemize}
+
+    \textbf{Outputs}:
+
+    \begin{itemize}
+      \item Active player puts the received card in hand
+    \end{itemize}
+  \end{testcard}
+
+\end{example}
+
+\begin{example}{A unhappy path test card for a player turn in Go
+  Fish}{se-ex-unhappyut}
+  \begin{testcard}{ Illegally Request A Card}{}
+    \textbf{Description}: Active player requests a card that is not
+    in their hand.
+
+    \textbf{Inputs}:
+
+    \begin{itemize}
+      \item An invalid requested card
+    \end{itemize}
+
+    \textbf{Outputs}:
+
+    \begin{itemize}
+      \item Active player is notified the request failed
+    \end{itemize}
+  \end{testcard}
+
+\end{example}
+\subsubsection{Integration Testing}
+
+While working in software, it is rare for a system to have a single unit or a
+collection of units that are completely uncoupled
+(Definition~\ref{se-def-coup}). When we do
+have units that depend on each other, we call the process of sticking
+those units
+together, \textbf{integration}. We verified during the unit tests
+that implemented
+units work individually as expected. In the integration testing phase, we verify
+that implemented units work together as expected. Tests in this phase should be
+designed against the artifacts from the software design phase
+(Section~\ref{subsec-softearedesign}) as well as the use cases
+defined in the requirements
+phase (Section~\ref{subsec-requirements}).
+
+\subsubsection{Acceptance Testing}
+
+When we have completed unit and integration testing, we have verified that the
+software, based on the design, doesn't unexpectedly break and satisfies written
+requirements (use cases). However, we have not yet verified that the system
+satisfies what all stakeholders wanted. In our Go Fish example, this phase may
+include a presentation to a customer. This is the point where a customer may
+find that our interpretations of Example~\ref{se-fig-bad_req}
+disagree, and we update to
+Example~\ref{se-fig-bad_req_fixed}.
+
+%  prettier-ignore-start
+
+\section{Survey of Knot Theory Software Tools}\label{sec-surveyoftools}
+
+%  prettier-ignore-end
+
+Having now established a model process for developing software we can start our
+efforts in developing a design for a general knot theory software toolbox. To
+begin, we explore a collection of tools currently in use in the computational
+knot theory space. Considering the strengths and shortcomings of these tools
+helps inform the requirements and possible use cases for our general knot theory
+software toolbox.
+
+\paragraph{KnotPlot}
+
+KnotPlot\citep{schareinInteractiveTopologicalDrawing1998} is a closed
+source\footnote{Closed source software is a software product with no
+published source code.}
+knot computation tool primarily and widely used for diagramming knots, this
+includes several diagrams in this thesis. Knotplot was developed as a portion of
+Dr. Robert Scharein's PhD thesis
+\citep{schareinInteractiveTopologicalDrawing1998},
+he is also the primary maintainer. The primary interface for KnotPlot is by
+interacting with a GUI\footnote{A graphical user interface, such as a
+  Windows or the screen on a copy
+machine.}. This makes the onboarding process for
+non-technical users, including undergraduate researchers, straightforward and
+the learning curve shallow. Knotplot includes many export options and
+specialized research computational tools, some undocumented. While support is
+readily available from Dr. Scharein this can make power use of KnotPlot
+difficult. KnotPlot has recently added a programmatic interface allowing general
+scripting in the programming language Lua. This scripting interface allows for
+custom diagramming and custom components. These custom scripts are limited
+however by the hooks available in KnotPlot. It is not always clear what calls to
+make into KnotPlot to accomplish your goals. Additionally, since the Lua
+interface is compiled into KnotPlot and isn't a language widely used in
+research, finding supported external libraries can be difficult. KnotPlot is an
+unparalleled knot diagramming tool, but the environment becomes a walled garden
+that can be difficult to build into a tool chain.
+
+\paragraph{Mathematica Libraries}
+
+%  (Mathematica https://katlas.org/wiki/Printable_Manual)
+
+KnotTheory \citep{bar-natanKnotTheory} and LinKnot
+\citep{jablanLinKnotKnotTheory2007} are
+collections of knot theory tools and datasets that are used with the Wolfram
+Mathematica system. Both KnotTheory and LinKnot are open
+source\footnote{Open-source software is a software product with
+  publicly published source
+code.} and
+available for download. Mathematica is a natural environment for mathematics
+research, as the language syntax is similar to written theoretical mathematics.
+This similarity of appearance lowers the learning curve for use of the tooling.
+Mathematica is also commonly used in undergraduate calculus sequences, making
+the onboarding of undergraduate researchers straight forward. The interfaces
+defined by both KnotTheory and LinKnot are natural in the Mathematica context,
+further shallowing the learning curve for those already familiar with
+Mathematica. Additionally, both collections are well documented by the website
+``knot atlas'' \citep{bar-natanKnotTheory} and the textbook ``LinKnot''
+\citep{jablanLinKnotKnotTheory2007} for KnotTheory and LinKnot, respectively.
+Unfortunately, neither collection is under active development or maintenance,
+with the last published versions from 2016 for KnotTheory and 2011 for
+LinKnot. Additionally, neither collection is released under version control, has
+a bug log, or has a published test suite. Missing the traceability implicit in
+these artifacts makes program correctness something that must be considered when
+using the collections.
+
+%  prettier-ignore-start
+
+\paragraph{SnapPy/SnapPea}\label{sec-surveyoftools-snap}
+
+%  prettier-ignore-end
+
+SnapPy \citep{SnapPy} is a Python wrapper for SnapPea, which is a
+collection of C
+libraries. SnapPy and SnapPea are open source and published in the same GitHub
+repository which includes bug reporting and test suites. SnapPy's Python
+bindings allow researchers to leverage the massive Python ecosystem, allowing
+for wide and varied usage. SnapPy can be utilized in anything from a simple
+command line tool, to a GUI tool to draw knots, to a webapp doing knot
+computations. This allows SnapPy to be tailored to the needs of individual
+researchers, allowing for simple subsets of functionality to be presented to
+undergraduate researchers. Each of these uses benefits from the decoupling of
+SnapPy and the core logic in SnapPea, allowing for fast execution of the SnapPea
+C code, but simple supportable Python bindings. The SnapPea layer, however, is
+designed on an ad hoc basis, meaning each file/unit stands alone with little
+structural overlap. If a developer wants to reuse the SnapPea C layer directly,
+they must reverse engineer the structures they wish to reuse.
+
+%  prettier-ignore-start
+
+\section{Architecture of A Knot Theory Software Toolbox}\label{sec-archofktst}
+
+%  prettier-ignore-end
+
+In Section~\ref{sec-surveyoftools} we discussed prior art in the knot
+computation space, in
+this section we utilize that analysis to design a software architecture for a
+general knot theory software toolbox. To complete this design, we will execute
+the first two phases of the modified V model we developed in
+Section~\ref{sec-life-cycle}.
+
+\subsection{Requirements}
+
+In this section we carry out the requirements phase of the modified V model. We
+will create a set of requirements and use cases that model the expectations we
+have for a general knot theory software toolbox. First, we would like our system
+to be easy to use. As we saw, easy to use can encompass various possibilities.
+We can capture all of these possibilities by decoupling the theoretical
+functionality from the user interfaces, and instead we will implement specific
+interfaces for specific users.
+
+\begin{requirement}{ User Interface Goals}{}
+  The system shall not couple functionality to user interface.
+\end{requirement}
+
+This design goal allows the interface to be a Jupyter notebook during
+undergraduate knot theory class, a Mathematica library for research, or a tool
+run on a university cluster for high-performance needs. With any possible target
+environment as a goal, the system must not be coupled to a particular platform
+(Windows, Linux, etc.), informing our second requirement.
+
+\begin{requirement}{ Portability Goals}{}
+  The system shall be platform (OS, language, toolchain, I/O (Input
+  and Output)) agnostic.
+\end{requirement}
+
+The tools we saw in Section~\ref{sec-surveyoftools} are all what we
+may call monolithic,
+meaning, from a development perspective, if the tool is to be used as a part in
+a new system, the whole tool must be included. In general, it is preferable to
+include only the functionality a system actually requires. For example, consider
+a system is being built to teach a seminar on constructing the Jones polynomial.
+That system will need to include a Jones polynomial component. Needing to pull
+in at the same time a hyperbolic volume component that serves no purpose,
+needlessly increasing the complexity of the system. These extensibility goals
+inform an encapsulation design goal.
+
+\begin{requirement}{ Encapsulation Goals}{}
+  System use cases shall be encapsulated into feature components.
+\end{requirement}
+
+Encapsulating each feature allows for the system components to be used by
+developers to build projects. However, as we saw in our discussion of SnapPy
+(Section~\ref{sec-surveyoftools-snap}), encapsulation itself does not
+remove all difficulty
+in reuse. We can further lower the difficulty of reuse by increasing commonality
+between components without coupling the components. This is accomplished by
+ensuring that every system component adheres to a set of common design patterns.
+
+\begin{requirement}{ Pattern Goals}{}
+  System use cases shall adhere to a set of design patterns.
+\end{requirement}
+
+Finally, we can further reduce the overhead of reuse we enforce a common
+development process on system components.
+
+\begin{requirement}{ Documentation Goals}{}
+  System use cases shall be documented and planned as outlined by the modified V
+  model (Section~\ref{sec-life-cycle}).
+\end{requirement}
+
+We now develop a collection of use cases that address the high-level behaviors
+expected by the general knot theory software toolbox.
+
+\begin{usecase}{ Use The Software}{}
+  A user interacts with the system.
+\end{usecase}
+
+\begin{usecase}{ Data Is Manipulated}{}
+  Data in the system is manipulated into somthing different.
+\end{usecase}
+
+\begin{usecase}{ Data Is Created}{}
+  New data in the system is created.
+\end{usecase}
+
+\begin{usecase}{ Data Is Written}{}
+  Data is written down for future use.
+\end{usecase}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/mermaid-b6bfc2a4-6a25e6f7cf9bed78913e1a8e65a9cbb2.png}
+  \caption{A use case diagram for the listed use cases.}
+\end{figure}
+
+%  prettier-ignore-start
+
+\subsection{Software Design}\label{sec-system_design}
+
+%  prettier-ignore-end
+
+With a set of requirements for our design, we can now describe a software
+design. Each requirement can be partitioned into one of two classes of
+requirements, functional or non-functional. Where, a functional requirement can
+impact the implementation of code and a non-functional requirement cannot. We
+start by addressing a software design for the non-functional requirements:
+
+\begin{itemize}
+  \item User Interface Goals
+  \item Portability Goals
+  \item Documentation Goals
+\end{itemize}
+
+The user interface goal is satisfied by simply excluding any user interface
+design from the software. The portability goal tells us that we need to pick a
+technology stack that is supported on the maximal number of platforms. The clear
+choice is to implement the software in the C language. The C language is widely
+used, and a C compiler exists to target just about any platform. The following
+is a selection of C compilers and tool chains and their targets:
+
+\begin{itemize}
+  \item Cython\citep{behnel2011cython}: ``Cython is a Python compiler
+    that makes writing C
+    extensions for Python as easy as Python itself. Cython is based on Pyrex,
+    but supports more cutting edge functionality and optimizations.'' - Cython
+    Documentation
+  \item GNU\citep{GCCGNUCompiler2025}: A C compiler that can has
+    around 200 targets
+    including
+    \begin{itemize}
+      \item x86\_64
+      \item ARM
+      \item Motorola 68000
+      \item PowerPC
+    \end{itemize}
+
+  \item
+    Emscripten\citep{zakaiEmscriptenLLVMtoJavaScriptCompiler2011}: Compiles C to
+    WebAssembly\citep{WebAssemblyCoreSpecification2} allowing for C
+    code to be used
+    in web systems.
+  \item Embedded compilers: Various compilers for esoteric embedded
+    systems.\footnote{An embedded system is a small, usually low
+      power, computer (microcontroller)
+      that is built into a product. For example, the power seat of
+      your car is an
+    embedded system.}
+\end{itemize}
+
+Selecting C for an implementation language has some risks, primarily caused by
+the low-level\footnote{A low-level language such as C or Rust
+  compiles to machine code that runs
+  directly on the hardware. A high-level language is one that abstracts
+functionality away from hardware.} nature of C. As a low-level
+language, C has no
+built-in garbage collection mechanism, that is, memory can be allocated but is
+not unallocated automatically. To mitigate this risk in C development we
+disallow memory allocation in our components. Any memory allocation must happen
+in the user interface layer, and then buffers with known sizes are passed to the
+components.
+
+To address the two remaining functional requirements, encapsulation goals and
+pattern goals, we define a collection of generic component interfaces that cover
+common use cases we described in the previous section. We also model these
+interfaces as a block diagram demonstrating the relationship between the
+interfaces.
+
+\begin{itemize}
+  \item Runner: The runner interface serves as the stand-in for user interfaces.
+    Since we are decoupling the interface from the functionality, there is no
+    further design consideration for the runner interface.
+  \item Runnables: Runnables serve as the functionality that is
+    called by a runner.
+    \begin{itemize}
+      \item Computation: The computation interface is a runnable that
+        operates in a
+        one call, one return program flow (one thing in one thing out). Example:
+        Compute Jones Polynomial and Compute Writhe.
+      \item Generator: The generation interface is a runnable that
+        operates in a one
+        call, multiple return flow (one thing in many things out). Example:
+        generate rational tangles, generate Montesinos tangles, and generate
+        arborescent tangles.
+    \end{itemize}
+
+  \item Data Wranglers: Data wranglers serve as a non-user facing layer used by
+    runnables to handle data.
+    \begin{itemize}
+      \item Notation: The notation interface defines data structures used to
+        represent knot data. Additionally, the interface describes the
+        translation between string representations and data structures. Example:
+        Conway notation, algebraic tangle tree notation, and weighted planar
+        tangle tree notation.
+      \item Storage: The storage interface serves the need for
+        components to read
+        and write from external systems. Examples: the command line or a
+        database.
+    \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/mermaid-606404c6-6d0191c2858c7930f917b0f7b763e040.png}
+  \caption{A block diagram of the architecture of a knot theory
+  software toolbox}
+\end{figure}
+
+\subsection{Unit Design for Generic Interfaces}
+
+Based on the system design, we will now give unit designs for each of our
+generic interfaces. Each interface has a brief description of the component, a
+class diagram for the component, and a brief description of each data member and
+function.
+
+%  prettier-ignore-start
+\subsubsection{Generator Interface}\label{sec-interfaces-generator}
+
+%  prettier-ignore-end
+
+The generator interface defines the general form for a component used to perform
+a knot operation. Then when the generator component is invoked, it produces more
+than a single output. The generator component does not allocate memory, it must
+be configured with sufficient buffer space to successfully execute.
+\paragraph{Class Diagram}
+
+$\,$
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=0.3\textheight]{files/mermaid-5a8e90a2-8a299f21031f3a7df7deb9dc167483dd.png}
+\end{figure}
+
+\paragraph{Functionality}
+
+\subparagraph{Public Structures}
+
+\subparagraph{Generator Configuration Structure}
+
+The generator configuration structure defines the collection of data the
+component needs for a single run. Setting a configuration should be considered
+equivalent to instantiating a class in a high-level language. However, in this
+case, there is only ever a single active instance of the class.
+
+\subparagraph{Public Functions}
+
+\subparagraph{Configuration Function}
+
+The function will take a configuration as input and set the local configuration
+instance to that input. The function returns a flag indicating whether the
+function was successful. This function can be considered analogous to
+the \texttt{init}
+function of a class in a high-level language.
+\newpage
+\subparagraph{Generate Function}
+
+When this function is invoked, the generation process begins. The actual
+internal functionality is specific to the specific generator. The function
+returns a flag indicating whether the function was successful.
+
+The flow for a generator is modeled by the following state machine:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=0.4\textheight]{files/mermaid-18bba444-2a831e2dcdf1f4d7d6b872c9fe1e1af5.png}
+\end{figure}
+
+%  prettier-ignore-start
+
+\newpage
+\subsubsection{Computation Interface}\label{sec-interfaces-computation}
+
+%  prettier-ignore-end
+
+The computation interface defines the general form for a component used to
+perform a knot operation. When the computation component is invoked, it produces
+a single output. The computation component does not allocate memory, it must be
+configured with sufficient buffer space to successfully execute.
+
+\paragraph{Class Diagram}
+
+$\,$
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=0.4\textheight]{files/mermaid-8aaebd29-c1f3ce664183cdcf75ffaa94ffab8126.png}
+\end{figure}
+
+\paragraph{Functionality}
+
+\subparagraph{Public Structures}
+
+\subparagraph{Computation Configuration Structure}
+
+The computation configuration structure defines the collection of data the
+component needs for a single run. Setting a configurationshould be considered
+equivalent to instantiating a class in a high-level language. However, in this
+case, there is only ever a single active instance of the class.
+
+\subparagraph{Computation Result Structure}
+
+The computation result structure defines the collection of data the component
+will produce in a single run. This is used as an alternative to the write
+interface, allowing the component to be used internally in other computation or
+generator components.
+\newpage
+\subparagraph{Public Functions}
+
+\subparagraph{Configuration Function}
+
+The function will take a configuration as input and set the local configuration
+instance to that input. The function returns a flag indicating whether the
+function was successful. This function can be considered analogous to
+the \texttt{init}
+function of a class in a high-level language.
+
+\subparagraph{Compute Function}
+
+When this function is invoked, the computation process begins. The actual
+internal functionality is specific to the specific computation. The function
+returns a flag indicating whether the function was successful.
+
+The flow for a computation is modeled by the following state machine:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.47\linewidth]{files/mermaid-6a25d18a-8170bf662108fc27b7e4b0657d910a16.png}
+\end{figure}
+
+\subparagraph{Result Function}
+
+When this function is invoked, the result of the computation process is
+reported. The actual internal functionality is specific to the specific
+computation.
+
+%  prettier-ignore-start
+\newpage
+\subsubsection{Notation Interface}\label{sec-interfaces-notation}
+
+%  prettier-ignore-end
+
+The notation interface defines the general form for a component used to store
+knot notational data. This includes a computational data structure for a knot
+notation and the functions required for translation into and out of string
+representations of that notation.
+
+\paragraph{Class Diagram}
+
+$\,$
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=0.25\textheight]{files/mermaid-2994999e-50bad96723d99e60bd6c0c09d441efc6.png}
+\end{figure}
+
+\paragraph{Functionality}
+
+\subparagraph{Public Structures}
+
+\subparagraph{Notation Data Structure}
+
+This is the primary data structure for a notation component. This data structure
+defines and stores the computational representation of a knot notation.
+
+\subparagraph{Public Functions}
+
+\subparagraph{Encode Function}
+
+The encode function takes in the string representation of a knot notation,
+processes the string, and stores the computational representation into a
+notation data structure.
+
+\subparagraph{Decode Function}
+
+The decode function takes in a computational representation of a notation data
+structure and processes it into a string representation of a knot notation.
+
+%  prettier-ignore-start
+\newpage
+\subsubsection{Storage Interface}\label{sec-interfaces-storage}
+
+%  prettier-ignore-end
+
+The storage interface defines the general form for a component that reads and
+writes key value pairs. These functions will generally be defined by the user
+interface layer and passed to components as function pointers. Data is assumed
+to be formatted in a key value store with two layers. The outermost layer is
+indexed by a value called a \textbf{key}. The value for the key is
+another collection
+of key value pairs. At this level, we call the key value is called an
+\textbf{index}
+and value entry \textbf{value}.
+
+\begin{example}{A JSON data store with the key:index:value structure.}{}
+  \begin{center}
+\begin{lstlisting}[language=json,numbers=none]
+{
+    "key": {
+        "index": "value"
+    },
+    "[1 1 1]": {
+        "crossing_number": "3",
+        "is_rational": "true"
+        }
+}
+\end{lstlisting}
+  \end{center}
+\end{example}
+
+\paragraph{Class Diagram}
+
+$\,$
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=0.2\textheight]{files/mermaid-6edd1b25-eb992c6387dbe86df4026001d05a54ba.png}
+\end{figure}
+
+\paragraph{Functionality}
+
+\subparagraph{Public Functions}
+
+\subparagraph{Read Function}
+
+The read function takes in a key index pair, then reads the value at key:index
+from the data store and returns the value.
+
+\subparagraph{Write Function}
+
+The write function takes in a key, index, and value tuple and writes the value
+to the data store at key:index.
+
+%  prettier-ignore-start
+\newpage
+\section{Unit Design for Tangle Tabulation}\label{sec-unitdesign}
+
+%  prettier-ignore-end
+
+The unit descriptions in this section are living documents with
+latest version as well as their associated implementations available on
+GitHub~\citep{Starr_The_Tanglenomicon_Core_2025}.

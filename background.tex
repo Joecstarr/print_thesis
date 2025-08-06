@@ -1,0 +1,1507 @@
+\chapter{Preliminaries}
+
+%  prettier-ignore-start
+
+\section{History of Knot Tabulation}\label{sec-history-of-tabulation}
+
+%  prettier-ignore-end
+
+Mathematical interest in knots was brought to the forefront of mathematics and
+physics during the 1860s by Lord Kelvin. A central area of research in physics
+during the 1860s was the investigation of the fundamental building blocks of
+matter: the atoms. Lord Kelvin hypothesized that atoms were knotted vortices in
+the aether \citep{thomsonVortexAtoms1867}. With this hypothesis, a
+natural next step
+is the creation of a table of the elements which, by hypothesis, was a table of
+knots.
+
+\subsection{Knot Tabulation by Hand}
+
+With Lord Kelvin's vortex hypothesis as the driving force for knot tabulation,
+the first knot table was produced, via hand computation, by P.G. Tait. Tait's
+first table, completed in the 1860s, contained prime knots (described in
+\nf{subsec-prime_knot}) up to seven crossings
+\citep{taitFirstSevenOrders1884} (described in \nf{subsec-knot_def}), a table
+of the first seven knots can be seen in Figure~\ref{fig-hist-7table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=0.4\textheight]{files/knots_to_7-f13b9b5556c173ab3d955b74f82b2e53.pdf}
+  \caption[A table of the first seven prime knots.]{A table of the
+  first seven prime knots. \citep{schareinInteractiveTopologicalDrawing1998}}
+  \label{fig-hist-7table}
+\end{figure}
+
+With a table of seven crossing knots complete, Tait's work in knot tabulation
+continued, alongside Kirkman and Little
+\citep{taitTenfoldKnottiness1885,
+kirkmanEnumerationDescriptionConstruction1885, littleKnotsCensusOrder1885},
+for the next 25 years. The trio ultimately constructed a complete list of prime
+knots up to ten crossings (250 knots + 1 repeat). When the knot
+theoretic machinery
+available at the time is considered, the completion of these tables with such
+high accuracy was a Herculean task. The tables contained a single error, two
+equivalent (described in \nf{subsec-knot_equivalence}) ten crossing knots
+(Figure~\ref{fig-hist-perko}), identified in 1974 by Perko, an
+amateur mathematician
+\citep{perkoClassificationKnots1974}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/perko_pair-f143cdf72c123a1835bc5e48f71d8245.pdf}
+  \caption[The Perko pair.]{The Perko pair, a pair of equivalent ten
+    crossing knots appearing as an
+    error in early knot tables
+    \citep{schareinInteractiveTopologicalDrawing1998,
+  perkoClassificationKnots1974}.}
+  \label{fig-hist-perko}
+\end{figure}
+
+After the completion of the ten crossing tables, efforts in knot tabulation
+stagnated, with few concerted efforts and little progress being made in
+expanding the tables. The next researcher to take up the tabulation torch was
+Conway in the 1960s \citep{conwayEnumerationKnotsLinks1970}. Conway,
+in ``a few hours''
+\citep{conwayEnumerationKnotsLinks1970}, tabulated knots to eleven
+crossings, with
+only four omissions\citep{caudron1982classification}. Conway's work
+continued by hand
+computation, but employed a novel approach to tabulation. He described
+decompositions of knots into building blocks, which he called
+tangles\citep{conwayEnumerationKnotsLinks1970}. Conway paired this
+with a calculus to
+glue the blocks together. Under Conway's tangle calculus, the combinatorial work
+of knot tabulation became a game of building from simple to complex. Inspired by
+Conway's strategies, a second effort to enumerate eleven crossing knots was
+carried out by Caudron \citep{caudron1982classification}, verifying
+Conway's findings
+and rectifying the four omissions. Caudron's confirmation of the eleven crossing
+tables marked the final chapter in the hand computation era of knot tabulation.
+
+\subsection{Knot Tabulation by Computer}
+
+With advancements in manufacturing in the early 1980s, electronic computers
+became closer to commodity products. This allowed for researchers of diverse
+backgrounds and interests to take their crack at time-consuming computational
+tasks. One of these computational tasks was the construction of knot tables. The
+first to construct a knot table by computer were Dowker and Thistlethwaite in
+1983 \citep{dowkerClassificationKnotProjections1983}, who produced a
+table of all
+prime knots to thirteen crossings. The pair implemented a novel two pass
+approach that has served as an outline for all major efforts that have followed.
+The process begins with a first pass to enumerate all possible knot diagrams
+(described in \nf{subsec-knot_def}). This is followed by a second pass where
+``sufficient invariants to distinguish them (knots) from each other''
+\citep{dowkerClassificationKnotProjections1983} are computed. This effectively
+assigns knots to equivalence classes (bins \footnote{In software
+    development, the mathematical concept of an equivalence class is
+often called a ``bin''.}), hence finding and removing
+all duplicate entries from the list (deduping \footnote{Short for
+    deduplicating, meaning the removal of duplicate entries from the
+list.}).
+
+The next table produced by computer, knots up to sixteen crossing, was given by
+Hoste, Thistlethwaite, and Weeks \citep{hosteFirst1701936Knots1998}
+in 1998. Their
+process deviates only slightly from the earlier approach of Dowker and
+Thistlethwaite, by leaning on heuristics\footnote{When discussing
+  algorithms, a heuristic describes a special case that, when
+seen, short circuits the algorithm, reducing unnecessary work.} to
+limit the duplicates
+found in their first pass. This preprocessing in the first pass allowed Hoste,
+Thistlethwaite, and Weeks to compute their table in one to two weeks of wall
+time\footnote{The real effective time of a clock on a wall, this is
+  different from CPU
+time which is a relative measure of time.}.
+
+The most recent computational effort was carried out by Burton in 2020
+\citep{burtonNext350Million2020}, finding knots to nineteen crossings. Burton's
+program followed closely to the two pass processes, with further heuristic work
+to preprocess in the first pass and heavily relying on the hyperbolic volume
+invariant for the second pass. The computation of the nineteen crossing table
+required months of wall time on a cluster\footnote{An aggregation of
+  many computers, each with many computational cores. We'll
+  see later in this thesis that tabulation is massively
+parallelizable.}, serving as an important
+signpost for the time requirement problems of knot tabulation.
+
+\subsection{Tangle Tabulation}
+
+Conway's tangle construction allowed him to quickly and effectively tabulate
+knots by hand. These building blocks of knots are interesting mathematical
+objects in their own right, however tabulation efforts for tangles have been
+sparse. The importance of the creation of a large table of tangles has been
+called:
+
+\begin{quote}
+  ``The Most Important Missing Infrastructure Project in Knot
+  Theory'' - Bar-Natan
+  \citep{bar-natanMostImportantMissing}
+\end{quote}
+
+As it stands, tables of tangles have been generated by hand up to seven
+crossings by Kanenobu, Saito, and Satoh
+\citep{kanenobuTanglesSevenCrossings2003a}.
+Computer driven efforts have been undertaken by several members of the
+University of Iowa Applied Topology (UIAT) group namely Conolly
+\citep{connollyClassificationTabulation2string2021}, Bryhtan
+\citep{bryhtanTabulating2stringTangles2024}, and this thesis.
+Separately, a table of
+algebraic tangles has been produced by Gren, Sulkowska, and,
+Gabrov\v{s}ek \citep{gren2025classificationalgebraictangles}. Their tabulation
+is built on a binary operation tree based on Conway's
+\citep{conwayEnumerationKnotsLinks1970} tangle calculus. Similar binary
+operation trees can be seen in Conolly
+\citep{connollyClassificationTabulation2string2021}, Caudron
+\citep{caudron1982classification}, and discussed in
+Section~\ref{sec-monttang}.
+
+\section{Foundations of Knots}
+
+We now begin a more formal description of the foundations of the theory of
+knots. Our treatment will begin with the general definition of knots, as well as
+similar knot-like objects. Next, we will discuss ways in which two knots can be
+considered equivalent. With this, we'll give an example of a common invariant
+for knots. Finally, we conclude with descriptions of the notational strategy
+that inspired the rest of this thesis, the Conway notation.
+
+%  prettier-ignore-start
+
+\subsection{Definition of a Knot}\label{subsec-knot_def}
+
+%  prettier-ignore-end
+
+As with anything, we must start with a definition, here we give one for a
+\textbf{proper knot}.
+
+\begin{definition}{From Jablan and Sazdanovi{\'c}, Definition 1.17
+  \textbf{\citep{jablanLinKnotKnotTheory2007}}}{def-knot}
+  A \textbf{proper knot} is a smooth embedding of a circle $S^1$ into Euclidean
+  3-dimensional space $\R^3$ (or the 3-dimensional sphere
+  $S^3$).
+
+\end{definition}With some consideration, we can see this definition
+aligns with our intuitive
+description of a knot given in
+Section~\ref{sec-intro-intuit_knot_theory}. We note that this
+definition gives two choices for ambient space, for this thesis we will prefer
+$S^3$ as an ambient space, the preference will become clear in later sections. A
+natural extension of the concept of a knot is to allow for more than a single
+$S^1$ component to be embedded into the ambient space. This allowance gives us
+the concept of a \textbf{$c$ component link}.
+
+\begin{definition}{From Jablan and Sazdanovi{\'c}, Definition 1.17
+  \textbf{\citep{jablanLinKnotKnotTheory2007}}}{def-link}
+  A \textbf{$c$ component link} is a smooth embedding of $c$ disjoint
+  copies of a circle
+  $S^1$ into $\R^3$ (or $S^3$), where the embeddings of circles $S_i^1$ are its
+  components ($i = 1, 2,\dots, c$).
+
+\end{definition}
+\begin{convention}
+  For convenience, and brevity, in the remainder of this thesis we
+  will adopt the
+  following convention. The term \textbf{knot} refers to the collection of
+  all proper knots and
+  all $c$ component links. If we find the need to exclude the $c$
+  component links
+  from consideration, we will use the term proper knot.
+\end{convention}
+
+Playing with this three-dimensional construction for knots, it will quickly
+become apparent that three-dimensional knots are unwieldy to work with. To
+simplify our work, we will now build a two-dimensionally encoded model for
+knots, a \textbf{knot diagram}. We start by taking a knot $K\subset
+S^3$. We then
+select an $S^2$ such that $K$ lies fully in the interior. Now, for any plane
+that lies tangent to $S^2$, we take an orthogonal projection of the knot onto
+the plane. We require that the projection have no \textbf{degenerate crossings},
+intersections of the knot projection where more than two points are collinear or
+where the crossing is not transverse.
+We call this projection a \textbf{knot shadow}, an example can be seen in
+Figure~\ref{fig-knot_def-shadow}. A knot shadow is interpreted as a planar
+graph\footnote{A graph in the mathematical sense, is a set of
+  vertices combined with a set of
+  relationships between those vertices called edges. A planar graph is a graph
+that when drawn in the plane has no overlapping edges.}, with points
+where strands overlap (are collinear in the
+projection) as vertices, and edges of the shadow as the strands between the
+overlaps.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/knot_shadow-bca368cd9027f5ce97cd68c0bb57f1be.pdf}
+  \caption[A schematic diagram demonstrating a knot and its
+  shadow.]{A schematic diagram demonstrating a knot (orange) and its
+    shadow (grey).
+    Imagine a light shining from above the knot onto a piece of paper. The knot
+  shadow is the shadow cast on the paper.}
+  \label{fig-knot_def-shadow}
+\end{figure}
+
+Taking only the shadow of a knot we lose some data that is intuitively
+important, the crossings of a knot (the relative distance of collinear points).
+To recover this data in a diagram, we split the edges of the shadow where the
+strand closer to the projection plane appears to travel under the edge
+corresponding to the strand further from the plane. We call the edge that is
+split the \textbf{under strand}, and the non-split strand the
+\textbf{over strand}. These
+augmented knot shadows are called knot diagrams and will serve as our primary
+schematic model for knots throughout this thesis. We call the count of crossings
+in a knot diagram the \textbf{crossing number} of the knot diagram.
+
+We finish with naming a knot with particular significance, the knot with no
+crossings in its diagram is called the \textbf{unknot}.
+
+%  prettier-ignore-start
+
+\subsection{Knot Equivalence}\label{subsec-knot_equivalence}
+
+%  prettier-ignore-end
+
+Armed with the formal definition of a knot, we can make our first progress in
+answering the overarching question from
+Section~\ref{sec-intro-intuit_knot_theory}.
+
+\begin{quote}
+  How do I tell two knots I make apart?
+\end{quote}
+
+To tell two knots apart, we need to discuss the concept of sameness, that is,
+what is equivalence in knots. Our concept of equivalence for knots is given by
+\textbf{ambient isotopy}, and equal knots are said to be
+\textbf{ambient isotopic}.
+
+\begin{definition}{From Jablan and Sazdanovi{\'c}, Definition 1.20
+  \textbf{\citep{jablanLinKnotKnotTheory2007}}}{def-ambient_isotopic}
+  Knots $K$ and $K_1$ are \textbf{ambient isotopic} if there exists a
+  continuous function $H: \R^3 \times[0,1] \rightarrow \R^3$ such that:
+  \begin{itemize}
+    \item{$h_0=H((x, y, z), 0)$ is the identity $\R^3 \rightarrow \R^3$,}
+    \item{for all $t \in[0,1], h_t=H((x, y, z), t)$ is a
+      homeomorphism $\R^3 \rightarrow \R^3$,}
+    \item{if $h_1=H((x, y, z), 1)$, then $h_1(K)=K_1$.}
+  \end{itemize}
+\end{definition}When working with the three-dimensional model of a
+knot, writing down explicit
+ambient isotopies is, in general, quite difficult. As we did in
+\nf{subsec-knot_def}, we can simplify the concept of equality by moving ambient
+isotopy to an equivalence of knot diagrams. Taking the orthogonal projection
+model for knot diagrams given in \nf{subsec-knot_def}, ambient isotopy can be
+modeled as three Reidemeister moves on diagrams
+\citep{reidemeisterElementareBegruendungKnotentheorie1927}. Meaning,
+two knots are
+ambient isotopic if and only if their diagrams are equal under a chain of
+Reidemeister moves
+\citep{reidemeisterElementareBegruendungKnotentheorie1927} and isotopies.
+
+The first Reidemeister move we will define is the Type I move
+\citep{reidemeisterElementareBegruendungKnotentheorie1927}. To carry
+out the Type I
+move (Figure~\ref{fig-knot_def-r1}), start by taking a portion of a
+diagram with no
+crossings, then add a half twist. When adding the twist, we have two choices;
+twist into (left handed) or out of (right handed) the plane the diagram lies in.
+In either, we can freely remove the new crossing by twisting in the opposite
+direction.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{files/R1-1068ad57841d108de41eaba727a15cd2.pdf}
+  \caption[Executing the two flavors of type I move.]{Executing the
+    two flavors of type I move on a knot diagram. On the left, we have
+    a twist into the plane, also called a positive or left-handed
+    twist. On the right,
+  we have a twist into the plane, also called a negative or right-handed twist.}
+  \label{fig-knot_def-r1}
+\end{figure}
+
+The next Reidemeister move is the Type II
+move\citep{reidemeisterElementareBegruendungKnotentheorie1927}, seen in
+Figure~\ref{fig-knot_def-r2}. When we carry out the type II move, we
+need two strands, each
+with no crossings. We then pull one strand on top of the other, inducing two new
+crossings in our diagram. Similarly to the type I move, the type II move can be
+freely undone by pulling the strands apart.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{files/R2-4010ce2b2b2ae0fefc84be521d714e22.pdf}
+  \caption[Executing the two type II moves.]{Executing the two type
+    II moves with a pair of strands. In the top image, the
+    bottom strand is pulled over the upper. In the bottom image, the
+    bottom strand
+  is pulled under the top strand.}
+  \label{fig-knot_def-r2}
+\end{figure}
+
+The final Reidemeister move is the Type III
+move\citep{reidemeisterElementareBegruendungKnotentheorie1927}. In
+the type III move,
+we take three strands, two that form a crossing and a third that lies in one of
+three possible positions:
+
+\begin{enumerate}
+  \item above the over strand
+  \item between the over and under strands
+  \item below the under strand
+\end{enumerate}
+
+We now execute the type III by taking the third strand (not part of the center
+crossing) and passing it across the center crossing. As with type I and type II,
+we're free to reverse the type III move.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{files/R3-053c00ec76f615349542d57514de7583.pdf}
+  \caption[Executing the three type III moves.]{Executing the three
+    type III moves with a set of three strands. Top
+    to bottom, the third strand is: $\ \bullet$ on top of the
+    crossing strands $\ \bullet$ between
+  the crossing strands $\ \bullet$ under the crossing strands.}
+  \label{fig-knot_def-r3}
+\end{figure}
+
+We should note here that with a concept of equivalence comes equivalence classes
+of knot diagrams. Historically, of particular interest in the tabulation of
+knots, are the knot diagrams that have minimal crossing number, we call these
+\textbf{minimal diagrams}, knot diagrams where crossing number cannot be
+decreased by Reidemeister moves.
+
+%  prettier-ignore-start
+
+\subsection{Prime Knots}\label{subsec-prime_knot}
+
+%  prettier-ignore-end
+
+With the goal of enumerating objects, we should be clear on what types of
+objects should be enumerated and which should be left uncounted. We now describe
+the class of knot that tabulators are interested in, the
+\textbf{prime knots}. The
+first step is to define an operation on knots, called the \textbf{connect sum}.
+
+\begin{definition}{}{}For knots $J$ and $K$, the \textbf{connect sum}
+  $J\#K$ is produced by:
+
+  \begin{enumerate}
+    \item Excising an arc from both $J$ and $K$
+    \item Gluing endpoints of $J$ to endpoints of $K$ so no new
+      crossings are added.
+  \end{enumerate}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{files/fig-prime_knot-conne-dc193ded4f495df17dda8990f19f876c.pdf}
+    \caption[An example of the connect sum of two trefoil knots.]{An
+    example of the connect sum of two trefoil knots.}
+    \label{fig-prime_knot-connect_sum}
+  \end{figure}
+
+\end{definition}With the connect sum operation defined, we are now
+prepared to give the
+definitions for prime and composite knots.
+
+\begin{definition}{}{}
+  A knot is called \textbf{prime} if, in every decomposition into a
+  connect sum, one
+  of the factors is unknotted. Otherwise, the knot is called \textbf{composite}.
+
+\end{definition}
+%  prettier-ignore-start
+
+\subsection{Knot Invariants}\label{subsec-invariant}
+
+%  prettier-ignore-end
+
+Our next topic of interest is that of a knot invariant. In general, an invariant
+for an object is a datum that is computed deterministically for the object and
+remains unchanged within an equivalence class. In the knot case, we
+will take the
+concept of equality to be that given in \nf{subsec-knot_equivalence}.
+As discussed
+in Section~\ref{sec-history-of-tabulation}, invariants play an
+important role in computer
+tabulation. We will now describe a simple invariant we first
+introduced in \nf{subsec-knot_equivalence}.
+
+% The remainder of this section will be devoted to the construction of
+% two historically significant knot invariants, the minimal crossing number and
+% the \textbf{Jones polynomial}.
+
+\subsubsection{Minimal Crossing Number}
+
+We saw at the end of \nf{subsec-knot_equivalence} the definition of
+the minimal crossing number for a knot. That being the minimal number of
+crossings needed to represent the knot as a diagram. Somewhat intuitively,
+this number is an invariant for a knot. If a knot has minimal crossing number
+$4$, we will never be able to represent it with three crossings, so it has to
+be different from the trefoil knot (a knot with three crossings).  However, we
+can see from the table of the first seven knot (seen in
+Figure~\ref{fig-hist-7table}) that having
+equivalent crossing number does not give us equivalent knots.
+
+% \subsubsection{Jones Polynomial}
+
+% In this section we will describe a more complex invariant for knots. While we
+% won't use this construction for our tangle tabulation it provides an example
+% for the kind of theory available for future work by undergraduates
+% (see Section~\ref{sec-selection_projects}).
+% The Jones polynomial (Definition~\ref{def-jones}) is due to Vaughan Jones
+% \citep{jonesPolynomialInvariantKnots1985}, which he discovered in
+% 1985 during his
+% work on Von Neumann algebras. A more combinatorial approach to the
+% construction,
+% due to Kauffman \citep{kauffmanStateModelsJones1987}, is given here
+% and uses the
+% \textbf{Kauffman bracket}.
+
+% \begin{definition}{From Lickorish, Definition 3.6
+% \textbf{\citep{kauffmanStateModelsJones1987a,
+% jonesPolynomialInvariantKnots1985,
+% lickorishIntroductionKnotTheory1997}}}{def-jones}
+% The Jones Polynomial $V\LP \mathscr{K}\RP$ of an oriented knot
+% $\mathscr{K}$ is
+% the Laurent polynomial\footnote{A Laurent polynomial is a
+% polynomial that is allowed to have both positive
+% and negative powers.} with integer coefficients in $t^{1/2}$. Defined by
+
+% \begin{equation}
+% V\LP \mathscr{K}\RP=\LP\LP-A\RP^{\ \m 3w(K)}\LA K\RA\RP_{t^{1/2}=A^{\ \m 2}}
+% \end{equation}
+% where $K$ is any oriented diagram for $\mathscr{K}$.
+
+% \end{definition}
+% %  prettier-ignore-start
+
+% \paragraph{Kauffman Bracket}\label{subsec-kauff}
+
+% %  prettier-ignore-end
+
+% The Kauffman bracket is a function that takes knot diagrams as
+% input and outputs
+% a Laurent polynomial[\^lp] (Definition~\ref{kb-def-kaufb}).
+
+% \begin{definition}{Kauffman, Definition 2.1
+% \textbf{\citep{kauffmanStateModelsJones1987,
+% lickorishIntroductionKnotTheory1997}}}{kb-def-kaufb}
+% The \textbf{Kauffman bracket} of an unoriented knot $K$, $\LA
+% K\RA$, is the Laurent
+% polynomial with integer coefficients in $A$ given by the following relations:
+
+% \begin{enumerate}
+% \item $\LA\img{media/kauf_bkt/unknot} \RA=1$
+% \item $\LA K \sqcup \img{media/kauf_bkt/unknot} \RA=\LP -A^2
+% -A^{\m2}\RP \LA K \RA$
+% \item $\LA \img{media/kauf_bkt/crossing/crossing_un} \RA=A\LA
+% \img{media/kauf_bkt/type2/6a} \RA+A^{\ \m 1}\LA
+% \img{media/kauf_bkt/type2/6b} \RA$
+% \end{enumerate}
+
+% \end{definition}Since the number one and the unknot serve important
+% roles for polynomials and
+% knots respectively, the first criterion is intuitive to select,
+% when inventing a
+% knot polynomial invariant. For now, we focus our discussion on the third
+% criterion. The action we see in three is called \textbf{smoothing a
+% crossing} and is
+% difficult to see. We will now present an intuitive model (originally by Jones
+% \citep{jonesJonesPolynomialDummies2014}) for what happens in the
+% smoothing process.
+
+% Consider a crossing as a tangle, imagine that the over strand of
+% the crossing is
+% the slot of a giant flathead screw, and attach a marker on either end of the
+% slot. Taking a screwdriver, we may turn the screw clockwise or anti-clockwise.
+% When the screw is turned, the markers (arrows in
+% Figure~\ref{fig-jp-screw-model}) trace out
+% two arcs on the page. We create two new tangles by placing arcs inside each
+% tangle and connecting the endpoints joined by the marker trace. We can see, by
+% inspection, that the resulting pictures match the components of the third
+% condition of Definition~\ref{kb-def-kaufb}.
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.5\linewidth]{files/fig-jp-screw-model_i-c5ffbb95a016d5b69741e75d01c6beb3.pdf}
+% \caption[A diagram depicting the screwdriver model of crossing
+% smoothing.]{A diagram depicting the screwdriver model of crossing
+% smoothing. On top, we have
+% the original, pre smoothed crossing. On the bottom left, we have an
+% anti-clockwise
+% smoothing. The result connects the top point to the left point and
+% the bottom point
+% to the right point. On the bottom right we have a clockwise smoothing. The
+% result connects the top point to the right point and the bottom point
+% to the left point.}
+% \label{fig-jp-screw-model}
+% \end{figure}
+
+% We will now move to proving that $\LA\,\RA$ is invariant under Reidemeister
+% moves. That is, when we start with two equivalent (by Reidemeister move) local
+% knot diagrams, the brackets of the two diagrams are equivalent.
+% First, we prove
+% that $\LA\,\RA$ is invariant under the type II move. For a moment,
+% we will write
+% the third condition of Definition~\ref{kb-def-kaufb} as
+% $\LA \img{media/kauf_bkt/crossing/crossing_un} \RA=A\LA
+% \img{media/kauf_bkt/type2/6a} \RA+B\LA \img{media/kauf_bkt/type2/6b} \RA$
+% and the second as
+% $\LA K \sqcup \img{media/kauf_bkt/unknot} \RA=\LP -A^2 -A^{\m2}\RP \LA K \RA$.
+
+% \begin{theorem}{}{thm-typeii_bkt}The equality of equation
+% (\ref{thm-kb-math-t2}) holds.
+% \begin{equation}
+% \label{thm-kb-math-t2}
+% \LA \img{media/kauf_bkt/type2/1}\RA=\LA \img{media/kauf_bkt/type2/6b} \RA
+% \end{equation}
+
+% \end{theorem}\begin{proof}We begin by smoothing the crossing on the
+% right side of the diagram, we then smooth
+% the other crossing, this process yields the following chain of equalities,
+% combining like terms where appropriate.
+
+% \begin{equation}
+% \begin{aligned}
+%  \bkt{media/kauf_bkt/type2/1}
+% &=A\bkt{media/kauf_bkt/type2/2a}+\LP
+%   B\RP\bkt{media/kauf_bkt/type2/2b}\\
+% &=A \LP
+%     A\bkt{media/kauf_bkt/type2/3a}+\LP
+%     B\RP\bkt{media/kauf_bkt/type2/4}\RP
+%  +\LP B\RP\LP A\bkt{media/kauf_bkt/type2/6b}+\LP
+%     B\RP\bkt{media/kauf_bkt/type2/6a}\RP\\
+% &=\LP A^2+ABC+B^2\RP\bkt{media/kauf_bkt/type2/6a}
+%  +\LP AB\RP\bkt{media/kauf_bkt/type2/6b}\\
+% \end{aligned}
+% \end{equation}
+% To ensure that the bracket polynomial is an invariant we need
+% to select $A, \ B, \ C$ so that $A^2+ABC+B^2=0$ and $AB=1$. The
+% conditions are satisfied by
+% $A=A$, $B=A^{\m 1}$, and $C=\LP -A^2 -A^{\m2}\RP$ (justifying the
+% second criteria
+% of Definition~\ref{kb-def-kaufb}). We then compute from the
+% beginning (\ref{sec-kb-math-t2ftb}),
+% showing the desired result.
+
+% \begin{equation}
+% \label{sec-kb-math-t2ftb}
+% \begin{aligned}
+%  \bkt{media/kauf_bkt/type2/1}
+% &=A\bkt{media/kauf_bkt/type2/2a}+\LP
+% B\RP\bkt{media/kauf_bkt/type2/2b}\\
+%  &=A \LP
+% A\bkt{media/kauf_bkt/type2/3a}+\LP
+% A^{\ \m 1}\RP\bkt{media/kauf_bkt/type2/4}\RP+\LP
+% A^{\ \m 1}\RP\LP A\bkt{media/kauf_bkt/type2/6b}+\LP
+% A^{\ \m 1}\RP\bkt{media/kauf_bkt/type2/6a}\RP\\
+%  &= \LP
+% A^2+A^{\ \m
+% 2}\RP\bkt{media/kauf_bkt/type2/6a}+\bkt{media/kauf_bkt/type2/4}+\bkt{media/kauf_bkt/type2/6b}\\
+%  &= \LP
+% A^2+A^{\ \m 2}\RP\bkt{media/kauf_bkt/type2/6a}+\LP-A^{2}-A^{\ \m
+% 2}\RP\bkt{media/kauf_bkt/type2/6a}+\bkt{media/kauf_bkt/type2/6b}\\
+%  &=\bkt{media/kauf_bkt/type2/6b}\\
+% \end{aligned}
+% \end{equation}
+
+% \end{proof}Now, utilizing the fact that $\LA\,\RA$ is invariant for
+% type II, we will prove
+% the same for type III.
+
+% \begin{theorem}{}{thm-typeiii_bkt}The equality of equation
+% (\ref{thm-kb-math-t3}) holds.
+% \begin{equation}
+% \label{thm-kb-math-t3}
+% \LA \img{media/kauf_bkt/type3/1}\RA=\LA \img{media/kauf_bkt/type3/6} \RA
+% \end{equation}
+
+% \end{theorem}\begin{proof}We begin by smoothing the crossing at the
+% center of each diagram in the
+% equality, yielding
+
+% \begin{equation}
+% \label{eq-kbkt-t3-1}
+% \bkt{media/kauf_bkt/type3/1}
+% =A\bkt{media/kauf_bkt/type3/2b}+A^{\ \m 1}\bkt{media/kauf_bkt/type3/2a}
+% \end{equation}
+
+% \begin{equation}
+% \label{eq-kbkt-t3-2}
+% \bkt{media/kauf_bkt/type3/6}
+% =A\bkt{media/kauf_bkt/type3/3b}+A^{\ \m 1}\bkt{media/kauf_bkt/type3/3a}
+% \end{equation}
+% Now, on the clockwise smoothing equation (\ref{eq-kbkt-t3-1}), we
+% execute a type II
+% move and obtain Figure~\ref{fig-inv-t3-c}.
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.5\linewidth]{files/2b_color-1bfc5e5306fab67c2456967cbbdb0f6b.pdf}
+% \caption[First smoothing of a type III move.]{On the left is a
+% clockwise smoothing of the type III move type crossing
+% Figure~\ref{fig-knot_def-r3}. On the right is an application of the
+% type II move on the
+% under strand.}
+% \label{fig-inv-t3-c}
+% \end{figure}
+
+% Similarly, the anti-clockwise smoothing from equation
+% (\ref{eq-kbkt-t3-2}) we execute a type II
+% move to obtain Figure~\ref{fig-inv-t3-cc}.
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.5\linewidth]{files/2a_color-5837b7c8e662b5e2c0f8448cce0ff0fa.pdf}
+% \caption[Second smoothing of a type III move.]{On the left is an
+% anti-clockwise smoothing of the type III move type crossing
+% Figure~\ref{fig-knot_def-r3}. On the right is an application of the
+% type II move on the
+% under strand.}
+% \label{fig-inv-t3-cc}
+% \end{figure}
+
+% Since the type II move is invariant for the bracket polynomial
+% (Theorem~\ref{thm-typeii_bkt})
+% the chain of equalities in equation (\ref{eq-kbkt-t3-final}) shows
+% the desired result.
+
+% \begin{equation}
+% \label{eq-kbkt-t3-final}
+% \begin{aligned}
+% \bkt{media/kauf_bkt/type3/1}
+% &=A\bkt{media/kauf_bkt/type3/2b}+A^{\ \m 1}\bkt{media/kauf_bkt/type3/2a}\\
+% &=A\bkt{media/kauf_bkt/type3/3b}+A^{\ \m
+% 1}\bkt{media/kauf_bkt/type3/3a}&&\text{(by type II move)} \\
+% &=\bkt{media/kauf_bkt/type3/6}
+% \end{aligned}
+% \end{equation}
+
+% \end{proof}Now for the final Reidemeister move, the type I move, we
+% compute two chains of
+% equality, (\ref{sec-kb-math-t11}) and (\ref{sec-kb-math-t12}).
+
+% \begin{equation}
+% \label{sec-kb-math-t11}
+% \begin{aligned}
+%  \bkt{media/kauf_bkt/type1/1b} & =
+% A\bkt{media/kauf_bkt/type1/2a}+A^{\ \m 1}\bkt{media/kauf_bkt/type1/2b}\\
+% & = A\bkt{media/kauf_bkt/type1/3}+A^{\ \m 1}\LP
+% -A^2-A^{\ \m 2}\RP\bkt{media/kauf_bkt/type1/3}\\
+% & = \LP A+
+% -A^-A^{\ \m 3}\RP\bkt{media/kauf_bkt/type1/3}\\
+% & = -A^{\ \m 3}\bkt{media/kauf_bkt/type1/3}\\
+% \end{aligned}
+% \end{equation}
+
+% \begin{equation}
+% \label{sec-kb-math-t12}
+% \begin{aligned}
+%  \bkt{media/kauf_bkt/type1/1} & =
+% A\bkt{media/kauf_bkt/type1/2b}+A^{\ \m 1}\bkt{media/kauf_bkt/type1/2a}\\
+%  & = A\LP
+% -A^2-A^{\ \m 2}\RP\bkt{media/kauf_bkt/type1/3}+A^{\ \m
+% 1}\bkt{media/kauf_bkt/type1/3}\\
+% & = \LP
+% -A^3-A^{\ \m 1}+A^{\ \m 1}\RP\bkt{media/kauf_bkt/type1/3}\\
+% & = -A^{3}\bkt{media/kauf_bkt/type1/3}\\
+% \end{aligned}
+% \end{equation}
+
+% Observe, with (\ref{sec-kb-math-t11}) and (\ref{sec-kb-math-t12}),
+% that the bracket polynomial
+% as it stands is not invariant under Reidemeister moves. We must augment the
+% bracket polynomial to find the invariance we would like.
+
+% \subparagraph{Writhe}
+
+% Before we can develop the concept of the \textbf{writhe} of a knot diagram, we
+% need to define an \textbf{orientation} for a knot diagram. Imagine
+% the strands of a knot to be a roller
+% coaster, it's clear that the rollercoster car has two choices for
+% direction. One
+% direction we intuitively call forward and its oposite backward. Just like most
+% rollercosters, each component of a knot is a circle we can choose
+% to traverse in
+% one of two directions. On a knot diagram we call this choice of
+% forward, an orientation,
+% see (Figure~\ref{fig-writhe-orientation}).
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.3\linewidth]{files/5_1-8d4df8b4b3c3dbcd7f8dfc4314714dc7.pdf}
+% \caption[An orientation applied to the knot.]{An orientation
+% applied to the knot 5\textsubscript{1}. Following the strand in the direction
+% of the arrow, you'll find that you arrive where you started.}
+% \label{fig-writhe-orientation}
+% \end{figure}
+
+% We now zoom in on our oriented diagram, and focus on each crossing. Since the
+% whole diagram is oriented, each strand in the local crossing has an induced
+% orientation, indicated by arrow heads on the strands. We arrange the crossing,
+% by rotating, so that the over strand arrowhead points up, notice then that
+% there are two possibilities for the under strand; pointing west or pointing
+% east. We call the crossing with a west pointing under strand a positive (+)
+% crossing (Figure~\ref{fig-inv-or-positive}), while an east pointing
+% under strand is called a
+% negative (-) crossing (Figure~\ref{fig-inv-or-negative}).
+
+% \begin{figure}[H]
+%     \centering
+% \begin{subfigure}[c]{.2\textwidth}
+% \centering
+% \includegraphics[width=\textwidth]{files/crossing_+-a152d2a53dd5f6118d5896ef3bd810a3.pdf}
+% \caption[A positive crossing.]{A positive crossing.}
+% \label{fig-inv-or-positive}
+% \end{subfigure}
+% ~
+% \begin{subfigure}[c]{.2\textwidth}
+% \centering
+% \includegraphics[width=\textwidth]{files/crossing_--eed911694e1575f898c0b8af79213f77.pdf}
+% \caption[A negative crossing.]{A negative crossing.}
+% \label{fig-inv-or-negative}
+% \end{subfigure}
+% \caption[The two crossing orientations.]{The two crossing orientations.}
+% \end{figure}
+
+% \begin{note}
+% A hint for determining the orientation of a crossing in practice is
+% a right-hand
+% rule. After the knot has been oriented, imagine your right hand with your
+% fingers extended and palm towards you. Align your hand with the over strand so
+% that your thumb points with the arrowhead. Now if your fingers are
+% pointing with the
+% arrowhead of the under strand, the crossing is positive, if your fingers are
+% opposite the arrowhead of the under strand, the crossing is negative.
+% \end{note}
+
+% Given an oriented knot diagram, we can now classify each crossing
+% as either positive or
+% negative, providing us with enough information to define the writhe of a knot.
+
+% \begin{definition}{}{def-writhe}The writhe, $w\LP K\RP$, of an
+% oriented knot diagram $K$ is defined to be:
+% \begin{equation}
+% \begin{aligned}
+% w\LP K\RP&=\LP\text{count of positive crossings in } K\RP\\
+% &-\LP\text{count of negative crossings in } K\RP
+% \end{aligned}
+% \end{equation}
+
+% \end{definition}
+% \begin{note}
+% The writhe of a diagram is not an invariant for the knot. We can see this by
+% adding a number of type I moves to a diagram, which will give us two different
+% writhes for the same knot.
+% \end{note}
+
+% The writhe is fairly simple to calculate, we will now carry out an example
+% calculation for knot 5\textsubscript{1}.
+
+% We start by taking the oriented version of knot 5\textsubscript{1} seen in
+% Figure~\ref{fig-writhe-orientation} and modifying the diagram with
+% local pictures for each
+% crossings seen in Figure~\ref{fig-writhe-local}.
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.4\linewidth]{files/fig-writhe-local-4733d4e765087c4c45e8c8937260d970.pdf}
+% \caption[An oriented five crossing knot.]{An oriented five crossing
+% knot, each local picture around a vertex is magnified
+% to show local crossing signs.}
+% \label{fig-writhe-local}
+% \end{figure}
+
+% Classifying each crossing as positive or negative, we can count finding 5
+% positive and 0 negative crossing giving
+
+% \begin{equation}
+% w\LP\img{media/kauf_bkt/orientation/5_1}\RP=5+0=5
+% \end{equation}
+
+% \subparagraph{Kauffman Bracket: Type I}
+
+% With the writhe, we're ready to augment the bracket polynomial applied to the
+% type I move. We do this with the addition of multiplication by a
+% $-A^{\ \m 3w\LP K\RP}$ term, obtaining Theorem~\ref{thm-typei}.
+
+% \begin{theorem}{}{thm-typei}The equality of equation
+% (\ref{thm-kb-math-t1}) holds.
+% \begin{equation}
+% \label{thm-kb-math-t1}
+%     \begin{aligned}
+%         -A^{\ \m 3w\LP
+%             \img{media/kauf_bkt/type1/1b}\RP}\bkt{media/kauf_bkt/type1/1b}
+%             & = \bkt{media/kauf_bkt/type1/3}\\
+%         -A^{\ \m 3w\LP
+%             \img{media/kauf_bkt/type1/1}\RP}\bkt{media/kauf_bkt/type1/1}
+%             & = \bkt{media/kauf_bkt/type1/3}\\
+%     \end{aligned}
+% \end{equation}
+
+% \end{theorem}\begin{proof}We first compute our writhes
+% \begin{equation}
+%     \begin{aligned}
+%             -w\LP \img{media/kauf_bkt/type1/1b}\RP=\ \m 1\\
+%             -w\LP \img{media/kauf_bkt/type1/1}\RP=1\\
+%     \end{aligned}
+% \end{equation}
+% now computing each flavor of type I move in turn
+% \begin{equation}
+% \begin{aligned}
+%         -A^{\ \m 3w\LP
+%     \img{media/kauf_bkt/type1/1b}\RP}\bkt{media/kauf_bkt/type1/1b}
+%     & =
+%     \LP-A^{3}\RP\LP-A^{\ \m 3}\bkt{media/kauf_bkt/type1/3}\RP \\
+%         & =
+%     \LP-A^{3}\RP\LP-A^{\ \m 3}\bkt{media/kauf_bkt/type1/3} \RP\\
+%         & = \bkt{media/kauf_bkt/type1/3} \\
+% \end{aligned}
+% \end{equation}
+% \begin{equation}
+% \begin{aligned}
+%         -A^{\ \m 3w\LP
+%     \img{media/kauf_bkt/type1/1}\RP}\bkt{media/kauf_bkt/type1/1}
+%     & =
+%     \LP-A^{\ \m 3}\RP\LP-A^{3}\bkt{media/kauf_bkt/type1/3}\RP\\
+%         & =
+%     \LP-A^{\ \m 3}\RP\LP-A^{3}\bkt{media/kauf_bkt/type1/3} \RP\\
+%         & = \bkt{media/kauf_bkt/type1/3} \\
+% \end{aligned}
+% \end{equation}
+% the desired sets of equality.
+
+% \end{proof}Having gained each equality needed for an invariant of
+% knots, we finish the
+% section with the following theorem.
+
+% \begin{theorem}The Jones polynomial (Definition~\ref{def-jones}) is
+% an invariant of oriented knots.
+
+% \end{theorem}\begin{proof}Combining Theorem~\ref{thm-typeii_bkt},
+% Theorem~\ref{thm-typeiii_bkt}, and Theorem~\ref{thm-typei},
+% substituting $A$ for
+% $t$ we obtain the result.
+
+% \end{proof}
+\subsection{Knot Notations}
+
+The final topic to cover in our treatment of foundations for knot theory is
+notational strategies for knots. In \nf{subsec-knot_def}, we came
+across our first
+notational strategy for knots, the knot diagrams. While diagrams are a great
+human-readable way to note a knot, when the tasks of enumeration and computation
+(by hand) are considered, knot diagrams quickly show deficiencies. These
+deficiencies become intractable when a computer is brought into the picture. As
+a remedy for this issue, knot theorists have invented several combinatorial
+notations for knots. Perhaps the most historically important knot notation for
+use in tabulation by computer is the Dowker-Thistlethwaite (DT) notation
+(\nf{sec-proj-note_dt}), developed by its namesakes specifically for use in
+computational tabulation. Each notational strategy used in knot theory has
+strengths and weaknesses. For example, using DT notation for computation of the
+Jones polynomial may be more cumbersome
+than using the Planar Diagram
+(PD) notation (\nf{sec-proj-note_pd}) for the same task, as PD directly encodes
+crossings while DT encodes a walk on a strand. The remainder of this section
+will be the development of the Conway notation, which lays the foundation for
+the work in this thesis.
+
+%  prettier-ignore-start
+
+\subsubsection{Conway Notation}\label{sec-conway}
+
+%  prettier-ignore-end
+
+In Section~\ref{sec-history-of-tabulation}, we saw that Conway
+claimed to have enumerated
+knots up to 11 crossings in ``a few hours''. Conway accomplished this
+by breaking
+knots into building blocks he called tangles. This section gives an outline of
+the tools he developed and used to achieve those ``few hours'' of amazing
+efficiency.
+
+%  prettier-ignore-start
+
+\paragraph{Definition of a Tangle}\label{subsubsec-deftangles}
+
+%  prettier-ignore-end
+
+Our first step in unlocking Conway's tabulation secrets is the definition of a
+tangle. We will give Conway's original definition followed by a description of
+what this looks like for a three dimensional embedding for a knot.
+
+\begin{definition}{Conway, Page 330
+  \textbf{\citep{conwayEnumerationKnotsLinks1970}}}{}
+  We define a \textbf{tangle} as a portion of a knot diagram from
+  which there emerge just 4
+  arcs pointing in the compass directions $NW, \ NE, \ SW, \ \text{and }SE$.
+
+\end{definition}These boundaries that split knots at four points are
+called \textbf{Conway circles},
+and we call the points $NW,\ NE,\ SW,\ \text{and }SE$ \textbf{boundary points}.
+Formally, we can consider a Conway circle to be a Jordan
+curve\footnote{A Jordan curve is a simple closed curve. This can be
+  thought of as a curve
+drawn on a piece of paper that has: 1) No end points. 2) No self
+intersections.}
+meeting the knot diagram in exactly four points
+\citep{bonahonNewGeometricSplittings2016}. In general, we prefer our
+Conway circles
+to actually be circles in the colloquial sense. Luckily, the circle and Jordan
+curve constructions are equivalent. This can be seen by a straightforward
+isotopy of one into the other, per Figure~\ref{fig-generic_jordan_iso}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{files/conway_circ_isotopy-9a8c6805166c373f6a290fdb7e952bb9.pdf}
+\caption[An isotopy turning Jordan curves into circles.]{An isotopy
+turning Jordan curves into circles.}
+\label{fig-generic_jordan_iso}
+\end{figure}
+
+We move our attention to the three dimensional analog for a Conway circle, the
+\textbf{Conway sphere}. A Conway sphere, similar to the Conway
+circle, is an $S^2$
+that encapsulates a portion of a knot so that the knot intersects the sphere in
+exactly four points. Here we see the first example of our preference for ambient
+space to be $S^3$ as opposed to $\R^3$. When a knot in $S^3$ is split by a
+Conway sphere, the ambient $S^3$ is decomposed into two $B^3$, each with a
+portion of the knot. Meaning, a single Conway sphere splits a knot into a pair
+of tangles.
+
+%  prettier-ignore-start
+
+\paragraph{Basic Tangles}\label{subsubsec-basic_tangles}
+
+%  prettier-ignore-end
+
+Often, when thinking about a new construction, we focus on the simplest object
+that can be created with the construction. In the case of drawing Conway circles
+to build tangles, the simplest tangles are a tangle with no crossings (the
+0 tangle Figure~\ref{prelim-fig-basic_0}) and a tangle with a single
+crossing (the +1
+tangle Figure~\ref{prelim-fig-basic_1}).
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[c]{0.3\textwidth}
+\centering
+\includegraphics[width=\textwidth]{files/0-4d1017ef91a5026c6771eb9f6ca80be3.pdf}
+\caption[A tangle with no crossings.]{A tangle with no crossings,
+called the 0 tangle.}
+\label{prelim-fig-basic_0}
+\end{subfigure}
+\quad
+\quad
+\quad
+\begin{subfigure}[c]{0.3\textwidth}
+\centering
+\includegraphics[width=\textwidth]{files/1-8c32584b33e2a4295948c6caf7fd3d15.pdf}
+\caption[A tangle with a single crossing.]{A tangle with a single
+crossing, called the 1 tangle.}
+\label{prelim-fig-basic_1}
+\end{subfigure}
+\caption[Two basic tangles.]{Two basic tangles.}
+\label{fig-basic_tangles}
+\end{figure}
+%  prettier-ignore-start
+
+\paragraph{Rotation and Mirroring of Tangles}\label{subsubsec-tangle_flips}
+
+%  prettier-ignore-end
+
+Consider a \textbf{generic tangle}, as seen in
+Figure~\ref{fig-generic_tangle}, where
+orientation (the position of the NW point) of data in the interior of the Conway
+circle is indicated by a broken $T$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\linewidth]{files/generic_tangle-a689b8d843d000777715cd84c327d565.pdf}
+\caption[A generic tangle.]{A generic tangle with a broken T.}
+\label{fig-generic_tangle}
+\end{figure}
+
+We can manipulate this tangle by the set of rotations, clockwise or
+anti-clockwise. Each rotation in turn gives a new arrangement of the interior
+data. We can also manipulate the tangle by the set of flips, one around the core
+x-axis and one around the y-axis. Each flip gives an arrangement of the interior
+data. Pairing flips with rotations gives the table seen in
+Figure~\ref{fig-tangle_flips}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{files/fig-tangle_flips-3e9facf2c059882951c81a73f9e178fa.pdf}
+\caption[A table with all unique rotations and flips for a generic
+tangle.]{A table with all unique rotations and flips for a generic tangle.
+From top to bottom in the first column:$\ \bullet$ No Flip$\ \bullet$
+Flip around the north south axis.
+From left to right in each row:$\ \bullet$ No rotation$\ \bullet$
+rotation quarter turn clockwise$\ \bullet$ rotation half turn clockwise
+$\ \bullet$ rotation three quarter turn clockwise$\ \bullet$ rotation
+quarter turn clockwise}
+\label{fig-tangle_flips}
+\end{figure}
+
+When we apply this set of flips and rotations to the basic tangles seen in
+\nf{subsubsec-basic_tangles}, we obtain the two additional basic tangles seen in
+Figure~\ref{fig-basic_tangles_extra}.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[c]{0.3\textwidth}
+\centering
+\includegraphics[width=\textwidth]{files/inf-6468e70ef1d9a2cf5e8722b2b4f72d73.pdf}
+\caption[A tangle with no crossings.]{A tangle with no crossings,
+called the $\infty$ tangle.}
+\label{prelim-fig-basic_nc-inf}
+\end{subfigure}
+\quad
+\quad
+\quad
+\begin{subfigure}[c]{0.3\textwidth}
+\centering
+\includegraphics[width=\textwidth]{files/m1-0b2e6635a4f891072ad82f405b21419d.pdf}
+\caption[A tangle with a single crossing.]{A tangle with a single
+crossing, called the $\m 1$ tangle.}
+\label{prelim-fig-basic_c-m1}
+\end{subfigure}
+\caption[Two additional basic tangles.]{Two additional basic tangles.}
+\label{fig-basic_tangles_extra}
+\end{figure}
+%  prettier-ignore-start
+
+\paragraph{Operations on Tangles}\label{subsubsec-conway_calc}
+
+%  prettier-ignore-end
+
+In addition to the rotations and flips, Conway introduced a calculus on tangles
+\citep{conwayEnumerationKnotsLinks1970}. This calculus allowed Conway
+to build the
+simple basic tangles into iteratively more complex tangles.
+
+%  prettier-ignore-start
+
+\paragraph{Minus Tangle}\label{subsubsec-conway_minus}
+
+%  prettier-ignore-end
+
+For a generic tangle $T$, we call the tangle generated from a clockwise rotation
+and flip around the y-axis the negative of $T$, notated $-T$. Equivalently, this
+can be thought of as rotating the tangle around the $NW$ and $SE$ axis
+(Figure~\ref{fig-opo-minus}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{files/fig-opo-minus-1fdce40a8fa385c913446181d227f7bf.pdf}
+\caption[The ``-'' of a tangle]{Rotating a tangle around the $NW$
+$SE$ diagonal, yielding the negative of the
+tangle.}
+\label{fig-opo-minus}
+\end{figure}
+
+\begin{note}
+Observe that the minus of the +1 tangle
+(Figure~\ref{prelim-fig-basic_1}) is the $\m 1$
+tangle (Figure~\ref{prelim-fig-basic_c-m1}).
+\end{note}
+
+%  prettier-ignore-start
+
+\paragraph{Tangle Addition}\label{subsubsec-opo-plus}
+
+%  prettier-ignore-end
+
+For a pair of generic tangles, $A$ and $B$, we construct their sum $A+B$ by
+first aligning $A$ and $B$ horizontally. We then connect the $NE$ and $SE$ of
+$A$ to the $NW$ and $SW$ of $B$, as seen in Figure~\ref{fig-opo-plus}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{files/fig-opo-plus-5f318d6baa2485438c40832900598a5b.pdf}
+\caption[The sum of two generic tangles.]{The sum of two generic tangles.}
+\label{fig-opo-plus}
+\end{figure}
+
+The class of tangles built by successive addition of the $\pm 1$ basic tangles
+are called the \textbf{integral tangles}.
+
+\paragraph{Tangle Multiplication}
+
+For a pair of generic tangles, $A$ and $B$, we construct their product, $A*B$
+(or $A\ B$) by first aligning $A$ and $B$ horizontally. We then take $-A$ and
+sum the two resulting tangles, equivalent to $-A+B$, as seen in
+Figure~\ref{fig-opo-times}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{files/fig-opo-times-0b4f2e944f3018fb2228367498107e23.pdf}
+\caption[The product of two generic tangles.]{The product of two
+generic tangles.}
+\label{fig-opo-times}
+\end{figure}
+
+\begin{note}
+Notice that
+\begin{equation}
+A*0=-A+0=-A
+\end{equation}
+\end{note}
+
+\paragraph{Tangle Ramification}
+
+For a pair of generic tangles, $A$ and $B$, we construct their ramification
+$A,B$ by first aligning $A$ and $B$ horizontally. We then take $-A$ and $-B$ and
+sum the resulting tangles. This makes ramification equivalent to $-A -B$ or
+$A0+B0$, as seen in Figure~\ref{fig-opo-ramification}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{files/fig-opo-ramification-ab32acc0ffde9c4a27ffdeb51ac9edaa.pdf}
+\caption[The ramification of two generic tangles.]{The ramification
+of two generic tangles.}
+\label{fig-opo-ramification}
+\end{figure}
+
+%  prettier-ignore-start
+
+\paragraph{Indicating Precedence}\label{subsubsec-opo-precedence}
+
+%  prettier-ignore-end
+
+With a set of operations comes the desire to chain multiple operations together.
+The precedence for operations on tangles is indicated by parentheses in the
+obvious way, as seen in Figure~\ref{fig-opo-prec}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{files/fig-opo-prec-d6df532c9a7248cf9c91aaf460b986e2.pdf}
+\caption[Multiple tangle operations chained together.]{Multiple
+operations chained together with precedence indicated by parentheses.}
+\label{fig-opo-prec}
+\end{figure}
+
+%  prettier-ignore-start
+
+\paragraph{The Flype}\label{subsubsec-opo-flype}
+
+%  prettier-ignore-end
+
+When working in this calculus of tangles, a common situation you find yourself
+in is one where the 1 (or $\ \m 1$) tangle is added to a tangle. In this
+situation, we can move the 1 crossing from one side of $T$ to the other by a
+\textbf{flype}. To complete a flype, we grab the top (north) and
+bottom (south) of
+the tangle and rotate (opposite the handedness of the crossing) as in
+Figure~\ref{fig-opo-flype}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{files/flype-c1c5e6a071b468e3e84bc83a5a2255ad.pdf}
+\caption[Demonstrating the flype move.]{A $(+)$-flype on the top and
+a $( -)$-flype on the bottom. Note that the generic
+tangle is flipped around the $x$-axis during the flype.}
+\label{fig-opo-flype}
+\end{figure}
+
+\paragraph{Closures}
+
+Since Conway's interest was in knots, he naturally needed ways to close up a
+tangle to form a knot. In this section, we will introduce two ways that this can
+be accomplished. The first closure method is the simple tangle closure, where
+points on a tangle are connected. The second closure method is the insertion of
+multiple tangles into a graph.
+
+\subparagraph{Simple Tangle Closures}
+
+The first closure method is the simple tangle closure. For a generic tangle $T$,
+we have two options for how to simply close up the tangle. One option is to
+connect a strand from $NW$ to $NE$ and a strand from $SW$ to $SE$
+(Figure~\ref{fig-closure-num}), called the numerator closure. The
+alternative is the
+denominator closure, formed by connecting a strand from $NW$ to $SW$ and a
+strand from $NE$ to $SE$ (Figure~\ref{fig-closure-den}). In both cases, we
+introduce no additional crossings.
+
+\begin{figure}[H]\label{fig-closure-prec}
+\centering
+\begin{subfigure}[c]{0.4\textwidth}
+\centering
+\includegraphics[height=\textwidth]{files/fig-closure-num-b689f8228388f8fb25c454811afe92c1.pdf}
+\caption[The numerator closure of a tangle.]{The numerator closure of a tangle.}
+\label{fig-closure-num}
+\end{subfigure}
+\quad
+\quad
+\quad
+\begin{subfigure}[c]{0.4\textwidth}
+\centering
+\includegraphics[width=\textwidth]{files/fig-closure-den-82a12a03e602f75e4b812dd59cbaae3d.pdf}
+\caption[The denominator closure of a tangle.]{The denominator
+closure of a tangle.}
+\label{fig-closure-den}
+\end{subfigure}
+\caption[The two simple closures of a tangle.]{The two simple
+closures of a tangle.}
+
+\end{figure}
+%  prettier-ignore-start
+
+\subparagraph{Tangle Insertions}\label{subsubsec-opo-insert}
+
+%  prettier-ignore-end
+
+With the calculus of tangles and simple closures, Conway was able to enumerate a
+substantial number of knots, but not all. We should notice a common theme with
+the calculus, when starting with basic tangles every operation forms
+a bigon\footnote{A bigon is a polygon with two sides. In the same way
+that an octagon has
+eight sides or a trigon (triangle) has three.} between two tangles in the
+knot shadow. We can collapse bigons in the knot shadow by deleting edges and
+merging the two vertices of a bigon. For a knot formed by only the operations
+on basic tangles and with simple closures, if we iteratively collapse
+all bigons we obtain a
+four-valent planar\footnote{A planar graph is one that can be drawn
+in the plane without edges
+overlapping.} graph\footnote{A graph is said to be four valent if
+each vertex has four edge ends
+connected to it. In Figure~\ref{fig-bigon_collapse}, the result is
+four valent.} with one vertex, per
+Figure~\ref{fig-bigon_collapse}. The class of knots who have a
+presentation where bigons can
+be collapsed to a single vertex with two self edges are called the
+\textbf{algebraic
+knots}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{files/fig-bigon_collapse-61482270433167ccce09792d12223a13.pdf}
+\caption[Bigon collapsing.]{The collapsing of the bigons in a knot
+shadow from left to right: $\ \bullet$ A trefoil knot. $\ \bullet$ A
+knot shadow for a trefoil knot with a
+bigon highlighted. $\ \bullet$ The previously highlighted bigon
+collapsed, and a new
+bigon highlighted. $\ \bullet$ A graph with no bigons.}
+\label{fig-bigon_collapse}
+\end{figure}
+
+To obtain a knot that has non-bigon connections between inputs, we will first
+identify a four-valent planar graph that has non-bigon connections between
+vertices. The class of graph that is most useful here are the polygon graphs.
+For example, the $6^{**}$ graph (or octahedron) can be seen in
+Figure~\ref{fig-6starstar}. Within the
+$6^{**}$ graph, we notice triangular regions between vertices.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{files/fig-6starstar-0873a710a7445b1d9dea336c329f5d83.pdf}
+\caption[A 6 vertex polygon. ]{A four valent planar graph with six
+vertices and triangular regions between
+vertices. When the graph is placed on the surface of an $S^2$ we get the
+octahedron.}
+\label{fig-6starstar}
+\end{figure}
+
+The simplest thing we can do from here is consider the graph as a knot shadow,
+and for each vertex, choose an over and under strand. While that method would
+give us a knot, it is limiting. Less limiting is a process of tangle insertion.
+In this process we consider each vertex a boundary of a Conway circle in which
+we can place a tangle generated with the Conway calculus. When we insert the
+tangle into the Conway circle (vertex in the graph), the
+$NW,\,NE,\,SW,\,\text{and }SE$ points of the tangle are connected to marked
+points of the Conway circle (the four edges of the vertex). An example of a
+tangle insertion into $6^{**}$ can be seen in
+Figure~\ref{fig-6starstar_insurtion}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{files/fig-6starstar_insurt-a3fdbf3ad9bd55c3bcc22b2d2b2dcff6.pdf}
+\caption[Tangle insertions.]{Tangles inserted into the $6^{**}$
+tangle, with Conway notation
+\\$6^{**}\ast.1\ 2\ 2\ 3\ 1.1\ 2\ 2\ 3\ 1.1\ 2\ 2\ 3\ 1.1\ 2\ 2\ 3\ 1.1\ 2\ 2\ 3\ 1$
+The $\ast$ labeled vertex defines the four boundary points of the
+resulting tangle. }
+\label{fig-6starstar_insurtion}
+\end{figure}
+
+When each vertex has a tangle inserted, the result is a knot. When $n$
+vertices are left empty, the result is a tangle with $n$ boundary Conway
+circles. If $n$ is 1, we have a tangle in the sense we've been discussing. To
+reduce ambiguity, we mark in the graph with a $\ast$ in that empty vertex. On
+each polygon graph, we select a canonical ordering of the vertices,
+per Figure~\ref{fig-6starstar_ordered}. When
+notating the tangle insertions, we list the subtangles we wish to insert in
+graph canonical order, each separated by a period and an empty vertex indicated
+with $\ast$. Following the terminology outlined by Conolly
+\citep{connollyClassificationTabulation2string2021}, we call these
+singularly marked
+polygonal graphs \textbf{constellations}. We call the tangle diagrams
+generated by
+this approach the \textbf{polygonal diagrams}. If a tangle has no algebraic
+representative we call it a \textbf{polygonal tangle}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{files/fig-6starstar_orderd-c5a9af08f3c2d72cc2ea67857cfdc271.pdf}
+\caption[Order of a polygon.]{The $6^{\ast\ast}$ graph with an order applied.}
+\label{fig-6starstar_ordered}
+\end{figure}
+
+\section{Foundations of Tangles}
+
+So far we have used tangles as a building block for knots, we will switch gears
+slightly to consider a tangle as our main object of interest. This section will
+give the foundations of the theory of tangles needed for the remainder of this
+thesis.
+
+\subsection{Tangle Equivalence}
+
+As we saw for knots in \nf{subsec-knot_equivalence}, if we want to
+tell two tangles
+apart, we first need to be able to identify when tangles are the same. Our
+development of the concept of equality of tangles follows closely to that of
+knots. From \nf{subsubsec-deftangles}, we have definitions for tangles in the
+context of knot diagrams and three-dimensional embeddings of knots. This tells
+us that the concepts of equality developed in
+\nf{subsec-knot_equivalence}, namely
+ambient isotopy and Reidemeister moves, will apply in the tangle case with two
+key differences.
+
+The first difference with tangles when compared to knots is that we restrict
+ambient isotopy and Reidemeister moves from pushing a strand through the
+Conway sphere, or Conway circle. The second difference is the handling of the
+boundary points. There are two conventions for how to handle equality with the
+boundary points; first allowing the boundary points to move on the Conway
+sphere, and second fixing the boundary points on the Conway sphere.
+
+\subsubsection{Moveable Boundary Points}
+
+Our first case for handling the boundary of a tangle is allowing the boundary
+points to move freely on the Conway sphere. In this case, a generic tangle, is
+equivalent to each of its rotations and flips (\nf{subsubsec-tangle_flips}). In
+addition to the rotation and flip equivalence, a moveable boundary allows us to
+unwind the ourtermosrt integral components of a tangle
+(Figure~\ref{fig-tangl_eq-unwinding}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{files/fig-tangl_eq-unwindi-273d573f9a22c37519018e3a651b4f17.pdf}
+\caption[Unwinding of integral tangles.]{The progressive unwinding of
+integral tangles, leaving a basic 0 tangle.}
+\label{fig-tangl_eq-unwinding}
+\end{figure}
+
+\begin{note}
+In the moveable boundary case, there is only one basic tangle, the 0 tangle.
+\end{note}
+
+For this thesis, we will assume tangles have a fixed boundary unless explicitly
+mentioned.
+
+\subsubsection{Non-moveable Boundary Points}
+
+The non-moveable case is the more straightforward of the two boundary concepts
+of equality for tangles. In the fixed boundary world, we have four distinct
+basic tangles $1,\ \ \m 1,\ 0,\ \text{and } \infty$ seen in
+Figure~\ref{fig-basic_tangles}
+and Figure~\ref{fig-basic_tangles_extra}. These are all distinct when
+the boundary is fixed. In Figure~\ref{fig-tangl_eq-fixed}
+we find two tangles, each with two crossings, but not equivalent by Reidemeister
+moves.
+
+\begin{figure}
+\centering
+\begin{subfigure}[t]{.45\textwidth}
+\centering
+\includegraphics[width=\textwidth]{files/fig-tang_eq-fixed-2-b02757c89b1831f1ec4678fa05e05464.pdf}
+\caption[A horizontal integral tangle with two crossings.]{A
+horizontal integral tangle with two crossings.}
+\label{fig-tang_eq-fixed-2}
+\end{subfigure}
+~
+\begin{subfigure}[t]{.45\textwidth}
+\centering
+\includegraphics[width=\linewidth]{files/fig-tang_eq-fixed-v2-cb810de4fba3b5df9ca4eab5dcecff9d.pdf}
+\caption[A vertical integral tangle with two crossings.]{A vertical
+integral tangle with two crossings.}
+\label{fig-tang_eq-fixed-v2}
+\end{subfigure}
+
+\caption[Two nonequivalent tangles with two crossings.]{Two no
+equivalent tangles with two crossings.}
+\label{fig-tangl_eq-fixed}
+\end{figure}
+%  prettier-ignore-start
+
+\subsection{Modified Tangle Operations}\label{subsec-tangle_operations}
+
+%  prettier-ignore-end
+
+In \nf{subsubsec-conway_calc} we saw Conway's calculus of tangles. While this
+construction is powerful and flexible, it's rather unintuitive and cumbersome
+when combined with computer methods. In this section, we will describe a
+slightly modified, but equivalent, version of the calculus. This version of
+tangle arithmetic is due to Kauffman and Goldman
+\citep{goldmanRationalTangles1997}.
+
+Instead of Conway's three operations on the two basic tangles 1 and 0, this
+arithmetic needs the two basic operations and all four basic tangles
+(Figure~\ref{fig-basic_tangles} and
+Figure~\ref{fig-basic_tangles_extra}). The first operation in this
+arithmetic is exactly Conway's horizontal sum, $+$
+(Figure~\ref{fig-opo-plus}). The second
+operation is the vertical sum, $\vee$, sometimes written
+$*$\citep{goldmanRationalTangles1997} or
+$+^\prime$\citep{kauffmanClassificationRationalKnots2002}. For
+generic tangle $A$ and
+$B$, $A\vee B$ is built analogously to the $+$ but stacking $A$ vertically on
+top of $B$ instead of horizontally (Figure~\ref{fig-opo-vee}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{files/fig-opo-vee-0108b868def1c0b26ad7e858e31be367.pdf}
+\caption[The vertical sum of two generic tangles.]{The vertical sum
+of two generic tangles.}
+\label{fig-opo-vee}
+\end{figure}
+
+These two operations combined with parentheses as in
+\nf{subsubsec-opo-precedence}
+give a natural arithmetic structure to the combinations of tangles. We'll see in
+later sections how this structure is easily encoded on a computer as a data
+structure. We conclude the section by redefining the \textbf{algebraic tangles}.
+
+\begin{definition}{Conway, Page
+331\textbf{\citep{conwayEnumerationKnotsLinks1970}}}{def-algebraic}
+Any tangle that can be produced by the two binary operations $+$ and $\vee$ on
+the four basic tangles is called an \textbf{algebraic tangle}.
+
+\end{definition}
+%  prettier-ignore-start
+
+\subsection{Integral Tangles}\label{subsec-integral_tangle}
+
+%  prettier-ignore-end
+
+We finish the chapter with a description of a class of tangles we first
+encountered in \nf{subsubsec-opo-plus}. The integral tangles are the
+simplest class
+of tangle that are built from the basic operations on basic tangles. We start by
+defining the horizontal integral tangles.
+
+\begin{definition}{}{}A tangle built from the successive sum of $n +1$
+tangles is called a
+\textbf{horizontal integral} (or simply integral) $n$ tangle.
+Similarly, a sum of $\m 1$ tangles is a
+horizontal integral $\m n$ tangle.
+
+\end{definition}It is convenient to notate the horizontal integral
+tangles simply by their
+corresponding integer, $\pm n$. A similar construction can be defined for the
+$\vee$ operation, yielding the vertical integral tangles.
+
+\begin{definition}{}{}A tangle built from the successive vertical sum of
+$n+1$ tangles is called a
+vertical integral $n$ tangle. Similarly, a vertical sum of $\m 1$ tangles is a
+vertical integral $\m n$ tangle.
+
+\end{definition}We will notate the vertical
+tangles by $\pm\frac{1}{n}$.

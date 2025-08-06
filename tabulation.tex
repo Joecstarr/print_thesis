@@ -1,0 +1,3502 @@
+\chapter{Tabulation}\label{ch-tabulation}
+
+\section{The First Tangle Datasets}
+
+This chapter will describe the methodology used to answer two of the essential
+questions detailed in Section~\ref{sec-intro-overview}.
+
+\begin{quote}
+  ``How do I systematically construct rational tangles?'', ``How do I tell two
+  rational tangles I make apart?'', and ``How do I generate new
+  rational tangles?''
+\end{quote}
+
+\begin{quote}
+  ``How do I systematically construct Montesinos tangles?'', ``How do I tell two
+  Montesinos tangles I make apart?'', and ``How do I generate new Montesinos
+  tangles?''
+\end{quote}
+
+The methodologies outlined in this section are for relatively simple classes of
+tangles, the rational and Montesinos tangles. As we progress, we will see a
+common solution pattern that outlines the general approach to the more difficult
+algebraic/arborescent case in Section~\ref{sec-arborescent}. That
+approach takes the form of
+the cadence:
+
+\begin{enumerate}
+  \item Define the object.
+  \item Define equivalence for the object.
+  \item Identify a unique representation.
+  \item Generate those unique representatives\footnote{Each tangle
+      can be represented by an infinite number of diagrams. A unique
+      representative in this context means a particular ``flavor'' of
+      diagram that
+    exists for every tangle in the class we are concerned about.}.
+\end{enumerate}
+
+%  prettier-ignore-start
+
+\subsection{Rational Tangles}\label{sec-rational}
+
+%  prettier-ignore-end
+
+We will see in this section that \textbf{rational tangles},
+originally described by
+Conway \citep{conwayEnumerationKnotsLinks1970}, have a deeply
+combinatorial nature,
+making them among the simplest classes of tangle. This simplicity leads to the
+rational tangles, and their knot closures, being some of the most commonly
+studied objects in knot theory.
+
+\subsubsection{Construction}
+
+In our development of the modified tangle calculus
+(Section~\ref{subsec-tangle_operations})
+we described a way to glue tangles together, allowing us to take simple objects
+and build complex objects. That approach forms the basis for our construction of
+the rational tangles.
+
+We start, with an intuitive description of the construction. Imagine a zero
+tangle (Figure~\ref{prelim-fig-basic_0}), now attach to that tangle a
+crank on the right
+(east) side (Figure~\ref{fig-rat_tang-crank}). We allow, for a
+moment, the fixed points of
+the tangle to move. If we crank a half turn clockwise or anti-clockwise, we
+introduce a twist, if we turn the crank $n$ half turns we make an integral
+$n$ tangle
+(Section~\ref{subsec-integral_tangle}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/fig-rat_tang-crank-8529a02a85dbb7212e706bdd68e2a9b4.pdf}
+  \caption[A set of three turns, changing a basic 0 tangle into an
+  integral 3 tangle.]{A set of three turns, changing a basic 0 tangle
+  into an integral 3 tangle.}
+  \label{fig-rat_tang-crank}
+\end{figure}
+
+When we have completed $n$ turns we take the crank and move it to the bottom
+(south) side of the tangle. We turn the crank to add $n$ half turns, this time
+building a vertical integral tangle. Continuing this, alternating between right
+and bottom sets of half turns, as seen in
+Figure~\ref{fig-rat_tang-crank_many}, we create a \textbf{rational
+tangle}. For a rational tangle $T$, the list of counts for right and bottom
+twists is the \textbf{twist vector}
+(Definition~\ref{rational-def-twistvector}) of the rational
+tangle.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/fig-rat_tang-crank_m-bbfbb8ad5a58ffb705d4dab5ff1ebff7.pdf}
+  \caption[The set of alternating turns building a rational
+  tangle.]{The set of alternating turns building a rational tangle
+  $\LB3\ 2\ 1\RB$.}
+  \label{fig-rat_tang-crank_many}
+\end{figure}
+
+Formalizing this intuitive construction requires the $\vee$ and $+$ operations
+(Section~\ref{subsec-tangle_operations}), as well as the integral tangles
+(Section~\ref{subsec-integral_tangle}). This formalization was
+originally stated by Conway
+\citep{conwayEnumerationKnotsLinks1970} but was ultimately proved by Burde and
+Zieschang, we will give a later construction by Kauffman and Goldman
+\citep{goldmanRationalTangles1997}. For convenience, we denote a
+horizontal integral
+tangle with $a\in\Z$ crossings as $t_a$, similarly, a vertical integral tangle
+with $b\in \Z$ crossings as $t_b^\prime$.
+
+\begin{definition}{Kauffman and Goldman, Page 310
+    \textbf{\citep{goldmanRationalTangles1997,
+  conwayEnumerationKnotsLinks1970}}}{rational-def-rational}
+  To build a \textbf{rational tangle}, take one of the following constructions:
+
+  \begin{enumerate}
+    \item Start with a horizontal tangle $t_{a_0}$. Add by $\vee$ a
+      vertical tangle
+      $t_{b_0}^{\prime}$ on the bottom, then add by $+$ a horizontal tangle
+      $t_{a_1}$ on the right, then add by $\vee$ a $t_{b_1}^{\prime}$ on the
+      bottom, and so on, stopping after a finite number of such steps at a
+      horizontal tangle $t_{a_n}$.
+    \item Start with a vertical tangle $t_{b_0}^\prime$. Add by $+$ a horizontal
+      tangle $t_{a_0}$ on the right, then add by $\vee$ a vertical tangle
+      $t_{b_1}^\prime$ on the bottom, then add by $+$ a $t_{a_1}$ on
+      the right, and
+      so on, stopping after a finite number of such steps at a
+      horizontal tangle $t_{a_n}$.
+  \end{enumerate}
+
+\end{definition}
+
+\begin{note}
+  In the first case the twist vector has an odd number of entries and in the
+  second the twist vector has an even number of entries.
+\end{note}
+
+To see the alignment between Definition~\ref{rational-def-rational}
+and our intuitive
+construction, view the turning of the crank as corresponding to horizontal and
+vertical integral tangles, and the alternating of right and bottom as
+corresponding to alternating $+$ and $\vee$.
+
+\paragraph{Correspondence With Extended Rational Numbers}
+
+Now we formally address our first two essential questions by:
+
+\begin{enumerate}
+  \item Describing a notation for rational tangles.
+  \item Demonstrating a correspondence between the rational tangles
+    and the extended rational
+    numbers.
+  \item Showing that the correspondence distinguishes (tells apart)
+    rational tangles.
+\end{enumerate}
+
+The answer to our first essential question, ``How do I systematically construct
+rational tangles?'', is seen by formalizing the twist vector notational strategy
+we saw in our intuitive formulation for rational tangles. This allows us to
+systematically write down a rational tangle by a list of integers.
+
+\begin{definition}{Conway, Page 332
+    \textbf{\citep{conwayEnumerationKnotsLinks1970,
+  goldmanRationalTangles1997}}}{rational-def-twistvector}
+  The list of integers of the sets of tangles $t_{a_i}$ and $t_{b_j}^\prime$
+  from Definition~\ref{rational-def-rational} ordered as in
+  Equation~(\ref{rational-def-math-tv}) or
+  (\ref{rational-def-math-tv2}) is called a
+  \textbf{twist vector}.
+
+  \begin{equation}
+    \label{rational-def-math-tv}
+    \LB a_0\ b_0\ a_1\ b_1\ \cdots\ a_n\RB
+  \end{equation}
+  \begin{equation}
+    \label{rational-def-math-tv2}
+    \LB b_0\ a_0\ b_1\ \cdots\ a_n\RB
+  \end{equation}
+
+\end{definition}We are now ready to answer the second of the
+essential questions, ``How do I tell
+two rational tangles I make apart?'' The critical observation to answer the
+questions is due to Conway's use \citep{conwayEnumerationKnotsLinks1970} of the
+entries of a twist vector as the entries for a continued fraction
+(Definition~\ref{rational-def-frac}). Since the twist vector is of
+finite length, this continued
+fraction corresponds to a rational number \citep{rockettContinuedFractions1998}.
+
+\begin{definition}{Conway, Page 332
+  \textbf{\citep{conwayEnumerationKnotsLinks1970}}}{rational-def-frac}
+  For a rational tangle $T$ we call
+  Equation~(\ref{rational-math-frac}) the \textbf{fraction of a
+  rational tangle} and denote it $F\LP T\RP$.
+  \begin{equation}
+    \label{rational-math-frac}
+    \frac{p}{q} = a_{n} + \cfrac{1}{b_n + \cfrac{1}{a_n + \cfrac{1}{b_{n-1} +
+    \cfrac{1}{a_{n-1} + \cfrac{1}{\ddots\,+\cfrac{1}{a_0}}}}}}
+  \end{equation}
+
+\end{definition}
+
+\begin{note}
+  The correspondance with the extended rational numbers means that
+  $F\LP\LB1\ \m 1\ 0\RB\RP=\frac{1}{0}$ corresponds to the basic $\infty$ tangle
+  (Figure~\ref{prelim-fig-basic_nc-inf}).
+\end{note}
+
+Kauffman and Goldman \citep{goldmanRationalTangles1997} prove
+(Theorem~\ref{rational-thm-conways})
+that this correspondence distinguishes, tells apart, rational tangles. Meaning,
+given two rational tangles, if their fractions are the same the tangles are
+isotopic, and if the fractions are different, the tangles are not isotopic. This
+answers the second of our essential questions.
+
+\begin{theorem}{Conway's Theorem, Kauffman and Goldman page 315
+    \textbf{\citep{conwayEnumerationKnotsLinks1970, burdeKnots2013,
+  goldmanRationalTangles1997}}}{rational-thm-conways}
+  Let $T_1$ and $T_2$ be rational tangles. $F\LP T_1\RP=F\LP T_2\RP$ if and only
+  if $T_1$ is ambient isotopic to $T_2$.
+
+\end{theorem}Observe, Theorem~\ref{rational-thm-conways} does not
+discount the possibility of two
+non-equivalent twist vectors, those differing in at least one entry,
+representing the same rational tangle.
+Example~\ref{rational-ex-tvssamebutdiff} demonstrates
+that the possibility is true. In fact, for each rational tangle, the set of
+twist vectors representing it is infinite.
+
+\begin{example}{}{rational-ex-tvssamebutdiff}
+  \begin{equation}
+    \begin{aligned}
+      F\LP\LB 1\ 7\ 0\ 1\RB \RP &= \frac{9}{1}\\
+      F\LP\LB \m 3\ 1\ \ \m 1\ \m 1\ \m 1\ 1\ 9\RB \RP &= \frac{9}{1}\\
+      F\LP\LB 1\ \m1\ 1\ \m1\ 7\ 0\ 3\RB \RP &= \frac{9}{1}\\
+      F\LP\LB 1\ \m1\ \m1\ 1\ \m1\ 1\ \m1\ 1\ \m1\ 9\RB \RP &= \frac{9}{1}\\
+      F\LP\LB 1\ 8\RB \RP &= \frac{9}{1}\\
+      F\LP\LB 9\RB \RP &= \frac{9}{1}\\
+    \end{aligned}
+  \end{equation}
+
+\end{example}To effectively answer our third essential question,
+``How do I generate rational
+tangles?'', we will need to determine a unique twist vector representative for
+each rational tangle. A unique representative allows us to simply and
+efficiently write down each tangle without risk of duplicates showing up on our
+list.
+
+\subsubsection{Canonical Twist Vectors}
+
+Identifying a unique representative will stem from properties of finite
+continued fractions. We start by defining a specific subclass of finite
+continued fractions with integer coefficients, the \textbf{regular continued
+fractions}. We frame the definition in the context of twist vectors.
+
+\begin{definition}{Kauffman and Goldman, page
+    318\textbf{\citep{kauffmanClassificationRationalKnots2002,
+  rockettContinuedFractions1998}}}{}
+  A continued fraction with integer coefficients $c_i$ is called a
+  \textbf{regular
+  continued fraction} if $c_i< 0$ for every coefficient or $0< c_i$ for
+  every coefficient except the last which may be 0.
+
+\end{definition}Conveniently, each rational number corresponds to
+exactly two regular continued
+fractions \citep{rockettContinuedFractions1998}. The first is a twist
+vector with the
+leftmost element greater than or equal to 2, and the second with leftmost
+element equal to 1, per Equation~(\ref{rational-math-twotv}).
+Observe, one of these
+twist vectors has an even number of entries, and one has an odd number of
+entries.
+
+\begin{equation}
+  \label{rational-math-twotv}
+  \begin{aligned}
+    F\LP\LB 9\RB \RP &= \frac{9}{1}= 8+\frac{1}{1} = F\LP\LB 1\ 8\RB \RP \\
+    F\LP\LB 9\ 0\RB \RP &= 0+\frac{1}{9}=0+\frac{1}{8+\frac{1}{1}}=
+    F\LP\LB 1\ 8\ 0\RB \RP \\
+  \end{aligned}
+\end{equation}
+
+\begin{note}
+  The fraction $\frac{1}{0}$ corresponds to the $\LB 0\ 0\RB$ twist vector.
+\end{note}
+
+To identify a unique representative for a rational number and hence rational
+tangle, we will select, for convenience, the odd length twist vector as our
+unique representative.
+
+\begin{definition}{Kauffman and Lambropoulou, Page 13
+  \textbf{\citep{kauffmanClassificationRationalKnots2002}}}{rational-def-canonrat}
+  A twist vector is called a \textbf{canonical twist vector} if it contains
+  coefficients of a regular continued fraction and is of odd length or is
+  $\LB0\ 0\RB$.
+
+\end{definition}
+\subsubsection{Computational Methods}
+
+Armed with a unique representative for a rational tangle, we can construct our
+computational answer to the third essential question.
+
+\paragraph{Notation}
+
+We start by describing how we will digitally store a rational tangle. In the
+rational tangle case, the theoretical encoding strategy of twist vectors happens
+to be well suited for computational storage. A twist vector can be
+computationally stored identically to its written form, a list of space
+separated integers delimited by a pair of square braces, $\LB\ \RB$. As we will
+see in Section~\ref{sec-arborescent} this direct translation of
+theoretical notation for tangles to
+computational notation is not always the case.
+
+\paragraph{Generation}
+
+A common tactic in the knot tabulation space is to pare down the number of items
+that must be tabulated by leveraging symmetries of the objects being tabulated.
+For example, the $\LB 3\RB$ and $\LB \m 3\RB$ tangles are related to each other
+by a minus operation (Section~\ref{subsubsec-conway_minus}). Meaning,
+if we tabulate
+$\LB 3\RB$, we can recover $\LB \m 3\RB$ with multiplication by $\m 1$. This
+fact holds for all rational tangles as demonstrated by
+Lemma~\ref{rationa-lema-pmtv}.
+Allowing us to focus our efforts on the rational tangle with twist vectors
+containing only positive entries.
+
+\begin{lemma}{Kauffman and Lambropoulou, Page 19
+  \textbf{\citep{kauffmanClassificationRationalKnots2002}}}{rationa-lema-pmtv}
+  For a tangle $T$ with negative $-T$ (Section~\ref{subsubsec-conway_minus}), if
+  $F\LP T\RP=\frac{p}{q}$ then $F\LP \m T\RP=\m\frac{ p}{q}$.
+
+\end{lemma}We now begin our development of a generation strategy for
+twist canonical twist
+vectors of rational tangles. The method seen here utilizes a
+common combinatorial method for defining compositions of integers,
+the same is used for
+rational tangle counting by Bryhtan \citep{bryhtanTabulating2stringTangles2024}.
+Consider, for a given crossing number $n$, what is the most ``obvious'' twist
+vector? A viable candidate for most ``obvious'' is a twist vector, of the form
+seen in Equation~(\ref{rational-math-1s}), dropping the trailing 0 where needed.
+
+\begin{equation}
+  \label{rational-math-1s}
+  \LB 1\ 1\ 1\ \cdots\ 1\RB
+\end{equation}
+
+The 1's twist vector (\ref{rational-math-1s}) is an ideal starting
+point for developing
+a generation strategy, as it distributes the data of a rational tangle as
+broadly as possible. Next, we consider how we might transform the 1's twist
+vector into a twist vector with a two crossing integral components. We can do
+this by exchanging the space between the first and second 1 with a numeric
+$+$.
+
+\begin{equation}
+  \label{rational-math-1plus}
+  \begin{aligned}
+    &\LB 1\square 1\ 1\ \cdots\ 1\RB\\
+    &\LB 1+1\ 1\ \cdots\ 1\RB\\
+    &\LB 2\ 1\ \cdots\ 1\RB\\
+  \end{aligned}
+\end{equation}
+
+This process tells us that we can utilize the exchange of whitespace of a twist
+vector for $+$ to generate new twist vectors. To complete our generation, we
+must generate every combination of exchanges.
+
+The 1's twist vector with crossing number $n$ has $n$ 1s and $n -1$ spaces. In
+each space position, we have the option between a space and $+$. To enumerate
+all $2^{n -1}$ combinations, we can simply count, in binary, from 1 to
+$2^{n -1}$, as in Example~\ref{rational-ex-counting}.
+
+\begin{example}{Combinations of exchanges for $n=4$ and their twist
+  vector }{rational-ex-counting}
+  \begin{equation}
+    \begin{aligned}
+      000\to \square \square \square\to &\LB1\ 1\ 1\ 1\RB \\
+      001\to \square \square +\to &\LB1\ 1\ 2\RB \\
+      010\to \square + \square\to &\LB1\ 2\ 1\RB \\
+      011\to \square + +\to &\LB1\ 3\RB \\
+      100\to + \square \square\to &\LB2\ 1\ 1\RB \\
+      101\to + \square +\to &\LB2\ 2\RB \\
+      110\to + + \square\to &\LB3\ 1\RB \\
+      111\to + + +\to &\LB4\RB \\
+    \end{aligned}
+  \end{equation}
+
+\end{example}Our final refinement in this process it to transform
+this collection into
+canonical twist vectors. Half of the twist vectors, those of odd length,
+generated in this process are already canonical. To canonize the even length
+twist vectors, we append 0 to the right most position of each list, turning
+the even vectors into an odd canonical vectors.
+
+\begin{note}
+  Appending 0 to the even twist vectors makes each of the fractions for these
+  twist vectors sit in the unit interval, $\LB 0,1\RP$.
+\end{note}
+
+We conclude the section with a set of algorithms that describe a method for
+computationally generating all rational tangles up to a given crossing number.
+
+\begin{remark}{Find all rational tangles of crossing number
+  \textbf{$n$} }{find-rat-tang-of-n}
+  \textbf{Input}
+
+  \begin{itemize}
+    \item A crossing number $n$
+  \end{itemize}
+
+  \textbf{Output}
+
+  \begin{itemize}
+    \item All collection $T$ of twist vectors
+  \end{itemize}
+
+  \textbf{Routine}
+
+  \begin{enumerate}
+    \item Generate $O$ the 1's twist vector as in
+      Equation~(\ref{rational-math-1s}) for $n$
+    \item for $i=0$ to $2^{n -1}$
+      \begin{enumerate}
+        \item Transform $i$ into its binary representation
+        \item Exchange as in Equation~(\ref{rational-math-1plus})
+          digits of $i$ with spaces where $i$
+          is $O$ and with $+$ where $i$ is 1
+        \item Apply operations to the 1s vector and store the
+          resulting vector as $O_r$
+        \item If $O_r$ is odd length, store $O_r$ in $T$
+        \item Else, append 0 to $O_r$ and store
+      \end{enumerate}
+  \end{enumerate}
+
+\end{remark}
+\begin{remark}{Find all rational tangles up to crossing number
+  \textbf{$n$}}{find-rat-tang-to-n}
+  \textbf{Input}
+
+  \begin{itemize}
+    \item A crossing number $n$
+  \end{itemize}
+
+  \textbf{Output}
+
+  \begin{itemize}
+    \item All collection $T$ of twist vectors
+  \end{itemize}
+
+  \textbf{Routine}
+
+  \begin{enumerate}
+    \item Store the twist vectors $\LB 0\RB,\LB 0\ 0\RB,\LB 1\RB$
+    \item for $i=2$ to $n$
+      \begin{enumerate}
+        \item Execute Algorithm~\ref{find-rat-tang-of-n} with $i$
+      \end{enumerate}
+  \end{enumerate}
+
+\end{remark}
+%  prettier-ignore-start
+
+\subsection{Montesinos Tangles}\label{sec-monttang}
+
+%  prettier-ignore-end
+
+In this section, we will use the rational tangles to build a yet more complex
+class of tangles, the Montesinos tangles. This building up process demonstrates
+one of the core strategies for tangle tabulation.
+
+\subsubsection{Construction}
+
+With the rational tangles in hand, we wish to utilize that data to enumerate
+additional tangles. One way we have seen to build simple objects into complex
+objects is to combine two tangles with the $+$ or $\vee$ operation. To keep
+complexity under control, we start with combining tangles with repeated $+$ sum.
+When all summands, $R_i$ in Equation~(\ref{mont-math-def}) are rational,
+we call the result of the sum a \textbf{Montesinos Tangle}
+\citep{ernstTANGLEEQUATIONS1996, bonahonNewGeometricSplittings2016}.
+
+\begin{equation}
+  \label{mont-math-def}
+  R_0+R_1+\cdots+R_n
+\end{equation}
+
+\begin{note}
+  Under this characterization of the Montesinos tangles, every rational tangle
+  including the integral tangles are Montesinos tangles with a single summand.
+\end{note}
+
+\paragraph{Unique Representative}
+
+Next, we develop a classification of Montesinos tangles, allowing us to tell two
+Montesinos tangles apart. For each rational summand $R_i$ in a
+Montesinos tangle, we have four possibilities:
+
+\begin{enumerate}
+  \item $R_i$'s canonical twist vector is positive and ends in 0
+  \item $R_i$'s canonical twist vector is positive and does not end in 0
+  \item $R_i$'s canonical twist vector is negative and ends in 0
+  \item $R_i$'s canonical twist vector is negative and does not end in 0
+\end{enumerate}
+
+Observe that in the second and fourth cases, $R_i$ terminates in a horizontal
+integral tangle. In these cases, the tangle can be simplified by using the flype
+(Section~\ref{subsubsec-opo-flype}) to move the horizontal crossings
+to be the right most
+summand, seen in Figure~\ref{mont-ex-flypesimple}. When this process
+is carried out for each
+summand of the type in cases two and four, the resulting summands all fall into
+cases one and three.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/fig-mont-fc6488a6dd1ca987118be5ace13f3e88.pdf}
+  \caption[A Montesinos tangle simplification.]{A Montesinos tangle
+    \\$\LB1\ 2\ 2\RB+\LB \m1\ \m2\ 0\RB+\LB \m3\ \m2\ \m1\RB+\LB
+    1\ 2\ 0\RB+\LB1\ 2\ 2\RB$
+    simplifying to \\$\LB 1\ 2\ 0\RB+\LB \m 1\ \m 2\ 0\RB+\LB \m3\ \m
+  2\ 0\RB+\LB1\ 2\ 2\RB+\LB1\ 2\ 0\RB+\LB 3\RB$}
+  \label{mont-ex-flypesimple}
+\end{figure}
+
+We will now pare down to a single possibility, case one. Consider a summand
+$R_i$ in case three, meaning $\m 1 <F\LP R_i\RP<0$ except for $R_n$, which may
+be integral. Theorem~\ref{rational-thm-conways} tells us that if we
+can find an alternative,
+potentially non-canonical, twist vector that fits our needs, we are free to
+exchange without impacting topology. What we would like is an odd length twist
+vector, where every entry is positive, except for the rightmost, which is a
+negative value, see Figure~\ref{mont-ex-equ-replace}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/3_2_-1-6b0c825b6d0643ae9067e9762d6f498c.pdf}
+  \caption[A transformation of a canonical rational tangle.]{On the
+    left rational tangle $\LB \m1\ \m2\ \m1\ \m1\ 0\RB$ and on the right
+    $\LB 3\ 2\ \m1\RB$. These tangles have fractions
+    $F\LP\LB \m1\ \m2\ \m1\ \m1\ 0\RB\RP=\frac{\m4}{7}$ and
+  $F\LP\LB 3\ 2\ \m1\RB\RP=\frac{\m4}{7}$ showing the tangles to be isotopic.}
+  \label{mont-ex-equ-replace}
+\end{figure}
+
+This ensures that the fraction is still negative but will allow us to flype the
+terminal horizontal integral tangle to the right. Rockett and Sz\"usz
+give a lemma
+that establishes the existence of such a twist vector for each rational number.
+
+\begin{lemma}{Rockett and Sz\"usz, Page 3
+  \textbf{\citep{rockettContinuedFractions1998}}}{mont-lem-other_cfrac}
+  Every rational number has a continued fraction with positive integer entries
+  except for the first (rightmost twist vector entry) which is an integer.
+
+\end{lemma}Full details on how the conversion from any twist vector to this
+twist vector can be found in Rockett and Sz\"usz
+\textbf{\citep{rockettContinuedFractions1998}}.
+We have now shown that each case (2,3,4) can be transformed into the first case,
+and we can define a canonical form for Montesinos tangles.
+
+\begin{theorem}{Bonahon and Siebenmann, Theorem 11.7
+  \textbf{\citep{nakanoEfficientGenerationPlane2002}}}
+  Every non-rational Montesinos tangle $T$ admits a canonical diagram satisfying
+  the following construction:
+  \begin{equation}
+    T \cong R_0+\cdots+R_m+\frac{k}{1}
+  \end{equation}
+  where each $R_i \cong \frac{p_i}{q_i}$ is a rational subtangle in
+  canonical form with
+  fraction satisfying $0<\frac{p_i}{q_i}<1$, and $\frac{k}{1}$ is a horizontal
+  integer subtangle.
+
+\end{theorem}
+\subsubsection{Computational Methods}
+
+\paragraph{Notation}
+
+Before we can generate Montesinos tangles, we need to define an efficient
+notation for computation and storage. Similar to what we saw in the rational
+tangle case, the theoretical notation for Montesinos tangles is sufficient for
+computation. However, with eyes on future computational work, we will generalize
+our notation to increase reusability and the efficiency of storage..
+
+Montesinos tangles are simple forms of the algebraic tangles
+(Definition~\ref{def-algebraic}),
+so we will build a notational strategy for general algebraic tangles.
+The strategy seen here is similar to those found in Conolly
+\citep{connollyClassificationTabulation2string2021}, Caudron
+\citep{caudron1982classification}, and Gren, Sulkowska, and,
+Gabrov\v{s}ek \citep{gren2025classificationalgebraictangles}. The
+theoretical notation for algebraic tangles is outlined in
+Section~\ref{subsec-tangle_operations} and seen in
+Figure~\ref{tangle-alg-tree-2}.
+We can simplify the notation, without losing fidelity, by substituting the
+integral leaf tangles for rational tangle twist vectors. Additionally, we can
+improve the storage overhead by storing the tree as a string in Polish notation
+\citep{lukasiewiczElementyLogikiMatematycznej1929}. Storing in Polish
+notation allows
+us to drop all the parentheses from our notation, saving two bytes in each
+instance.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/mont-81522111e034b6335aedb3c82a3272ea.pdf}
+    \caption{}
+    \label{tangle-alg-tree-1}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/mermaid-253f34ae-3e58cd025723b9ae2cdb797305599ac0.png}
+    \caption{}
+    \label{tangle-alg-tree-2}
+  \end{subfigure}
+  \caption[Conversion of a tangle to a algebraic tangle tree.]{The
+    tangle in \ref{tangle-alg-tree-1}:
+    \\$\cdot$Algebraically:$\LB1\ 2\ 0\RB+\LP\LB2\ 1\ 0\RB+\LB2\ 2\ 0\RB\RP$
+    \\$\cdot$In polish
+    notation:$+\LB1\ 2\ 0\RB+\LB2\ 1\ 0\RB\LB2\ 2\ 0\RB$ $\cdot$\\ As an
+  algebraic tangle tree in \ref{tangle-alg-tree-2}}
+  \label{tangle-alg-tree}
+
+\end{figure}
+\paragraph{Generation}
+
+In this section, we will design an algorithm that allows us to efficiently
+generate new Montesinos tangles up to a given crossing number. As we saw, the
+construction of a Montesinos tangle is based on the repeated summation of
+rational tangles. Consequently, our generation strategy will utilize our table
+of rational tangles.
+
+To start, we need a mechanism that allows us to select all possible combinations
+of rational tangles with crossing numbers that sum to our target. For a
+Montesinos tangle $T$, the set of rational components $\LS R_i\RS_i^n$ combined
+with the integral component $k$ corresponds to an ordered list of crossing
+numbers as in Equation~(\ref{mont-math-orderedlist}).
+
+\begin{equation}
+  \label{mont-math-orderedlist}
+  CN\LP R_0\RP,\ \cdots,\ CN\LP R_n\RP,\  CN\LP k\RP
+\end{equation}
+
+We call a list of the form seen in (\ref{mont-math-orderedlist}) a
+\textbf{stencil} for a
+Montesinos tangle. By construction, every canonical Montesinos tangle relates to
+precisely one stencil. Observe, that $2\leq CN\LP R_i\RP$ since $\frac{1}{2}$ is
+the lowest crossing number rational tangle with fraction in the unit interval.
+
+Generation for all Montesinos tangles of a given crossing number at this point
+can be broken down into two steps:
+
+\begin{enumerate}
+  \item Generate all stencils
+  \item Fill in the stencils with all rational tangles of the
+    appropriate crossing
+    number whose fraction is in the unit interval (plus an integral
+    tangle in the rightmost position).
+\end{enumerate}
+
+For the first step, we require a mechanism for breaking an integer into all
+possible combinations where the parts sum to the integer. Luckily, we have
+already seen how to do this, in the context of a twist vector. We follow the
+same counting algorithm outlined in
+Algorithm~\ref{find-rat-tang-of-n} however, we modify the
+algorithm to keep both the even and odd outputs, but filter out stencils with
+entries less than two.
+
+\begin{example}{}{ex-mont-stencils}The set of all possible stencils
+  for crossing number 5:
+
+  \bigskip\noindent
+  \begin{tabular}{p{\dimexpr 0.250\linewidth-2\tabcolsep}p{\dimexpr
+      0.250\linewidth-2\tabcolsep}p{\dimexpr
+    0.250\linewidth-2\tabcolsep}p{\dimexpr 0.250\linewidth-2\tabcolsep}}
+    \toprule
+    $1\ 1\ 1\ 1\ 1$ & $2\ 1\ 1\ 1$ & $1\ 2\ 1\ 1$ & $1\ 1\ 2\ 1$ \\
+    $1\ 1\ 1\ 2$ & $3\ 1\ 1$ & $1\ 3\ 1$ & $1\ 1\ 3$ \\
+    $2\ 2\ 1$ & $2\ 1\ 2$ & $1\ 2\ 2$ & $3\ 2$ \\
+    $2\ 3$ & $4\ 1$ & $1\ 4$ & $5$ \\
+    \bottomrule
+  \end{tabular}
+
+  \bigskip$\!\,$The set of stencils for crossing number 5:
+
+  \bigskip\noindent
+  \begin{tabular}{p{\dimexpr 0.500\linewidth-2\tabcolsep}p{\dimexpr
+    0.500\linewidth-2\tabcolsep}}
+    \toprule
+    $3\ 2$ & $2\ 3$ \\
+    \bottomrule
+  \end{tabular}
+
+  \bigskip
+\end{example}For the second step, for each entry in the stencil we
+create a list of rational tangles in the unit interval with that entry for a
+crossing number. For the rightmost entry of the stencil we also include the
+horizontal integral tangles with crossing number equal entry. This creates all
+combinations of input tangles given by the stencil.
+
+\begin{example}{}{ex-mont-stencil_insert}The set of rational tangles
+  of crossing numbers two and three:
+
+  \bigskip\noindent
+  \begin{tabular}{p{\dimexpr 0.500\linewidth-2\tabcolsep}p{\dimexpr
+    0.500\linewidth-2\tabcolsep}}
+    \toprule
+    Two & Three \\
+    \hline
+    $[1\ 1\ 0]$ & $[2\ 1\ 0]$ \\
+    $[2]$ & $[1\ 2\ 0]$ \\
+    & $[3]$ \\
+    \bottomrule
+  \end{tabular}
+
+  \bigskip$\!\,$The set of stencils for crossing number five, with
+  rational tangles inserted in polish notation:
+
+  \bigskip\noindent
+  \begin{tabular}{p{\dimexpr 0.500\linewidth-2\tabcolsep}p{\dimexpr
+    0.500\linewidth-2\tabcolsep}}
+    \toprule
+    $3\ 2$ & $2\ 3$ \\
+    \hline
+    $+[2\ 1\ 0][1\ 1\ 0]$ & $+[1\ 1\ 0][2\ 1\ 0]$ \\
+    $+[1\ 2\ 0][1\ 1\ 0]$ & $+[1\ 1\ 0][1\ 2\ 0]$ \\
+    \bottomrule
+  \end{tabular}
+
+  \bigskip
+\end{example}We conclude the section with a set of algorithms that
+describe this method for
+computationally generating all Montesinos tangles up to a given crossing number.
+\newpage
+\begin{remark}{Find all stencils of crossing number
+  \textbf{$n$}}{find-mont-sten}
+  \textbf{Input}
+
+  \begin{itemize}
+    \item A crossing number
+  \end{itemize}
+
+  \textbf{Output}
+
+  \begin{itemize}
+    \item All collection $S$ stencils
+  \end{itemize}
+
+  \textbf{Routine}
+
+  \begin{enumerate}
+    \item Generate $O$ the 1's twist vector as in
+      Equation~(\ref{rational-math-1s}) for $n$
+    \item for $i=0$ to $2^{n -1}$
+      \begin{enumerate}
+        \item Transform $i$ into its binary representation
+        \item Exchange as in Equation~(\ref{rational-math-1plus})
+          digits of $i$ with spaces where $i$
+          is $O$ and with $+$ where $i$ is 1
+        \item Apply operations to the 1s vector and store the
+          resulting vector as $O_r$
+        \item Continue to the next iteration if $O_r$ has entries less than 2
+        \item Add $O_r$ to $S$
+      \end{enumerate}
+  \end{enumerate}
+
+\end{remark}
+\begin{remark}{Find all Montesinos tangles of crossing number
+  \textbf{$n$}}{find-mont-tang-of-n}
+  \textbf{Input}
+
+  \begin{itemize}
+    \item All rational tangles of crossing number up to $n$
+  \end{itemize}
+
+  \textbf{Output}
+
+  \begin{itemize}
+    \item All collection $T$ of Montesinos tangles
+  \end{itemize}
+
+  \textbf{Routine}
+
+  \begin{enumerate}
+    \item Execute Algorithm~\ref{find-mont-sten} for $n$ and store in $S$
+    \item for each stencil $s$ in in $S$
+      \begin{enumerate}
+        \item Retrieve lists $L=\LS L_i\RS_i^n$ of rational tangles
+          for each stencil
+          entry $s_i$.
+        \item Add to the $L_n$ list the integral tangle $s_n$
+        \item While there is a list in $L$ that is not exhausted.
+          \begin{enumerate}
+            \item Construct and store a Montesinos tangle from list entries.
+          \end{enumerate}
+      \end{enumerate}
+  \end{enumerate}
+
+\end{remark}
+\begin{remark}{Find all non-rational Montesinos tangles up to
+  crossing number \textbf{$n$}}{find-mont-tang-to-n}
+  \textbf{Input}
+
+  \begin{itemize}
+    \item A crossing number
+    \item All rational tangles up to $n$
+  \end{itemize}
+
+  \textbf{Output}
+
+  \begin{itemize}
+    \item All collection $T$ of twist vectors
+  \end{itemize}
+
+  \textbf{Routine}
+
+  \begin{enumerate}
+    \item for $i=4$ to $n$
+      \begin{enumerate}
+        \item Execute Algorithm~\ref{find-mont-tang-of-n} with $i$
+      \end{enumerate}
+  \end{enumerate}
+
+\end{remark}
+%  prettier-ignore-start
+
+\section{Arborescent Tangles}\label{sec-arborescent}
+
+%  prettier-ignore-end
+
+This section describes the methodology we use to answer the final of the
+essential questions detailed in Section~\ref{sec-intro-overview}.
+
+\begin{quote}
+  ``How do I systematically construct algebraic/arborescent
+  tangles?'', ``How do I
+  tell two algebraic/arborescent tangles I make apart?'', and ``How many
+  algebraic/arborescent tangles can I create?''
+\end{quote}
+
+In this thesis so far we have worked with the algebraic tangles
+(Definition~\ref{def-algebraic})
+constructed with Conway's tangle arithmetic
+(Section~\ref{subsubsec-conway_calc}).
+In this section we will leverage a slightly different, but
+equivalent, construction
+given by Bonahon and Siebenmann \citep{bonahonNewGeometricSplittings2016} the
+\textbf{arborescent tangles}. The one-to-one correspondence between
+the classes will
+become clear as we introduce the construction for arborescent tangles.
+
+This section starts with an overview of Bonahon and Siebenmann's
+\citep{bonahonNewGeometricSplittings2016} definition of arborescent
+knots and tangles
+(Section~\ref{prelim-arbor_def}). We then give their smooth and
+combinatorial constructions
+of arborescent knots and tangles (Section~\ref{subsec-wptt}). Next,
+we give original work
+extending Bonahon and Siebenmann's canonical construction to a local view
+(Section~\ref{sec-CWPTT-def}). This local view is leveraged to define
+a unique representative
+for each class of arborescent tangles (Section~\ref{subsec-rlitt}).
+Finally, we will describe
+an original algorithm and notation that directly enumerates those unique
+representatives (Section~\ref{subsec-computation}).
+
+%  prettier-ignore-start
+
+\subsection{Definition of Arborescent}\label{prelim-arbor_def}
+
+%  prettier-ignore-end
+
+We now give a high-level description of the manifold theory underpinning the
+theory of arborescent knots and tangles. A full treatment of the manifold theory
+can be found in Bonahon and Siebenmann
+\citep{bonahonNewGeometricSplittings2016}.
+Our first concept is that
+of a \textbf{knot pair}, which serves as the underlying structure for
+all the smooth
+objects in this subsection.
+
+\begin{definition}{Bonahon and Siebenmann, Page 15
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{prelim-def-arborescent-knot-pair}
+  A \textbf{knot pair} is a pair $(M, K)$ where $M$ is an oriented
+  connected compact 3
+  manifold with (possibly empty) boundary, and where $K$ is a proper
+  1-dimensional
+  submanifold of $M$.
+
+\end{definition}
+For example a tangle $\LP B^3,T\RP$ is a knot pair.
+\begin{definition}{Bonahon and Siebenmann, Page vi
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{prelim-def-arborescent-knot}
+  A knot $(S^3, K)$ is \textbf{arborescent} if there exists a finite collection
+  $F_1,\dots,F_n$ of disjoint Conway spheres such that, if $N$ is the
+  closure (in the sense of a closure of a set) of
+  any component of $S^3 - \cup_{i=1}F_i$ , then the pair $(N, K \cap
+  N )$ takes the
+  simple form of Figure~\ref{fig-arborescent_part} after suitable isotopic
+  deformation in $S^3$.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{files/arborescent_knot-48d6fedd7bda45f063e639fe06adfa3e.pdf}
+    \caption[A collection of Conway circles forming a arborescent
+    vignette.]{A collection of Conway circles forming what we call an
+    \textbf{arborescent vignette}.}
+    \label{fig-arborescent_part}
+  \end{figure}
+
+\end{definition}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/arborescent_band-5577f7920d0716dd044364979702873e.pdf}
+  \caption[The arborescent vignette.]{The arborescent vignette from
+  Figure~\ref{fig-arborescent_part} seen with Conway spheres.}
+  \label{fig-arborescent_band}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/vin_1-d2a610c6959ee59775ba4a238da5e94a.pdf}
+  \caption[The arborescent vignette showing a 1 crossing tangle.]{The
+  arborescent vignette showing a 1 crossing tangle to be arborescent.}
+  \label{fig-arborescent_vignette_1}
+\end{figure}
+
+\begin{note}
+  The $F_i$ in Definition~\ref{prelim-def-arborescent-knot} are
+  disjoint but may sit inside
+  each other. This means we may have arborescent vignettes containing
+  arborescent
+  vignettes, but the closure of each individual component looks like
+  Figure~\ref{fig-arborescent_part}.
+\end{note}
+
+Observe that arborescent knots are characterized by a collection of Conway
+spheres (circles). Choosing to not fill one, or more, of these Conway spheres
+yields a tangle.
+
+\begin{definition}{Bonahon and Siebenmann, Page 144
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{intro-def-arbor-tangle}
+  Define an \textbf{arborescent tangle} as one whose underlying knot
+  pair $(M, K)$ (Definition~\ref{prelim-def-arborescent-knot-pair}) is
+  arborescent in the sense defined in
+  Definition~\ref{prelim-def-arborescent-knot}.
+
+\end{definition}We see from the above the first portion of the
+correspondence between the
+algebraic and arborescent tangles. Each algebraic tangle can be naturally
+decomposed into a collection of nested arborescent knot vignettes given by its
+operations $+$ and $\vee$.
+
+%  prettier-ignore-start
+
+\subsection{Weighted Planar Trees}\label{subsec-wptt}
+
+%  prettier-ignore-end
+
+%  prettier-ignore-start
+
+%  prettier-ignore-end
+
+%  prettier-ignore-start
+
+\subsubsection{Construction of Arborescent Knots from Weighted Planar
+Trees}\label{construction_of_arbor}
+
+%  prettier-ignore-end
+
+This subsection begins with an introduction to Bonahon and Siebenmann's
+\citep{bonahonNewGeometricSplittings2016} construction of arborescent knots and
+tangles in the smooth setting. This is followed by the development of a
+combinatorial representation for arborescent knots and tangles
+\citep{bonahonNewGeometricSplittings2016}. We deviate slightly from Bonahon and
+Siebenmann's introduction but ultimately arrive at the same structure. In our
+introduction we develop partial solutions, then progressively modify those
+partial solutions until they fit our needs. Next, we describe Bonahon and
+Siebenmann's \citep{bonahonNewGeometricSplittings2016} operations on the
+combinatorial structure, which allow us to systematically modify the structure,
+without changing the topology. This subsection finishes with the classification
+of arborescent knots and tangles given by Bonahon and Siebenmann
+\citep{bonahonNewGeometricSplittings2016} as well as our extension
+from a global to
+local viewpoint.
+
+\paragraph{Bands and Plumbing Squares}
+
+Our first step in describing a notation for the arborescent knots
+\citep{bonahonNewGeometricSplittings2016} is describing a plumbing operation on
+bands. A band with a plumbing square is a band $S^1\times\LB 0,1\RB$, along with
+an oriented square on the band such that two of the sides of the square
+intersect the boundary of the band. Two examples of bands with plumbing squares
+can be seen in Figure~\ref{wpt-construc-fig-band_sum}.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/bnd_sum_1-3b7426920de1e4efba9af1d3a5aba180.pdf}
+    \caption[A band with a plumbing square facing the viewer.]{A band
+    with a plumbing square facing the viewer.}
+    \label{wpt-construc-fig-band_sum-1}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/bnd_sum_2-0f8a5a0218c04208316206db8595abf8.pdf}
+    \caption[A band with the plumping square facing away from the
+    viewer.]{A band with the plumping square facing away from the
+    viewer. We are looking through the band.}
+    \label{wpt-construc-fig-band_sum-2}
+  \end{subfigure}
+  \caption[Plumbing squares of bands.]{}
+  \label{wpt-construc-fig-band_sum}
+\end{figure}\paragraph{Plumbing bands}
+
+We now glue the bands seen in Figure~\ref{wpt-construc-fig-band_sum}
+together with an
+operation called \textbf{plumbing}. Consider the orientation given in the green
+band's plumbing square. We will call the blue arrow $X$ and the thicker red
+arrow $Y$; similarly for the blue band with $X^\prime$ and $Y^\prime$. We
+\textbf{plumb} the bands together along their plumbing squares, with
+the requirement
+that the orientation labels are mapped $X\to Y^\prime$ and $Y\to X^\prime$.
+Finally, we forget the boundaries of the plumbing squares, leaving only the
+joined boundaries of the bands. The result of plumbing as well as a local
+picture for plumbing can be seen in Figure~\ref{wpt-construc-fig-band_sum_opo}.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/bnd_sum_sum-5039ec3a2186e40e4a34a24bb86ae52c.pdf}
+    \caption{}
+    \label{wpt-construc-fig-band_sum_opo-1}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/bnd_sum_patch-4165c83cc3f37aafe79d4b947ad0b900.pdf}
+    \caption{}
+    \label{wpt-construc-fig-band_sum_opo-2}
+  \end{subfigure}
+  \caption[Two bands plumbed.]{Two bands plumbed.}
+  \label{wpt-construc-fig-band_sum_opo}
+\end{figure}Our plumbing band construction can be turned into a knot,
+by adding a series of
+half-twists to our plumbing bands (Figure~\ref{wpt-construc-fig-6} and
+Figure~\ref{wpt-construc-fig-25}). When forming the half twists, we
+have two options for
+direction relative to the band, we call one positive (left handed twists) and
+one negative (right handed twists). We note that the twists appear in unique
+regions of the band, determined by their position relative to the plumbing
+squares.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/arbor_band_with_twis-ae3d0a74a12df52afd907b081cba1c07.pdf}
+    \caption[Band with two negative half twists.]{Band with two
+      negative half twists\newline
+    and three plumbing squares.}
+    \label{wpt-construc-fig-6}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/arbor_band_with_twis-5c07bffa285ece2cd9b0d471ca67f520.pdf}
+    \caption[Band with three positive half twists.]{Band with three
+      positive half twists \newline
+    and one plumbing square.}
+    \label{wpt-construc-fig-25}
+  \end{subfigure}
+  \caption[Plumbing bands with twists.]{}
+\end{figure}Successive plumbing yields collections of bands like those seen in
+Figure~\ref{wpt-construc-fig-10}. Finally, turning
+Figure~\ref{wpt-construc-fig-10} into a knot is as
+simple as removing the interior of the bands, leaving only the boundary, per
+Figure~\ref{wpt-construc-fig-24}.
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/arbor_bands-d47febe50384b73ef69d7c9b9eb15c3f.pdf}
+    \caption{}
+
+    \label{wpt-construc-fig-10}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{files/arbor_bound-a3d0541c15268c7cee37d83234237561.pdf}
+    \caption{}
+
+    \label{wpt-construc-fig-24}
+  \end{subfigure}
+  \caption[Plumbing and arborescent knots.]{A set of plumbed bands in
+    \ref{wpt-construc-fig-10}
+  and arborescent knot in \ref{wpt-construc-fig-24}}
+
+\end{figure}
+It is important to note that, for creating arborescent knots, we must restrict
+plumbing from creating ``cycles'' of bands. That is a chain of
+plumbing beginning
+and ending with the same band, as seen in
+Figure~\ref{wpt-construc-fig-cycle}. If we allow
+cycles in the bands, we may create a polygonal tangle, defined in
+Section~\ref{subsubsec-opo-insert}. These polygonal tangles contain
+portions that do not
+satisfy Definition~\ref{intro-def-arbor-tangle}, so are not arborescent.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/band_cycle-7c0a613101506fe84b3e2dd906bec769.pdf}
+  \caption[A collection of bands plumbed into a cycle.]{A collection
+    of bands plumbed in such a way that the last band is plumbed to
+  the first band in a cycle.}
+  \label{wpt-construc-fig-cycle}
+\end{figure}
+
+We now establish some language for describing the relative positions of bands.
+This language will be reused when we transition to the combinatorial setting,
+and is widely used in graph theoretic settings.
+
+\begin{definition}{}{wpt-construc-def-relationships_of_bands}
+  Given a band $B$ with plumbing squares, we call the set $C$ of bands
+  plumbed to $B$ the \textbf{children} of $B$. Additionally, for
+  $c\in C$ we call $B$
+  the \textbf{parent} of $c$ and the collection of $C -\LS c \RS$ the
+  \textbf{siblings of $c$}.
+
+\end{definition}We claim the plumbing band construction is in
+correspondence with the definition
+of arborescent seen in Definition~\ref{prelim-def-arborescent-knot}.
+To see this, we take each
+plumbing band and encapsulate it in a $S^2$ so that the corners of the plumbing
+squares lie on the $S^2$, giving us the vignette seen in
+Figure~\ref{fig-arborescent_band}.
+
+\paragraph{Weighted Planar Trees}
+
+The band construction we have developed for arborescent knots, as it stands, is
+completely unsuited for machine computation. In this subsection, we lay out a
+line of reasoning leading to a combinatorial encoding strategy
+\citep{bonahonNewGeometricSplittings2016} for the plumbing band construction of
+arborescent knots and tangles. The line of reasoning starts by presenting the
+required data of arborescent knots and tangles that any combinatorial
+representation must encode. We then propose partial solutions, each
+progressively closer to the full encoding described by Bonahon and Siebenmann
+\citep{bonahonNewGeometricSplittings2016}. As we will see, the encoding strategy
+ultimately takes the form of a modified rooted plane tree, a specialized flavor
+of graph theoretic tree.
+
+Inventing a combinatorial encoding strategy means we first have to identify the
+essential information that is needed to construct arborescent knots and tangles
+from band plumbings. The two essential pieces of information that must be
+encoded by any combinatorial strategy for notating plumbing of bands are the
+following:
+
+\begin{enumerate}
+  \item The parent child relationship between bands
+  \item The twists on bands, and their positions relative to the band's children
+    (plumbing squares)
+\end{enumerate}
+
+Explicit details expanding on why these two pieces of information are essential
+can be found in Bonahon and Siebenmann
+\citep{bonahonNewGeometricSplittings2016}. We
+will see in the following subsections ways in which these data are essential,
+albeit in specialized cases.
+
+Consider the first piece of essential information our combinatorial strategy
+must encode, the parent child relationships between bands. Perhaps the most
+commonly computationally utilized structure that encodes relational data is an
+abstract graph. We imagine how an abstract graph might be used for encoding the
+relationship of bands. One solution is to map bands to vertices and plumbing
+relationships to edges. In the discussion of the band construction, we
+restricted plumbing from forming cycles
+(Figure~\ref{wpt-construc-fig-cycle}). A result of
+this restriction is that any abstract graph must also have no cycles, meaning
+all the graphs we will work with, abstract or otherwise, are actually trees. We
+will call the data of a vertex and a collection of \textbf{bonds} (half-edges)
+associated with plumbing squares the \textbf{local picture around a vertex}.
+
+We have partially completed our goal of encoding the essential information of
+band plumbing in a combinatorial object. Unfortunately, an abstract tree doesn't
+encode all the essential data. Particularly, our second piece of information,
+the positions of children and weights, is not easily seen in an abstract tree.
+To solve this problem, we will instead use a modified version of an abstract
+tree, a \textbf{rooted plane tree}, for our encoding.
+
+\begin{definition}{}{wpt-construc-def-rooted_plane_tree}A
+  \textbf{rooted plane tree} is an abstract tree imbued with a strict
+  total order,
+  indexed by the non-negative integers, on the vertices. We call the least
+  vertex the \textbf{root} of the tree.
+
+\end{definition}In a rooted plane tree $\Gamma$, at each vertex $v$,
+the children of $v$ have an
+ordering inherited from the total order of $\Gamma$, we call this ordering of
+the children the \textbf{cyclic order} of the children. The cyclic
+order gives us two
+natural ways to draw $v$ and its children in the plane. We may choose to draw
+the children anti-clockwise in one of increasing or decreasing order of index.
+The realization of these two options can be seen in
+Figure~\ref{wpt-construc-fig-order_tree}. A universal choice of
+increasing or decreasing
+yields a unique realization of a rooted plane tree in the plane.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/arbor_graph_split_lo-45ac2a5c77ff7ba4ddbfbc87daddc9be.pdf}
+    \caption[The local picture of a vertex in anti-clockwise
+    order.]{The local picture of a vertex with child labels
+    increasing in anti-clockwise order.}
+    \label{wpt-construc-fig-order_1}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/arbor_graph_split_lo-2249954de7fa775addf0b3e30c964706.pdf}
+    \caption[The local picture of a vertex in anti-clockwise
+    order.]{The local picture of a vertex with child labels
+    decreasing in anti-clockwise order.}
+    \label{wpt-construc-fig-order_2}
+  \end{subfigure}
+  \caption[Local pictures of a vertex of a tree. ]{}
+  \label{wpt-construc-fig-order_tree}
+\end{figure}
+%  prettier-ignore-start
+
+\subparagraph{Indexing the total order of a tree}\label{indexing-rpt}
+
+%  prettier-ignore-end
+
+We will now describe an \textbf{ideal indexing} for a rooted plane tree.
+
+\begin{definition}{}{}Let $\Gamma$ be a rooted plane tree $r$, be the
+  root of $\Gamma$. Additionally,
+  let $v_i\neq r$ be a vertex with parent $v_p$ and children
+  $v_{c_1},\,\cdots,\,v_{c_n}$. We call the indexing of a rooted
+  plane \textbf{depth first} if
+  it satisfies the following:
+
+  \begin{itemize}
+    \item $r$ is index 0
+    \item $p<i<c_1<\cdots< c_n$
+  \end{itemize}
+
+\end{definition}
+
+\begin{note}
+  Two commonly seen orderings of a tree are the breadth and depth
+  first orderings, both orderings
+  are ideal orderings. For our purposes we will prefer the depth first ordering.
+\end{note}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/rpt_order-8d066d4b0623b0d11cb8e5223597ccfb.pdf}
+    \caption[A rooted plane tree with ideal indexing.]{A rooted plane
+      tree with ideal indexing. The index of each vertex is seen inside
+    the vertex.}
+    \label{wpt-construc-fig-rptorder_1}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/rpt_order_ni-05d87f91294bbb47d9e46fbf563a337b.pdf}
+    \caption[A rooted plane tree with indexing that is not depth
+    first.]{A rooted plane tree with indexing that is not depth
+    first. The index of is each vertex seen inside the vertex.}
+    \label{wpt-construc-fig-rptorder_2}
+  \end{subfigure}
+  \caption[Indexing strategies of a rooted plane tree. ]{}
+  \label{wpt-construc-fig-order}
+\end{figure}
+
+\begin{convention}
+  For the remainder of this thesis we will adopt some conventions for
+  rooted plane
+  trees (and their derivatives the weighted planar tangle trees, CWPTT, and
+  RLITT). When realizing a tree in the plane we select the universal
+  anti-clockwise increasing
+  order and assume that the tree has depth first indexing.
+\end{convention}
+
+The final data we need to record is the position and count of half twists
+relative to plumbing squares. We observed earlier that the half twists on a band
+must lie in a unique region determined by position relative to plumbing squares
+on a band. This relationship can be recreated for a rooted plane tree by
+annotating the local view of a vertex with an integer placed in the regions
+between bonds. The relationship between a plumbing band and a weighted vertex in
+a rooted plane tree can be seen in Figure~\ref{wpt-construc-fig-7}.
+The weights placed in
+regions between bonds inherit a cyclic order from the cyclic order of the bonds.
+Each weight falls in the region between two bonds. We assign to each weight
+(including zero weights) the lower of the two indices. This aligns with
+assigning to the weight the index that appears before it in the anti-clockwise
+planar realization of the cyclic order, per
+Figure~\ref{wpt-construc-fig-weights-with-index}.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/arbor_graph_split_lo-d4ac908e2b012b3aa3b53562353c28a8.pdf}
+    \caption[The local view of a vertex with the weights $-2$, zero,
+    and zero.]{The local view of a vertex with the weights $-2$,
+    zero, and zero.}
+    \label{wpt-construc-fig-7}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/arbor_graph_split_lo-9fccfef14ced7a247f4d9f2d0b7199f1.pdf}
+    \caption[The local view of a vertex with weights.]{The local view
+      of a vertex with weight. \newline
+      Notice the index of the weights come
+      from the bond ``before'' it in the planar realized cyclic order
+    given by convention.}
+    \label{wpt-construc-fig-weights-with-index}
+  \end{subfigure}
+  \caption[Local view of a vertex with weights. ]{}
+  \label{wpt-construc-fig-order_weights}
+\end{figure}We can see a full example of a tree with its associated
+plumbed construction in
+Figure~\ref{wpt-construc-fig-27}. We call this fully realized
+combinatorial recipe for an
+arborescent knot a \textbf{weighted planar tree}.
+
+\begin{definition}{Bonahon and Siebenmann, Page
+  143\textbf{\citep{bonahonNewGeometricSplittings2016}}}{}
+  A rooted plane tree $\Gamma$ augmented with weights is called a
+  \textbf{weighted planar tree}.
+
+\end{definition}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/arbor_graph-f540218bf98a387a4e4b547a93445b49.pdf}
+    \caption[The tree describing the plumbing of bands.]{The tree
+      describing the plumbing of bands. Each vertex represents the band
+    illustrated near it.}
+    \label{wpt-construc-fig-27}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/arbor_bands-d47febe50384b73ef69d7c9b9eb15c3f.pdf}
+    \caption[The realization by plumbing bands of a tree.]{The
+      realization by plumbing bands of the tree in
+    Figure~\ref{wpt-construc-fig-27}}
+    \label{wpt-construc-fig-28}
+  \end{subfigure}
+  \caption[Realization of plumbing of a tree.]{}
+\end{figure}
+%  prettier-ignore-start
+
+\paragraph{Weighted Planar Tangle Trees}\label{wpt-construc-sec-wptt}
+
+%  prettier-ignore-end
+
+Our construction to this point has been concerned with the notation for knots
+and links. We now give a modification of this notation for tangles. A weighted
+planar tree, as in Figure~\ref{wpt-construc-fig-29}, can be modified
+to represent a tangle
+by allowing a \textbf{free bond} (half-edge), to be attached to a
+vertex, that is, to
+allow bands to have a non-plumbed plumbing square. We realize the non-plumbed
+square, as a Conway circle for a two string tangle as in
+Figure~\ref{wpt-construc-fig-tangle_trad}. To consistently orient the
+Conway sphere's interior, we align the north boundary points of the Conway
+sphere with the top (up in the band orientation) boundary component, and place
+the NW corner first (following the orientation of the boundary), per
+Figure~\ref{wpt-construc-fig-band_orientation}. Plumbing two bands
+then corresponds to the
+action of gluing a pair of tangles together on their Conway spheres so that
+boundary points align.
+
+A tree may have many free bonds, with each free bond representing a unique
+boundary Conway sphere. Each boundary component serves as a location where a
+tangle can be inserted to form a knot or link. For our efforts in enumerating
+two string tangles, we restrict our focus to trees that have a single free bond.
+In tangle trees with a single free bond, we designate the vertex with the free
+bond as the root of the tree.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/arbor_tangle-14a418154dfaf35f146b52dfa168bd93.pdf}
+    \caption[The plumbing realization of an arborescent tangle.]{The
+    plumbing realization of an arborescent tangle.}
+    \label{wpt-construc-fig-29}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.7\textwidth]{files/example_tangle-4c128833ef1611bc12dcf29876e1e528.pdf}
+    \caption[Realizing bands as a tangle.]{With an isotopy of the
+      tangle and inversion of the Conway circle given by the
+      non-plumbed square we have the realization of
+      Figure~\ref{wpt-construc-fig-29} as a
+    traditional orthogonally projected tangle.}
+    \label{wpt-construc-fig-tangle_trad}
+  \end{subfigure}
+  \caption[Plumbing bands as a tangle.]{}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\textwidth]{files/bnd_with_orientation-a963ba0fe226248533f2dad3ada2982d.pdf}
+  \caption[The orientation of a Conway sphere.]{The orientation of a
+    Conway sphere given by a plumbing square on a band of an
+    arborescent tangle. The orientation of the underlying plumbing
+    square is shown.
+    This aligns with a left hand rule with $Y$ the thumb, $X$ the
+    index finger, and
+    $Z$ middle finger, with $Z$ pointing away from the center of the band,
+  out of the page in this case. }
+  \label{wpt-construc-fig-band_orientation}
+\end{figure}
+
+We will see that keeping track of the
+location of the fixed points of the boundary sphere is important when
+determining tangle equivalence. This is due to the need to maintain the rational
+number (Definition~\ref{rational-def-frac}) associated with the
+``rational tangle'' subtangles of
+a tree, prompting us to assign rotation information to the free bonds. This
+information takes the form of labels from the members of $V_4$ of the Klein
+four-group $\iota,\xi,\zeta,\eta$. Each of these labels corresponds to a
+rotation of the Conway sphere around an axis in $\R^3$, as seen in
+Figure~\ref{wpt-construc-fig-v_4rotations} and
+Figure~\ref{wpt-construc-fig-k4g}. Full details for the
+manifold theory underpinning these markings are found in Bonahon and Siebenmann
+\citep{bonahonNewGeometricSplittings2016}. We call such a labeled
+tree a \textbf{weighted
+planar tangle tree}.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.2\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/v4_rotations_i-2a340230132ad100c9adc5eb2529d02f.pdf}
+    \caption{}
+    \label{wpt-construc-fig-k4g-rotationsi}
+  \end{subfigure}
+  \quad
+  \quad
+  \quad
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{files/v4_rotations-ac373932ba90a3a5b91b87418d43ff12.pdf}
+    \caption{}
+    \label{wpt-construc-fig-k4g-rotations}
+  \end{subfigure}
+  \caption[The effect of the $V_4$ rotations.]{The identity rotation
+  (no rotation), and the effect of the $V_4$ rotations on each of the}
+  \label{wpt-construc-fig-v_4rotations}
+\end{figure}
+
+\begin{definition}{Bonahon and Siebenmann, Page 165
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{}
+  A weighted planar tree $\Gamma$ with free bonds labeled in $V_4$ is called a
+  \textbf{weighted planar tangle tree (WPTT)}.
+
+\end{definition}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[width=.5\textwidth]{files/iota-7ccd6540b4630d7bc532763aec0fa7fb.pdf}
+    \caption[$\iota$ for no rotation.]{$\iota$ for no rotation}
+    \label{wpt-construc-fig-k4g-i}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[width=.5\textwidth]{files/zeta-ccf154293b27a3af9396774196e3df8a.pdf}
+    \caption[$\xi$ rotates around the $x$-axis.]{$\xi$ rotates around
+    the $x$-axis}
+    \label{wpt-construc-fig-k4g-x}
+  \end{subfigure}
+  \newline
+  \centering
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[width=.5\textwidth]{files/eta-8a2277d5eff21840ebb2ca47ad98f9ae.pdf}
+    \caption[$\eta$ rotates around the $y$-axis.]{$\eta$ rotates
+    around the $y$-axis}
+    \label{wpt-construc-fig-k4g-y}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[width=.5\textwidth]{files/xi-1d75e1fe4635234febc0e30976942994.pdf}
+    \caption[$\zeta$ rotates around the $z$-axis.]{$\zeta$ rotates
+    around the $z$-axis}
+    \label{wpt-construc-fig-k4g-z}
+  \end{subfigure}
+  \caption[Roations of a tangle. ]{}
+  \label{wpt-construc-fig-k4g}
+\end{figure}
+%  prettier-ignore-start
+
+\subsubsection{Anatomy of a tree}\label{wpt-construc-sec-subtrees}
+
+%  prettier-ignore-end
+
+In this subsection, we will describe several portions of weighted planar trees:
+the ring subtree, essential vertex, and the sticks of a tree.
+
+%  prettier-ignore-start
+
+\paragraph{Ring subtree}\label{wpt-construc-sec-rings}
+
+%  prettier-ignore-end
+
+We will now describe the ring subtrees of a weighted planar tree, which locally
+appear as Figure~\ref{wpt-construc-fig-17}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/arbor_graph_ring-d80406b3ccc9a75cbacd2e8eecfa706d.pdf}
+  \caption[Positive and negative ring subtrees.]{Positive and
+  negative ring subtrees}
+  \label{wpt-construc-fig-17}
+\end{figure}
+
+Now, resolving the plumbing for the positive subtree, we arrive at bands as in
+Figure~\ref{wpt-construc-fig-12}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/arbor_ring-f1ab6236c3e07c2dbd1fd86733fbfa89.pdf}
+  \caption[Plumbed ring bands.]{Plumbed ring bands}
+  \label{wpt-construc-fig-12}
+\end{figure}
+
+Notice that the boundary of these plumbed bands has three components, as seen in
+Figure~\ref{wpt-construc-fig-13}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/arbor_ring_no_bnd-571778a714009a521aa0c17358a4d65e.pdf}
+  \caption[Ring boundary.]{Ring boundary}
+  \label{wpt-construc-fig-13}
+\end{figure}
+
+With an isotopy of the tangle and inversion of the Conway circle given by the
+non-plumbed square, we can arrange our plumbed bands into the standard tangle
+projection seen in Figure~\ref{wpt-construc-fig-14}. This tangle
+projection tells us that
+the subtree in Figure~\ref{wpt-construc-fig-12} is, depending on
+location of $\text{NW}$,
+either the zero or infinity tangle with a ring.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{files/arbor_ring_tangle-a2936a53323b2187ce9cd2a9209f32db.pdf}
+  \caption[Ring Tangle.]{Ring Tangle}
+  \label{wpt-construc-fig-14}
+\end{figure}
+
+%  prettier-ignore-start
+
+\paragraph{Essential Vertex}\label{wpt-construc-sec-essential_verts}
+
+%  prettier-ignore-end
+
+We now classify each vertex into one of two classes, the essential vertices and
+the non-essential vertices.
+
+\begin{definition}{Bonahon and Siebenmann, Page 159
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{apn-def-2}
+  We define an \textbf{essential vertex} as any vertex with valence
+  (count of the number of bonds)
+  greater than 3.
+
+\end{definition}
+\begin{definition}{Bonahon and Siebenmann, Page 159
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{apn-def-3}
+  A vertex is called non-essential if it has valence (count of the
+  number of bonds) $0,1,2$.
+
+\end{definition}As an example, consider the vertices seen in
+Figure~\ref{wpt-construc-fig-18}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/arbor_ring_essential-dc5f17b0ae16077f7beced9f4b581de3.pdf}
+  \caption[A weighted planar tangle tree annotated with essential
+  vertices.]{A weighted planar tree annotated with essential vertices
+    in orange and
+  non-essential in blue}
+  \label{wpt-construc-fig-18}
+\end{figure}
+
+%  prettier-ignore-start
+
+\paragraph{Sticks of a Tree}\label{wpt-construc-sec-sticks}
+
+%  prettier-ignore-end
+
+The final part of the anatomy of a tree we will consider is the
+\textbf{sticks} of a
+tree.
+
+\begin{definition}{Bonahon and Siebenmann, Page 159
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{wpt-construc-def-sticks-of-a-tree}
+  Let $\Gamma$ be a weighted planar tree and $\LS b_i\RS$ be the set
+  of essential
+  vertices of $\Gamma$ including their bonds (half-edges). We call the
+  $\Gamma_s=\Gamma\setminus \LS b_i\RS$ the \textbf{sticks} of
+  $\Gamma$ and every
+  connected component of $\Gamma_s$ a \textbf{stick}.
+
+\end{definition}As an example, consider the tree seen in
+Figure~\ref{wpt-construc-fig-18}, the sticks of
+which can be seen in Figure~\ref{wpt-construc-fig-19}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/arbor_ring_noessenti-ac06ddb43820e892797452240f28d7d0.pdf}
+  \caption[Sticks of a tree.]{Sticks of the tree from
+    Figure~\ref{wpt-construc-fig-18}, six half-open sticks and one open
+  stick.}
+  \label{wpt-construc-fig-19}
+\end{figure}
+
+By construction, a stick subtree of $\Gamma$ may have 0, 1, or 2 free bonds
+(seen in Figure~\ref{wpt-construc-fig-sticks}). We call a stick with
+0 free bonds closed, 1
+free bond half-open, and 2 free bonds open. Additionally, we call a stick where
+each vertex has a single weight a \textbf{proper stick}, and we call
+a vertex on the
+end of a stick an \textbf{end vertex}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/sticks_open-a37c24f6b1180f1c4b02c7cf19d6eea4.pdf}
+  \caption[Closed, half-open, and an open sticks.]{From top to
+    bottom, a closed, half-open, and an open stick. Each end vertex
+  is colored in red.}
+  \label{wpt-construc-fig-sticks}
+\end{figure}
+
+%  prettier-ignore-start
+
+\subparagraph{Integral Tangles}\label{wpt-construc-sec-integral}
+
+%  prettier-ignore-end
+
+When a weighted planar tangle tree is a half-open stick containing a single
+vertex with a single weight $w_0$ we call it an \textbf{integral tangle tree}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/watt_integral-d0566b70563422fdde261b042662a783.pdf}
+  \caption[A stick realized as a integral tangle.]{A stick realized
+  as a integral tangle.}
+  \label{wpt-construc-fig-integral}
+\end{figure}
+
+%  prettier-ignore-start
+
+\subparagraph{Rational Tangles}\label{wpt-construc-sec-rational}
+
+%  prettier-ignore-end
+
+Bonahon and Siebenmann \citep{bonahonNewGeometricSplittings2016} give a
+correspondence between stick tangle trees (stick with a single free bond) and
+Conway's rational tangles \citep{conwayEnumerationKnotsLinks1970}. An
+example of the
+correspondence can be seen in Figure~\ref{wpt-construc-fig-rat}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/watt_rational-aab54569c87acbbe1143e6b14a6cbeeb.pdf}
+  \caption[A stick tangle tree realized as a rational tangle.]{A
+  stick tangle tree realized as a rational tangle.}
+  \label{wpt-construc-fig-rat}
+\end{figure}
+
+%  prettier-ignore-start
+
+\subparagraph{Tree Crossing Number}\label{wpt-construc-sec-TCN}
+
+%  prettier-ignore-end
+
+Finally, we define the \textbf{Tree Crossing Number (TCN)} of a weighted planar
+tangle tree. This corresponds to the crossing number of the tangle diagram given
+by the weighted planar tangle tree.
+
+\begin{definition}{}{apn-def-tcn}For weighted planar tangle tree
+  $\Gamma$, with weights $\LS w_i\RS$. We call
+  \begin{equation}
+    \text{TCN}=\sum |w_i|
+  \end{equation}
+  the \textbf{Tree Crossing Number (TCN)}.
+
+\end{definition}
+%  prettier-ignore-start
+
+\subsubsection{Calculus of Weighted Planar Trees}\label{calculus_on_trees}
+
+%  prettier-ignore-end
+
+This subsection develops a set of moves, $F^\prime_3,\ F_2,\ F_1$, and $R^\pm$,
+on the weighted planar trees described in Section~\ref{subsec-wptt}. We will
+restrict our discussion to a subset of the calculus of weighted planar trees. A
+full description of the calculus can be found in Bonahon and Siebenmann
+\citep{bonahonNewGeometricSplittings2016}. The
+$F^\prime_3,\ F_2,\ F_1,\text{ and}\ R_\pm$ moves allow us to systematically
+modify, without changing the topology, a weighted planar tree and form the basis
+for the classification of the arborescent knots.
+
+\paragraph{The $F^\prime_3$ Move}
+
+The first move, and as we will see, the most important in distinguishing
+tangles, is the $F_3^\prime$ move. In this move we consider the
+local picture of a vertex. In the local view, isolate a single bond
+(half-edge corresponding to a plumbing
+square of a band), then move a weight across that bond. The impact
+of this movement of a weight propagates to the descendants of the
+subtree attached to the bond
+(plumbing square) but leaves unchanged all other weights and bonds
+(including their
+attached subtrees) in the local view of the object vertex.
+\newpage
+\begin{definition}{Bonahon and Siebenmann, Section 12.7.3
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{wpt-moves-def-f3p-move}
+  The \textbf{$F_3^\prime$ move} on a weighted arborescent tree moves
+  a weight $W$ as in
+  Figure~\ref{wpt-moves-fig-f3p-move-indef} and, if $W$ is odd,
+  reverses the cyclic order of
+  weights and bonds at all vertices of the subtree attached to the
+  purple bond (half-edge) lying at odd distance
+  (count of edges between two vertices) from the vertex shown. Also, when $W$ is
+  odd, apply $\xi$ ($X$-axis rotation
+  Figure~\ref{wpt-construc-fig-k4g}) to all free bonds
+  in the subtree attached to the purple bond (half-edge) that are
+  attached to a vertex at even distance from the
+  vertex shown, and $\eta$ ($Y$-axis rotation
+  Figure~\ref{wpt-construc-fig-k4g-y}) to those
+  at odd distance. The rotations are relative to the local orientations of the
+  plumbing squares on the bands corresponding to vertices at odd distance from
+  the vertex carrying weight $W$.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{files/f3p_def-fea9c634e65e4c0469220121c3d52833.pdf}
+    \caption[An $F_3^\prime$ move on a subtree.]{An $F_3^\prime$ move
+      on a subtree. The purple bond indicates the subtree
+      impacted by the move. The blue portion of the local view
+      indicates all other bonds and weights
+    of the vertex.}
+    \label{wpt-moves-fig-f3p-move-indef}
+  \end{figure}
+
+\end{definition}The $F_3^\prime$ move is a derivative of the more
+general $F_3$ move described
+in Bonahon and Siebenmann \citep{bonahonNewGeometricSplittings2016}.
+\newpage
+\begin{definition}{Bonahon and Siebenmann, Section 12.7.1
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{wpt-moves-def-f3-move}
+  The \textbf{$F_3$ move} replaces the left side of
+  Figure~\ref{wpt-moves-fig-f3-move-indef} with the right side, where
+  the cyclic order of bonds and weights is reversed at all vertices
+  in the subtree attached to the purple bond (half-edge) of the
+  vertex shown and at odd distances from this vertex. Also, apply
+  $\xi$ ($X$-axis rotation) to all free bonds in the subtree attached
+  to the purple bond (half-edge) that are attached to a vertex at
+  even distance from the vertex shown,
+  and $\eta$ ($Y$-axis rotation) to those at odd distance. The rotations are
+  relative to the orientation of the  plumbing square (Conway sphere) of the the
+  band the weight is moving across, per
+  Figure~\ref{wpt-construc-fig-band_orientation}.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{files/f3_def-73cd92acd310ffe76248c72f6e024950.pdf}
+    \caption[An $F_3^\prime$ move on a subtree.]{An $F_3$ move on a
+      subtree. The purple bond indicates the subtree
+      impacted by the move. The blue portion of the local view
+      indicates all other bonds and weights
+    of the vertex.}
+    \label{wpt-moves-fig-f3-move-indef}
+  \end{figure}
+
+\end{definition}
+
+\begin{note}
+  $F_3^\prime$ is equivalent, in
+  Figure~\ref{wpt-moves-fig-f3-move-indef}, to setting
+  $X=0$, then executing $F_3$ $W$ times, decreasing $\abs{W}$ with
+  each iteration.
+\end{note}
+
+We will now consider some examples of the $F_3^\prime$ move. While we explore
+these examples, we view $F_3^\prime$ from the perspective of an object vertex
+(object band). The object vertex may have one or more children that we will act
+on with $F^\prime_3$. When we translate $F_3$ and $F_3^\prime$ into practice we
+are free to operate on children as well as the parent of a vertex (band).
+
+\subparagraph{$F_3^\prime$ on bands}
+
+The translation of crossings across child bands models the
+traditional \textbf{flype}
+move, of ``Tait Flyping Conjecture'' \citep{taitKnotsIIIII1900} fame. To see the
+correspondence between $F_3^\prime$ and flype we need to view the plumbed child
+(or parent) band as a tangle, $T$. We can then carry out $F_3^\prime$ over this
+tangle. Tracking the parts of this operation, we can see the correspondence in
+Figure~\ref{uc-c-f3-e-flype_and_bnd}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/bnd_f3-57da5576983f5d6c9a55f15dc96a5397.pdf}
+  \caption[Flype and $F_3^\prime$.]{Flype and $F_3^\prime$, with
+    orientation of the Conway sphere given by
+  Section~\ref{wpt-construc-sec-wptt}.}
+  \label{uc-c-f3-e-flype_and_bnd}
+\end{figure}
+
+When this is carried out, for an odd number of crossings, the child band is
+inverted so it lies inside the parent band
+(Figure~\ref{uc-c-f3-e-flype_bnd}). The inversion
+reverses the cyclic order of the child, as described in
+Definition~\ref{wpt-moves-def-f3p-move}.
+Applying $F_3^\prime$ to an even number of crossings is equivalent to applying
+the move on two sets of an odd number of crossings. When the first set of odd
+crossings is applied, the child band is inverted; the second set inverts the
+child again, leaving it where it began
+(Figure~\ref{wpt-moves-fig-example-f3-even-2}).
+We expand to an example where the child band has descendants, as in
+Figure~\ref{uc-c-f3-e-cor}. Observe that when the $F_3^\prime$ is
+applied in this case, the
+child band and every band even distance from it (odd distance from the parent)
+is inverted.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{files/bnd_only_f3_even_2-ece02f57e951d9e680c8d28405e22790.pdf}
+  \caption[$F_3^\prime$ on the band model.]{The even case of the $F_3^\prime$
+    with the purple band and any descendants of the purple band
+  remaining unchanged.}
+  \label{wpt-moves-fig-example-f3-even-2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{files/bnd_only_f3-f34dfee65146995d01e338de8bd5c474.pdf}
+  \caption[The odd $F_3^\prime$ case on a band model realization of
+    the given portion of a
+  tree.]{ The odd $F_3^\prime$ case on a band model realization of
+    the given portion of a
+    tree, with local $X$-axis in blue and $Y$-axis in red given
+    relative to the purple band.
+    Yielding a $\xi$ ($X$-axis rotation) to all bands plumbed to the purple band
+    or plumbed at even distance (counting plumbing squares) from the
+    orange band,
+    and $\eta$ ($Y$-axis rotation) to the purple band and those
+    plumbed at odd distance from the orange band.
+    Note that the orientations of the plumbing squares must agree before and
+    after $F_3^\prime$. Following the orientations with the left hand
+    (Figure~\ref{wpt-construc-fig-band_orientation})
+    rule shows the orientation of the purple band reverses in $X$ and
+    $Z$ in the second image due to the rotation in $Y$
+  (we are no longer looking through the band in the second image). }
+  \label{uc-c-f3-e-flype_bnd}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/bands_odd_change-707797bd70b675acb7b1ee4ff8e2c6c8.pdf}
+  \caption[$F_3^\prime$ when applied to a band.]{$F_3^\prime$ when
+    applied to a band (gray) with a child (orange) and grandchild
+    (light blue). We read the bands following the local orientation
+    of the plumbing
+    squares. Before the move is applied, the child (orange) band is
+    traversed as;
+    the blue band, a green star, a green circle, and back to the parent. After
+    $F_3^\prime$ it is traversed as; a green circle, a green star,
+    the blue band,
+    and back to the parent. The blue band is traversed as; yellow star, yellow
+  circle, and back to orange band.}
+  \label{uc-c-f3-e-cor}
+\end{figure}
+
+\subparagraph{$F_3^\prime$ Examples}
+
+Consider the weighted planar tree in
+Figure~\ref{wpt-moves-fig-example_f3-even-1} and
+Figure~\ref{wpt-moves-fig-example_f3-odd_1}, the left trees in each
+agree in all but a
+weight of a single vertex, what we will call our object vertex which is marked
+in orange. The weight of this object vertex has been changed from -2 in
+Figure~\ref{wpt-moves-fig-example_f3-even-1} to -3 in
+Figure~\ref{wpt-moves-fig-example_f3-odd_1}.
+
+We will first walk through
+Figure~\ref{wpt-moves-fig-example_f3-even-1}. In this example,
+our object weight is e ven, applying $F_3^\prime$ to the tree, the impacted
+subtree (purple subtree in Figure~\ref{wpt-moves-fig-f3p-move-indef})
+is unchanged except
+for free bonds, which are altered as described in
+Definition~\ref{wpt-moves-def-f3p-move}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\linewidth]{files/watt_rooted_even-4d8585086a5084d3bb46059e31a94e1b.pdf}
+  \caption[$F_3^\prime$ on a weighted planar tree.]{$F_3^\prime$ on a
+    weighted planar tree with even weight. The weight of the
+  object weight is even, so the impacted subtree is unchaged.}
+  \label{wpt-moves-fig-example_f3-even-1}
+\end{figure}
+
+In Figure~\ref{wpt-moves-fig-example_f3-odd_1}, the object weight is
+odd, applying
+$F_3^\prime$ the cyclic order of vertices, of the impacted subtree at an odd
+distance are reversed. Additionally, all free bonds in the impacted subtree are
+altered as described in Definition~\ref{wpt-moves-def-f3p-move}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\linewidth]{files/watt_rooted_odd-f5793e212c4d6a0fa6d460f40db1f8c4.pdf}
+  \caption[$F_3^\prime$ on a weighted planar tree.]{$F_3^\prime$ on a
+    weighted planar tree with odd weight clockwise. Note the
+    changes in the relative positions of subtrees after the application of
+  $F_3^\prime$.}
+  \label{wpt-moves-fig-example_f3-odd_1}
+\end{figure}
+
+\paragraph{The $F_2$ Move}
+
+Our second move, $F_2$, is a special application of the general $F_3$ move.
+
+\begin{definition}{Bonahon and Siebenmann, Section 12.7.1
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{uc-c-f2-d-f2-t}
+  The \textbf{$F_2$ move} on a weighted arborescent tangle tree
+  reverses the cyclic order
+  of bonds and weights at one vertex on the tree and at every vertex
+  at even distance from it; also
+  apply $\eta$ ($Y$-axis rotation) to every free bond of a vertex at
+  even (or zero) distance, and
+  apply $\xi$ ($X$-axis rotation) to every free bond at odd distance.
+  The rotations are relative to the orientation of the plumbing square (Conway
+  sphere) of the band being acted on, per Section~\ref{subsec-wptt}.
+
+\end{definition}$F_2$ is equivalent to applying $F_3$ to a vertex by
+moving a $\pm 1$ weight
+around a full cycle of the children (and parent), as in
+Figure~\ref{wpt-moves-fig-example_f2_cycle}. If the vertex has no
+weights, the zero weight
+is split into a +1 and -1, one of which completes the cycle. The +1 and
+-1 then cancel, returning the vertex to zero weight. The result of carrying
+out $F_2$ on a weighted planar tree can be seen in
+Figure~\ref{wpt-moves-fig-example_f2}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{files/f2_local-a580dd826a40b46351b2f9bac9e0d6dd.pdf}
+  \caption[$F_3$ moving a weight in a complete cycle.]{$F_3$ moving a
+  weight in a complete cycle}
+  \label{wpt-moves-fig-example_f2_cycle}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{files/watt_rooted-f89a1c8a169f64c614d42e3085f20ec8.pdf}
+  \caption[$F_2$ on a weighted planar tree.]{$F_2$ on a weighted
+    planar tree. Observe the changes to the entire tree, as
+  opposed to the changes of $F_3^\prime$ which impact only a subtree.}
+  \label{wpt-moves-fig-example_f2}
+\end{figure}
+Observe that vertices can be partitioned into two equivalence classes. Those
+changed by $F_2$ applied at an even distance from the root, and those changed by
+$F_2$ applied at an odd distance from the root. We write $F_2$ on the even class
+as $F_{2e}$ and odd as $F_{2o}$.
+
+\paragraph{The $F_1$ Move}
+
+The third of the $F$ moves is the $F_1$ move, which is a repeated application of
+the $F_2$ move.
+
+\begin{definition}{Bonahon and Siebenmann, Section 12.7.1
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{uc-c-f1-d-f1-t}
+  The \textbf{$F_1$ move} on a weighted arborescent tangle tree
+  reverses the cyclic order
+  of bonds and weights at every vertex of the graph and applies
+  $\zeta$ ($z$-axis
+  rotation) to every free bond. The rotations are relative to the
+  orientation of the plumbing square (Conway
+  sphere) of the band being acted on, per Section~\ref{subsec-wptt}.
+
+\end{definition}To realize $F_1$ as $F_2$ moves, we successively
+apply $F_{2e}$ then $F_{2o}$ to
+the tree. Observe that the combination of $F_{2e}$ and $F_{2o}$ modifies the
+free bonds by $\xi\eta=\zeta$.
+
+\paragraph{The $R^\pm$ moves}
+
+The $R$ move, or ring move is the final move we will describe on weighted planar
+tangle trees and deals with the ring subtrees of a tree. The result of a ring
+move on a tangle can be seen in Figure~\ref{wpt-moves-fig-example-r}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/example_ring-bbe1129008e26ffeb7c9523c9fa21b23.pdf}
+  \caption[$R^ -$ on on a tangle representation of a tree.]{$R^ -$ on
+  on a tangle representation of a tree.}
+  \label{wpt-moves-fig-example-r}
+\end{figure}
+
+\begin{definition}{Bonahon and Siebenmann, Section 12.3
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{wpt-moves-def-rm}
+  The \textbf{$R^ -$} replaces the left of Figure~\ref{rmove-n-pic}
+  with the right, leaving the rest of the tree unchanged.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{files/def-1f585d3bf18ce302acf77bd52e61f5f0.pdf}
+    \caption[A $\LP-\RP$-ring subtree moving around a vertex.]{A
+      $\LP-\RP$-ring subtree moving around a vertex. Equivalent to
+    Figure~\ref{wpt-moves-fig-example-r}.}
+    \label{rmove-n-pic}
+  \end{figure}
+
+\end{definition}
+
+\begin{note}
+  In Figure~\ref{wpt-moves-fig-example-r} the ring moves from the
+  right to the left of the
+  tangle. This corresponds to the ring subtree in
+  Definition~\ref{wpt-moves-def-rm} moving from
+  top to bottom of the orange portion of the tree.
+\end{note}
+
+\begin{definition}{Bonahon and Siebenmann, Section 12.3
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{wpt-moves-def-rp}
+  The \textbf{$R^+$} replaces the left of Figure~\ref{rmove-n-pic}
+  with the right, leaving the rest of the tree unchanged.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{files/def-e0f5401b23b1e565a07876afd1239ac4.pdf}
+    \caption[A $\LP+\RP$-ring subtree moving around a vertex.]{A
+    $\LP+\RP$-ring subtree moving around a vertex.}
+    \label{rmove-p-pic}
+  \end{figure}
+
+\end{definition}
+%  prettier-ignore-start
+
+\subsubsection{Canonical Weighted Planar Tangle Trees
+(CWPTT)}\label{sec-CWPTT-def}
+
+%  prettier-ignore-end
+
+Observe that the weighted planar tangle trees we have seen are badly non-unique
+representatives for arborescent tangles. The first step to finding a unique
+preferred representative is to put some additional conditions on a weighted
+planar tree, $\Gamma$. The following conditions pare down the equivalence class
+of an arborescent tangle to a more manageable level.
+
+\begin{definition}{Bonahon and Siebenmann, Section 12.8.2
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{wpt-equi-def-abcanon}
+  A weighted planar tree is called a \textbf{canonical weighted planar
+  tangle tree (CWPTT)} if it has a single free bond with a label from
+  $V_4$ and satisfies the following conditions:
+
+  \begin{itemize}
+    \item \textbf{Weight Condition (W)} At each vertex of $\Gamma$, at
+      most one weight is
+      non-zero.
+
+    \item \textbf{Stick Conditions}
+
+      \begin{itemize}
+        \item[\textbf{(S.1)}] On any stick the weights of the
+          vertices are non-zero
+          except for end vertices that have a bond free in $\Gamma$
+          and for the case $\Gamma$ is
+          Figure~\ref{wpt-construc-fig-stick_cond-1} or
+          Figure~\ref{wpt-construc-fig-stick_cond-2}.
+        \item[\textbf{(S.2)}] The non-zero weights along any stick are of
+          alternating sign.
+        \item[\textbf{(S.3)}] No end vertex of a stick has weight $\pm
+          1$ unless it
+          has a bond free in $\Gamma$.
+      \end{itemize}
+
+      \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+          \centering
+          \includegraphics[width=0.3\textwidth]{files/0-38f5b78e700440f6bd95db3013659000.pdf}
+          \caption[The zero tangle. Where the indicated vertex is
+          $v_0$.]{The zero tangle.}
+          \label{wpt-construc-fig-stick_cond-1}
+        \end{subfigure}
+        ~
+        \begin{subfigure}[b]{0.45\textwidth}
+          \centering
+          \includegraphics[width=0.3\textwidth]{files/00-ff78b5394e9bf86a9ab4f9dd4fcec2d4.pdf}
+          \caption[The infinity tangle.]{The infinity tangle. Where
+          the indicated vertex is $v_0$ and $v_1$.}
+          \label{wpt-construc-fig-stick_cond-2}
+        \end{subfigure}
+        \caption{Where the given sticks are the entire tree $\Gamma$}
+        \label{wpt-construc-fig-stick_cond}
+      \end{figure}
+    \item One of:
+
+      \begin{itemize}
+        \item \textbf{Positivity Condition (P)} Except for those with a
+          free bond, there are no sticks in $\Gamma$ of the forms
+          Figure~\ref{wpt-construc-fig-positivity_cond-1} or
+          Figure~\ref{wpt-construc-fig-positivity_cond-2}.
+
+          \begin{figure}[H]
+            \centering
+            \begin{subfigure}[b]{0.45\textwidth}
+              \centering
+              \includegraphics[width=0.3\textwidth]{files/am2-aaefc226f30ccf19cdbae75e67deae18.pdf}
+              \caption[The -2 integral tangle.]{The -2 integral
+              tangle. Where the indicated vertex is $v_i$ with $i\neq 0$}
+              \label{wpt-construc-fig-positivity_cond-1}
+            \end{subfigure}
+            ~
+            \begin{subfigure}[b]{0.45\textwidth}
+              \centering
+              \includegraphics[width=0.3\textwidth]{files/am2a-16bd870e6cc41ef82a45bae5879e4226.pdf}
+              \caption[A fully open stick with -2 crossings.]{A fully
+                open stick with -2 crossings. Where the indicated
+              vertex is $v_i$ with $i\neq 0$}
+              \label{wpt-construc-fig-positivity_cond-2}
+            \end{subfigure}
+            \caption[Positivity condition.]{}
+            \label{wpt-construc-fig-positivity_cond}
+          \end{figure}
+        \item \textbf{Negativity Condition (N)} Except for those with a
+          free bond, there are no sticks in $\Gamma$ of the forms
+          Figure~\ref{wpt-construc-fig-negativity_cond-1} or
+          Figure~\ref{wpt-construc-fig-negativity_cond-2}.
+
+          \begin{figure}[H]
+            \centering
+            \begin{subfigure}[b]{0.45\textwidth}
+              \centering
+              \includegraphics[width=0.3\textwidth]{files/a2-2b741f8ba3f1cb8d8849231ce6357e1b.pdf}
+              \caption[The 2 integral tangle.]{The 2 integral tangle.
+              Where the indicated vertex is $v_i$ with $i\neq 0$}
+              \label{wpt-construc-fig-negativity_cond-1}
+            \end{subfigure}
+            ~
+            \begin{subfigure}[b]{0.45\textwidth}
+              \centering
+              \includegraphics[width=0.3\textwidth]{files/a2a-ec06a2a1420a8190c1216d90a131ca77.pdf}
+              \caption[A fully open stick with 2 crossings.]{A fully
+                open stick with 2 crossings.W here the indicated vertex
+              is $v_i$ with $i\neq 0$}
+              \label{wpt-construc-fig-negativity_cond-2}
+            \end{subfigure}
+            \caption[Negativity condition.]{}
+            \label{wpt-construc-fig-negativity_cond}
+          \end{figure}
+      \end{itemize}
+  \end{itemize}
+
+\end{definition}
+
+\begin{note}
+  The set of CWPTT for an arborescent tangle can be large.
+\end{note}
+\begin{note}
+  The positivity and negativity conditions are a consequence of the behavior of
+  two crossing tangles seen in Figure~\ref{minimal-fig-nonmin}. We
+  will adopt the
+  $\LP+\RP$ as our prefered form.
+\end{note}
+Bonahon and Siebenmann show in Corollary~\ref{wpt-equi-lemma-exist}
+that these conditions are
+sufficient to realize every arborescent tangle. In fact, every weighted planar
+tangle tree can be turned into a CWPTT by a series of moves in an extended
+calculus on weighted planar trees
+\citep{bonahonNewGeometricSplittings2016}. We call
+this process \textbf{canonization} of a weighted planar tangle tree.
+
+\begin{corollary}{Existance of CWPTT, Bonahon and Siebenmann
+    Corollary 12.20
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{wpt-equi-lemma-exist}
+  Every arborescent tangle is obtained by plumbing operations from
+  arborescent tangles associated to positively (or negatively)
+  canonical weighted planar trees (with labels in $V_4$ at free bonds).
+
+\end{corollary}We note some consequences of the positivity and
+negativity condition. First, a
+positive CWPTT ($\LP +\RP$-CWPTT) can be transformed by a sequence of moves in
+the extended calculus of weighted planar trees into a negative CWPTT
+($\LP -\RP$-CWPTT). Similarly, a negative CWPTT can be transformed into a
+positive CWPTT. Second, we note that a CWPTT, with no modification, can be both
+positive and negative. We will refer to these trees as \textbf{neutral} trees.
+
+Bonahon and Siebenmann give a classification of arborescent tangles via moves on
+CWPTT.
+
+\begin{theorem}{Classification Theorem for Canonical Weighted Planar
+    Tangle Trees, Bonahon and Siebenmann, Theorem 12.21
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{wpt-equi-thm-classi}
+  Consider two positive (or negative) CWPTT
+  $\Gamma^{\,}$ and $\Gamma^\prime$, with free bonds labeled by
+  elements of $V_4$. Plumbing according to $\Gamma$ and $\Gamma^\prime$
+  gives isomorphic arborescent tangles if and only if $\Gamma$ and
+  $\Gamma^\prime$ can be deduced from each other by a sequence of moves
+  ($F_1$), ($F_2$), ($F_3^\prime$), and the modified ring moves $\LP\pm R\RP$.
+
+\end{theorem}Further, Bonahon and Siebenmann describe an algorithm
+for producing these
+sequences of moves. This algorithm will be useful to us in
+Section~\ref{sec-rlitt-generation}.
+
+\begin{theorem}{Bonahon and Siebenmann, Theorem 12.19
+  \textbf{\citep{bonahonNewGeometricSplittings2016}}}{wpt-equi-cor-algo}
+  There exists an effective algorithm which, for any weighted planar
+  tree $\Gamma$
+  with free bonds labeled by elements of $V_4$, alters $\Gamma$ by a sequence of
+  moves of the calculus of arborescent tangles to produce its collection of
+  positively (or negatively) canonical weighted planar trees.
+
+\end{theorem}\paragraph{Canonical Vertex}
+
+The conditions for a weighted planar tree to be a CWPTT are phrased for the
+global context of a weighted planar tangle tree. We now recontextualize those
+conditions for a local view, a single vertex of the tree.
+
+\begin{definition}{}{vertex-canon-def}
+  A vertex $v_i$ of a weighted planar tangle tree $\Gamma$ with a single free
+  bond labeled from $V_4$ is said to be \textbf{$\LP+\RP$-canonical}
+  if $v_i$ has at
+  most one non-zero weight $w_i$, and $i$ is zero (the root) with no
+  conditions or
+  $i$ is not zero with the following conditions satisfied:
+
+  \begin{enumerate}[I.]
+
+    \item {If the valence of $v_i$ is 1 and all of:
+        \begin{itemize}
+          \item{Stick Condition:
+              \begin{enumerate}[1.]
+                \item {$w_i\neq 0$ unless $i=1$ and $w_0=0$ (the
+                  weight of the root)}
+                \item {If the valence of $v_{i -1}$ (the parent) is 2
+                    then $\text{sign}\LP w_i\RP\neq\text{sign}\LP w_{i
+                  -1}\RP$ unless $i=1$ and $w_0=0$}
+                \item {$w_i\neq \pm 1$}
+              \end{enumerate}
+            }
+          \item {Positivity Condition:
+            \begin{enumerate}[1)]
+              \item{If the valence of $v_{i -1}$ (the parent) is
+                greater than 2 then $w_i\neq -2$}
+            \end{enumerate}
+          }
+      \end{itemize}
+    }
+
+  \item {If the valence of $v_i$ is 2 and all of:
+      \begin{enumerate}
+        \item{Stick Condition:
+            \begin{enumerate}[1.]
+              \item {$w_i\neq 0$}
+              \item{
+                \begin{enumerate}[i)]
+                  \item{ If valence of the child is 2 then
+                      $\text{sign}\LP w_i\RP\neq\text{sign}\LP
+                    w_{i+1}\RP$ (the child)}
+                  \item {If valence of the parent is 2 then
+                      $\text{sign}\LP w_i\RP\neq\text{sign}\LP w_{i
+                    -1}\RP$ (the parent)}
+                \end{enumerate}
+              }
+            \item {If valence of the parent or valence of the child
+              is greater than 2 (is essential) then $w_i\neq \pm1$}
+          \end{enumerate}
+        }
+      \item {Positivity Condition:
+          \begin{enumerate}[1.]
+            \item {If valence of the parent and valence of the child
+              is greater than 2 (both are essential) then $w_i\neq \m2$}
+          \end{enumerate}
+        }
+    \end{enumerate}
+  }
+\end{enumerate}
+
+\end{definition}From this definition, we now show that these
+conditions are identical to those
+in the global context of Definition~\ref{wpt-equi-def-abcanon}.
+
+\begin{theorem}{}{vertex-and-cannon}$\Gamma$ is a $\LP+\RP$-CWPTT if
+and only if all the vertices of $\Gamma$ are
+$\LP+\RP$-canonical.
+
+\end{theorem}
+\begin{proof}
+Checking each canonicity condition locally shows both directions.
+\end{proof}
+%  prettier-ignore-start
+
+The definition and proof for $\LP -\RP$-canonical vertices are identical.
+Similarly to the canonical tree case, we define a third positivity class for a
+vertex, the \textbf{neutral vertex}, a vertex that is both $\LP
+-\RP$-canonical and
+$\LP+\RP$-canonical.
+
+\subsubsection{Minimalization of CWPTT}\label{sec-minimalization}
+
+%  prettier-ignore-end
+
+\paragraph{CWPTT are Not Minimal}
+
+A common measure for the complexity of knots and their relatives is the
+\textbf{minimal crossing number}. That being the least number of
+crossings needed to
+realize the object in a diagram, we call that diagram the
+\textbf{minimal diagram}.
+It is natural to ask if our CWPTT are minimal representatives among either all
+representations or arborescent representations. A quick analysis of the process
+of canonization demonstrates that CWPTT are unfortunately far from minimal even
+among arborescent representatives. An example of canonizing a tangle, making
+that tangle non-minimal, is seen in Figure~\ref{minimal-fig-nonmin_min}.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{\textwidth}
+\centering
+\includegraphics[width=.6\textwidth]{files/non-minimal_minimali-5d080586fc68b86cb67ded41def430c0.pdf}
+\caption[A minimal presentation of a arborescent tangle.]{A minimal
+  presentation of a arborescent tangle in both its orthogonal projection
+as well as its weighted planar tree.}
+\label{minimal-fig-nonmin_min}
+\end{subfigure}
+\newline
+\centering
+\begin{subfigure}[b]{\textwidth}
+\centering
+\includegraphics[width=.6\textwidth]{files/non-minimal-b7d96efc2cab4d59d3fdbe8e4e6fd919.pdf}
+\caption[A non-minimal presentation of the same arborescent
+tangle.]{A non-minimal presentation of the same arborescent tangle as
+  Figure~\ref{minimal-fig-nonmin_min} in both its orthogonal projection
+as well as its CWPTT.}
+\label{minimal-fig-nonmin_non}
+\end{subfigure}
+\caption[Minimal and non-minimal trees.]{}
+\label{minimal-fig-nonmin}
+\end{figure}\paragraph{Canonization Can Increase Complexity}
+
+As we have seen, a CWPTT often does not realize a minimal crossing
+representative for an arborescent tangle. Since minimal crossing number is such
+a common measure for complexity, we should understand how canonization impacts
+the crossing number complexity of a CWPTT. We will accomplish this by
+identifying a (non-unique) minimal arborescent representative for each tangle.
+That is, a weighted planar tangle tree with minimal TCN among all weighted
+planar tangle trees in its equivalence class. To begin we expand our
+understanding of the moves in the calculus of arborescent tangles to those that
+alter weights arithmetically. These moves are related to the arithmetic
+operations on continued fractions \citep{bonahonNewGeometricSplittings2016}.
+
+\begin{definition}{Bonahon and Siebenmann, Section 12.3
+\textbf{\citep{bonahonNewGeometricSplittings2016}}}{minimal-def-arithmetic}
+When carrying out the following \textbf{arithmetic moves} the
+relative positions of weights are
+critical to the invariance of the underlying knot pair.
+
+\begin{itemize}
+\item (0.1) The \textbf{0.1 move} replaces the left side with the
+  right side of Figure~\ref{minimal-fig-move01}.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.625\linewidth]{files/def-06392bbc82305bf238bf19fae97e05ba.pdf}
+    \caption[Move 0.1 on a weighted planar tree.]{Move 0.1 on a
+    weighted planar tree.}
+    \label{minimal-fig-move01}
+  \end{figure}
+
+\item (0.2) The \textbf{0.2 move} replaces the left side with the
+  right side of Figure~\ref{minimal-fig-move02}. Additionally, the
+  cyclic order of all descendants in the purple subtree is reversed
+  and $\zeta$ ($Z$-axis rotation
+  Figure~\ref{wpt-construc-fig-k4g-z}). The vertices $a$ and $b$ need
+  not be valence two, either or both may have a valence greater than two.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.625\linewidth]{files/def-c1d1c36f8c5b6b3cf209c56ae164e0e1.pdf}
+    \caption[Move 0.2 on a weighted planar tree.]{Move 0.2 on a
+    weighted planar tree.}
+    \label{minimal-fig-move02}
+  \end{figure}
+
+\item (1.1) The \textbf{1.1 move} replaces the left side with the
+  right side of Figure~\ref{minimal-fig-move11}.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.625\linewidth]{files/def-c88ffe87967c699fe0df6b57f440c690.pdf}
+    \caption[Move 1.1 on a weighted planar tree.]{Move 1.1 on a
+    weighted planar tree.}
+    \label{minimal-fig-move11}
+  \end{figure}
+
+\item (1.2) The \textbf{1.2 move} replaces the left side with the
+  right side of Figure~\ref{minimal-fig-move12}. The vertices $a$ and
+  $b$ need not be valence two, either or both may have a valence
+  greater than two.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.625\linewidth]{files/def-7fcc9ebbcf1bc20bcad55cabc45a67d1.pdf}
+    \caption[Move 1.2 on a weighted planar tree.]{Move 1.2 on a
+    weighted planar tree.}
+    \label{minimal-fig-move12}
+  \end{figure}
+
+\item (2.1) Replace the left side with the right side of
+  Figure~\ref{minimal-fig-move21}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.625\linewidth]{files/def-0d1c913041ef32fcc5f274b63cf2c009.pdf}
+    \caption[Move 2.1 on a weighted planar tree.]{Move 2.1 on a
+    weighted planar tree.}
+    \label{minimal-fig-move21}
+  \end{figure}
+
+\item (2.2) Replace the left side with the right side of
+  Figure~\ref{minimal-fig-move22}. The vertices $a$ and $b$ need not
+  be valence two, either or both may have a valence greater than two.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.625\linewidth]{files/def-53b898a2529b73e08acc755c45e36375.pdf}
+    \caption[Move 2.2 on a weighted planar tree.]{Move 2.2 on a
+    weighted planar tree.}
+    \label{minimal-fig-move22}
+  \end{figure}
+\end{itemize}
+
+\end{definition}
+\begin{note}
+The 2.1 and 2.2 moves are what allow us to pass between the $\LP+\RP$ and
+$\LP -\RP$ canonical classes of trees.
+\end{note}
+
+From here we will show that canonization of minimal trees increases TCN
+complexity in a controlled manner.
+
+\begin{theorem}{}{minimal-thm-minimal}A minimal tree canonizes to a
+$\LP+\RP$-CWPTT, with only the moves 1.2, 2.1,
+and 2.2 increasing TCN.
+
+\end{theorem}
+\begin{proof}Let $\Gamma$ be a minimal TCN arborescent representative
+of its equivalence
+class. Starting with the weight condition
+(W) maximally apply $F_3$ consolidating the weights of each vertex.
+$F_3$ may need to be reapplied after application of arithmetic moves
+and does not impact TCN.
+
+Next we handle the stick condition starting with condition S.2 concerning
+sticks having non-zero weights. Maximally apply
+to $\Gamma$ moves 0.1, and 0.2; this removes zero weights of
+sticks. In the general canonization process S.1, the alternating
+stick condition, is handled by application
+of move 1.2. However, on a pair of vertices violating condition
+S.1, move 1.2
+decreases the TCN. This means by minimality of $\Gamma$, condition
+S.1 must already be
+satisfied. Finally to obtain condition S.3, we apply moves 1.1 and
+1.2, where move 1.2 may increase crossing number by 1.
+
+The last condition to enforce is P, the positvity condition, which is
+done by modifying $\Gamma$ by application of moves 2.1
+and 2.2. Similarly to our S.1 case, $\Gamma$ is minimal, 2.1,
+and 2.2 cannot decrease TCN. However, 2.1 and 2.2 may increase TCN
+by 1 and 2 respectively.
+
+\end{proof}
+
+We note that
+Theorem~\ref{minimal-thm-minimal} indicates that
+any opportunities to decrease TCN in a CWPTT are found on the end
+vertices of sticks adjacent to
+an essential vertex. Particularly, at least one weight
+used in the execution of 1.2, 2.1, and 2.2 must be carried by an essential
+vertex. Reversing the sequence of moves in
+Theorem~\ref{minimal-thm-minimal} tells us that a
+minimal tree can be constructed from a CWPTT by application of TCN
+decreasing moves 1.2,
+2.1, and 2.2. It is important to note that this does not guarantee that
+every set of applications of the 1.2, 2.1, and 2.2 moves to a CWPTT
+minimizes the TCN, only the existence of a path to a minimal tree.
+
+\begin{note}
+The reversed sequence of moves in Theorem~\ref{minimal-thm-minimal}
+taking us from a CWPTT to a minimal weighted planar tangle tree does
+not need to increase TCN to obtain minimality.
+\end{note}
+
+\paragraph{Bounding complexity}
+
+We now introduce a bound on complexity between a CWPTT and a minimal
+representation of that tree.  We build the bound by identifying the
+maximum number of subtrees of a CWPTT which admit
+a 1.2, 2.1, or 2.2 move. We begin by identifying the smallest TCN of a
+subtree that admits each move. These minimal subtrees follow directly from
+Definition~\ref{minimal-def-arithmetic} and our essential vertex
+requirement. The smallest, by TCN, canonical subtree admitting move 1.2 is
+7, as in Figure~\ref{minimal-fig-minimize_move12}.
+For move 2.1 the smallest TCN for a canonical subtree is 5, as in
+Figure~\ref{minimal-fig-minimize_move21}, and for 2.2 the smallest TCN is
+10, as in Figure~\ref{minimal-fig-minimize_move22}. Combining these
+smallest TCN subtrees with the how each move decreases TCN gives the
+bound in Equation~(\ref{bound-arbor-cwptt}), where $\Gamma_m$ is a
+minimal representative for the
+tangle class of $\Gamma$.
+
+\begin{equation}
+\label{bound-arbor-cwptt}
+\begin{aligned}
+\text{TCN}\LP\Gamma\RP-\text{TCN}\LP\Gamma_m\RP&\leq
+1\cdot\left\lfloor\frac{\text{TCN}\LP\Gamma\RP}{7}\right\rfloor+1\cdot\left\lfloor\frac{\text{TCN}\LP\Gamma\RP}{5}\right\rfloor+2\cdot\left\lfloor\frac{\text{TCN}\LP\Gamma\RP}{10}\right\rfloor\\
+&\leq
+\frac{\text{TCN}\LP\Gamma\RP}{7}+\frac{\text{TCN}\LP\Gamma\RP}{5}+2\cdot\frac{\text{TCN}\LP\Gamma\RP}{10}\\
+&=\frac{\text{TCN}\LP\Gamma\RP\cdot 19}{35}\\
+\end{aligned}
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{.3\textwidth}
+\centering
+\includegraphics[width=\textwidth]{files/minimal-382709d139690600e8a2d4027e6ae77c.pdf}
+\caption[Admits move 1.2.]{Admits move 1.2}
+\label{minimal-fig-minimize_move12}
+\end{subfigure}
+~
+\begin{subfigure}[b]{.2\textwidth}
+\centering
+\includegraphics[width=\textwidth]{files/minimal-8a6f09e8a725817c264714a97dc2e1f8.pdf}
+\caption[Admits move 2.1]{Admits move 2.1}
+\label{minimal-fig-minimize_move21}
+\end{subfigure}
+~
+\begin{subfigure}[b]{.3\textwidth}
+\centering
+\includegraphics[width=\textwidth]{files/minimal-d307983510930002fc016efa47e0e062.pdf}
+\caption[Admits move 2.2]{Admits move 2.2}
+\label{minimal-fig-minimize_move22}
+\end{subfigure}
+
+\label{minimal-cont-move-subtrees}
+\caption[Subtrees for minimalization moves.]{Examples of
+canoncial subtrees of a $\LP+\RP$-CWPTT which admit the given moves.
+Note: These are subtrees admiting the moves, but not the only subtrees admiting
+the moves. }
+\end{figure}
+%  prettier-ignore-start
+
+\subsection{Right Leaning Identity CWPTT}\label{subsec-rlitt}
+
+%  prettier-ignore-end
+
+The CWPTT are sufficient for distinguishing any two arborescent tangles via
+moves on their trees. Unfortunately, the equivalence class of CWPTT is still too
+large for computational enumeration to be feasible. The time required for
+pairwise comparisons grows badly exponentially. Luckily, from the class of CWPTT
+for an arborescent tangle, we can select a unique preferred form that allows for
+efficient direct enumeration by computer. To achieve this we will define two
+additional conditions for CWPTT, first the right leaning condition, and second,
+the identity condition. We call these preferred CWPTT \textbf{Right
+Leaning Identity
+Canonical Weighted Planar Tangle Trees (RLITT)}.
+
+\subsubsection{Existence of Right Leaning CWPTT}
+
+We start our construction of RLITT by defining what conditions make a CWPTT a
+right leaning CWPTT.
+
+\begin{definition}{}{rli-const-def-rl}A CWPTT is called \textbf{right
+leaning} if all weights are in the highest indexed
+region (as in Section~\ref{indexing-rpt}) of each vertex.
+Additionally, any ring subtrees
+that are children of a vertex are the highest indexed children of that vertex.
+
+\end{definition}Our next step is to show that every arborescent
+tangle has a right leaning
+representative.
+
+\begin{theorem}{}{rli-const-thm-rl-exists}Every arborescent tangle
+has a right leaning CWPTT representative.
+
+\end{theorem}
+\begin{proof}Let $\Gamma$ be a CWPTT representative for a tangle $T$.
+If every weight
+$w_i$ of $\Gamma$ is in the highest indexed region of $\Gamma_{w_i}$, we
+are done. Otherwise, we will follow a similar algorithm to that outlined by
+Bonahon and Siebenmann \citep{bonahonNewGeometricSplittings2016} for
+distinguishing
+CWPTT. Let $w_i$ be the weight for the lowest indexed vertex $v_i$ not in its
+highest indexed region of $\Gamma_{v_i}$. With move $F_3^\prime$ shift $w_i$ so
+that it lies in the highest indexed region. Further, choose to shift $w_i$
+anti-clockwise, as this ensures that $v_j$ with $j<i$ are unchanged
+when $w_i$ is
+odd. Additionally, with ring moves position the ring subtrees in the right most
+region before the weight. We repeat this process for any $v_k$ with
+$i<k$ where the weight $w_k$ not
+in the highest indexed region. Since $\Gamma$ has finite vertices, the
+algorithm terminates with a $\Gamma$ transformed into a right leaning tree
+completing the proof.
+
+\end{proof}
+\subsubsection{Existence of Identity CWPTT}
+
+Our second step in the construction of RLITT is to define what conditions make a
+CWPTT an identity CWPTT.
+
+\begin{definition}{}{rli-const-def-identity}A CWPTT is called an
+\textbf{identity tree} if its free bond is marked by
+$\iota\in V_4$.
+
+\end{definition}Again, we must show that every arborescent tangle has
+an identity
+representative.
+
+\begin{theorem}{}{rli-const-thm-ident_exists}Every arborescent tangle
+has an identity CWPTT representative.
+
+\end{theorem}
+\begin{proof}Let $\Gamma$ be a CWPTT representative for a tangle $T$.
+If the label
+$\alpha$ for the free bond of $\Gamma$ is $\iota$ we are done. Otherwise,
+we fall into one of three cases:
+
+\begin{itemize}
+\item $\alpha=\zeta$: In the case $\alpha$ is $\zeta$ we apply move $F_1$. This
+  modifies $\alpha$ by $\zeta$ yielding $\alpha\zeta=\zeta\zeta=\iota$.
+\item $\alpha=\eta$: In the case $\alpha$ is $\eta$ we apply move $F_{2e}$. This
+  modifies $\alpha$ by $\eta$ yielding $\alpha\eta=\eta\eta=\iota$.
+\item $\alpha=\xi$: In the case $\alpha$ is $\xi$ we apply move $F_{2o}$. This
+  modifies $\alpha$ by $\xi$ yielding $\alpha\xi=\xi\xi=\iota$.
+\end{itemize}
+
+This transforms $\Gamma$ into an identity tree completing the proof.
+
+\end{proof}
+\subsubsection{Existence of Right Leaning Identity CWPTT (RLITT)}
+
+What we have shown is that every arborescent tangle has at least one right
+leaning CWPTT and at least one identity CWPTT representative. Combining these
+two ideas, we will show that every arborescent tangle has at least one CWPTT
+that is right leaning and identity, we call such a CWPTT a RLITT.
+
+\begin{definition}{}{rli-const-def-rlident}A CWPTT is called a
+\textbf{right leaning identity tangle tree (RLITT)} if it's a
+right leaning and identity tree.
+
+\end{definition}
+\begin{theorem}{}{rli-const-thm-rightident_exists}Every CWPTT has a
+right leaning identity representative.
+
+\end{theorem}
+\begin{proof}Let $\Gamma$ be an identity CWPTT representative for a tangle $T$.
+Applying the algorithm described in the proof of
+Theorem~\ref{rli-const-thm-rl-exists} transforms $\Gamma$ into a right leaning
+tree. Our requirement that $F_3^\prime$ be anti-clockwise ensures that the
+resulting tree retains label $\iota$. This shows that $\Gamma$ can be
+represented as a right leaning identity CWPTT.
+
+\end{proof}
+\subsubsection{Uniqueness of Right Leaning Identity CWPTT}
+
+Our final step at identifying a preferred representative CWPTT of an arborescent
+tangle is to show that a $\LP +\RP$-RLITT is unique in the set of CWPTT
+representing an arborescent tangle. We will utilize the key proposition from
+Bonahon and Siebenmann \citep{bonahonNewGeometricSplittings2016} a
+consequence of
+Theorem~\ref{wpt-equi-thm-classi} and Theorem~\ref{wpt-equi-cor-algo}.
+
+\begin{proposition}{Bonahon and Siebenmann, Proposition 12.22
+\textbf{\citep{bonahonNewGeometricSplittings2016}}}{rli-const-prop-not_iso}
+Let $\Gamma$ and $\Gamma^\prime$ be $\LP +\RP$-CWPTT tangle trees
+with isomorphic
+underlying abstract trees. Further, let $\varphi$ be a sequence of moves of the
+calculus of arborescent tangles ($F_1$, $F_2$, $F_3^\prime$, and the
+modified ring moves $\LP\pm R\RP$). Assume that there is an $i > 0$ such that
+$\varphi$ respects the cyclic orders of weight and bonds at each vertex $v_j$
+with $j < i$, and that the labels of the free bond $\alpha$ in
+$\Gamma$ and of $\varphi\LP \alpha\RP$ in $\Gamma^\prime$ are identical. Assume
+moreover that one of:
+
+\begin{enumerate}
+\item $\varphi$ reverses the cyclic order of bonds at $v_i$
+\item $\varphi$ does not respect the label in $V_4$ of some free bond of a
+  vertex $v_j$ with $1 \leq j < i$.
+\end{enumerate}
+
+Then $\varphi$ is not a sequence of moves of the calculus of arborescent tangles
+taking $\Gamma^\prime$ to $\Gamma$.
+
+\end{proposition}
+\begin{theorem}{}{rli-const-thm-rlitt_unique}The $\LP +\RP$-RLITT
+representative is unique in the class of CWPTT.
+
+\end{theorem}
+\begin{proof}Let $\Gamma$ and $\Gamma^\prime$ be two $\LP +\RP$-RLITT
+representatives for an arborescent
+tangle $T$. Assume for the sake of contradiction that
+$\Gamma\neq \Gamma^\prime$, meaning $T$ has two distinct $\LP +\RP$-RLITT. The
+classification result in Theorem~\ref{wpt-equi-thm-classi} and algorithm given
+by Theorem~\ref{wpt-equi-cor-algo} we produce a sequence of moves in the
+calculus of arborescent tangles that takes $\Gamma^\prime$ to $\Gamma$. Let
+$\varphi$ be such a sequence. By construction the labels in $V_4$ of $\Gamma$
+and $\Gamma^\prime$ agree. Now, since $\Gamma\neq \Gamma^\prime$ there must be a
+first, in the total order, vertex $v_i$ where $\Gamma$ and $\Gamma^\prime$
+disagree. As $\LP +\RP$-RLITT the location of weights for $v_i$ in $\Gamma$ and
+$\Gamma^\prime$ must appear in the same region. This requires that the
+disagreement at $v_i$ must be in cyclic order of its children. We find ourselves
+in the first case of Proposition~\ref{rli-const-prop-not_iso}, making
+$\varphi$ not a
+sequence of moves of the calculus of arborescent tangles taking $\Gamma^\prime$
+to $\Gamma$.
+
+\end{proof}
+%  prettier-ignore-start
+
+\subsection{Computational Methods}\label{subsec-computation}
+
+%  prettier-ignore-end
+
+%  prettier-ignore-start
+
+\subsubsection{An Encoding Strategy for Arborescent Knots and
+Tangles}\label{sec-arborescent-linear}
+
+%  prettier-ignore-end
+
+The various flavors of weighted planar trees we have seen thus far are a useful
+tool for manipulation of arborescent tangles by humans or machines.
+Unfortunately, the tree structure is quite difficult to store directly in a
+computer database. We will rectify this by introducing a linearization strategy
+for weighted planar trees. This linearization strategy is designed to encode not
+only CWPTT but arbitrary weighted planar tangle trees. If a weighted planar
+tangle tree has more than one free bond we list the label as a subtree. We will
+omit this from our algorithm description as we are primarily concerned with
+RLITT.
+
+We will descend the tree following the indexing of the total order
+(Section~\ref{indexing-rpt}), where the total ordering is an ideal
+ordering, specifically the
+depth first ordering. As we descend the tree, we annotate the
+linearization with two
+sets of delimiters. Each delimiter communicates extra information about the type
+of subtree it is delimiting, the two sets of delimiters are as follows:
+
+\begin{itemize}
+\item $\LB\ \RB$: Corresponds to a half-open proper stick and is
+interpreted as a
+twist vector for a rational tangle
+\cite{kauffmanClassificationRationalKnots2002}.
+\item $\LP\ \RP$: Corresponds to a vertex not on a half-open stick.
+\end{itemize}
+
+We will now walk through an example of the linearization algorithm. Let $\Gamma$
+be a weighted planar tangle tree seen in Figure~\ref{wpt-rli-fig-23}.
+As we walk the tree,
+the vertex currently being linearized will be called the \textbf{object vertex}.
+
+\paragraph{Tangle Linearization Example}
+
+We begin by adding the $V_4$ label for our tangle to the linearization. We then
+start the following algorithm with the root as the object vertex.
+
+For the object vertex, we add a `$\LP\ \right.$' delimiter to our linearization.
+Adding to our linearization the weights and children of the object vertex in an
+anti-clockwise order. When a child bond is encountered, we descend to that
+child. When we descend, we have two cases to consider, the child is a half-open
+proper stick or otherwise.
+
+\paragraph{Case 1: The Child Is The Root Of A Half-Open And Proper Stick}
+
+When the child is the root of a is proper and half-open (contains a leaf
+vertex), we append that stick as the twist vector
+(Definition~\ref{rational-def-twistvector}) for the corresponding rational
+tangle. Let the stick consist of the vertices, $v_i\cdots v_{i+k}$, and weights,
+$w_i\cdots w_{i+k}$. We delimit the stick with $\LB\ \RB$, with each weight
+separated by a space, and the leaf weight as the left most entry of the twist
+vector. Further, every other entry is multiplied by -1, forcing the sign of
+all entries to match, as in (\ref{linear-math-tv}).
+
+\begin{equation}
+\label{linear-math-tv}
+\LB w_{i+k}\ \m w_{i+k-1}\cdots\ \m w_{i-1}\ w_{i}\RB
+\end{equation}
+
+\paragraph{Case 2: The Child Is Essential, On A Open Stick, Or On A
+Non-Proper Stick}
+
+In this case, we restart the algorithm from the beginning with the current
+vertex as the object vertex.
+
+When we have exhausted the children for the object vertex, we close our
+linearization for that vertex with the delimiter `$\LN\ \RP$'. We then return to
+the parent linearization, repeating until all vertices have been exhausted. An
+example of a tree encoded with this strategy can be seen in
+Figure~\ref{wpt-rli-fig-23}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{files/watt_walk_tangle-18fc70625153f60d62d4bd17ca1eac74.pdf}
+\caption[Encoded tree subtrees are indicated by color.]{Encoded tree
+subtrees are indicated by color. Encoding follows the indicated path.}
+\label{wpt-rli-fig-23}
+\end{figure}
+
+%  prettier-ignore-start
+
+\subsubsection{Generation of Right Leaning Identity Weighted Planar
+Tangle Trees}\label{sec-rlitt-generation}
+
+%  prettier-ignore-end
+
+\paragraph{Generation of Rooted Plane Tree}
+
+Just as rooted plane trees serve as the scaffolding we built WPTT on, a rooted
+plane tree algorithm will serve as the backbone for our RLITT generation
+algorithm. We will now give a brief description of the generation algorithm for
+rooted plane trees given by Nakano
+\citep{nakanoEfficientGenerationPlane2002}. We
+begin by defining the \textbf{rightmost path} of a rooted plane tree $\Gamma$.
+
+\begin{definition}{Nakano, Section 2
+\textbf{\citep{nakanoEfficientGenerationPlane2002}}}{}
+Let $v_0$ be the root and $v_i$ be the highest indexed leaf (vertex of valence
+$\leq 1$) of a rooted plane tree $\Gamma$. The unique path
+$\LP v_0,\,\cdots,\,v_i \RP$, in the standard graph theoretic sense, is called
+the \textbf{rightmost path} of $\Gamma$.
+
+\end{definition}Next, we define a grafting operation on rooted plane
+trees $\Gamma$ and
+$\Gamma^\prime$.
+
+\begin{definition}{}{rli-gen-def-grafting_op}Let
+$\mathcal{T}^{p}_{n}$ be the set of rooted plane trees on $n$ vertices,
+$\Gamma_r\in \mathcal{T}^{p}_{n}$ , and $\Gamma_s\in \mathcal{T}^{p}_{m}$.
+Define the \textbf{grafting operation} as follows.
+
+\begin{equation}
+\begin{aligned}
+  \star_i:\mathcal{T}^{rp}_{n}\times\mathcal{T}^{rp}_{m}&\to\mathcal{T}^{rp}_{n+m}\\
+  \Gamma_r\times\Gamma_s&\mapsto\Gamma_r\star_i\Gamma_s
+\end{aligned}
+\end{equation}
+
+At the vertex $v_i$ of $\Gamma_r$, introduce an edge to the root of $\Gamma_s$.
+Now, adjust the indexing of a vertex $s_k$ of $\Gamma_s$ as $v_{n+k}$, placing
+$\Gamma_s$ as the rightmost child of $v_i$. This results in a rooted plane tree
+$\Gamma\in \mathcal{T}^{rp}_{n+m}$.
+
+When grafting at the root $v_0$ we omit the index label in the grafting
+operation, that is, $\star_0$ is written simply as $\star$. We call
+$\Gamma_r$ the
+\textbf{rootstock} and $\Gamma_s$ the \textbf{scion}.
+
+\end{definition}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\linewidth]{files/arbor_graph_grafting-61926ec067da7853030611f875cb397e.pdf}
+\caption[Grafting a scion.]{Grafting a scion $\Gamma_s$ to a
+rootstock $\Gamma_r$ with $\Gamma_r\star_3\Gamma_s$}
+\label{rli-gen-fig-scion_grafting}
+\end{figure}
+Now we are prepared to give the algorithm to generate all rooted plane trees of
+a given size that are created from $\Gamma$ by a sequence of $\star_\ast$
+operations on the rightmost path of $\Gamma$.
+\newpage
+\begin{remark}{Find all rooted plane trees of a given size created
+from \textbf{$\Gamma$
+\citep{nakanoEfficientGenerationPlane2002}}}{find-all-related-trees}
+\textbf{Input}
+
+\begin{itemize}
+\item A tree $\Gamma\in \mathcal{T}^{rp}_{i}$, $i<n$
+\item A target size $n\in T$
+\end{itemize}
+
+\textbf{Output}
+
+\begin{itemize}
+\item All collections of trees $\Gamma\in \mathcal{T}^{rp}_{n}$
+  created from $\Gamma$
+\end{itemize}
+
+\textbf{Routine}
+
+\begin{enumerate}
+\item Set $P$ to the rightmost path of $\Gamma$
+\item Set $\Gamma_1$ as the single vertex rooted plane tree
+\item If the number of vertices of $\Gamma$ is $n$ exit the algorithm
+\item For each vertex $v_i$ in $P$
+  \begin{enumerate}
+    \item Graft $\Gamma_1$ onto $\Gamma$ as $\Gamma\star_i
+      \Gamma_1=\Gamma^\prime$
+    \item Start a new instance of Algorithm~\ref{find-all-related-trees} with
+      $\Gamma=\Gamma^\prime$ and size=size
+  \end{enumerate}
+\end{enumerate}
+
+\end{remark}This algorithm can be extended to an algorithm that finds
+all rooted plane trees
+up to a given size as follows.
+
+\begin{remark}{Efficient generation of rooted plane trees
+\textbf{\citep{nakanoEfficientGenerationPlane2002}}}{find-efficient-trees}
+\textbf{Input}
+
+\begin{itemize}
+\item A target number of vertices of a tree $n\in \Z$
+\end{itemize}
+
+\textbf{Output}
+
+\begin{itemize}
+\item All trees $\Gamma\in \mathcal{T}^{rp}_{n}$
+\end{itemize}
+
+\textbf{Routine}
+
+\begin{enumerate}
+\item Set $\Gamma_1$ as the single vertex rooted plane tree
+\item Execute Algorithm~\ref{find-all-related-trees} with
+  $\Gamma=\Gamma_1$ and $n=n$
+\end{enumerate}
+
+\end{remark}
+\newpage
+\paragraph{Modification for RLITT}
+
+The algorithm described above serves as the inspiration for the algorithm we
+will build now for the enumeration of the arborescent tangles. Building this
+algorithm begins with modifying the grafting $\star_i$ operation to operate on
+weighted planar tangle trees as follows.
+
+\begin{definition}{}{rli-gen-def-grafting_op-wpt}The \textbf{grafting
+operation} $\star_i$ for weighted planar tangle trees, we require
+that the free bond of the scion be grafted to $v_i$. We also specify that the
+scion be grafted so that the rightmost weight of $v_i$ remains to the right of
+the scion after grafting; this can be seen in
+Figure~\ref{rli-gen-fig-scion_grafting_wth_weight}.
+
+\end{definition}
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{\textwidth}
+\centering
+\includegraphics[width=0.6\textwidth]{files/awptt_graph_pregraft-28141689ce1fed14e0a3223ce9a0eede.pdf}
+\caption[A WPTT rootstock and RLITT scion grafted.]{A rootstock
+  $\Gamma_r=\iota\LP \LP2\LP2\LB3\RB2\LB -3\RB3\RP \LB3\RB4\RP 4\RP$
+  in grey and scion $\Gamma_s=\iota\LB 10\ 9 \RB$ in orange. Each vertex is
+labeled with its index in the order on $\Gamma$.}
+\label{rli-gen-fig-scion_grafting_wth_weight_1}
+\end{subfigure}
+\newline
+\begin{subfigure}[b]{\textwidth}
+\centering
+\includegraphics[width=0.6\textwidth]{files/awptt_graph_grafted-e265b8e668aca3adac89f27cd9529cd2.pdf}
+\caption[Grafting at $v_2$.]{Grafting at $v_2$ yields
+  $\Gamma_r\star_2\Gamma_s=\iota\LP \LP2\LP2\LB3\RB2\LB -3\RB\LB 10\ 9
+\RB 3\RP \LB3\RB4\RP 4\RP$}
+\label{rli-gen-fig-scion_grafting_wth_weight_2}
+\end{subfigure}
+\caption[Grafting trees.]{}
+\label{rli-gen-fig-scion_grafting_wth_weight}
+\end{figure}Just as we have adjusted the grafting operator, we must
+adjust the Nakano
+algorithm so it is aware of the extra data in an RLITT. The initial reaction to
+this problem may be to simply annotate the scion of the grafting operation with
+the weights necessary to reach a target TCN. Unfortunately, this method quickly
+runs into issues generating even just the Montesinos tangles, a smaller class of
+tangle described by \citep{bonahonNewGeometricSplittings2016}. We must make a
+slightly more radical change to the Nakano algorithm, that being, grafting an
+entire RLITT to only the root $v_0$ of the rootstock. We will now show that a
+list of integral tangles (single vertex RLITT
+Section~\ref{subsec-integral_tangle})
+combined with grafting at the root generates all $\LP+\RP$-RLITT. To start, we
+will prove that each $\LP+\RP$-RLITT is integral or the result of grafting
+weighted planar tangle trees at the root.
+
+\begin{theorem}{}{rli-gen-const-thm-acnm1toacn}Every $\Gamma$
+$\LP+\RP$-RLITT of TCN $n$ is one of two forms:
+
+\begin{enumerate}
+\item $\Gamma$ is a single vertex with weight $\pm n$.
+\item $\Gamma$ is the result of grafting at the root of some
+  rootstock $\Gamma_r$
+  and $\LP+\RP$-RLITT scion $\Gamma_s$ where:
+  \begin{enumerate}
+    \item In $\Gamma_r$, $v_0$ is valence two, and $v_1$ is canonical
+      except for violating the stick condition by
+      $\text{Sign}\LP v_0\RP=\text{Sign}\LP v_1\RP$. Each vertex in
+      $\LS v_i\RS_{i=2}^n$ of $\Gamma_r$ is $\LP +\RP$-canonical.
+    \item $\Gamma_r$ is $\LP+\RP$-RLITT
+  \end{enumerate}
+\end{enumerate}
+
+\end{theorem}
+\begin{proof}Let $\Gamma$ be a $\LP +\RP$-RLITT, we have three cases
+based on the valence of
+$v_0\in \Gamma$.
+
+Valence of $v_0$ is:
+
+\begin{enumerate}
+\item \textbf{One:} $\Gamma$ is integral
+  (Section~\ref{subsec-integral_tangle}), we fall into
+  the first condition.
+
+\item \textbf{Two:} $\Gamma$ is a stick at the root, we let
+  $\Gamma_r=\iota\LB w_0\RB$
+  and $\Gamma_s=\iota\LP\alpha w_1\RP$, where $\alpha$ is the remaining
+  vertices, weights, and bonds of $\Gamma$. $\Gamma_r$ is integral, and as such
+  is $\LP+\RP$-RLITT. Now to show that $\Gamma_s$ is $\LP+\RP$-RLITT. Since
+  $\Gamma$ is $\LP+\RP$-RLITT, each $v_i$ in $\Gamma$ is canonical. Each vertex
+  in $\Gamma_s$ is also in $\Gamma$, so $\Gamma_s$ has only canonical vertices
+  and by Theorem~\ref{vertex-and-cannon} is $\LP+\RP$-canonical.
+  Finally, since locations of
+  weights are unchanged and grafting requires the scion to have identity label
+  $\Gamma_s$ is $\LP+\RP$-RLITT.
+
+\item \textbf{Three:} The root of $\Gamma$ has two children, we let
+  $\Gamma_s$ be the tree
+  with the right child of $v_0$ as a root and
+  $\Gamma_r=\iota\LP \alpha w_0\RP$, where $\alpha$ is the remaining vertices,
+  weights, and bonds of $\Gamma$. Showing $\Gamma_s$ is $\LP+\RP$-RLITT follows
+  identically as it did in the first form.
+
+  We now show $\Gamma_r$ is $\LP+\RP$-RLITT. First, given that $\Gamma$ is
+  $\LP+\RP$-RLITT, each $v_i$ in $\Gamma$ is canonical, consequently each
+  vertex that is unchanged in $\Gamma_r$ ($\LS v_i\RS_{i=2}^n$) is canonical.
+  The vertices that differ in $\Gamma_r$ are $v_0$ and $v_1$, $v_0$ remains
+  the root of $\Gamma_r$ so is canonical. Showing the canonicity of $v_1$
+  depends on the valence of $v_1$. When the valence is 0 or is greater
+  than 2, $\Gamma_r$ is $\LP+\RP$-RLITT by the same argument as $\Gamma_s$.
+  When $v_1$ is valence 1 or 2, $\Gamma_r$ begins with a stick, and $v_1$
+  continues to satisfy the weight, positivity, and the $\pm 1$ and 0 portion
+  of the stick condition. For the sign condition, when the signs agree, we are
+  in form 2.1 of this theorem, and when they disagree, we are in form 2.2.
+  \newpage
+\item \textbf{Greater than Three:} The final case is when the valence
+  of $v_0$ is greater
+  than three. We let $\Gamma_s$ be the tree with the right child of $v_0$ as a
+  root and $\Gamma_r=\iota\LP \alpha w_0\RP$, where $\alpha$ is the remaining
+  vertices, weights, and bonds of $\Gamma$. Both $\Gamma_r$ and $\Gamma_s$
+  follow the same argument used for $\Gamma_s$ of the valence 1 case.
+\end{enumerate}
+
+\end{proof}An identical theorem can be phrased for the $\LP
+-\RP$-RLITT case. With this
+result, we can start our construction of a grafting algorithm for arborescent
+tangles.
+
+\begin{remark}{Find weighted planar trees by grafting RLITT scions to
+the root of RLITT rootstocks}{find-grafted-trees}\textbf{Input}
+
+\begin{itemize}
+\item A collection of of RLITT scions $T_s$
+\item A collection of RLITT rootstocks $T_r$
+\end{itemize}
+
+\textbf{Output}
+
+\begin{itemize}
+\item A collection of weighted planar trees
+\end{itemize}
+
+\textbf{Routine}
+
+\begin{enumerate}
+\item for each combination of $\Gamma_r\in T_r$ and $\Gamma_s \in T_s$
+  \begin{enumerate}
+    \item Compute $\Gamma_r\star \Gamma_s$
+  \end{enumerate}
+\end{enumerate}
+
+\end{remark}Executing the algorithm with $\Gamma_r=\LS \iota\LB
+1\RB\RS$ as the rootstock
+and $\Gamma_s=\LS \iota\LB 2\ 0\RB\RS$ produces the tangle
+$\iota\LB 2\ 0\ 1\RB$. Unfortunately, this resultant tangle violates the stick
+condition and hence is not canonical. The remainder of this
+subsection will refine
+the grafting algorithm to satisfy each of the RLITT conditions.
+
+\subparagraph{Weight Condition}
+
+The simplest condition to verify is the weight condition. By construction,
+grafting the rootstock and scion introduces no additional weights at the
+grafting vertex. Meaning, the weight condition is satisfied with no adjustment
+to the algorithm.
+
+\subparagraph{Identity Condition}
+
+The next RLITT condition to address is the identity condition. We note that the
+$\star_i$ operation does not modify the $V_4$ label of the rootstock. This
+observation means if the rootstock is identity, the grafted tree will also be
+identity.
+
+%  prettier-ignore-start
+
+\subparagraph{Stick Condition}\label{rli-gen-sec-stick-con}
+
+%  prettier-ignore-end
+
+To start with the stick condition we will prove that if grafting produces a
+non-canonical tree the non-canonical vertex must be adjacent to the root.
+
+\begin{theorem}{}{only-the-root-matters}For $\Gamma_r$ a $\LP+\RP
+-$RLITT and $\Gamma_s$ a $\LP+\RP -$RLITT scion,
+the result of $\Gamma=\Gamma_r\star\Gamma_s$ is canonical, if all
+$v_i$ at distance 1 or less from the root are canonical.
+
+\end{theorem}
+\begin{proof}We need to show that each vertex $v_i$ at a distance
+greater than one from the
+root of $\Gamma=\Gamma_r\star\Gamma_s$ is canonical. The vertex $v_i$ is also a
+vertex of either $\Gamma_r$ or $\Gamma_s$. If the vertex is in $\Gamma_r$ then
+$v_i$ has a parent in $\Gamma_r$ and if the valence of $v_i$ is 2 or more
+$v_i$ also has children in $\Gamma_r$. The parent and children in $\Gamma$ are
+the same as the parent and children in $\Gamma_r$. Since $\Gamma_r$ is RLITT
+$v_i$ is canonical in $\Gamma_r$ and since it shares a parent and children in
+$\Gamma$ it is also canonical in $\Gamma$. Similarly, for $v_i$ in the scion,
+showing canonicity of grafting is dependent only on the canonicity of the
+vertices at a distance up to one from the root.
+
+\end{proof}The $\LP -\RP$-RLITT case is shown identically, covering
+the majority of
+possibilities. However, we need to take special care when grafting a
+non-negative to a non-positive tree (or the reverse). Before we address that
+case we define a restricted class of scions that, after grafting, satisfy the
+nonzero portion of the stick condition.
+
+\begin{definition}{}{}A $\LP+\RP -$RLITT (respectively $\LP+\RP
+-$RLITT) $\Gamma$ with root weight $w_0$
+is called a \textbf{good scion} when either:
+
+\begin{enumerate}
+\item $w_0\neq0$
+\item $w_0=0$ and the valence of $v_0$ is greater than 2 (essential)
+\end{enumerate}
+
+\end{definition}
+\begin{theorem}{}{positive-and-negative-dont-mix}For $\Gamma_r$ a
+non-negative $\LP+\RP -$RLITT, and $\Gamma_s$ a good
+non-positive $\LP -\RP -$RLITT scion, the result of
+$\Gamma=\Gamma_r\star\Gamma_s$ is non-canonical.
+
+\end{theorem}
+\begin{proof}$\Gamma_r$ is a non-neutral $\LP+\RP -$RLITT, so it has
+a non-root vertex $v_{i}$,
+which is a stick of the form Figure~\ref{wpt-construc-fig-positivity_cond-1} or
+Figure~\ref{wpt-construc-fig-positivity_cond-2}. Similarly,
+$\Gamma_s$ is a non-neutral
+$\LP+\RP -$RLITT, so it has a non-root vertex $v_{j}$, which is a stick of the
+form Figure~\ref{wpt-construc-fig-negativity_cond-1} or
+Figure~\ref{wpt-construc-fig-negativity_cond-2}.
+Since, $v_i$ and $v_j$ are not at the root, they remain sticks of the form
+Figure~\ref{wpt-construc-fig-positivity_cond-1},
+Figure~\ref{wpt-construc-fig-positivity_cond-2},
+Figure~\ref{wpt-construc-fig-negativity_cond-1}, or
+Figure~\ref{wpt-construc-fig-negativity_cond-2}
+after grafting. Making $\Gamma$ neither $\LP+\RP -$RLITT nor $\LP
+-\RP -$RLITT, as
+we desired.
+
+\end{proof}
+
+\newpage
+\begin{remark}{Find weighted planar trees by grafting RLITT good
+scions to the root of RLITT rootstocks}{find-grafted-good-trees}\textbf{Input}
+
+\begin{itemize}
+\item A collection of RLITT good scions $T_s$
+\item A collection of RLITT rootstocks $T_r$
+\end{itemize}
+
+\textbf{Output}
+
+\begin{itemize}
+\item A collection of weighted planar trees (still not guaranteed to be RLITT)
+\end{itemize}
+
+\textbf{Routine}
+
+\begin{enumerate}
+\item for each combination of $\Gamma_s\in T_s$ and $\Gamma_r \in T_r$
+  \begin{enumerate}
+    \item Compute $\Gamma = \Gamma_r\star \Gamma_s$
+    \item for each vertex $v_i$ at distance 1 from the root of $\Gamma$
+      \begin{enumerate}
+        \item Continue to the next iteration of the outer loop if
+          $v_i$ fails to satisfy the stick condition
+      \end{enumerate}
+
+    \item Report $\Gamma$
+  \end{enumerate}
+\end{enumerate}
+
+\end{remark}
+%  prettier-ignore-start
+
+\subparagraph{Positivity/Negativity Condition}\label{rli-gen-sec-pm-con}
+
+%  prettier-ignore-end
+
+Our approach to the positivity and negativity condition follows our approach to
+the stick condition. We will leverage
+Theorem~\ref{only-the-root-matters} to add a check for
+positvity and negativity in our algorithm.
+
+\begin{remark}{Find weighted planar trees by grafting
+\textbf{$\LP+\RP$-RLITT good scions to the root of $\LP+\RP$-RLITT
+rootstocks}}{find-grafted-good-trees-p}
+\textbf{Input}
+
+\begin{itemize}
+\item A collection of $\LP+\RP$-RLITT good scions $T_s$
+\item A collection of $\LP+\RP$-RLITT rootstocks $T_r$
+\end{itemize}
+
+\textbf{Output}
+
+\begin{itemize}
+\item A collection of weighted planar trees (still not guaranteed to be RLITT)
+\end{itemize}
+
+\textbf{Routine}
+
+\begin{enumerate}
+\item for each combination of $\Gamma_s\in T_s$ and $\Gamma_r \in T_r$
+  \begin{enumerate}
+    \item Compute $\Gamma = \Gamma_r\star \Gamma_s$
+    \item for each vertex $v_i$ at distance 1 from the root of $\Gamma$
+      \begin{enumerate}
+        \item Continue to the next iteration of the outer loop if
+          $v_i$ fails to satisfy the stick condition
+        \item Continue to the next iteration of the outer loop if
+          $v_i$ fails to satisfy the positivity condition
+      \end{enumerate}
+
+    \item Report $\Gamma$
+  \end{enumerate}
+\end{enumerate}
+
+\end{remark}
+\begin{remark}{Find weighted planar trees by grafting \textbf{$\LP
+  -\RP$-RLITT good scions to the root of $\LP -\RP$-RLITT
+rootstocks}}{find-grafted-good-trees-n}
+\textbf{Input}
+
+\begin{itemize}
+\item A collection of $\LP -\RP$-RLITT good scions $T_s$
+\item A collection of $\LP -\RP$-RLITT rootstocks $T_r$
+\end{itemize}
+
+\textbf{Output}
+
+\begin{itemize}
+\item A collection of weighted planar trees (still not guaranteed to be RLITT)
+\end{itemize}
+
+\textbf{Routine}
+
+\begin{enumerate}
+\item for each combination of $\Gamma_s\in T_s$ and $\Gamma_r \in T_r$
+  \begin{enumerate}
+    \item Compute $\Gamma = \Gamma_r\star \Gamma_s$
+    \item for each vertex $v_i$ at distance 1 from the root of $\Gamma$
+      \begin{enumerate}
+        \item Continue to the next iteration of the outer loop if
+          $v_i$ fails to satisfy the stick condition
+        \item Continue to the next iteration of the outer loop if
+          $v_i$ fails to satisfy the negativity condition
+      \end{enumerate}
+
+    \item Report $\Gamma$
+  \end{enumerate}
+\end{enumerate}
+
+\end{remark}\subparagraph{Right Leaning Condition}
+
+Satisfying the right leaning condition is a consequence of the modified
+$\star_i$ operation. Our definition of the $\star_i$ operation grafts the scion
+in such a way that weights at $v_i$ are always right of the scion. To fully
+satisfy the right leaning condition, we need to ensure that any stick subtrees
+of are in the right most postions. This is accomplished with a slight
+modification of our grafting algorithms.
+
+\begin{remark}{Find weighted planar trees by grafting
+\textbf{$\LP+\RP$-RLITT good scions to the root of $\LP+\RP$-RLITT
+rootstocks}}{find-grafted-good-trees-p-r}
+\textbf{Input}
+
+\begin{itemize}
+\item A collection of $\LP+\RP$-RLITT good scions $T_s$
+\item A collection of $\LP+\RP$-RLITT rootstocks $T_r$
+\end{itemize}
+
+\textbf{Output}
+
+\begin{itemize}
+\item A collection of RLITT
+\end{itemize}
+
+\textbf{Routine}
+
+\begin{enumerate}
+\item for each combination of $\Gamma_s\in T_s$ and $\Gamma_r \in T_r$
+  \begin{enumerate}
+    \item Compute $\Gamma = \Gamma_r\star \Gamma_s$
+    \item Shift ring subtrees of the root of $\Gamma$ to the right
+    \item for each vertex $v_i$ at distance 1 from the root of $\Gamma$
+      \begin{enumerate}
+        \item Continue to the next iteration of the outer loop if
+          $v_i$ fails to satisfy the stick condition
+        \item Continue to the next iteration of the outer loop if
+          $v_i$ fails to satisfy the positivity condition
+      \end{enumerate}
+
+    \item Report $\Gamma$
+  \end{enumerate}
+\end{enumerate}
+
+\end{remark}
+\begin{remark}{Find weighted planar trees by grafting \textbf{$\LP
+  -\RP$-RLITT good scions to the root of $\LP -\RP$-RLITT
+rootstocks}}{find-grafted-good-trees-n-r}
+\textbf{Input}
+
+\begin{itemize}
+\item A collection of $\LP -\RP$-RLITT good scions $T_s$
+\item A collection of $\LP -\RP$-RLITT rootstocks $T_r$
+\end{itemize}
+
+\textbf{Output}
+
+\begin{itemize}
+\item A collection of RLITT
+\end{itemize}
+
+\textbf{Routine}
+
+\begin{enumerate}
+\item for each combination of $\Gamma_s\in T_s$ and $\Gamma_r \in T_r$
+  \begin{enumerate}
+    \item Compute $\Gamma = \Gamma_r\star \Gamma_s$
+    \item Shift ring subtrees of the root of $\Gamma$ to the right
+    \item for each vertex $v_i$ at distance 1 from the root of $\Gamma$
+      \begin{enumerate}
+        \item Continue to the next iteration of the outer loop if
+          $v_i$ fails to satisfy the stick condition
+        \item Continue to the next iteration of the outer loop if
+          $v_i$ fails to satisfy the negativity condition
+      \end{enumerate}
+
+    \item Report $\Gamma$
+  \end{enumerate}
+\end{enumerate}
+
+\end{remark}\paragraph{Full Generation Algorithm}
+
+The algorithm we have developed so far generates new RLITT from two restricted
+collections of trees. Unfortunately, it doesn't yet tell us how to select the
+collections that guarantee the generation of all arborescent tangles up to a
+target TCN are represented. The final step in the generation scheme is
+describing how to build these collections. With computer enumeration in mind, we
+would like for our strategy to be easily split into jobs that can be run in
+parallel.
+
+We observe that when grafting $\Gamma_r\star_i\Gamma_s=\Gamma$, the TCN $r$ of
+$\Gamma_r$ and the TCN $s$ of $\Gamma_s$, sum to the TCN of $\Gamma$. This
+observation is the key underpinning of the strategy we use to define discrete
+generation jobs. For a target TCN we have the integer pairs seen in
+(\ref{rli-gen-eq-buckets}) that sum to the target TCN. Each of these
+pairs defines two classes, determined by TCN, of RLITT that can be grafted.
+
+\begin{equation}
+\label{rli-gen-eq-buckets}
+\begin{aligned}
+(0&,\text{TCN})\\
+( 1&,\text{TCN}-1)\\
+&\vdots\\
+(\text{TCN}-1&,1)\\
+(\text{TCN}&,0)
+\end{aligned}
+\end{equation}
+
+The next question we should ask is if we can simplify the list at all. First, as
+we saw in the discussion of the stick condition
+Section~\ref{rli-gen-sec-stick-con}, we
+need our scions to be good. This means we cannot have 1 or 0 in the second
+position of the pair, excluding $(\text{TCN} -1,1)$ and
+$(\text{TCN},0)$ from the
+list. Second, the pair $(0,\text{TCN})$ will be excluded from our list, since
+the zero-crossing tangle $\iota[0\ 0]$ can't serve as rootstock; grafting any
+scion would violate the stick condition. We will recover tangles with root
+weight 0 with a post-processing step.
+
+The following is the recursive algorithm used to take us from the set of RLITT
+with $\text{TCN} -1$ to the set of RLITT of the target TCN.
+
+\begin{remark}{Find RLITT of given TCN from all RLITT of
+TCN-1}{find-rlitt-from-acnm1toacn}\textbf{Input}
+
+\begin{itemize}
+\item A target TCN
+\item All RILTT up to TCN-1
+\end{itemize}
+
+\textbf{Output}
+
+\begin{itemize}
+\item A set $T$ of all RLITT of TCN
+\end{itemize}
+
+\textbf{Routine}
+
+\begin{enumerate}
+\item Set $i=1$
+\item Set $N=\text{TCN} -1$
+\item Set $T$ to the set $\LS \iota[\text{TCN}], \iota[0\ \text{TCN}]\RS$
+\item For each pair $(i,N -i)$
+  \begin{enumerate}
+    \item Set $T_{s+}$ to be the set of $+$-RLITT good scions with TCN
+      equal to $\text{N} -i$
+    \item Set $T_{s -}$ to be the set of $( -)$-RLITT good scions with TCN
+      equal to $\text{N} -i$
+    \item Set $T_{r+}$ to be the set of $(+)$-RLITT TCN equal to $i$
+    \item Set $T_{r -}$ to be the set of $( -)$-RLITT TCN equal to $i$
+    \item Execute Algorithm~\ref{find-grafted-good-trees-n-r} with
+      input $T_{r -}$ and $T_{s -}$
+    \item Add the results to $T$
+    \item Execute Algorithm~\ref{find-grafted-good-trees-p-r} with
+      input $T_{r+}$ and $T_{s+}$
+    \item Add the results to $T$
+  \end{enumerate}
+
+\item For every RLITT $\Gamma$ in $T$
+  \begin{enumerate}
+    \item Continue to the next iteration of the loop if root of
+      $\Gamma$ is valence two with weight zero
+    \item Compute $\iota[0]\star\Gamma$ and add to T
+  \end{enumerate}
+\end{enumerate}
+
+\end{remark}
+\begin{remark}{Find RLITT up to a given TCN}{find-rlitt-up-to-acn}\textbf{Input}
+
+\begin{itemize}
+\item A target TCN
+\end{itemize}
+
+\textbf{Output}
+
+\begin{itemize}
+\item A set $T$ of all RLITT up to TCN
+\end{itemize}
+
+\textbf{Routine}
+
+\begin{enumerate}
+\item Set $T$ to be the set $\LS
+  \iota[0],\ \iota[0\ 0],\ \iota[1],\ \iota[ -1],\ \iota[2],\ \iota[
+  -2],\,\ \iota[2\ 0],\ \iota[ -2\ 0]\RS$
+\item for i from 3 to TCN
+  \begin{enumerate}
+    \item Execute Algorithm~\ref{find-rlitt-from-acnm1toacn} with
+      input TCN $i$ and RLITT set
+      $T$.
+    \item Add the results to $T$
+  \end{enumerate}
+\end{enumerate}
+
+\end{remark}It is important to note that the output of
+Algorithm~\ref{find-rlitt-up-to-acn} includes
+duplicates in the form of $\LP+\RP$-RLITT and $\LP -\RP$-RLITT pairs. To
+deduplicate our list so it contains only topologically unique objects, we select
+from the list the collection of $\LP+\RP$-RLITT.

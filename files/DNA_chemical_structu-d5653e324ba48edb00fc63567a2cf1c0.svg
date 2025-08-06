@@ -1,0 +1,634 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg118" font-family="'Arial Rounded MT Bold'" version="1.1" viewBox="0 0 1440.848 1577.51">
+  <defs id="defs39">
+    <radialGradient id="rgWhite">
+      <stop id="stop1" stop-color="#FFF"/>
+      <stop id="stop2" offset=".5" stop-color="#FFF" stop-opacity=".7"/>
+      <stop id="stop3" offset="1" stop-color="#FFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rgYellow">
+      <stop id="stop4" stop-color="#FF0" stop-opacity="0"/>
+      <stop id="stop5" offset="1" stop-color="#FF0" stop-opacity=".85"/>
+    </radialGradient>
+    <radialGradient id="rgDeoxyribose">
+      <stop id="stop6" stop-color="#FFA600" stop-opacity="0"/>
+      <stop id="stop7" offset="1" stop-color="#FFA600" stop-opacity=".7"/>
+    </radialGradient>
+    <radialGradient id="rgAdenine">
+      <stop id="stop8" stop-color="#0F0" stop-opacity="0"/>
+      <stop id="stop9" offset="1" stop-color="#0F0" stop-opacity=".6"/>
+    </radialGradient>
+    <radialGradient id="rgCytosine">
+      <stop id="stop10" stop-color="red" stop-opacity="0"/>
+      <stop id="stop11" offset="1" stop-color="#F33" stop-opacity=".6"/>
+    </radialGradient>
+    <radialGradient id="rgThymine">
+      <stop id="stop12" stop-color="#C3F" stop-opacity="0"/>
+      <stop id="stop13" offset="1" stop-color="#C0F" stop-opacity=".6"/>
+    </radialGradient>
+    <radialGradient id="rgGuanine">
+      <stop id="stop14" stop-color="#33F" stop-opacity="0"/>
+      <stop id="stop15" offset="1" stop-color="#33F" stop-opacity=".6"/>
+    </radialGradient>
+    <radialGradient id="rgGrey" cx="460.896" cy="585.562" r="398.252" fx="460.896" fy="585.562" gradientTransform="matrix(.60855 0 0 1.64326 -19.36 -133.92)" gradientUnits="userSpaceOnUse">
+      <stop id="stop16" stop-color="#7F7F7F" stop-opacity="0"/>
+      <stop id="stop17" offset=".5" stop-color="#7F7F7F" stop-opacity="0"/>
+      <stop id="stop18" offset="1" stop-color="#7F7F7F" stop-opacity=".7"/>
+    </radialGradient>
+    <radialGradient xlink:href="#rgDeoxyribose" id="radialGradient291" cx="405.591" cy="485.584" r="48.916" fx="405.591" fy="485.584" gradientTransform="scale(1.00898 .9911)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient292" cx="406.83" cy="436.07" r="18.3" fx="406.83" fy="436.07" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgYellow" id="radialGradient293" cx="267.92" cy="310.54" r="26" fx="267.92" fy="310.54" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgDeoxyribose" id="radialGradient303" cx="405.591" cy="485.584" r="48.916" fx="405.591" fy="485.584" gradientTransform="scale(1.00898 .9911)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient304" cx="406.83" cy="436.07" r="18.3" fx="406.83" fy="436.07" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgYellow" id="radialGradient305" cx="267.92" cy="310.54" r="26" fx="267.92" fy="310.54" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgDeoxyribose" id="radialGradient315" cx="405.591" cy="485.584" r="48.916" fx="405.591" fy="485.584" gradientTransform="scale(1.00898 .9911)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient316" cx="406.83" cy="436.07" r="18.3" fx="406.83" fy="436.07" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgYellow" id="radialGradient317" cx="267.92" cy="310.54" r="26" fx="267.92" fy="310.54" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgDeoxyribose" id="radialGradient327" cx="1004.22" cy="400.338" r="49.656" fx="1004.22" fy="400.338" gradientTransform="scale(.97118 1.02968)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient328" cx="963.61" cy="457.6" r="18.3" fx="963.61" fy="457.6" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgYellow" id="radialGradient329" cx="1102.33" cy="588.91" r="26" fx="1102.33" fy="588.91" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgDeoxyribose" id="radialGradient339" cx="1004.22" cy="400.338" r="49.656" fx="1004.22" fy="400.338" gradientTransform="scale(.97118 1.02968)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient340" cx="963.61" cy="457.6" r="18.3" fx="963.61" fy="457.6" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgYellow" id="radialGradient341" cx="1102.33" cy="588.91" r="26" fx="1102.33" fy="588.91" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgDeoxyribose" id="radialGradient351" cx="1004.22" cy="400.338" r="49.656" fx="1004.22" fy="400.338" gradientTransform="scale(.97118 1.02968)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient352" cx="963.61" cy="457.6" r="18.3" fx="963.61" fy="457.6" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgYellow" id="radialGradient353" cx="1102.33" cy="588.91" r="26" fx="1102.33" fy="588.91" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgAdenine" id="radialGradient359" cx="517.112" cy="388.47" r="52.067" fx="517.112" fy="388.47" gradientTransform="scale(1.01792 .9824)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgAdenine" id="radialGradient360" cx="640.848" cy="393.592" r="62.226" fx="640.848" fy="393.592" gradientTransform="scale(.97717 1.02337)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient361" cx="523.51" cy="328.89" r="18.3" fx="523.51" fy="328.89" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient362" cx="685.03" cy="385.48" r="18.3" fx="685.03" fy="385.48" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient363" cx="499.68" cy="431.14" r="18.3" fx="499.68" fy="431.14" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient364" cx="613.9" cy="465.65" r="18.3" fx="613.9" fy="465.65" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient365" cx="523.515" cy="449.51" r="98.078" fx="523.515" fy="449.51" gradientTransform="scale(1.1315 .88379)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgAdenine" id="radialGradient366" cx="543.657" cy="416.432" r="106.831" fx="543.657" fy="416.432" gradientTransform="scale(1.08123 .92487)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgCytosine" id="radialGradient369" cx="593.967" cy="740.702" r="60.519" fx="593.967" fy="740.702" gradientTransform="scale(1.05223 .95036)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient370" cx="688.19" cy="710.86" r="18.3" fx="688.19" fy="710.86" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient371" cx="587.34" cy="753.83" r="18.3" fx="587.34" fy="753.83" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient372" cx="485.247" cy="962.528" r="52.29" fx="485.247" fy="962.528" gradientTransform="scale(1.3143 .76086)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgThymine" id="radialGradient375" cx="694.209" cy="1064.956" r="60.681" fx="694.209" fy="1064.956" gradientTransform="scale(1.0341 .96703)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient376" cx="773.47" cy="1036.04" r="18.3" fx="773.47" fy="1036.04" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient377" cx="680.69" cy="1078.49" r="18.3" fx="680.69" fy="1078.49" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient378" cx="568.329" cy="1352.591" r="50.566" fx="568.329" fy="1352.591" gradientTransform="scale(1.27933 .78166)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgGuanine" id="radialGradient384" cx="783.757" cy="1373.977" r="51.419" fx="783.757" fy="1373.977" gradientTransform="scale(1.00566 .99438)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgGuanine" id="radialGradient385" cx="890.481" cy="1388.854" r="62.167" fx="890.481" fy="1388.854" gradientTransform="scale(.99996 1.00004)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient386" cx="787.61" cy="1318.6" r="18.3" fx="787.61" fy="1318.6" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient387" cx="950.29" cy="1365.09" r="18.3" fx="950.29" fy="1365.09" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient388" cx="765.53" cy="1410.92" r="18.3" fx="765.53" fy="1410.92" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient389" cx="877.08" cy="1445.27" r="18.3" fx="877.08" fy="1445.27" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient390" cx="736.793" cy="1609.103" r="95.055" fx="736.793" fy="1609.103" gradientTransform="scale(1.16438 .85882)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgGuanine" id="radialGradient391" cx="757.524" cy="1543.351" r="106.066" fx="757.524" fy="1543.351" gradientTransform="scale(1.12698 .88733)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgDeoxyribose" id="radialGradient392" cx="405.591" cy="485.584" r="48.916" fx="405.591" fy="485.584" gradientTransform="scale(1.00898 .9911)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient393" cx="406.83" cy="436.07" r="18.3" fx="406.83" fy="436.07" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgYellow" id="radialGradient394" cx="267.92" cy="310.54" r="26" fx="267.92" fy="310.54" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgDeoxyribose" id="radialGradient395" cx="1004.22" cy="400.338" r="49.656" fx="1004.22" fy="400.338" gradientTransform="scale(.97118 1.02968)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient396" cx="963.61" cy="457.6" r="18.3" fx="963.61" fy="457.6" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgYellow" id="radialGradient397" cx="1102.33" cy="588.91" r="26" fx="1102.33" fy="588.91" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgAdenine" id="radialGradient398" cx="517.112" cy="388.47" r="52.067" fx="517.112" fy="388.47" gradientTransform="scale(1.01792 .9824)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgAdenine" id="radialGradient399" cx="640.848" cy="393.592" r="62.226" fx="640.848" fy="393.592" gradientTransform="scale(.97717 1.02337)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient400" cx="523.51" cy="328.89" r="18.3" fx="523.51" fy="328.89" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient401" cx="685.03" cy="385.48" r="18.3" fx="685.03" fy="385.48" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient402" cx="499.68" cy="431.14" r="18.3" fx="499.68" fy="431.14" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient403" cx="613.9" cy="465.65" r="18.3" fx="613.9" fy="465.65" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient404" cx="523.515" cy="449.51" r="98.078" fx="523.515" fy="449.51" gradientTransform="scale(1.1315 .88379)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgAdenine" id="radialGradient405" cx="543.657" cy="416.432" r="106.831" fx="543.657" fy="416.432" gradientTransform="scale(1.08123 .92487)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgCytosine" id="radialGradient406" cx="593.967" cy="740.702" r="60.519" fx="593.967" fy="740.702" gradientTransform="scale(1.05223 .95036)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient407" cx="688.19" cy="710.86" r="18.3" fx="688.19" fy="710.86" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient408" cx="587.34" cy="753.83" r="18.3" fx="587.34" fy="753.83" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient409" cx="485.247" cy="962.528" r="52.29" fx="485.247" fy="962.528" gradientTransform="scale(1.3143 .76086)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgThymine" id="radialGradient410" cx="694.209" cy="1064.956" r="60.681" fx="694.209" fy="1064.956" gradientTransform="scale(1.0341 .96703)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient411" cx="773.47" cy="1036.04" r="18.3" fx="773.47" fy="1036.04" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient412" cx="680.69" cy="1078.49" r="18.3" fx="680.69" fy="1078.49" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient413" cx="568.329" cy="1352.591" r="50.566" fx="568.329" fy="1352.591" gradientTransform="scale(1.27933 .78166)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgGuanine" id="radialGradient414" cx="783.757" cy="1373.977" r="51.419" fx="783.757" fy="1373.977" gradientTransform="scale(1.00566 .99438)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgGuanine" id="radialGradient415" cx="890.481" cy="1388.854" r="62.167" fx="890.481" fy="1388.854" gradientTransform="scale(.99996 1.00004)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient416" cx="787.61" cy="1318.6" r="18.3" fx="787.61" fy="1318.6" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient417" cx="950.29" cy="1365.09" r="18.3" fx="950.29" fy="1365.09" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient418" cx="765.53" cy="1410.92" r="18.3" fx="765.53" fy="1410.92" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient419" cx="877.08" cy="1445.27" r="18.3" fx="877.08" fy="1445.27" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgWhite" id="radialGradient420" cx="736.793" cy="1609.103" r="95.055" fx="736.793" fy="1609.103" gradientTransform="scale(1.16438 .85882)" gradientUnits="userSpaceOnUse"/>
+    <radialGradient xlink:href="#rgGuanine" id="radialGradient421" cx="757.524" cy="1543.351" r="106.066" fx="757.524" fy="1543.351" gradientTransform="scale(1.12698 .88733)" gradientUnits="userSpaceOnUse"/>
+    <linearGradient id="lgYellow" x1="7.739" x2="136.209" y1="2331.034" y2="2331.034" gradientTransform="matrix(2.63096 0 0 .38009 -19.36 -133.92)" gradientUnits="userSpaceOnUse">
+      <stop id="stop19" stop-color="#FF0" stop-opacity="0"/>
+      <stop id="stop20" offset=".5" stop-color="#FF0" stop-opacity=".45"/>
+      <stop id="stop21" offset="1" stop-color="#FF0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lgDeoxyribose" x1="7.359" x2="135.829" y1="2515.202" y2="2515.202" gradientTransform="matrix(2.63096 0 0 .38009 -19.36 -133.92)" gradientUnits="userSpaceOnUse">
+      <stop id="stop22" stop-color="#FFA600" stop-opacity="0"/>
+      <stop id="stop23" offset=".5" stop-color="#FFA600" stop-opacity=".35"/>
+      <stop id="stop24" offset="1" stop-color="#FFA600" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lgGrey" x1="11.834" x2="144.408" y1="2615.797" y2="2615.797" gradientTransform="matrix(2.54951 0 0 .39223 -19.36 -133.92)" gradientUnits="userSpaceOnUse">
+      <stop id="stop25" stop-color="#7F7F7F" stop-opacity="0"/>
+      <stop id="stop26" offset=".5" stop-color="#7F7F7F" stop-opacity=".3"/>
+      <stop id="stop27" offset="1" stop-color="#7F7F7F" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lgAdenine" x1="161.848" x2="317.75" y1="405.702" y2="405.702" gradientTransform="matrix(2.16802 0 0 .46125 -19.36 -133.92)" gradientUnits="userSpaceOnUse">
+      <stop id="stop28" stop-color="#0F0" stop-opacity="0"/>
+      <stop id="stop29" offset=".5" stop-color="#0F0" stop-opacity=".25"/>
+      <stop id="stop30" offset="1" stop-color="#0F0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lgCytosine" x1="425.524" x2="564.609" y1="3453.153" y2="3453.153" gradientTransform="matrix(2.31808 0 0 .4314 -19.36 -133.92)" gradientUnits="userSpaceOnUse">
+      <stop id="stop31" stop-color="red" stop-opacity="0"/>
+      <stop id="stop32" offset=".5" stop-color="#FF1919" stop-opacity=".3"/>
+      <stop id="stop33" offset="1" stop-color="#F33" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lgGuanine" x1="293.029" x2="431.855" y1="3510.604" y2="3510.604" gradientTransform="matrix(2.31376 0 0 .4322 -19.36 -133.92)" gradientUnits="userSpaceOnUse">
+      <stop id="stop34" stop-color="#33F" stop-opacity="0"/>
+      <stop id="stop35" offset=".5" stop-color="#33F" stop-opacity=".3"/>
+      <stop id="stop36" offset="1" stop-color="#33F" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lgThymine" x1="303.525" x2="452.578" y1="303.684" y2="303.684" gradientTransform="matrix(2.26765 0 0 .44098 -19.36 -133.92)" gradientUnits="userSpaceOnUse">
+      <stop id="stop37" stop-color="#C3F" stop-opacity="0"/>
+      <stop id="stop38" offset=".5" stop-color="#CC19FF" stop-opacity=".25"/>
+      <stop id="stop39" offset="1" stop-color="#C0F" stop-opacity="0"/>
+    </linearGradient>
+    <style id="style39">.structure{fill:none;stroke:#000;stroke-width:4.5px;stroke-linecap:round}</style>
+  </defs>
+  <g id="g1">
+    <path id="path39" fill="url(#rgGrey)" d="M246.01 842.71c13.09 15.86 40.6 58.95 55.99 128.85 11.94 54.26 19.23 434.74 201.47 510.53-188 19.92-237.81-421.76-252.35-469.55-28.38-93.25-95.09-138.17-95.45-140.48-.36-2.3 27.21-77.86-4.64-169.98-16.33-47.2-235.64-433.81-71.84-528.2C-23.7 342.31 194.04 654.41 216.27 705.33c28.65 65.6 31.01 116.85 29.74 137.38" style="fill:url(#rgGrey)"/>
+    <path id="rect39" d="M1 752.08h338v48.83H1Z" style="fill:url(#lgYellow)"/>
+    <path id="rect40" d="M0 822.08h338v48.83H0Z" style="fill:url(#lgDeoxyribose)"/>
+    <path id="rect41" d="M10.81 892.08h338v52h-338Z" style="fill:url(#lgGrey)"/>
+    <g id="g41" font-size="56" transform="translate(-19.36 -133.92)">
+      <switch id="switch41">
+        <g id="trsvg101" aria-label="Phosphate-deoxyribosebackbone">
+          <path id="path259" d="M46.4 893.455v15.34h6.945q3.855 0 5.96-1.996 2.106-1.997 2.106-5.688 0-3.664-2.105-5.66t-5.961-1.996zm-5.524-4.54h12.469q6.863 0 10.363 3.118 3.527 3.09 3.527 9.078 0 6.043-3.527 9.133-3.5 3.09-10.363 3.09H46.4v16.406h-5.524zm59.008 22.34v18.485h-5.031v-18.32q0-4.348-1.696-6.508t-5.086-2.16q-4.074 0-6.425 2.597t-2.352 7.082v17.309h-5.059v-42.547h5.06v16.68q1.804-2.762 4.237-4.13 2.461-1.366 5.66-1.366 5.278 0 7.985 3.281 2.707 3.254 2.707 9.598m21.902-8.613q-4.047 0-6.398 3.172-2.352 3.145-2.352 8.64 0 5.497 2.324 8.669 2.352 3.144 6.426 3.144 4.02 0 6.371-3.172 2.352-3.171 2.352-8.64 0-5.442-2.352-8.613-2.351-3.2-6.37-3.2m0-4.265q6.563 0 10.309 4.265 3.746 4.266 3.746 11.813 0 7.52-3.746 11.812-3.746 4.266-10.309 4.266-6.59 0-10.336-4.266-3.718-4.293-3.718-11.812 0-7.547 3.718-11.813 3.746-4.265 10.336-4.265m41.918 1.64v4.758q-2.133-1.094-4.43-1.64-2.296-.547-4.757-.547-3.746 0-5.633 1.148-1.86 1.149-1.86 3.445 0 1.75 1.34 2.762 1.34.984 5.387 1.887l1.723.383q5.36 1.148 7.601 3.254 2.27 2.078 2.27 5.824 0 4.265-3.39 6.754-3.364 2.488-9.27 2.488-2.461 0-5.14-.492-2.653-.465-5.606-1.422v-5.195q2.789 1.449 5.496 2.187 2.707.711 5.36.711 3.554 0 5.468-1.203 1.914-1.23 1.914-3.445 0-2.051-1.395-3.145-1.367-1.094-6.043-2.105l-1.75-.41q-4.675-.985-6.754-3.008-2.078-2.051-2.078-5.606 0-4.32 3.063-6.672 3.062-2.351 8.695-2.351 2.79 0 5.25.41t4.54 1.23m14.52 25.13v16.241h-5.059v-42.273h5.059v4.648q1.586-2.734 3.992-4.046 2.434-1.34 5.797-1.34 5.578 0 9.05 4.43 3.5 4.43 3.5 11.648 0 7.219-3.5 11.648-3.472 4.43-9.05 4.43-3.363 0-5.797-1.313-2.406-1.34-3.992-4.074m17.117-10.692q0-5.551-2.297-8.695-2.27-3.172-6.262-3.172t-6.289 3.172q-2.27 3.144-2.27 8.695 0 5.55 2.27 8.722 2.297 3.145 6.29 3.145t6.261-3.145q2.297-3.171 2.297-8.722m39.02-3.2v18.485h-5.032v-18.32q0-4.348-1.695-6.508t-5.086-2.16q-4.074 0-6.426 2.597-2.351 2.598-2.351 7.082v17.309h-5.059v-42.547h5.059v16.68q1.804-2.762 4.238-4.13 2.46-1.366 5.66-1.366 5.277 0 7.984 3.281 2.707 3.254 2.707 9.598m23.953 3.09q-6.098 0-8.45 1.395t-2.351 4.758q0 2.68 1.75 4.265 1.777 1.559 4.812 1.559 4.184 0 6.7-2.953 2.542-2.98 2.542-7.902v-1.122zm10.035-2.078v17.473h-5.031v-4.648q-1.723 2.789-4.293 4.128-2.57 1.313-6.29 1.313-4.703 0-7.492-2.625-2.761-2.652-2.761-7.082 0-5.168 3.445-7.793 3.473-2.625 10.336-2.625h7.055v-.492q0-3.473-2.297-5.36-2.27-1.914-6.399-1.914-2.625 0-5.113.63-2.488.628-4.785 1.886v-4.648q2.761-1.067 5.36-1.586 2.597-.547 5.058-.547 6.644 0 9.925 3.445t3.282 10.445m15.34-21.847v8.695h10.363v3.91h-10.363v16.625q0 3.746 1.011 4.813 1.04 1.066 4.184 1.066h5.168v4.211h-5.168q-5.824 0-8.04-2.16-2.214-2.188-2.214-7.93v-16.625h-3.691v-3.91h3.691v-8.695zm43.175 22.75v2.46h-23.132q.328 5.196 3.117 7.93 2.816 2.707 7.82 2.707 2.899 0 5.606-.71 2.734-.712 5.414-2.133v4.757q-2.707 1.149-5.551 1.75-2.844.602-5.77.602-7.328 0-11.62-4.266-4.266-4.265-4.266-11.539 0-7.52 4.046-11.922 4.075-4.43 10.965-4.43 6.18 0 9.762 3.993 3.61 3.965 3.61 10.8m-5.03-1.477q-.056-4.129-2.325-6.59-2.242-2.46-5.961-2.46-4.211 0-6.754 2.378-2.516 2.38-2.898 6.7zm10.745.465h14.738v4.484H332.58z"/>
+          <path id="path260" d="M60.81 973.763v-16.57h5.03v42.547h-5.03v-4.594q-1.586 2.735-4.02 4.074-2.406 1.313-5.797 1.313-5.55 0-9.05-4.43-3.473-4.43-3.473-11.648 0-7.219 3.473-11.649 3.5-4.43 9.05-4.43 3.39 0 5.797 1.34 2.434 1.313 4.02 4.047m-17.145 10.692q0 5.55 2.27 8.722 2.297 3.145 6.289 3.145t6.289-3.145q2.297-3.171 2.297-8.722t-2.297-8.695q-2.297-3.172-6.29-3.172-3.991 0-6.288 3.172-2.27 3.144-2.27 8.695m58.735-1.285v2.46H79.267q.328 5.196 3.117 7.93 2.816 2.707 7.82 2.707 2.899 0 5.606-.71 2.734-.712 5.414-2.133v4.757q-2.707 1.149-5.551 1.75-2.844.602-5.77.602-7.328 0-11.62-4.266-4.266-4.265-4.266-11.539 0-7.52 4.047-11.922 4.074-4.43 10.964-4.43 6.18 0 9.762 3.993 3.61 3.965 3.61 10.8m-5.032-1.477q-.054-4.129-2.324-6.59-2.242-2.46-5.96-2.46-4.212 0-6.755 2.378-2.515 2.38-2.898 6.7zm25.157-9.05q-4.047 0-6.399 3.171-2.351 3.145-2.351 8.64 0 5.497 2.324 8.669 2.351 3.144 6.426 3.144 4.02 0 6.37-3.172 2.352-3.171 2.352-8.64 0-5.442-2.351-8.613-2.352-3.2-6.371-3.2m0-4.266q6.562 0 10.308 4.265 3.746 4.266 3.746 11.813 0 7.52-3.746 11.812-3.746 4.266-10.308 4.266-6.59 0-10.336-4.266-3.72-4.293-3.72-11.812 0-7.547 3.72-11.813 3.746-4.265 10.336-4.265m46.128.738-11.074 14.902 11.649 15.723h-5.934l-8.914-12.031-8.914 12.031h-5.934l11.895-16.023-10.883-14.602h5.934l8.12 10.91 8.122-10.91zm20.426 33.469q-2.133 5.469-4.156 7.137t-5.414 1.667h-4.02v-4.21h2.953q2.079 0 3.227-.985 1.148-.984 2.543-4.648l.902-2.297-12.386-30.133h5.332l9.57 23.953 9.57-23.953h5.332zm38.145-28.766q-.848-.492-1.86-.71-.984-.247-2.187-.247-4.266 0-6.563 2.79-2.27 2.76-2.27 7.956v16.133h-5.058v-30.625h5.059v4.758q1.586-2.79 4.129-4.13 2.543-1.366 6.18-1.366.519 0 1.148.082.629.054 1.394.191zm5.277-4.703h5.031v30.625h-5.03zm0-11.922h5.031v6.371h-5.03zm37.543 27.262q0-5.551-2.297-8.695-2.27-3.172-6.262-3.172t-6.289 3.172q-2.27 3.144-2.27 8.695 0 5.55 2.27 8.722 2.297 3.145 6.29 3.145t6.261-3.145q2.297-3.171 2.297-8.722m-17.117-10.692q1.586-2.734 3.992-4.046 2.434-1.34 5.797-1.34 5.578 0 9.05 4.43 3.5 4.43 3.5 11.648 0 7.219-3.5 11.648-3.472 4.43-9.05 4.43-3.363 0-5.797-1.313-2.406-1.34-3.992-4.074v4.594h-5.059v-42.547h5.059zm42.547-1.12q-4.047 0-6.399 3.171-2.351 3.145-2.351 8.64 0 5.497 2.324 8.669 2.352 3.144 6.426 3.144 4.02 0 6.37-3.172 2.352-3.171 2.352-8.64 0-5.442-2.351-8.613-2.352-3.2-6.371-3.2m0-4.266q6.562 0 10.308 4.265 3.746 4.266 3.746 11.813 0 7.52-3.746 11.812-3.746 4.266-10.308 4.266-6.59 0-10.336-4.266-3.719-4.293-3.719-11.812 0-7.547 3.719-11.813 3.746-4.265 10.336-4.265m41.918 1.64v4.758q-2.133-1.094-4.43-1.64-2.297-.547-4.758-.547-3.746 0-5.633 1.148-1.859 1.149-1.859 3.445 0 1.75 1.34 2.762 1.34.984 5.387 1.887l1.722.383q5.36 1.148 7.602 3.254 2.27 2.078 2.27 5.824 0 4.265-3.391 6.754-3.364 2.488-9.27 2.488-2.46 0-5.14-.492-2.653-.465-5.606-1.422v-5.195q2.79 1.449 5.496 2.187 2.707.711 5.36.711 3.554 0 5.468-1.203 1.914-1.23 1.914-3.445 0-2.051-1.394-3.145-1.367-1.094-6.043-2.105l-1.75-.41q-4.676-.985-6.754-3.008-2.078-2.051-2.078-5.606 0-4.32 3.062-6.672 3.063-2.351 8.696-2.351 2.789 0 5.25.41t4.539 1.23m35.847 13.153v2.46h-23.132q.328 5.196 3.117 7.93 2.816 2.707 7.82 2.707 2.899 0 5.606-.71 2.734-.712 5.414-2.133v4.757q-2.707 1.149-5.551 1.75-2.844.602-5.77.602-7.328 0-11.62-4.266-4.266-4.265-4.266-11.539 0-7.52 4.046-11.922 4.075-4.43 10.965-4.43 6.18 0 9.762 3.993 3.61 3.965 3.61 10.8m-5.03-1.477q-.056-4.129-2.325-6.59-2.242-2.46-5.961-2.46-4.211 0-6.754 2.378-2.516 2.38-2.898 6.7z"/>
+          <path id="path261" d="M62.642 1054.455q0-5.55-2.297-8.695-2.27-3.172-6.262-3.172t-6.289 3.171q-2.27 3.145-2.27 8.696 0 5.55 2.27 8.723 2.297 3.144 6.29 3.144 3.991 0 6.26-3.144 2.298-3.172 2.298-8.723m-17.117-10.692q1.585-2.734 3.992-4.046 2.433-1.34 5.797-1.34 5.578 0 9.05 4.43 3.5 4.43 3.5 11.648 0 7.219-3.5 11.648-3.472 4.43-9.05 4.43-3.364 0-5.797-1.312-2.407-1.34-3.992-4.075v4.594h-5.06v-42.547h5.06zm44.597 10.583q-6.097 0-8.449 1.394-2.352 1.395-2.352 4.758 0 2.68 1.75 4.265 1.778 1.559 4.813 1.559 4.184 0 6.7-2.953 2.542-2.98 2.542-7.902v-1.121zm10.035-2.079v17.473h-5.03v-4.648q-1.724 2.789-4.294 4.129-2.57 1.312-6.289 1.312-4.703 0-7.492-2.625-2.762-2.652-2.762-7.082 0-5.168 3.445-7.793 3.473-2.625 10.336-2.625h7.055v-.492q0-3.473-2.297-5.36-2.27-1.914-6.398-1.914-2.625 0-5.113.63-2.489.628-4.786 1.886v-4.648q2.762-1.067 5.36-1.586 2.597-.547 5.058-.547 6.645 0 9.926 3.445t3.281 10.445m32.403-11.976v4.703q-2.133-1.176-4.293-1.75-2.133-.602-4.32-.602-4.895 0-7.602 3.118-2.707 3.09-2.707 8.695t2.707 8.723q2.707 3.09 7.601 3.09 2.188 0 4.32-.575 2.16-.601 4.294-1.777v4.648q-2.106.985-4.375 1.477-2.243.492-4.785.492-6.918 0-10.993-4.348-4.074-4.347-4.074-11.73 0-7.492 4.102-11.785 4.129-4.293 11.293-4.293 2.324 0 4.539.492 2.215.465 4.293 1.422m8.558-13.098h5.059v25.129l15.012-13.207h6.425l-16.242 14.328 16.926 16.297h-6.563l-15.558-14.957v14.957h-5.059zm54.606 27.262q0-5.55-2.297-8.695-2.27-3.172-6.262-3.172t-6.289 3.172q-2.27 3.144-2.27 8.695 0 5.55 2.27 8.723 2.297 3.144 6.29 3.144 3.991 0 6.26-3.144 2.298-3.172 2.298-8.723m-17.117-10.692q1.586-2.734 3.992-4.046 2.433-1.34 5.797-1.34 5.578 0 9.05 4.43 3.5 4.43 3.5 11.648 0 7.219-3.5 11.648-3.472 4.43-9.05 4.43-3.364 0-5.797-1.312-2.406-1.34-3.992-4.075v4.594h-5.059v-42.547h5.059zm42.546-1.12q-4.046 0-6.398 3.171-2.352 3.145-2.352 8.64 0 5.497 2.325 8.669 2.351 3.144 6.425 3.144 4.02 0 6.372-3.171 2.351-3.172 2.351-8.641 0-5.442-2.351-8.613-2.352-3.2-6.372-3.2m0-4.266q6.563 0 10.309 4.265 3.746 4.266 3.746 11.813 0 7.52-3.746 11.812-3.746 4.266-10.309 4.266-6.59 0-10.336-4.266-3.718-4.293-3.718-11.812 0-7.547 3.719-11.813 3.746-4.265 10.335-4.265m47.852 12.879v18.484h-5.031v-18.32q0-4.348-1.696-6.508t-5.086-2.16q-4.074 0-6.425 2.597t-2.352 7.082v17.309h-5.058v-30.625h5.058v4.758q1.805-2.762 4.238-4.13 2.461-1.366 5.66-1.366 5.278 0 7.985 3.281 2.707 3.254 2.707 9.598m36.23 1.914v2.46h-23.132q.328 5.196 3.117 7.93 2.816 2.707 7.82 2.707 2.899 0 5.606-.71 2.734-.711 5.414-2.133v4.757q-2.707 1.149-5.551 1.75-2.844.602-5.77.602-7.328 0-11.62-4.266-4.266-4.265-4.266-11.539 0-7.52 4.047-11.922 4.074-4.43 10.964-4.43 6.18 0 9.762 3.993 3.61 3.965 3.61 10.8m-5.03-1.477q-.055-4.129-2.325-6.59-2.242-2.46-5.96-2.46-4.212 0-6.755 2.378-2.515 2.38-2.898 6.7z"/>
+        </g>
+      </switch>
+    </g>
+    <path id="rect42" d="M331.53 53.21h338v71.91h-338z" style="fill:url(#lgAdenine)"/>
+    <path id="rect43" d="M668.93 0h338v65.73h-338Z" style="fill:url(#lgThymine)"/>
+    <path id="rect44" d="M658.64 1383.35h321.21v60H658.64Z" style="fill:url(#lgGuanine)"/>
+    <path id="rect45" d="M967.04 1355.74h322.41v60H967.04Z" style="fill:url(#lgCytosine)"/>
+    <g id="g48" font-size="72" transform="translate(-19.36 -133.92)">
+      <switch id="switch45">
+        <path id="trsvg104" d="m412.25 203.668-9.633 26.12h19.3zm-4.008-6.996h8.05l20.004 52.488h-7.383l-4.78-13.465h-23.66l-4.782 13.465h-7.488zm60.082 19.09v-21.305h6.468v54.703h-6.468v-5.906q-2.04 3.515-5.168 5.238-3.094 1.688-7.453 1.688-7.137 0-11.637-5.696-4.465-5.695-4.465-14.976t4.465-14.977q4.5-5.695 11.637-5.695 4.359 0 7.453 1.722 3.129 1.688 5.168 5.204m-22.043 13.746q0 7.136 2.918 11.215 2.953 4.042 8.086 4.042 5.132 0 8.085-4.042 2.954-4.079 2.954-11.215t-2.954-11.18q-2.953-4.078-8.085-4.078t-8.086 4.078q-2.918 4.043-2.918 11.18m75.515-1.653v3.164h-29.742q.422 6.68 4.008 10.196 3.621 3.48 10.055 3.48 3.726 0 7.207-.914 3.515-.914 6.96-2.742v6.117q-3.48 1.477-7.136 2.25-3.656.774-7.418.774-9.422 0-14.942-5.485-5.484-5.484-5.484-14.836 0-9.668 5.203-15.328 5.238-5.695 14.098-5.695 7.945 0 12.55 5.133 4.641 5.097 4.641 13.886m-6.468-1.898q-.07-5.309-2.989-8.473-2.883-3.164-7.664-3.164-5.414 0-8.683 3.059-3.235 3.058-3.727 8.613zm49.816-.563v23.766h-6.469v-23.555q0-5.59-2.18-8.367t-6.539-2.777q-5.238 0-8.261 3.34-3.024 3.34-3.024 9.105v22.254h-6.504v-39.375h6.504v6.117q2.32-3.55 5.45-5.308 3.164-1.758 7.277-1.758 6.785 0 10.265 4.219 3.48 4.183 3.48 12.34m12.902-15.609h6.469v39.375h-6.469zm0-15.328h6.469v8.191h-6.469zm52.735 30.937v23.766h-6.47v-23.555q0-5.59-2.179-8.367-2.18-2.777-6.539-2.777-5.238 0-8.262 3.34t-3.023 9.105v22.254h-6.504v-39.375h6.504v6.117q2.32-3.55 5.45-5.308 3.163-1.758 7.277-1.758 6.785 0 10.265 4.219 3.48 4.183 3.48 12.34m46.582 2.461v3.164H647.62q.422 6.68 4.008 10.196 3.621 3.48 10.055 3.48 3.727 0 7.207-.914 3.516-.914 6.96-2.742v6.117q-3.48 1.477-7.136 2.25-3.656.774-7.418.774-9.422 0-14.941-5.485-5.485-5.484-5.485-14.836 0-9.668 5.204-15.328 5.238-5.695 14.097-5.695 7.946 0 12.551 5.133 4.64 5.097 4.64 13.886m-6.47-1.898q-.07-5.309-2.987-8.473-2.883-3.164-7.664-3.164-5.414 0-8.684 3.059-3.234 3.058-3.727 8.613z" aria-label="Adenine"/>
+      </switch>
+      <switch id="switch46">
+        <path id="trsvg107" d="M1043.931 1497.635v7.488q-3.586-3.34-7.664-4.992-4.043-1.653-8.613-1.653-9 0-13.781 5.52-4.782 5.484-4.782 15.89 0 10.372 4.782 15.891 4.78 5.485 13.78 5.485 4.571 0 8.614-1.653 4.078-1.652 7.664-4.992v7.418q-3.727 2.531-7.91 3.797-4.148 1.266-8.79 1.266-11.917 0-18.773-7.278-6.855-7.312-6.855-19.933 0-12.657 6.855-19.934 6.856-7.312 18.774-7.312 4.71 0 8.86 1.265 4.183 1.23 7.84 3.727m27.07 52.101q-2.742 7.031-5.343 9.176t-6.961 2.145h-5.168v-5.414h3.797q2.672 0 4.148-1.266 1.477-1.266 3.27-5.977l1.16-2.953-15.926-38.742h6.855l12.305 30.797 12.305-30.797h6.855zm32.625-54.21v11.179h13.325v5.027h-13.325v21.375q0 4.817 1.301 6.188 1.336 1.37 5.38 1.37h6.644v5.415h-6.645q-7.488 0-10.336-2.777-2.848-2.813-2.848-10.196v-21.375h-4.746v-5.027h4.746v-11.18zm37.09 15.714q-5.203 0-8.226 4.078-3.024 4.043-3.024 11.11t2.989 11.144q3.023 4.043 8.261 4.043 5.168 0 8.192-4.078t3.023-11.11q0-6.995-3.023-11.074-3.024-4.113-8.192-4.113m0-5.484q8.438 0 13.254 5.484 4.817 5.484 4.817 15.188 0 9.668-4.817 15.187-4.816 5.484-13.254 5.484-8.472 0-13.289-5.484-4.781-5.52-4.781-15.187 0-9.704 4.781-15.188 4.817-5.484 13.29-5.484m53.895 2.11v6.116q-2.742-1.406-5.695-2.11-2.954-.702-6.118-.702-4.816 0-7.242 1.476-2.39 1.477-2.39 4.43 0 2.25 1.722 3.55 1.723 1.266 6.926 2.427l2.215.492q6.89 1.476 9.773 4.183 2.918 2.672 2.918 7.489 0 5.484-4.36 8.683-4.323 3.2-11.917 3.2-3.164 0-6.61-.633-3.41-.598-7.207-1.829v-6.68q3.586 1.864 7.067 2.813 3.48.914 6.89.914 4.57 0 7.032-1.547 2.46-1.582 2.46-4.43 0-2.636-1.792-4.042-1.758-1.406-7.77-2.707l-2.25-.528q-6.012-1.265-8.683-3.867-2.672-2.636-2.672-7.207 0-5.554 3.937-8.578 3.938-3.023 11.18-3.023 3.586 0 6.75.527t5.836 1.582m12.41-1.161h6.469v39.375h-6.47zm0-15.328h6.469v8.191h-6.47zm52.734 30.937v23.766h-6.468v-23.555q0-5.59-2.18-8.367t-6.54-2.777q-5.237 0-8.26 3.34-3.024 3.34-3.024 9.105v22.254h-6.504v-39.375h6.504v6.117q2.32-3.55 5.449-5.309 3.164-1.757 7.277-1.757 6.785 0 10.266 4.218 3.48 4.184 3.48 12.34m46.582 2.461v3.164h-29.742q.422 6.68 4.008 10.196 3.621 3.48 10.055 3.48 3.726 0 7.207-.914 3.515-.914 6.96-2.742v6.117q-3.48 1.477-7.136 2.25-3.656.774-7.418.774-9.422 0-14.941-5.485-5.485-5.484-5.485-14.836 0-9.668 5.203-15.328 5.239-5.695 14.098-5.695 7.945 0 12.55 5.132 4.641 5.098 4.641 13.887m-6.468-1.898q-.07-5.309-2.989-8.473-2.882-3.164-7.664-3.164-5.414 0-8.683 3.059-3.235 3.058-3.727 8.613z" aria-label="Cytosine"/>
+      </switch>
+      <switch id="switch47">
+        <path id="trsvg110" d="M738.815 1565.902v-14.098h-11.601v-5.836h18.633v22.535q-4.114 2.918-9.07 4.43-4.958 1.476-10.583 1.476-12.304 0-19.265-7.171-6.926-7.207-6.926-20.04 0-12.867 6.926-20.039 6.96-7.207 19.265-7.207 5.133 0 9.739 1.266 4.64 1.266 8.543 3.727v7.558q-3.938-3.34-8.368-5.027t-9.316-1.688q-9.633 0-14.484 5.38-4.817 5.378-4.817 16.03 0 10.618 4.817 15.997 4.851 5.379 14.484 5.379 3.762 0 6.715-.633 2.953-.668 5.308-2.04m19.055-8.051v-23.836h6.469v23.59q0 5.59 2.18 8.402 2.18 2.777 6.539 2.777 5.238 0 8.261-3.34 3.059-3.34 3.059-9.105v-22.324h6.469v39.375h-6.469v-6.047q-2.355 3.586-5.484 5.344-3.094 1.723-7.207 1.723-6.786 0-10.301-4.22-3.516-4.218-3.516-12.339m64.195-4.254q-7.84 0-10.863 1.793t-3.023 6.117q0 3.445 2.25 5.485 2.285 2.003 6.187 2.003 5.38 0 8.614-3.796 3.27-3.832 3.27-10.16v-1.442zm12.903-2.672v22.465h-6.469v-5.977q-2.215 3.586-5.52 5.309-3.304 1.687-8.085 1.687-6.047 0-9.633-3.375-3.551-3.41-3.551-9.105 0-6.645 4.43-10.02 4.465-3.375 13.289-3.375h9.07v-.632q0-4.465-2.953-6.89-2.918-2.462-8.227-2.462-3.375 0-6.574.809-3.199.808-6.152 2.425v-5.976q3.55-1.371 6.89-2.04 3.34-.702 6.504-.702 8.543 0 12.762 4.43t4.219 13.43m46.055-1.3v23.765h-6.47v-23.555q0-5.59-2.179-8.367-2.18-2.777-6.539-2.777-5.238 0-8.262 3.34t-3.023 9.105v22.254h-6.504v-39.375h6.504v6.117q2.32-3.55 5.45-5.308 3.163-1.758 7.276-1.758 6.786 0 10.266 4.218 3.48 4.184 3.48 12.34m12.902-15.61h6.469v39.375h-6.47zm0-15.328h6.469v8.191h-6.47zm52.734 30.937v23.766h-6.469v-23.555q0-5.59-2.18-8.367-2.179-2.777-6.538-2.777-5.239 0-8.262 3.34t-3.023 9.105v22.254h-6.504v-39.375h6.504v6.117q2.32-3.55 5.449-5.308 3.164-1.758 7.277-1.758 6.785 0 10.266 4.218 3.48 4.184 3.48 12.34m46.582 2.461v3.164H963.5q.422 6.68 4.008 10.196 3.621 3.48 10.055 3.48 3.726 0 7.207-.914 3.515-.914 6.96-2.742v6.117q-3.48 1.477-7.136 2.25t-7.418.773q-9.422 0-14.942-5.484-5.484-5.484-5.484-14.836 0-9.668 5.203-15.328 5.238-5.695 14.098-5.695 7.945 0 12.55 5.133 4.641 5.097 4.641 13.886m-6.468-1.898q-.07-5.309-2.989-8.473-2.883-3.164-7.664-3.164-5.414 0-8.683 3.059-3.235 3.058-3.727 8.613z" aria-label="Guanine"/>
+      </switch>
+      <switch id="switch48">
+        <path id="trsvg113" d="M702.05 136.882h44.401v5.976H727.82v46.512h-7.137v-46.512h-18.633zm83.706 28.722v23.766h-6.469v-23.555q0-5.59-2.18-8.367-2.179-2.777-6.538-2.777-5.239 0-8.262 3.34t-3.024 9.105v22.254h-6.503v-54.703h6.503v21.445q2.32-3.55 5.45-5.308 3.164-1.758 7.277-1.758 6.785 0 10.266 4.219 3.48 4.183 3.48 12.34m29.285 27.422q-2.742 7.031-5.343 9.176t-6.961 2.145h-5.168v-5.414h3.796q2.672 0 4.149-1.266t3.27-5.977l1.16-2.953-15.926-38.742h6.855l12.305 30.797 12.305-30.797h6.855zm56.883-35.472q2.426-4.36 5.8-6.434 3.376-2.074 7.946-2.074 6.153 0 9.492 4.324 3.34 4.29 3.34 12.234v23.766h-6.504v-23.555q0-5.66-2.004-8.402t-6.117-2.742q-5.027 0-7.945 3.34t-2.918 9.105v22.254h-6.504v-23.555q0-5.695-2.004-8.402-2.004-2.742-6.187-2.742-4.957 0-7.875 3.375-2.918 3.34-2.918 9.07v22.254h-6.504v-39.375h6.504v6.117q2.214-3.62 5.308-5.344 3.094-1.722 7.348-1.722 4.289 0 7.277 2.18 3.024 2.18 4.465 6.328m39.48-7.559h6.47v39.375h-6.47zm0-15.328h6.47v8.191h-6.47zm52.735 30.937v23.766h-6.469v-23.555q0-5.59-2.18-8.367t-6.539-2.777q-5.238 0-8.261 3.34-3.024 3.34-3.024 9.105v22.254h-6.504v-39.375h6.504v6.117q2.32-3.55 5.45-5.308 3.164-1.758 7.277-1.758 6.785 0 10.265 4.219 3.48 4.183 3.48 12.34m46.582 2.461v3.164h-29.742q.422 6.68 4.008 10.196 3.62 3.48 10.054 3.48 3.727 0 7.207-.914 3.516-.914 6.961-2.742v6.117q-3.48 1.477-7.136 2.25-3.657.774-7.418.774-9.422 0-14.942-5.485-5.484-5.484-5.484-14.836 0-9.668 5.203-15.328 5.238-5.695 14.098-5.695 7.945 0 12.55 5.133 4.64 5.097 4.64 13.886m-6.469-1.898q-.07-5.309-2.988-8.473-2.883-3.164-7.664-3.164-5.414 0-8.684 3.059-3.234 3.058-3.726 8.613z" aria-label="Thymine"/>
+      </switch>
+    </g>
+    <g id="g114" font-size="28" font-weight="bold" text-anchor="middle" transform="translate(-19.36 -133.92)">
+      <g id="pdb1">
+        <path id="path48" fill="url(#rgDeoxyribose)" d="m458.59 472.22-16.43 57.52h-65.73l-16.55-60.45 47.77-36.51z" style="fill:url(#radialGradient392)"/>
+        <path id="circle48" d="M425.13 436.07a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient393)"/>
+        <path id="circle49" d="M293.92 310.54a26 26 0 0 1-26 26 26 26 0 0 1-26-26 26 26 0 0 1 26-26 26 26 0 0 1 26 26" style="fill:url(#radialGradient394)"/>
+        <path id="path49" d="m253 309.59-33-9m0-6 33 9m27-5 20-25m-59 73 18-25m18-4 28 24m91 100-38 28M316.5 365.5l-5.5 63.09 47 41 20 60h64l18-57-42-31m72 0-30 31" class="structure"/>
+        <switch id="switch49">
+          <path id="trsvg114" d="M306.653 252.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch50">
+          <path id="trsvg115" d="M201.993 286.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch51">
+          <path id="trsvg116" d="M260.31 298.188h8.736q3.896 0 5.975 1.736 2.091 1.723 2.091 4.922 0 3.213-2.091 4.95-2.079 1.722-5.975 1.722h-3.473v7.082h-5.263zm5.263 3.814v5.702h2.912q1.532 0 2.366-.739.834-.752.834-2.119t-.834-2.105-2.366-.739z" aria-label="P"/>
+        </switch>
+        <switch id="switch52">
+          <path id="trsvg117" d="M315.993 343.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch53">
+          <g id="trsvg118" aria-label="&#8722;O">
+            <path id="path262" d="M205.335 364.21h17.527v3.226h-17.527z"/>
+            <path id="path263" d="M237.724 352.633q-2.407 0-3.733 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.733 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.71 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765-2.788 2.816-7.71 2.816-4.909 0-7.711-2.816-2.79-2.816-2.79-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816"/>
+          </g>
+        </switch>
+        <switch id="switch54">
+          <path id="trsvg119" d="M406.993 424.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+      </g>
+      <switch id="switch55">
+        <path id="trsvg120" d="M321.236 264.2h17.528v3.226h-17.528z" aria-label="&#8722;"/>
+      </switch>
+      <switch id="switch56">
+        <path id="trsvg121" d="M624.276 1561.633q-2.406 0-3.732 1.777-1.326 1.778-1.326 5.004 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.327-1.778 1.327-4.99 0-3.227-1.327-5.005-1.326-1.777-3.746-1.777m0-3.814q4.922 0 7.711 2.816t2.79 7.78q0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.963 2.79-7.779 2.802-2.816 7.71-2.816m14.479.369h5.264v7.78h7.765v-7.78h5.264v20.412h-5.264v-8.654h-7.765v8.654h-5.264z" aria-label="OH"/>
+      </switch>
+      <g id="use56" transform="translate(87.51 329.79)">
+        <path id="path281" fill="url(#rgDeoxyribose)" d="m458.59 472.22-16.43 57.52h-65.73l-16.55-60.45 47.77-36.51z" style="fill:url(#radialGradient291)"/>
+        <path id="path282" d="M425.13 436.07a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient292)"/>
+        <path id="path283" d="M293.92 310.54a26 26 0 0 1-26 26 26 26 0 0 1-26-26 26 26 0 0 1 26-26 26 26 0 0 1 26 26" style="fill:url(#radialGradient293)"/>
+        <path id="path284" d="m253 309.59-33-9m0-6 33 9m27-5 20-25m-59 73 18-25m18-4 28 24m91 100-38 28M316.5 365.5l-5.5 63.09 47 41 20 60h64l18-57-42-31m72 0-30 31" class="structure"/>
+        <switch id="switch285">
+          <path id="path285" d="M306.653 252.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch286">
+          <path id="path286" d="M201.993 286.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch287">
+          <path id="path287" d="M260.31 298.188h8.736q3.896 0 5.975 1.736 2.091 1.723 2.091 4.922 0 3.213-2.091 4.95-2.079 1.722-5.975 1.722h-3.473v7.082h-5.263zm5.263 3.814v5.702h2.912q1.532 0 2.366-.739.834-.752.834-2.119t-.834-2.105-2.366-.739z" aria-label="P"/>
+        </switch>
+        <switch id="switch288">
+          <path id="path288" d="M315.993 343.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch290">
+          <g id="g290" aria-label="&#8722;O">
+            <path id="path289" d="M205.335 364.21h17.527v3.226h-17.527z"/>
+            <path id="path290" d="M237.724 352.633q-2.407 0-3.733 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.733 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.71 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765-2.788 2.816-7.71 2.816-4.909 0-7.711-2.816-2.79-2.816-2.79-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816"/>
+          </g>
+        </switch>
+        <switch id="switch291">
+          <path id="path291" d="M406.993 424.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+      </g>
+      <g id="use57" transform="translate(178.34 656.75)">
+        <path id="path293" fill="url(#rgDeoxyribose)" d="m458.59 472.22-16.43 57.52h-65.73l-16.55-60.45 47.77-36.51z" style="fill:url(#radialGradient303)"/>
+        <path id="path294" d="M425.13 436.07a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient304)"/>
+        <path id="path295" d="M293.92 310.54a26 26 0 0 1-26 26 26 26 0 0 1-26-26 26 26 0 0 1 26-26 26 26 0 0 1 26 26" style="fill:url(#radialGradient305)"/>
+        <path id="path296" d="m253 309.59-33-9m0-6 33 9m27-5 20-25m-59 73 18-25m18-4 28 24m91 100-38 28M316.5 365.5l-5.5 63.09 47 41 20 60h64l18-57-42-31m72 0-30 31" class="structure"/>
+        <switch id="switch297">
+          <path id="path297" d="M306.653 252.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch298">
+          <path id="path298" d="M201.993 286.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch299">
+          <path id="path299" d="M260.31 298.188h8.736q3.896 0 5.975 1.736 2.091 1.723 2.091 4.922 0 3.213-2.091 4.95-2.079 1.722-5.975 1.722h-3.473v7.082h-5.263zm5.263 3.814v5.702h2.912q1.532 0 2.366-.739.834-.752.834-2.119t-.834-2.105-2.366-.739z" aria-label="P"/>
+        </switch>
+        <switch id="switch300">
+          <path id="path300" d="M315.993 343.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch302">
+          <g id="g302" aria-label="&#8722;O">
+            <path id="path301" d="M205.335 364.21h17.527v3.226h-17.527z"/>
+            <path id="path302" d="M237.724 352.633q-2.407 0-3.733 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.733 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.71 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765-2.788 2.816-7.71 2.816-4.909 0-7.711-2.816-2.79-2.816-2.79-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816"/>
+          </g>
+        </switch>
+        <switch id="switch303">
+          <path id="path303" d="M406.993 424.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+      </g>
+      <g id="use58" transform="translate(266.33 985.48)">
+        <path id="path305" fill="url(#rgDeoxyribose)" d="m458.59 472.22-16.43 57.52h-65.73l-16.55-60.45 47.77-36.51z" style="fill:url(#radialGradient315)"/>
+        <path id="path306" d="M425.13 436.07a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient316)"/>
+        <path id="path307" d="M293.92 310.54a26 26 0 0 1-26 26 26 26 0 0 1-26-26 26 26 0 0 1 26-26 26 26 0 0 1 26 26" style="fill:url(#radialGradient317)"/>
+        <path id="path308" d="m253 309.59-33-9m0-6 33 9m27-5 20-25m-59 73 18-25m18-4 28 24m91 100-38 28M316.5 365.5l-5.5 63.09 47 41 20 60h64l18-57-42-31m72 0-30 31" class="structure"/>
+        <switch id="switch309">
+          <path id="path309" d="M306.653 252.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch310">
+          <path id="path310" d="M201.993 286.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch311">
+          <path id="path311" d="M260.31 298.188h8.736q3.896 0 5.975 1.736 2.091 1.723 2.091 4.922 0 3.213-2.091 4.95-2.079 1.722-5.975 1.722h-3.473v7.082h-5.263zm5.263 3.814v5.702h2.912q1.532 0 2.366-.739.834-.752.834-2.119t-.834-2.105-2.366-.739z" aria-label="P"/>
+        </switch>
+        <switch id="switch312">
+          <path id="path312" d="M315.993 343.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch314">
+          <g id="g314" aria-label="&#8722;O">
+            <path id="path313" d="M205.335 364.21h17.527v3.226h-17.527z"/>
+            <path id="path314" d="M237.724 352.633q-2.407 0-3.733 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.733 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.71 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765-2.788 2.816-7.71 2.816-4.909 0-7.711-2.816-2.79-2.816-2.79-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816"/>
+          </g>
+        </switch>
+        <switch id="switch315">
+          <path id="path315" d="M406.993 424.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+      </g>
+      <path id="path58" d="m378 529.59 18 50m70 280 15 43m74 285 13 45m76 284v38" class="structure"/>
+      <g id="pdb2">
+        <path id="path59" fill="url(#rgDeoxyribose)" d="m927.05 412.22 34.86 51.13 61.59-22.08-3.49-61.59-56.94-18.59z" style="fill:url(#radialGradient395)"/>
+        <path id="circle59" d="M981.91 457.6a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient396)"/>
+        <path id="circle60" d="M1128.33 588.91a26 26 0 0 1-26 26 26 26 0 0 1-26-26 26 26 0 0 1 26-26 26 26 0 0 1 26 26" style="fill:url(#radialGradient397)"/>
+        <path id="path60" d="m952 450.59-26-37 38-52 57 20 2 61-45 16m-87-71 35 26m97 29 47 44-11 45m7 24 28 25m22-4 20-23m-18 35 33 7m0 6-33-7m-15 6-9 35" class="structure"/>
+        <switch id="switch60">
+          <path id="trsvg122" d="M962.993 454.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch61">
+          <path id="trsvg123" d="M1054.993 539.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch62">
+          <g id="trsvg124" aria-label="O&#8722;">
+            <path id="path264" d="M1138.263 532.633q-2.407 0-3.733 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.733 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.71 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765-2.788 2.816-7.71 2.816-4.908 0-7.711-2.816-2.79-2.816-2.79-7.766 0-4.962 2.79-7.779 2.803-2.816 7.71-2.816"/>
+            <path id="path265" d="M1153.138 544.21h17.527v3.226h-17.527z"/>
+          </g>
+        </switch>
+        <switch id="switch63">
+          <path id="trsvg125" d="M1097.31 577.188h8.736q3.896 0 5.975 1.736 2.091 1.723 2.091 4.922 0 3.213-2.092 4.95-2.078 1.722-5.974 1.722h-3.473v7.082h-5.263zm5.263 3.814v5.701h2.912q1.532 0 2.366-.738.834-.752.834-2.119t-.834-2.105-2.366-.739z" aria-label="P"/>
+        </switch>
+        <switch id="switch64">
+          <path id="trsvg126" d="M1165.993 593.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch65">
+          <path id="trsvg127" d="M1089.993 641.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+      </g>
+      <switch id="switch66">
+        <path id="trsvg128" d="M1003.276 322.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.747-1.777 1.326-1.778 1.326-4.99 0-3.227-1.327-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816m14.479.369h5.264v7.78h7.765v-7.78h5.264V339.6h-5.264v-8.654h-7.765v8.654h-5.264z" aria-label="OH"/>
+      </switch>
+      <switch id="switch67">
+        <path id="trsvg129" d="M1323.236 1635.2h17.528v3.226h-17.528z" aria-label="&#8722;"/>
+      </switch>
+      <g id="use67" transform="translate(87.33 330.02)">
+        <path id="path317" fill="url(#rgDeoxyribose)" d="m927.05 412.22 34.86 51.13 61.59-22.08-3.49-61.59-56.94-18.59z" style="fill:url(#radialGradient327)"/>
+        <path id="path318" d="M981.91 457.6a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient328)"/>
+        <path id="path319" d="M1128.33 588.91a26 26 0 0 1-26 26 26 26 0 0 1-26-26 26 26 0 0 1 26-26 26 26 0 0 1 26 26" style="fill:url(#radialGradient329)"/>
+        <path id="path320" d="m952 450.59-26-37 38-52 57 20 2 61-45 16m-87-71 35 26m97 29 47 44-11 45m7 24 28 25m22-4 20-23m-18 35 33 7m0 6-33-7m-15 6-9 35" class="structure"/>
+        <switch id="switch321">
+          <path id="path321" d="M962.993 454.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch322">
+          <path id="path322" d="M1054.993 539.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch324">
+          <g id="g324" aria-label="O&#8722;">
+            <path id="path323" d="M1138.263 532.633q-2.407 0-3.733 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.733 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.71 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765-2.788 2.816-7.71 2.816-4.908 0-7.711-2.816-2.79-2.816-2.79-7.766 0-4.962 2.79-7.779 2.803-2.816 7.71-2.816"/>
+            <path id="path324" d="M1153.138 544.21h17.527v3.226h-17.527z"/>
+          </g>
+        </switch>
+        <switch id="switch325">
+          <path id="path325" d="M1097.31 577.188h8.736q3.896 0 5.975 1.736 2.091 1.723 2.091 4.922 0 3.213-2.092 4.95-2.078 1.722-5.974 1.722h-3.473v7.082h-5.263zm5.263 3.814v5.701h2.912q1.532 0 2.366-.738.834-.752.834-2.119t-.834-2.105-2.366-.739z" aria-label="P"/>
+        </switch>
+        <switch id="switch326">
+          <path id="path326" d="M1165.993 593.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch327">
+          <path id="path327" d="M1089.993 641.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+      </g>
+      <g id="use68" transform="translate(175.63 655.5)">
+        <path id="path329" fill="url(#rgDeoxyribose)" d="m927.05 412.22 34.86 51.13 61.59-22.08-3.49-61.59-56.94-18.59z" style="fill:url(#radialGradient339)"/>
+        <path id="path330" d="M981.91 457.6a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient340)"/>
+        <path id="path331" d="M1128.33 588.91a26 26 0 0 1-26 26 26 26 0 0 1-26-26 26 26 0 0 1 26-26 26 26 0 0 1 26 26" style="fill:url(#radialGradient341)"/>
+        <path id="path332" d="m952 450.59-26-37 38-52 57 20 2 61-45 16m-87-71 35 26m97 29 47 44-11 45m7 24 28 25m22-4 20-23m-18 35 33 7m0 6-33-7m-15 6-9 35" class="structure"/>
+        <switch id="switch333">
+          <path id="path333" d="M962.993 454.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch334">
+          <path id="path334" d="M1054.993 539.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch336">
+          <g id="g336" aria-label="O&#8722;">
+            <path id="path335" d="M1138.263 532.633q-2.407 0-3.733 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.733 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.71 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765-2.788 2.816-7.71 2.816-4.908 0-7.711-2.816-2.79-2.816-2.79-7.766 0-4.962 2.79-7.779 2.803-2.816 7.71-2.816"/>
+            <path id="path336" d="M1153.138 544.21h17.527v3.226h-17.527z"/>
+          </g>
+        </switch>
+        <switch id="switch337">
+          <path id="path337" d="M1097.31 577.188h8.736q3.896 0 5.975 1.736 2.091 1.723 2.091 4.922 0 3.213-2.092 4.95-2.078 1.722-5.974 1.722h-3.473v7.082h-5.263zm5.263 3.814v5.701h2.912q1.532 0 2.366-.738.834-.752.834-2.119t-.834-2.105-2.366-.739z" aria-label="P"/>
+        </switch>
+        <switch id="switch338">
+          <path id="path338" d="M1165.993 593.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch339">
+          <path id="path339" d="M1089.993 641.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+      </g>
+      <g id="use69" transform="translate(264.16 984.12)">
+        <path id="path341" fill="url(#rgDeoxyribose)" d="m927.05 412.22 34.86 51.13 61.59-22.08-3.49-61.59-56.94-18.59z" style="fill:url(#radialGradient351)"/>
+        <path id="path342" d="M981.91 457.6a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient352)"/>
+        <path id="path343" d="M1128.33 588.91a26 26 0 0 1-26 26 26 26 0 0 1-26-26 26 26 0 0 1 26-26 26 26 0 0 1 26 26" style="fill:url(#radialGradient353)"/>
+        <path id="path344" d="m952 450.59-26-37 38-52 57 20 2 61-45 16m-87-71 35 26m97 29 47 44-11 45m7 24 28 25m22-4 20-23m-18 35 33 7m0 6-33-7m-15 6-9 35" class="structure"/>
+        <switch id="switch345">
+          <path id="path345" d="M962.993 454.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch346">
+          <path id="path346" d="M1054.993 539.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch348">
+          <g id="g348" aria-label="O&#8722;">
+            <path id="path347" d="M1138.263 532.633q-2.407 0-3.733 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.733 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.71 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765-2.788 2.816-7.71 2.816-4.908 0-7.711-2.816-2.79-2.816-2.79-7.766 0-4.962 2.79-7.779 2.803-2.816 7.71-2.816"/>
+            <path id="path348" d="M1153.138 544.21h17.527v3.226h-17.527z"/>
+          </g>
+        </switch>
+        <switch id="switch349">
+          <path id="path349" d="M1097.31 577.188h8.736q3.896 0 5.975 1.736 2.091 1.723 2.091 4.922 0 3.213-2.092 4.95-2.078 1.722-5.974 1.722h-3.473v7.082h-5.263zm5.263 3.814v5.701h2.912q1.532 0 2.366-.738.834-.752.834-2.119t-.834-2.105-2.366-.739z" aria-label="P"/>
+        </switch>
+        <switch id="switch350">
+          <path id="path350" d="M1165.993 593.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+        <switch id="switch351">
+          <path id="path351" d="M1089.993 641.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+        </switch>
+      </g>
+      <path id="path69" d="m1021 381.59 2-37m72 317 15 50m72.33 280.02 15 50m73.3 275.48 15 50" class="structure"/>
+      <g id="adenine" fill="url(#rgAdenine)" style="fill:url(#radialGradient405)">
+        <path id="path70" d="m521.86 330.48 57.52 31.64-14.79 59.98-63.27 10.68-27.94-62.45z" style="fill:url(#radialGradient398)"/>
+        <path id="path71" d="m579.38 360.47 60.81-21.36 46.83 44.37-11.5 61.63-61.63 21.36-48.48-45.19z" style="fill:url(#radialGradient399)"/>
+        <g id="g74" fill="url(#rgWhite)" style="fill:url(#radialGradient404)">
+          <path id="circle71" d="M541.81 328.89a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient400)"/>
+          <path id="circle72" d="M703.33 385.48a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient401)"/>
+          <path id="circle73" d="M517.98 431.14a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient402)"/>
+          <path id="circle74" d="M632.2 465.65a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient403)"/>
+        </g>
+        <path id="path74" d="m512 337.59-37 34 19 45m19 15 53-10 14-59-45-26m31 85 35 33m25 9 50-18 9-51m-11-23-34-31-60 22m70-74-10 52m-126 4-30 27m101-1-11 46m54 39 40-14m-1-68-27-24" class="structure"/>
+      </g>
+      <g id="use74" fill="url(#rgAdenine)" style="fill:url(#radialGradient366)" transform="scale(-1 1)rotate(14 -2758.659 -5601.213)">
+        <path id="path353" d="m521.86 330.48 57.52 31.64-14.79 59.98-63.27 10.68-27.94-62.45z" style="fill:url(#radialGradient359)"/>
+        <path id="path354" d="m579.38 360.47 60.81-21.36 46.83 44.37-11.5 61.63-61.63 21.36-48.48-45.19z" style="fill:url(#radialGradient360)"/>
+        <g id="g358" fill="url(#rgWhite)" style="fill:url(#radialGradient365)">
+          <path id="path355" d="M541.81 328.89a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient361)"/>
+          <path id="path356" d="M703.33 385.48a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient362)"/>
+          <path id="path357" d="M517.98 431.14a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient363)"/>
+          <path id="path358" d="M632.2 465.65a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient364)"/>
+        </g>
+        <path id="path359" d="m512 337.59-37 34 19 45m19 15 53-10 14-59-45-26m31 85 35 33m25 9 50-18 9-51m-11-23-34-31-60 22m70-74-10 52m-126 4-30 27m101-1-11 46m54 39 40-14m-1-68-27-24" class="structure"/>
+      </g>
+      <switch id="switch74">
+        <g id="trsvg130" aria-label="NH2">
+          <path id="path266" d="M613.396 265.188h5.878l7.424 14v-14h4.99V285.6h-5.878l-7.424-14v14h-4.99zm23.433 0h5.264v7.78h7.765v-7.78h5.264V285.6h-5.264v-8.654h-7.765v8.654h-5.264z"/>
+          <path id="path267" d="M665.759 286.73h8.982v3.87h-14.834v-3.87l7.451-6.575q.998-.903 1.477-1.764.478-.861.478-1.791 0-1.436-.97-2.31-.957-.876-2.557-.876-1.23 0-2.693.534-1.463.52-3.131 1.558v-4.484q1.777-.588 3.514-.889 1.736-.314 3.404-.314 3.664 0 5.687 1.613 2.037 1.613 2.037 4.498 0 1.668-.86 3.117-.862 1.436-3.624 3.856z"/>
+        </g>
+      </switch>
+      <switch id="switch75">
+        <path id="trsvg131" d="M513.854 316.188h5.878l7.424 14v-14h4.99V336.6h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch76">
+        <path id="trsvg132" d="M676.854 371.188h5.878l7.424 14v-14h4.99V391.6h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch77">
+        <path id="trsvg133" d="M490.854 419.188h5.878l7.424 14v-14h4.99V439.6h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch78">
+        <path id="trsvg134" d="M603.854 454.188h5.878l7.424 14v-14h4.99V474.6h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch79">
+        <g id="trsvg135" aria-label="H2N">
+          <path id="path268" d="M835.396 913.188h5.263v7.78h7.766v-7.78h5.263V933.6h-5.263v-8.654h-7.766v8.654h-5.263z"/>
+          <path id="path269" d="M864.325 934.73h8.983v3.87h-14.834v-3.87l7.45-6.575q.999-.903 1.477-1.764t.479-1.791q0-1.436-.97-2.31-.958-.876-2.557-.876-1.23 0-2.694.534-1.463.52-3.13 1.558v-4.484q1.777-.588 3.513-.889 1.736-.314 3.404-.314 3.664 0 5.688 1.613 2.037 1.613 2.037 4.498 0 1.668-.861 3.117-.862 1.436-3.623 3.856z"/>
+          <path id="path270" d="M878.312 913.188h5.878l7.424 14v-14h4.99V933.6h-5.878l-7.424-14v14h-4.99z"/>
+        </g>
+      </switch>
+      <switch id="switch80">
+        <path id="trsvg136" d="M1001.854 937.188h5.878l7.424 14v-14h4.99V957.6h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch81">
+        <path id="trsvg137" d="M855.854 1025.188h5.878l7.424 14v-14h4.99v20.412h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch82">
+        <path id="trsvg138" d="M1044.853 1030.188h5.88l7.423 14v-14h4.99v20.412h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch83">
+        <path id="trsvg139" d="M943.854 1090.188h5.878l7.424 14v-14h4.99v20.412h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <g id="cytosine">
+        <path id="path83" fill="url(#rgCytosine)" d="m599.1 646.42 65.74 7.39 23.83 58.34-37.8 49.3-63.27-7.39-26.29-56.7z" style="fill:url(#radialGradient406)"/>
+        <g id="g84" fill="url(#rgWhite)" style="fill:url(#radialGradient409)">
+          <path id="circle83" d="M706.49 710.86a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient407)"/>
+          <path id="circle84" d="M605.64 753.83a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient408)"/>
+        </g>
+        <path id="path84" d="m580 736.59-18-39 37-51 64 8 20 42m-5 29-27 36-51-7m0-99-29 41m103-3-14-30m3-9 30-44m-39 150 18 43m-6 2-18-43" class="structure"/>
+      </g>
+      <g id="use84" transform="scale(-1 1)rotate(12 -3177.12 -7164.447)">
+        <path id="path366" fill="url(#rgCytosine)" d="m599.1 646.42 65.74 7.39 23.83 58.34-37.8 49.3-63.27-7.39-26.29-56.7z" style="fill:url(#radialGradient369)"/>
+        <g id="g368" fill="url(#rgWhite)" style="fill:url(#radialGradient372)">
+          <path id="path367" d="M706.49 710.86a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient370)"/>
+          <path id="path368" d="M605.64 753.83a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient371)"/>
+        </g>
+        <path id="path369" d="m580 736.59-18-39 37-51 64 8 20 42m-5 29-27 36-51-7m0-99-29 41m103-3-14-30m3-9 30-44m-39 150 18 43m-6 2-18-43" class="structure"/>
+      </g>
+      <switch id="switch84">
+        <g id="trsvg140" aria-label="NH2">
+          <path id="path271" d="M666.396 587.188h5.878l7.424 14v-14h4.99V607.6h-5.878l-7.424-14v14h-4.99zm23.433 0h5.264v7.78h7.765v-7.78h5.264V607.6h-5.264v-8.654h-7.765v8.654h-5.264z"/>
+          <path id="path272" d="M718.759 608.73h8.982v3.87h-14.834v-3.87l7.451-6.575q.998-.903 1.477-1.764.478-.861.478-1.791 0-1.436-.97-2.31-.957-.876-2.557-.876-1.23 0-2.693.534-1.463.52-3.131 1.558v-4.484q1.777-.588 3.514-.889 1.736-.314 3.404-.314 3.664 0 5.687 1.613 2.037 1.613 2.037 4.498 0 1.668-.86 3.117-.862 1.436-3.624 3.856z"/>
+        </g>
+      </switch>
+      <switch id="switch85">
+        <path id="trsvg141" d="M677.854 700.188h5.878l7.424 14v-14h4.99V720.6h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch86">
+        <path id="trsvg142" d="M577.854 742.188h5.878l7.424 14v-14h4.99V762.6h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch87">
+        <path id="trsvg143" d="M674.993 811.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+      </switch>
+      <switch id="switch88">
+        <g id="trsvg144" aria-label="H2N">
+          <path id="path273" d="M960.396 1222.188h5.263v7.78h7.766v-7.78h5.263v20.412h-5.263v-8.654h-7.766v8.654h-5.263z"/>
+          <path id="path274" d="M989.325 1243.73h8.983v3.87h-14.834v-3.87l7.45-6.575q.999-.903 1.477-1.764t.479-1.791q0-1.436-.97-2.31-.958-.876-2.557-.876-1.23 0-2.694.534-1.463.52-3.13 1.558v-4.484q1.777-.588 3.513-.889 1.736-.314 3.404-.314 3.664 0 5.688 1.613 2.037 1.613 2.037 4.498 0 1.668-.861 3.117-.862 1.436-3.623 3.856z"/>
+          <path id="path275" d="M1003.312 1222.188h5.878l7.424 14v-14h4.99v20.412h-5.878l-7.424-14v14h-4.99z"/>
+        </g>
+      </switch>
+      <switch id="switch89">
+        <path id="trsvg145" d="M1025.853 1329.188h5.88l7.423 14v-14h4.99v20.412h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch90">
+        <path id="trsvg146" d="M1131.854 1350.188h5.878l7.424 14v-14h4.99v20.412h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch91">
+        <path id="trsvg147" d="M1069.993 1435.633q-2.406 0-3.732 1.777-1.326 1.778-1.326 5.004 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.005-1.326-1.777-3.746-1.777m0-3.814q4.922 0 7.711 2.816t2.79 7.78q0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.963 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+      </switch>
+      <g id="thymine">
+        <path id="path91" fill="url(#rgThymine)" d="m691.16 971.16 61.58 8.13 27.89 54.62-38.34 54.61-61.59-8.13-25.57-55.78z" style="fill:url(#radialGradient410)"/>
+        <g id="g92" fill="url(#rgWhite)" style="fill:url(#radialGradient413)">
+          <path id="circle91" d="M791.77 1036.04a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient411)"/>
+          <path id="circle92" d="M698.99 1078.49a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient412)"/>
+        </g>
+        <path id="path92" d="m675 1066.59-19-41 35-54 64 8 19 43m-3 26-28 40-50-6m-28-59 28-43m-2-9-25-56m110 22-24 40m6 4 24-40m-18 189-18-43m-6 2 18 43" class="structure"/>
+      </g>
+      <g id="use92" transform="scale(-1 1)rotate(14 2768.409 -5630.882)">
+        <path id="path372" fill="url(#rgThymine)" d="m691.16 971.16 61.58 8.13 27.89 54.62-38.34 54.61-61.59-8.13-25.57-55.78z" style="fill:url(#radialGradient375)"/>
+        <g id="g374" fill="url(#rgWhite)" style="fill:url(#radialGradient378)">
+          <path id="path373" d="M791.77 1036.04a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient376)"/>
+          <path id="path374" d="M698.99 1078.49a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient377)"/>
+        </g>
+        <path id="path375" d="m675 1066.59-19-41 35-54 64 8 19 43m-3 26-28 40-50-6m-28-59 28-43m-2-9-25-56m110 22-24 40m6 4 24-40m-18 189-18-43m-6 2 18 43" class="structure"/>
+      </g>
+      <switch id="switch92">
+        <path id="trsvg148" d="M786.993 918.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+      </switch>
+      <switch id="switch93">
+        <path id="trsvg149" d="M763.137 1025.188h5.879l7.423 14v-14h4.99v20.412h-5.878l-7.424-14v14h-4.99zm23.433 0h5.264v7.78h7.766v-7.78h5.263v20.412H799.6v-8.654h-7.766v8.654h-5.264z" aria-label="NH"/>
+      </switch>
+      <switch id="switch94">
+        <path id="trsvg150" d="M670.854 1070.188h5.878l7.424 14v-14h4.99v20.412h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch95">
+        <path id="trsvg151" d="M766.993 1138.633q-2.406 0-3.732 1.777-1.326 1.778-1.326 5.004 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.005-1.326-1.777-3.746-1.777m0-3.814q4.922 0 7.711 2.816t2.79 7.78q0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.963 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+      </switch>
+      <switch id="switch96">
+        <path id="trsvg152" d="M736.993 244.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+      </switch>
+      <switch id="switch97">
+        <path id="trsvg153" d="M746.137 345.188h5.263v7.78h7.766v-7.78h5.264V365.6h-5.264v-8.654H751.4v8.654h-5.263zm23.433 0h5.88l7.423 14v-14h4.99V365.6h-5.879l-7.423-14v14h-4.99z" aria-label="HN"/>
+      </switch>
+      <switch id="switch98">
+        <path id="trsvg154" d="M868.854 366.188h5.878l7.424 14v-14h4.99V386.6h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch99">
+        <path id="trsvg155" d="M808.993 451.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+      </switch>
+      <g id="guanine" fill="url(#rgGuanine)" style="fill:url(#radialGradient421)">
+        <path id="path99" d="m736.48 1354.63 48.8-39.51 54.62 29.05-10.46 61.59-61.59 11.62z" style="fill:url(#radialGradient414)"/>
+        <path id="path100" d="m828.28 1406.92 49.96 44.16 58.11-19.76 16.26-66.23-49.96-38.35-62.75 16.27z" style="fill:url(#radialGradient415)"/>
+        <g id="g103" fill="url(#rgWhite)" style="fill:url(#radialGradient420)">
+          <path id="circle100" d="M805.91 1318.6a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient416)"/>
+          <path id="circle101" d="M968.59 1365.09a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient417)"/>
+          <path id="circle102" d="M783.83 1410.92a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient418)"/>
+          <path id="circle103" d="M895.38 1445.27a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient419)"/>
+        </g>
+        <path id="path103" d="m775 1324.59-38 32 21 41m20 18 51-9 12-62-39-20m39 20 61-18 36 28m11 24-11 52-48 17m-26-9-35-32m-83-49 30-26m70 21-9 49m57 38 36-13m8 4 33 29m-72-133 11-49m6 0-11 49" class="structure"/>
+      </g>
+      <g id="use103" fill="url(#rgGuanine)" style="fill:url(#radialGradient391)" transform="scale(-1 1)rotate(12 3222.933 -7134.899)">
+        <path id="path378" d="m736.48 1354.63 48.8-39.51 54.62 29.05-10.46 61.59-61.59 11.62z" style="fill:url(#radialGradient384)"/>
+        <path id="path379" d="m828.28 1406.92 49.96 44.16 58.11-19.76 16.26-66.23-49.96-38.35-62.75 16.27z" style="fill:url(#radialGradient385)"/>
+        <g id="g383" fill="url(#rgWhite)" style="fill:url(#radialGradient390)">
+          <path id="path380" d="M805.91 1318.6a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient386)"/>
+          <path id="path381" d="M968.59 1365.09a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient387)"/>
+          <path id="path382" d="M783.83 1410.92a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient388)"/>
+          <path id="path383" d="M895.38 1445.27a18.3 18.3 0 0 1-18.3 18.3 18.3 18.3 0 0 1-18.3-18.3 18.3 18.3 0 0 1 18.3-18.3 18.3 18.3 0 0 1 18.3 18.3" style="fill:url(#radialGradient389)"/>
+        </g>
+        <path id="path384" d="m775 1324.59-38 32 21 41m20 18 51-9 12-62-39-20m39 20 61-18 36 28m11 24-11 52-48 17m-26-9-35-32m-83-49 30-26m70 21-9 49m57 38 36-13m8 4 33 29m-72-133 11-49m6 0-11 49" class="structure"/>
+      </g>
+      <switch id="switch103">
+        <path id="trsvg156" d="M914.993 1255.633q-2.406 0-3.732 1.777-1.326 1.778-1.326 5.004 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.005-1.326-1.777-3.746-1.777m0-3.814q4.922 0 7.711 2.816t2.79 7.78q0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.963 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+      </switch>
+      <switch id="switch104">
+        <path id="trsvg157" d="M778.854 1303.188h5.878l7.424 14v-14h4.99v20.412h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch105">
+        <path id="trsvg158" d="M940.137 1355.188h5.879l7.423 14v-14h4.99v20.412h-5.878l-7.424-14v14h-4.99zm23.433 0h5.264v7.78h7.766v-7.78h5.263v20.412H976.6v-8.654h-7.766v8.654h-5.264z" aria-label="NH"/>
+      </switch>
+      <switch id="switch106">
+        <path id="trsvg159" d="M755.854 1403.188h5.878l7.424 14v-14h4.99v20.412h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch107">
+        <path id="trsvg160" d="M867.854 1437.188h5.878l7.424 14v-14h4.99v20.412h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch108">
+        <g id="trsvg161" aria-label="NH2">
+          <path id="path276" d="M959.396 1462.188h5.878l7.424 14v-14h4.99v20.412h-5.878l-7.424-14v14h-4.99zm23.433 0h5.264v7.78h7.765v-7.78h5.264v20.412h-5.264v-8.654h-7.765v8.654h-5.264z"/>
+          <path id="path277" d="M1011.759 1483.73h8.982v3.87h-14.834v-3.87l7.451-6.575q.998-.903 1.477-1.764.478-.861.478-1.791 0-1.436-.97-2.31-.957-.876-2.557-.876-1.23 0-2.693.534-1.463.52-3.131 1.558v-4.484q1.777-.588 3.514-.889 1.736-.314 3.404-.314 3.664 0 5.687 1.613 2.038 1.613 2.038 4.498 0 1.668-.862 3.117-.861 1.436-3.623 3.856z"/>
+        </g>
+      </switch>
+      <switch id="switch109">
+        <path id="trsvg162" d="M782.993 592.633q-2.406 0-3.732 1.778-1.326 1.777-1.326 5.003 0 3.213 1.326 4.99t3.732 1.778q2.42 0 3.746-1.777 1.326-1.778 1.326-4.99 0-3.227-1.326-5.004-1.326-1.778-3.746-1.778m0-3.814q4.922 0 7.711 2.816 2.79 2.817 2.79 7.78 0 4.949-2.79 7.765t-7.71 2.816q-4.909 0-7.712-2.816-2.789-2.816-2.789-7.766 0-4.962 2.79-7.779 2.802-2.816 7.71-2.816" aria-label="O"/>
+      </switch>
+      <switch id="switch110">
+        <path id="trsvg163" d="M910.854 611.188h5.878l7.424 14v-14h4.99V631.6h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch111">
+        <path id="trsvg164" d="M749.137 697.188h5.263v7.78h7.766v-7.78h5.264V717.6h-5.264v-8.654H754.4v8.654h-5.263zm23.433 0h5.88l7.423 14v-14h4.99V717.6h-5.879l-7.423-14v14h-4.99z" aria-label="HN"/>
+      </switch>
+      <switch id="switch112">
+        <path id="trsvg165" d="M950.854 702.188h5.878l7.424 14v-14h4.99V722.6h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch113">
+        <path id="trsvg166" d="M852.854 760.188h5.878l7.424 14v-14h4.99V780.6h-5.878l-7.424-14v14h-4.99z" aria-label="N"/>
+      </switch>
+      <switch id="switch114">
+        <g id="trsvg167" aria-label="H2N">
+          <path id="path278" d="M718.396 807.188h5.263v7.78h7.766v-7.78h5.263V827.6h-5.263v-8.654h-7.766v8.654h-5.263z"/>
+          <path id="path279" d="M747.325 828.73h8.983v3.87h-14.834v-3.87l7.45-6.575q.999-.903 1.477-1.764t.479-1.791q0-1.436-.97-2.31-.958-.876-2.557-.876-1.23 0-2.694.534-1.463.52-3.13 1.558v-4.484q1.777-.588 3.513-.889 1.736-.314 3.404-.314 3.664 0 5.688 1.613 2.037 1.613 2.037 4.498 0 1.668-.861 3.117-.862 1.436-3.623 3.856z"/>
+          <path id="path280" d="M761.312 807.188h5.878l7.424 14v-14h4.99V827.6h-5.878l-7.424-14v14h-4.99z"/>
+        </g>
+      </switch>
+    </g>
+    <path id="path114" fill="none" stroke="#7f7f7f" stroke-dasharray="5, 5" stroke-width="5" d="m658.23 138.57 48.59-16.09m-29.37 123.37 49.68-19.43m-26.5 239.25 54 2m-73 111h52m-66.29 108h40.27m69.9 107 40.67-2m-32.19 110.97 50.68 1.07m70.73 222.19 36.24-18.06m13.47 121.28 49.62-18.54m-14.39 125.14 49.45-21.2"/>
+    <g id="g118" font-size="48" transform="translate(-19.36 -133.92)">
+      <switch id="switch115">
+        <path id="trsvg170" d="M1017.557 274.693q3.398.726 5.296 3.023 1.922 2.297 1.922 5.672 0 5.18-3.562 8.016-3.563 2.836-10.125 2.836-2.203 0-4.547-.446-2.32-.421-4.805-1.289v-4.57q1.969 1.148 4.313 1.734t4.898.586q4.453 0 6.774-1.757 2.343-1.758 2.343-5.11 0-3.094-2.18-4.828-2.155-1.758-6.023-1.758h-4.078v-3.89h4.266q3.492 0 5.344-1.383 1.851-1.406 1.851-4.031 0-2.696-1.922-4.125-1.898-1.454-5.46-1.454-1.946 0-4.173.422-2.226.422-4.898 1.313v-4.219q2.695-.75 5.039-1.125 2.367-.375 4.453-.375 5.39 0 8.531 2.46 3.141 2.438 3.141 6.61 0 2.907-1.664 4.922-1.664 1.992-4.734 2.766m12-7.383 4.054-8.742h4.758l-6.773 8.742zm52.195 12.047v2.11h-19.828q.281 4.452 2.672 6.796 2.414 2.32 6.703 2.32 2.484 0 4.805-.609 2.343-.61 4.64-1.828v4.078q-2.32.984-4.758 1.5-2.437.516-4.945.516-6.281 0-9.961-3.657-3.656-3.656-3.656-9.89 0-6.445 3.468-10.219 3.493-3.797 9.399-3.797 5.297 0 8.367 3.422 3.094 3.399 3.094 9.258m-4.313-1.266q-.047-3.539-1.992-5.648-1.922-2.11-5.11-2.11-3.608 0-5.788 2.04-2.156 2.039-2.485 5.742zm33.211-.375v15.844h-4.312v-15.703q0-3.727-1.453-5.578t-4.36-1.852q-3.492 0-5.508 2.227t-2.015 6.07v14.836h-4.336v-26.25h4.336v4.078q1.547-2.367 3.633-3.539 2.11-1.172 4.851-1.172 4.524 0 6.844 2.813 2.32 2.789 2.32 8.226m25.875-6.422v-14.203h4.313v36.469h-4.313v-3.937q-1.359 2.343-3.445 3.492-2.062 1.125-4.969 1.125-4.758 0-7.758-3.797-2.976-3.797-2.976-9.985t2.977-9.984q3-3.797 7.757-3.797 2.906 0 4.969 1.149 2.086 1.125 3.445 3.468m-14.695 9.164q0 4.758 1.945 7.477 1.97 2.695 5.391 2.695t5.39-2.695q1.97-2.719 1.97-7.477 0-4.757-1.97-7.453-1.968-2.718-5.39-2.718t-5.39 2.718q-1.946 2.696-1.946 7.453" aria-label="3&#8242; end"/>
+      </switch>
+      <switch id="switch116">
+        <path id="trsvg173" d="M1322.63 1675.758h18.586v3.984h-14.25v8.578q1.03-.351 2.062-.515 1.031-.188 2.063-.188 5.859 0 9.28 3.211 3.423 3.211 3.423 8.695 0 5.649-3.516 8.79-3.516 3.117-9.914 3.117-2.203 0-4.5-.375-2.273-.375-4.71-1.125v-4.758q2.108 1.148 4.358 1.71t4.758.563q4.055 0 6.422-2.132t2.367-5.79-2.367-5.789-6.422-2.132q-1.898 0-3.797.421-1.875.422-3.843 1.313zm26.296 8.742 4.055-8.742h4.758l-6.773 8.742zm52.196 12.047v2.11h-19.828q.281 4.452 2.672 6.796 2.414 2.32 6.703 2.32 2.484 0 4.804-.609 2.344-.61 4.641-1.828v4.078q-2.32.984-4.758 1.5-2.437.516-4.945.516-6.281 0-9.961-3.657-3.656-3.656-3.656-9.89 0-6.445 3.468-10.219 3.493-3.797 9.399-3.797 5.297 0 8.367 3.422 3.094 3.399 3.094 9.258m-4.313-1.266q-.047-3.539-1.992-5.648-1.922-2.11-5.11-2.11-3.609 0-5.788 2.04-2.156 2.039-2.485 5.742zm33.211-.375v15.844h-4.312v-15.703q0-3.727-1.453-5.578t-4.36-1.852q-3.492 0-5.507 2.227-2.016 2.226-2.016 6.07v14.836h-4.336v-26.25h4.336v4.078q1.547-2.367 3.633-3.539 2.109-1.172 4.851-1.172 4.524 0 6.844 2.813 2.32 2.789 2.32 8.226m25.875-6.422v-14.203h4.313v36.469h-4.313v-3.937q-1.36 2.343-3.445 3.492-2.062 1.125-4.969 1.125-4.758 0-7.758-3.797-2.976-3.797-2.976-9.985t2.976-9.984q3-3.797 7.758-3.797 2.906 0 4.969 1.149 2.086 1.125 3.445 3.468m-14.695 9.164q0 4.758 1.945 7.477 1.969 2.695 5.39 2.695 3.423 0 5.392-2.695 1.968-2.719 1.968-7.477 0-4.757-1.968-7.453-1.97-2.718-5.391-2.718t-5.39 2.718q-1.946 2.696-1.946 7.453" aria-label="5&#8242; end"/>
+      </switch>
+      <switch id="switch117">
+        <path id="trsvg176" d="M591.157 1614.083q3.398.726 5.296 3.023 1.922 2.297 1.922 5.672 0 5.18-3.562 8.016-3.563 2.836-10.125 2.836-2.203 0-4.547-.446-2.32-.422-4.805-1.289v-4.57q1.969 1.148 4.313 1.734t4.898.586q4.453 0 6.774-1.758 2.343-1.757 2.343-5.109 0-3.094-2.18-4.828-2.156-1.758-6.023-1.758h-4.078v-3.89h4.266q3.492 0 5.343-1.383 1.852-1.407 1.852-4.032 0-2.695-1.922-4.125-1.898-1.453-5.46-1.453-1.946 0-4.173.422-2.226.422-4.898 1.313v-4.219q2.695-.75 5.039-1.125 2.367-.375 4.453-.375 5.39 0 8.531 2.46 3.141 2.438 3.141 6.61 0 2.907-1.664 4.922-1.664 1.992-4.734 2.766m12-7.383 4.054-8.742h4.758l-6.773 8.742zm52.195 12.047v2.11h-19.828q.281 4.452 2.672 6.796 2.414 2.32 6.703 2.32 2.484 0 4.804-.609 2.344-.61 4.641-1.828v4.078q-2.32.984-4.758 1.5-2.437.516-4.945.516-6.281 0-9.961-3.657-3.656-3.656-3.656-9.89 0-6.445 3.468-10.219 3.493-3.797 9.399-3.797 5.297 0 8.367 3.422 3.094 3.399 3.094 9.258m-4.313-1.266q-.047-3.539-1.992-5.648-1.922-2.11-5.11-2.11-3.609 0-5.788 2.04-2.157 2.038-2.485 5.742zm33.211-.375v15.844h-4.312v-15.703q0-3.727-1.453-5.578t-4.36-1.852q-3.492 0-5.508 2.227t-2.015 6.07v14.836h-4.336v-26.25h4.336v4.078q1.547-2.367 3.633-3.539 2.11-1.172 4.851-1.172 4.524 0 6.844 2.813 2.32 2.789 2.32 8.226m25.875-6.422v-14.203h4.313v36.469h-4.313v-3.937q-1.36 2.343-3.445 3.492-2.063 1.125-4.969 1.125-4.758 0-7.758-3.797-2.976-3.797-2.976-9.985t2.976-9.984q3-3.797 7.758-3.797 2.906 0 4.969 1.149 2.086 1.125 3.445 3.468m-14.695 9.164q0 4.758 1.945 7.477 1.97 2.695 5.39 2.695 3.423 0 5.392-2.695 1.968-2.719 1.968-7.477 0-4.757-1.968-7.453-1.97-2.719-5.391-2.719t-5.39 2.72q-1.946 2.695-1.946 7.452" aria-label="3&#8242; end"/>
+      </switch>
+    </g>
+  </g>
+</svg>

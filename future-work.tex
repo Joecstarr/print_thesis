@@ -1,0 +1,762 @@
+\chapter{Future Directions and Undergraduate
+Research}\label{ch-future-directions}
+
+In this chapter, we describe the future research directions for the tabulation
+of tangles. The future directions take two forms. First, the direct next steps
+to the work of this thesis
+(Section~\ref{sec-future_work-continued_tabulation}). Second, an
+undergraduate research research experience program with a collection
+of undergraduate
+problems (Section~\ref{sec-future_work-tabulation}).
+
+%  prettier-ignore-start
+
+\section{Continued Tabulation}\label{sec-future_work-continued_tabulation}
+
+%  prettier-ignore-end
+
+In this section, we describe the next steps for what has been discussed in
+Chapter~\ref{ch-tabulation}. The first item to tackle in our future tabulation
+work is the reconciliation of our table of arborescent tangles with
+the algebraic table produced by Gren, Sulkowska, and,
+Gabrov\v{s}ek \citep{gren2025classificationalgebraictangles}. Following this our
+efforts take two forms, first a collection of minimalization problems for
+the data we have generated. Second, is the expansion of this work
+to cover the complete set of two string tangles, the arborescent and
+the polygonal.
+
+\subsection{Minimalization of Arborescent Tangles}
+
+As we discussed in \nf{sec-minimalization}, that RLITT are often non-minimal
+arborescent representatives of a tangle. In fact, minimal arborescent
+representations may not be minimal tangle representations. Conway gives an
+example \citep{conwayEnumerationKnotsLinks1970} where an arborescent
+(algebraic) knot
+is transformed into a minimal polygonal knot (\nf{subsubsec-opo-insert}). In
+Figure~\ref{fig-6starstar_nonminimal} we rephrase Conway's example for tangles.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/fig-6starstar_nonmin-065532cac05a0e9000a7c014da0e0610.pdf}
+  \caption[An arborescent tangle being turned into a polygonal
+  tangle.]{An arborescent tangle being turned into a polygonal tangle
+    via a sequence of
+  interpolated Reidemister moves.}
+  \label{fig-6starstar_nonminimal}
+\end{figure}
+
+This leads to two items that must be addressed to ensure the list of tangles
+contains minimal diagrams.
+
+\subsubsection{Identification of Minimal Arborescent Tangle Representations}
+
+The first item, and most straightforward to address, is the identification of a
+minimal arborescent representative of a given RLITT $\Gamma$. This requires the
+identification of the weighted planar tree related to $\Gamma$ whose TCN is
+minimal. We saw in \nf{sec-minimalization} the ways canonization can increase
+complexity in a weighted planar tangle tree. To take $\Gamma$ to its minimal
+form, we will need to develop the theory for and an implementation of an
+efficient algorithm to systematically de-canonize $\Gamma$ into its minimal
+arborescent form.
+
+\subsubsection{Identification of Minimal Representations for
+Arborescent Tangles}
+
+Second, and more challenging, is the identification of
+the minimal representative of a given arborescent tangle. That is, identifying
+the minimal representative, arborescent or otherwise as in
+Figure~\ref{fig-6starstar_nonminimal}. This task requires the development of a
+classification of the subtrees of a weighted planar tree that correspond to
+moves of the type similar to that seen in
+Figure~\ref{fig-6starstar_nonminimal}. The
+complexity of this task is compounded by the fact that the family of polygon
+graphs allowing these types of moves is infinite (easily shown via an
+induction). Further, the moves that enable arborescent tangles that are
+minimally polygonal are not limited to the moves on the marked $6^{**}$
+(Figure~\ref{fig-6starstar_nonminimal}). We can see a second class in
+Figure~\ref{fig-other_nonminimal}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{files/fig-other_nonminimal-665b635bba53dc590e590ae2271ee742.pdf}
+  \caption[An arborescent tangle turned into a polygonal tangle.]{An
+  arborescent tangle turned into a polygonal tangle.}
+  \label{fig-other_nonminimal}
+\end{figure}
+
+\subsection{Polygonal Tangles}
+
+We now discuss the expansion of the tangle tables to include all polygonal
+tangles up to a target crossing number. Expanding tangle tables to include the
+polygonal tangles is useful as at high crossing numbers, the polygonal tangles
+dominate the arborescent tangles. Unfortunately, for the polygonal case, we lack
+a general classification result. Meaning, as it stands, we have no theoretical
+mechanism for direct generation of unique representatives for a polygonal tangle
+as we have done with the classes of tangle in this thesis. The development of a
+general classification for polygonal tangles is difficult, at least as difficult
+as a general classification of knots. With this in mind, we will discuss two
+possible directions for expanding the polygonal tangles.
+
+\subsubsection{Ad Hoc Classification of Constellations}
+
+In \nf{subsubsec-opo-insert}, we discussed constellations
+\citep{connollyClassificationTabulation2string2021} used for
+generation of polygonal
+tangles via insertion. The crossing number of a polygonal tangle is bounded
+below by the vertex count of its constellation. So the number of constellations
+represented at reasonable crossing numbers is small. Additionally, when the
+difference between crossing number and vertex count is low, many of the inserted
+tangles will have low crossing numbers, again bounding complexity. In his thesis
+work, Connolly \citep{connollyClassificationTabulation2string2021}
+enumerates the ten
+smallest constellations, those with ten or fewer vertices.
+
+\begin{note}
+  It's worth noting that expanding the table of constellations for a
+  polygon graph is computationally
+  hard, shown NP-Complete by
+  Cook\citep{cookComplexityTheoremprovingProcedures1971}.
+\end{note}
+
+With low vertex count polygons, and at low crossing number, developing an ad hoc
+classification result for each constellation may be a fruitful approach. For
+example, consider the constellation seen in
+Figure~\ref{fig-6starstar_const}, we can
+enumerate the possible crossing numbers and locations for tangles to be
+inserted, Table~\ref{sec-fw-adhoc-tab-to7}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/fig-6starstar_const-5b51b8bba46d02ef6ff52c23ba10c900.pdf}
+  \caption[The unique constellation for $6^{\ast\ast}$.]{The unique
+  constellation for $6^{\ast\ast}$}
+  \label{fig-6starstar_const}
+\end{figure}
+
+We see that up to 7 crossings this constellation only admits rational
+insertions, at 8 crossings we see our first Montesinos. Completing an analysis
+of the possibilities for insertion may reveal patterns that allow a
+classification of this $6^{**}$ constellation.
+% Even partial results in this
+% arena may yield more efficient heuristics when utilizing the methodology in
+% \nf{subsubsec-fw-brute}.
+
+\begin{figure}
+  \centering
+  \caption[Possible insertions of $6^{\ast\ast}$ by crossing
+  number.]{Possible insertions of $6^{\ast\ast}$ by crossing number.}
+  \label{sec-fw-adhoc-tab-to7}
+  \begin{tabular}{p{\dimexpr 0.500\linewidth-2\tabcolsep}p{\dimexpr
+    0.500\linewidth-2\tabcolsep}}
+    \toprule
+    Crossing Number & Possible Crossing numbers for insertion \\
+    \hline
+    5 & $\ast.1.1.1.1.1$ \\
+    6 & \(\displaystyle
+      \begin{aligned}\ast.2.1.1.1.1,\ast.1.2.1.1.1\\\ast.1.1.2.1.1,\ast.1.1.1.2.1,\\\ast.1.1.1.1.2
+    \end{aligned} \) \\
+    7 & \(\displaystyle
+      \begin{aligned}\ast.1.1.1.2.2,*.1.1.2.1.2\\\ast.1.1.2.2.1,*.1.2.1.1.2,\\\ast.1.2.1.2.1,*.1.2.2.1.1,\\\ast.2.1.1.1.2,*.2.1.1.2.1,\\\ast.2.1.2.1.1,*.2.2.1.1.1,\\\ast.3.1.1.1.1,*.1.3.1.1.1,\\\ast.1.1.3.1.1,*.1.1.1.3.1,\\\ast.1.1.1.1.3
+    \end{aligned} \) \\
+    \bottomrule
+  \end{tabular}
+\end{figure}
+
+%  prettier-ignore-start
+
+% \subsubsection{Brute Force Tabulation}\label{subsubsec-fw-brute}
+
+% %  prettier-ignore-end
+
+% Without a full or partial classification of the polygonal tangles,
+% we must take
+% an alternative approach to what we have seen in this thesis. That
+% alternative is
+% the brute force, two pass enumeration strategy used in previous
+% knot tabulation
+% efforts \citep{dowkerClassificationKnotProjections1983,
+% hosteFirst1701936Knots1998, burtonNext350Million2020} and outlined
+% in Section~\ref{sec-history-of-tabulation}. The key
+% difficulty in this methodology is the selection of invariants that combine to
+% uniquely identify tangles. This difficulty is due to the fast growth rate for
+% the count of tangles of a given crossing number. This growth rate means any
+% invariant that is selected must have an efficient computation
+% strategy. If, for
+% example, as Burton did \citep{burtonNext350Million2020}, we select
+% hyperbolic volume,
+% we may be able to distinguish a large portion of tangles, however computation
+% for crossing numbers as low as 10 will be intractable due to the
+% per tangle time
+% to compute the volume. This says nothing about the raw storage needed to hold
+% the computed and partial data. A seemingly better choice are invariants
+% (Section~\ref{subsec-invariant}) which have polynomial time
+% computations, such as those
+% introduced by van der Veen and Bar-Natan (to be published
+% \citep{vanderveenKnotInvariantsFinite}). While weaker than
+% hyperbolic volume, these
+% invariants are stronger than the polynomial invariants, and faster
+% than both to
+% compute. Statistics for polynomial invariants can be found in Maguire's thesis
+% work \citep{maguireKhovanovHomologyLegendrian}.
+
+%  prettier-ignore-start
+
+\section{Tabulation as Undergraduate Research}\label{sec-future_work-tabulation}
+
+%  prettier-ignore-end
+
+\subsection{A Research Experience Program for Undergraduates}
+
+The accessibility of knot theory was discussed in
+Section~\ref{sec-intro-intuit_knot_theory}.
+This section elaborates on how that accessibility can be leveraged to engage
+undergraduates in research. Throughout this thesis, we have investigated and
+observed the depth and complexity of tabulation. We have seen how easily
+portions of complex tabulation problems can be ``peeled off'' and decomposed as
+self-contained problems. Additionally, we discussed product management training
+(Section~\ref{sec-product-management}) and developed a software
+enginering life cycle
+(Section~\ref{sec-life-cycle}) for use in organizing undergraduate
+research. These self
+contained problems combined with our processes, produce a research experience
+program ideal for undergraduates. The research experience program can be
+enhanced by sequencing problems with a gradual release of responsibility model
+as described by Fisher and Frey \citep{fisherBetterLearningStructured2013}.
+
+We now outline a multi-semester program for training of undergraduates,
+beginning when those students have only lower division (college algebra level)
+maturity. To begin, we engage in directed reading with low level accessible
+texts such as this thesis or The Knot Book: An Elementary Introduction to the
+Mathematical Theory of Knots by Adams
+\citep{adamsKnotBookElementary2004}. When the
+student has gained a basic understanding of knots, a structured play problem
+(potentially non-original work) can be introduced. Fitting the need here are
+problems such as: the sculpting and 3D printing of stick
+knots\footnote{A stick knot is a knot made of straight lines of a
+unit length.} in a
+program such as Blender or OpenSCAD \nf{sec-proj-sticks}, the creation of knot
+mosaics \nf{sec-proj-mosaic}, or quilting Celtic knots
+\nf{sec-proj-quilt}. The goal of
+such an activity is to build wonder and cultivate confidence in the students
+investigation skills.
+
+As the student matures, their investigation skills improve, and their
+knowledgebase deepens, they can be presented with more complex reading and novel
+research problems. Depending on the student's interest, we present additional
+but more advanced readings such as LinKnot
+\citep{jablanLinKnotKnotTheory2007} or
+accessible research papers such as Burton
+\citep{burtonNext350Million2020}. We should
+encourage freedom in these readings, allowing students to select sections and
+formulate questions of their own. At this level, problems should still be well
+structured having a clear path from start to finish but requiring the filling in
+of gaps with original work. We should consider problems such as the translation
+of notations as in \nf{sec-proj-notations}, or the computation of a
+well understood
+invariant, as in \nf{sec-projs-invariants}.
+
+The program culminates with a mature undergraduate researcher ready to tackle
+complex problems. At this point we expect the student to have mature reading and
+reasoning skills, but perhaps lack skills such as literature review. Support for
+reading at this stage should be focused on assisting students in finding answers
+rather than answers being provided. Students may be prepared to formulate a
+research question of their own and this should be encouraged; however presenting
+students with ideas to build on or select from is beneficial. An ideal problem
+here should fit student's interests and have a clear goal but perhaps no clear
+starting point, for example the random tangle sampling seen in
+\nf{sec-proj-rand}.
+
+\subsection{Infrastructure of a Tabulation Program}
+
+One key issue that must be addressed in a tabulation research program is
+computational needs. Computing on knots and tangles is not necessarily a
+computationally challenging task. Many problems are simple to describe
+computationally and have efficient implementations. The primary challenge for
+tabulation research stems from the raw scale of the dataset, as both the knot
+and tangle datasets grow exponentially. This exponential growth of the data
+gives us two primary areas of concern, time to compute and space to store. Even
+if a problem has a nice constant time or linear time solution, doing a
+computation on every knot or tangle in our dataset turns the problem into an
+exponential one, a computational ``death by a thousand cuts''.
+
+Generally when research questions run up against computational time constraints,
+solutions take one of two forms, vertical scaling or horizontal scaling. We will
+explain the two by analogy. Imagine we are trying to move a large boulder with a
+bulldozer that is just not powerful enough for the job. We can trade in our
+bulldozer for a bigger more powerful bulldozer that will push the rock without a
+problem, this would be vertical scaling. Alternatively, we can blow up the
+boulder and trade in our bulldozer for multiple smaller bulldozers, each able to
+simultaneously move bits of the boulder, this would be horizontal scaling. In
+our tabulation case, we could feasibly use either solution. If we vertically
+scale, we could complete each computation faster. This makes sense for some
+computations where each computation is slow such as hyperbolic volume. For other
+computations, like the grafting seen in \nf{sec-rlitt-generation},
+each computation
+requires such little computational effort we would quickly run up against data
+retrieval bottlenecks. In cases like this, distributing the effort horizontally
+means, with some infrastructure effort, on aggregate we have less idle time in
+the system. Another key feature of horizontal scaling in our case is the common
+availability of clusters, at primarily undergraduate institutions. These
+primarily undergraduate institutions often have no access to the large super
+computers available at large institutions.
+
+The planning and design of infrastructure leads us to address the second
+challenge, space to store data. We will touch on two points: first the actual
+storage of the data, and second, accessing and adding to the dataset. As we have
+discussed, knot and tangle data grows exponentially, as expected, the space
+needed to store that data also grows exponentially. As a benchmark, we use
+arborescent tangles and the space required to store them in their linearized
+form (\nf{sec-arborescent-linear}).
+
+\bigskip\noindent
+\begin{tabular}{p{\dimexpr 0.333\linewidth-2\tabcolsep}p{\dimexpr
+  0.333\linewidth-2\tabcolsep}p{\dimexpr 0.333\linewidth-2\tabcolsep}}
+  \toprule
+  Tree Crossing Number & Projected Total number of tangles up to TCN
+  & Projected Total size of notations up to TCN \\
+  \hline
+  20 &
+  20178846455.0426 &
+  744.93 GB\\
+  21&
+  77404113447.2751&
+  3.02 TB\\
+  22&
+  296920571662.606&
+  12.24 TB\\
+  23&
+  1138987289416.26&
+  49.59 TB\\
+  24&
+  4369161597793.56&
+  200.98 TB\\
+  25&
+  16760135017593&
+  814.55 TB\\
+  26&
+  64292004387526.9&
+  3.30 PB\\
+  27&
+  246624621285968&
+  13.38 PB\\
+  28&
+  946053943972148&
+  54.23 PB\\
+  29&
+  3629070212865634&
+  219.77 PB\\
+
+  \bottomrule
+\end{tabular}
+
+\bigskip$\,$ As we can see, the space required for storing tangles
+quickly becomes
+large. For perspective, a basic storage solution holds at least two copies of
+the data, meaning to store arborescent tangles up to 21 crossings, we need
+$3\times4\text{TB}=12\text{TB}$ of disk space (using 4TB as it's a common disk
+size). More robust would be a solution that allows for two drive failures such
+as RAIDZ2, in this case, we require $\LP2+3\RP\times4\text{TB}=20\text{TB}$. At
+approximately $\$15$ per TB, putting us at around $\$200$ for the basic solution
+and $\$300$ for the robust solution. It's important to remember this is the
+required space and cost to store only a sequential list of notations for tangles
+as in Example~\ref{sequential-list} making retrieval of a specific
+tangle difficult.
+
+\begin{example}{}{sequential-list}
+  $$\iota\LP\LP\LB 2\RB \LB \m 3\RB \RP1\RP\iota\LP\LP\LB 2\RB \LB
+  2\RB \m 1\RP1\RP\iota\LP\LP\LB 2\RB \LB 2\RB 1\RP1\RP\cdots$$
+  A sequential list of tangles.
+\end{example}
+
+To expand the list, we require infrastructure that allows for random access, the
+ability to search the data, and the ability to add additional data. This will
+require that the data be stored in a database system. Unfortunately, a database
+does come with a downside, it increases the storage requirements for the data
+with mandatory overhead. With an effective data model and some consideration of
+what should be stored and what should be computed on demand, we can mitigate
+some of this overhead. However, even at low crossing number $\leq 12$, we will
+quickly run into storage issues as we complete undergraduate computation
+problems.
+
+We will now discuss the selection and design of a database for a table of
+tangles. Our data will be used by undergraduates, so an ideal database system is
+one with a data model that has a shallow learning curve. Additionally, our data
+is largely non-relational, meaning we don't need a database system geared to
+relational data. These two items make a noSQL database system ideal. Just as we
+had options for vertical scaling and horizontal scaling for carrying out the
+computations we have the same two options for serving our database. However, in
+the service case our choice is significantly more clear. Based on the size of
+our data if we select vertical scaling our cost for a server will be in the
+$\$10k -\$20k$ (not including storage cost) range and we may still end up with
+bottlenecks. Therefore, for our needs, horizontal scaling is ideal. In this case
+we can use a few low-cost cloud servers to store portions of the data, with a
+coordinator balancing load across the system. If we encounter a bottleneck,
+instead of buying a whole new expensive server, we simply add another low cost
+server to our system. This horizontal scaling concept is called sharding, a
+feature of MongoDB an ideal choice for our needs.
+
+%  prettier-ignore-start
+
+\subsection{Selection of Undergraduate Projects}\label{sec-selection_projects}
+
+%  prettier-ignore-end
+
+In this section we will provide a curated collection of undergraduate research
+problem statements. We will also give a brief outline for each, contextualizing
+the problem and describing what phase of the research experience program the
+problem may be appropriate for:
+
+\begin{enumerate}
+  \item \textbf{Lower Division Student:} A lower division student is
+    a student with little
+    to no research or abstract math experience. A student at this
+    level should be
+    expected to have completed a college algebra course and started a calculus
+    sequence. For students with a computational background we should expect the
+    student to have started an introduction to programming course.
+  \item \textbf{Intermediate Student:} An intermediate student is a
+    student who has some
+    exposure to abstract math. This could take the form of solving a lower
+    division problem. These students should be well into a calculus sequence,
+    having completed calculus II (advanced integration) or calculus III (vector
+    calculus). For students with a computational background we should expect the
+    student to have completed an introduction to programming sequence
+    and started
+    a course on algorithms and data structures.
+  \item \textbf{Upper Division Student:} An upper division student is
+    a student who can be
+    expected to work semi-independently. They have solved one or more
+    intermediate student problems, have completed the standard
+    calculus sequence,
+    and have begun abstract math courses. For students with a computational
+    background we should expect the student to have completed a discrete methods
+    course, ideally covering computational complexity theory.
+\end{enumerate}
+
+The remainder of the section gives statements for problems appropriate for
+undergraduate research. The problems in the list fall into five types:
+visualizations (\nf{sec-proj-visual}), invariants
+(\nf{sec-projs-invariants}), notations
+(\nf{sec-proj-notations}), generation (\nf{sec-proj-gen}), and
+potpourri\footnote{Definition: A miscellaneous collection}
+(\nf{sec-proj-pot}).
+
+%  prettier-ignore-start
+
+\subsubsection{Visualization}\label{sec-proj-visual}
+
+%  prettier-ignore-end
+
+Visualzation and spatial reasoning is a critically important for work in knot
+theory. Problems of the visualization type develop specific visualizations or
+general visualization tools for knots and tangles.
+
+%  prettier-ignore-start
+
+\paragraph{Create Knot Mosaics: Lower Division Student}\label{sec-proj-mosaic}
+
+%  prettier-ignore-end
+
+\subparagraph{Problem Statement}
+
+Create a knot mosaic that has a particular property.
+
+\subparagraph{Brief}
+
+Knot mosaics are a simple method for creating knots from a collection of tiles.
+Creating mosaics with a particular property, a specific writhe, for example, is
+a fun and engaging activity where abstraction of a concept can be explored.
+Modifying the tile set can add additional complexity to the task.
+
+%  prettier-ignore-start
+
+\paragraph{Create Stick Knots: Lower Division Student}\label{sec-proj-sticks}
+
+%  prettier-ignore-end
+
+\subparagraph{Problem Statement}
+
+Create stick knots with desired properties.
+
+\subparagraph{Brief}
+
+Stick knots are knots built from a collection of unit sticks. Creating a
+physical model by hand or with computer design and 3D printing develops spatial
+reasoning skills needed for work in higher knot theory.
+
+%  prettier-ignore-start
+
+\paragraph{Creating Celtic Knots: Lower Division Student}\label{sec-proj-quilt}
+
+%  prettier-ignore-end
+
+\subparagraph{Problem Statement}
+
+Create Celtic knots with desired properties.
+
+\subparagraph{Brief}
+
+Celtic knots are common artistic knots. Exploring the creation of a unique
+ruleset for creating Celtic knots is an opportunity to develop a unique
+understanding of the diagrammatic nuances of knot theory.
+
+%  prettier-ignore-start
+
+\paragraph{Compute Diagram for General Notations: Intermediate
+Student}\label{sec-proj-diagram_att}
+
+%  prettier-ignore-end
+
+\subparagraph{Problem Statement}
+
+Create an interface for plotting knots in an arbitrary notation in KnotPlot.
+
+\subparagraph{Brief}
+
+An aspect of knot theory that makes it among the most accessible higher math
+domains is the ability for anyone to draw pictures of knots. A continuing theme
+of this thesis is that computations/operations are easy by hand, with the
+qualifier, ``up to reasonable crossing number''. This carries through with the
+drawing of the diagrams. A common drawing tool in knot theory is KnotPlot
+\citep{schareinInteractiveTopologicalDrawing1998}, unfortunatly KnotPlot has no
+interface for drawing knots in ``arbitrary'' notations. The tool however, does
+have a Lua scripting interface in which an arbitrary notation decoder can be
+designed.
+\newpage
+\paragraph{Create VR Band Plumbing Visualizer: Upper Division Student}
+
+\subparagraph{Problem Statement}
+
+Create a 3D VR visualizer for the band plumbing construction for arborescent
+knots.
+
+\subparagraph{Brief}
+
+The plumbing construction for arborescent knots and tangles is easiest
+visualized in 3D. The ideal for visualizing these objects is in VR as this is
+reduces the need for spatial reasoning. While the theory exists for creating the
+objects, the linear algebra required makes this an upper division problem.
+
+%  prettier-ignore-start
+
+\subsubsection{Invariants}\label{sec-projs-invariants}
+
+%  prettier-ignore-end
+
+One way to build conjecture is by the analysis of patterns in data, these
+conjectures often lead to the development of new theory. Problems in this
+section create the collections of data that can be used for developing those
+conjectures and theory.
+
+%  prettier-ignore-start
+
+\paragraph{Compute Polynomial From A Tangle Notation: Intermediate
+Student or Upper Division Student}\label{sec-proj-homflypt}
+
+%  prettier-ignore-end
+
+\subparagraph{Problem Statement}
+
+Develop the theory needed for efficiently computing polynomials of tangles
+
+\subparagraph{Brief}
+
+One of the most important advancements in knot theory was the discovery of knot
+polynomials as a class of knot invariants. As an example, one of the most
+powerful of these polynomials is the HOMFLYPT polynomial
+\citep{freydNewPolynomialInvariant1985} constructed from the skein
+relations equation
+Figure~\ref{fig-future_work-skein_homfly}.
+
+\begin{equation}
+  \begin{aligned}
+    P\LP\text{unknot}\RP&=1\\
+    \ell P\left(L_{+}\right)+\ell^{-1} P\left(L_{-}\right)+m
+    P\left(L_0\right)&=0\\
+  \end{aligned}
+\end{equation}
+
+Conveniently, the data needed to apply the skein relations is precisely the data
+encoded by RLITT, relative crossing data.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{files/Skein_HOMFLY-6ebea249863dfdbae5e3432af0414ba9.pdf}
+  \caption[The skein relation for the HOMFLYPT polynomial.]{The skein
+    relation for the HOMFLYPT polynomial.  (Public domain, via
+    Wikimedia Commons\citep{pbroks13SkeinHOMFLYPublic2008})
+    % Similar to that seen for the Kauffman bracket Section~\ref{subsec-kauff}.
+  }
+  \label{fig-future_work-skein_homfly}
+\end{figure}
+
+Depending on the polynomial selected, the problem is appropriate for
+intermediate students or upper division students. When the polynomial has a
+developed tangle theory, the solution will have a well defined start and end
+point and is appropriate for intermediate students. Otherwise, the full tangle
+theory must be developed. This requires experience with the development of
+original abstract theory, making the problem appropriate for upper division
+students.
+
+\paragraph{Compute Finite Type Invariant From A Tangle Notation:
+Intermediate Student or Upper Division Student}
+
+\subparagraph{Problem Statement}
+
+Develop the theory needed for efficiently computing a finite type invariant of
+tangles
+
+\subparagraph{Brief}
+
+Similar to the computation of polynomial invariants the computation of finite
+type invariants expands our table with data useful for binning future tangles
+and knots. Depending on the invariant selected, the problem is appropriate for
+intermediate or upper division students. When the invariant has a developed
+tangle theory the solution will have a well defined start and end point and be
+appropriate for intermediate students. Otherwise, the full tangle theory must be
+developed. This requires experience with the development of original abstract
+theory, making the problem appropriate for upper division students.
+
+%  prettier-ignore-start
+
+\subsubsection{Notations}\label{sec-proj-notations}
+
+%  prettier-ignore-end
+
+There are many ways to encode the data of a knot, each with advantages and
+disadvantages. Throughout this thesis, the primary target notation was the RLITT
+Section~\ref{subsec-rlitt}. This subsection discusses several useful
+notations where a
+computational tool translating from and to RLITT is desired. Since the source
+and destination notation in each problem are well understood each is appropriate
+for intermediate students.
+
+%  prettier-ignore-start
+
+\paragraph{Notation Description for Extended Gauss Notation:
+Intermediate Student}\label{sec-proj-note_gauss}
+
+%  prettier-ignore-end
+
+\subparagraph{Problem Statement}
+
+Develop the theory translating RLITT to extended Gauss notation. Additionally,
+develop the software needed for storing and translating per theory.
+
+%  prettier-ignore-start
+
+\paragraph{Notation Description For Planar Diagram (PD) Notation:
+Intermediate Student}\label{sec-proj-note_pd}
+
+%  prettier-ignore-end
+
+\subparagraph{Problem Statement}
+
+Develop the theory translating RLITT to PD notation. Additionally, develop the
+software required for storing and translating per theory.
+
+%  prettier-ignore-start
+
+\paragraph{Notation Description For DT Notation: Intermediate
+Student}\label{sec-proj-note_dt}
+
+%  prettier-ignore-end
+
+\subparagraph{Problem Statement}
+
+Develop the theory translating RLITT to DT notation. Additionally, develop the
+software needed for storing and translating per theory.
+
+\subsubsection{Generation}\label{sec-proj-gen}
+
+%  prettier-ignore-end
+
+This section expands the census of tangles to more abstract classes. These
+expanded lists increase accessibility of complex objects allowing for the
+creation of new theory.
+
+\paragraph{Create a table of virtual tangles: Upper Division Student}
+
+\subparagraph{Problem Statement}
+
+Create the theory needed to construct a table of virtual tangles.
+
+\subparagraph{Brief}
+
+Virtual knots, developed by Kauffman
+\citep{kauffmanVirtualKnotTheory1999}, are an
+extension of the knot concept where a knot shadow need not be planar. Some work
+has been done on classifying the virtual tangles by Mellor and Nevin
+\citep{mellorVirtualRationalTangles2020}. The full tangle theory must
+be developed to
+solve this problem. This requires experience with the development of original
+abstract theory, making the problem appropriate for upper division students
+
+\paragraph{Create a table of $n$ string tangles: Upper Division Student}
+
+\subparagraph{Problem Statement}
+
+Create the theory needed to construct a table of $n$ string tangles.
+
+\subparagraph{Brief}
+
+The tangles we have worked with in this thesis are the two string tangles, those
+with four fixed points on the Conway circle. A natural extension to this concept
+is the $n$ string tangle. Recently, Kwon
+\citep{kwonClassificationRational3tangles2025}, the 3 strings
+rational tangles, have
+been classified. For the remaining cases, the full tangle theory must be
+developed to solve the problem, this requires experience with the development of
+original abstract theory, making the problem appropriate for upper division
+students
+
+%  prettier-ignore-start
+
+\subsubsection{Potpourri}\label{sec-proj-pot}
+
+%  prettier-ignore-end
+
+Problems in this section are those that do not fit into other classes of
+problems.
+
+%  prettier-ignore-start
+
+\paragraph{Random Tangle Sampling: Upper Division Student}\label{sec-proj-rand}
+
+%  prettier-ignore-end
+
+\subparagraph{Problem Statement}
+
+Create the theory and software to select from a collection or generate a tangle
+at random with an understood distribution.
+
+\subparagraph{Brief}
+
+In the introduction chapter Section~\ref{sec-intro-applications},
+applications of knots to the
+hard sciences were discussed. When working in the hard sciences, being able to
+sample with an understood distribution from a collection is important. Similarly
+to the previous notational projects, describing and implementing random sampling
+methodologies is a class of extremely useful tabulation projects. The full
+tangle theory must be developed to solve this problem. This requires experience
+with the development of original abstract theory, making the problem appropriate
+for upper division students
+\newpage
+\paragraph{Develop a tangle analogue for petal knots: Upper Division Student}
+
+\subparagraph{Problem Statement}
+
+Create the theory needed for a well defined tangle analogue of the petal
+knots\citep{adamsKnotProjectionsSingle2015}.
+
+\subparagraph{Brief}
+
+Petal knots, first developed by Adams\citep{adamsKnotProjectionsSingle2015}, are
+knots in which all crossings are colinear in the orthogonal projection, an
+``ubercrossing''. Converting these objects to a braid is
+straightforward, however
+less obvious is converting to a two string tangle. Identifying a tangle analogue
+for the petal knots may allow for computation of a whole new family of tangle
+data. The full tangle theory must be developed to solve this problem This
+requires experience with the development of original abstract theory, making the
+problem appropriate for upper division students
